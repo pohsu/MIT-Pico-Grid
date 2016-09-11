@@ -56,6 +56,8 @@ main.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/in
 main.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F2837xD_SysCtrl_defines.h
 main.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F2837xD_Upp_defines.h
 main.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F2837xD_defaultisr.h
+main.obj: ../Peripheral/ISR.h
+main.obj: ../Peripheral/Adc.h
 
 ../main.c: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F28x_Project.h: 
@@ -113,3 +115,5 @@ C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F283
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F2837xD_SysCtrl_defines.h: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F2837xD_Upp_defines.h: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F2837xD_defaultisr.h: 
+../Peripheral/ISR.h: 
+../Peripheral/Adc.h: 
