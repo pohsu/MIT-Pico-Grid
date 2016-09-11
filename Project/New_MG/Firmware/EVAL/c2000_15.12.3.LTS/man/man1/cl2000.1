@@ -1,0 +1,548 @@
+.bd B 3
+.TH cl2000 1 "Jun 23, 2016" "TI Tools" "TI Code Generation Tools"
+.SH NAME
+cl2000 - Compiler
+.SH SYNOPSIS
+.B cl2000
+[
+.I options
+] [
+.I file(s)
+]
+.SH DESCRIPTION
+The compiler is an optimizing C/C++ compiler that accepts C++ as well as American National Standards Institute (ANSI) standard C source code and produces target specific object code.  This compiler builds object code directly from your C++ program source.  There is no intermediate C version of the program.
+
+The 
+.B Optimizing C Compiler User's Guide
+discusses the characteristics and limitations of this C/C++ compiler, as well as the languages, features and keywords supported.
+.SH OPTIONS
+The following options are accepted by this tool:
+.SS Processor Options:
+.SS
+.TP
+--cla_support[=cla0,cla1]
+This option can be used to specify how CLA support is provided.
+
+cla0 - target has CLA support from device type 0
+
+cla1 - target has CLA support from device type 1 The argument to the option is optional, and if not specified it will default to: cla0
+.TP
+--float_support=fpu32,softlib
+This option can be used to specify how the floating point support is provided.
+
+fpu32 - target has 32-bit hardware floating point unit
+
+softlib - no hardware floating point support, use RTS routines.
+.TP
+-ml
+Option deprecated, set by default
+.TP
+-mt
+Unified memory
+.TP
+--tmu_support[=tmu0]
+This option can be used to specify how TMU support is provided.
+
+tmu0 - target has TMU support from device type 0 The argument to the option is optional, and if not specified it will default to: tmu0
+.TP
+-v=28
+Processor version When not specified by the user, the compiler defaults to 28
+.TP
+--vcu_support[=vcu0,vcu2]
+This option can be used to specify how VCU support is provided.
+
+vcu0 - target has VCU support from device type 0
+
+vcu2 - target has VCU support from device type 2 The argument to the option is optional, and if not specified it will default to: vcu0
+.SS Optimization Options:
+.SS
+.TP
+--fp_mode=relaxed,strict
+Specify a floating point mode. In relaxed mode, hardware instructions may replace floating point library calls when available. This behavior is not ISO conformant, but results in faster/smaller code, with some loss in accuracy. When not specified by the user, the compiler defaults to strict
+.TP
+--fp_reassoc=on,off
+Set to on to allow reassociation of floating point arithmetic even in cases where the reassociation will result in a slightly different answer. When not specified by the user, the compiler defaults to on
+.TP
+-mf[=0-5]
+Control speed vs. size trade-offs in optimization.  A value of 5 indicates fully optimizing for speed with a potentially large code size penalty, while a value of 0 indicates fully optimizing for size. Values between 0 and 5 indicate trade-offs between the two extremes. The argument to the option is optional, and if not specified it will default to: 4
+.TP
+-O[=off,0,1,2,3,4]
+Set compiler optimization level.
+
+Level 0 includes register optimizations.  Level 1 adds local optimizations. Level 2 further adds global optimizations. Level 3 further adds interprocedure optimizations. Level 4 adds whole program optimizations. Level 4 must be passed to the linker for the optimizations to take affect. The argument to the option is optional, and if not specified it will default to: 2
+.SS Include Options:
+.SS
+.TP
+-I=dir
+Add the specified dir(ectory) to the #include file search path list.
+.TP
+--preinclude=filename
+Include the source code of the indicated file at the beginning of the compilation. This can be used to establish standard macro definitions, etc. The file name is searched for in the directories on the include search list. The files are processed in the order in which they were specified.
+.SS Performance Advisor Options:
+.SS
+.TP
+--advice:performance[=all,none]
+Provide advice on improving performance.  Currently provides TMU performance advice when TMU hardware support is enabled. The argument to the option is optional, and if not specified it will default to: all
+.SS Control Options:
+.SS
+.TP
+-c
+Disable linking, overriding -z (if used).
+.TP
+-h
+Show usage information.  When followed by another option or a phrase display that option's detailed information, or search for options related to that phrase.
+.TP
+-n
+Compile only; do not assemble
+.TP
+-z[=arguments]
+After compiling all the source files, perform a link and pass all the options following this option to the linker.
+.SS Advanced Debug Options:
+.SS
+.TP
+-g
+Enable full symbolic DWARF debugging in the generated object or out file. [Same as -gw]
+.TP
+-gp
+Adds the necessary debug directives to the object file which are needed by the profiler to allow function level profiling with minimal impact on optimization (if optimization is enabled). Using -g may hinder some optimizations to ensure that debugability is maintained, while this option will not hinder optimization.
+
+You will still be able to set breakpoints and profile on function-level boundaries, but you will not be able to single-step through code as with full debug ability.
+.TP
+-gt
+Enable full symbolic COFF debugging in the generated object or out file (DEPRECATED).
+.TP
+-gw
+Enable full symbolic DWARF debugging in the generated object or out file. [Same as -g]
+.TP
+-mn[=on,off]
+Optimize fully in the presence of debug (DEPRECATED) The argument to the option is optional, and if not specified it will default to: on
+.TP
+--symdebug:dwarf_version=2,3,4
+Specify DWARF version
+.TP
+--symdebug:keep_all_types
+Keep referenced type info (default for elf w/ debug)
+.TP
+--symdebug:none
+Disable debug and suppress all symbolic debug information from being included in the generated object or out file.
+.TP
+--symdebug:skeletal
+Enable symbolic debug information for program analysis. (DEPRECATED)
+.SS Language Options:
+.SS
+.TP
+--c++03
+Compile program in C++03 mode.
+.TP
+--c89
+Compile program in ANSI C89 mode.
+.TP
+--c99
+Compile program in C99 mode.
+.TP
+--cla_default
+Treat C files as CLA files
+.TP
+--exceptions
+Enable C++ exception handling
+.TP
+-fg
+Treat C files as C++ files
+.TP
+--float_operations_allowed=all,32,64,none
+Control the acceptable precision of floating point operations. The default is all.
+.TP
+--gcc
+This option enables the support for GCC extensions.  This feature is incompatible with strict ANSI mode.
+.TP
+--keep_unneeded_statics
+The parser, by default, will remark about and then remove any unreferenced static variables.  This option will keep the parser from deleting unreferenced static variables and any static functions that are, in turn referenced by these variables.
+.TP
+-pc
+Enable parser support for multibyte character sequences in comments, string literals, and character constants.
+.TP
+-pe
+Enable support for embedded C++
+.TP
+--pending_instantiations=#
+The number of template instantiations that may be in progress at any given time. Use 0 to specify an unlimited number.
+.TP
+-pi
+Ignore the inline keyword while parsing.
+.TP
+-pk
+Enable K & R C compatibility.
+.TP
+-pl
+Output raw listing to .rl file
+.TP
+-pm
+Enable program mode compilation.
+.TP
+-pn
+Disable intrinsic functions in the parser.
+.TP
+-pr
+Enable relaxed ANSI source parsing mode.
+.TP
+-ps
+Enable strict ANSI source parsing mode.  Any source violating strict ANSI guidelines will generate a parsing error.
+.TP
+-px
+Output xref listing to .crl file
+.TP
+-rtti
+Support C++ run-time type information
+.TP
+--static_template_instantiation
+All template entities are instantiated as needed in the file.  The instantiations are given internal (static) linkage.
+.SS Parser Preprocessing Options:
+.SS
+.TP
+-ppa
+This option instructs the compiler to additionally continue compilation of the source file (rather than exiting) after generating a pre-processing .pp output file such as those generated by -ppd (dependencies) -ppi (included files), or -ppm (macros).
+.TP
+-ppc
+Only preprocess the source file(s) and then stop; maintain source comments in the output.
+.TP
+-ppd[=filename]
+Generate a dependency list for the source file into the file <filename>.pp and then exit.  Optionally, name the output file.  The output will include all files included in the source file as well as any of the files included.  Also see the -ppa option to continue compilation after generating the dependency list (similar to gcc).
+.TP
+-ppi[=filename]
+Generate an include list for the source file into the file <filename>.pp and then exit.  Optionally, name the output file.  The output will include only those files directly included by the source file.   Also see the -ppa option to continue compilation after generating the include list (similar to gcc).
+.TP
+-ppl
+Only preprocess the source file(s) and then stop; maintain #line directives in the output..
+.TP
+-ppm[=filename]
+Generate a list of predefined and user defined macros for the source file into the file <filename>.pp and then exit.  Optionally, name the output file. The output will include only those files directly included by the source file.   Also see the -ppa option to continue compilation after generating the macro list (similar to gcc).
+.TP
+-ppo
+Only preprocess the source file(s) and then stop.
+.SS Predefined Symbols Options:
+.SS
+.TP
+-D=NAME[=value]
+Pre-define a symbol with the id 'NAME', optionally setting it's contents to 'value'.
+.TP
+-U=NAME
+Undefine the symbol with the id 'NAME'.
+.SS Diagnostic Options:
+.SS
+.TP
+--compiler_revision
+Print out the compiler release revision and exit.
+.TP
+--diag_wrap[=on,off]
+Set diagnostic messages to wrap at 79 columns (on) or not (off). The argument to the option is optional, and if not specified it will default to: on
+.TP
+-pdb
+Line buffer diagnostic output to reduce message mixing when compiling in parallel.
+.TP
+-pdel=count
+Set error limit to <count>
+.TP
+-pden
+Emit the diagnostic identifier numbers along with diagnostic messages.  These identifiers can be used with options such as -pds to suppress a specific diagnostic.
+.TP
+-pdew
+Treat warnings as errors
+.TP
+-pdf
+Write diagnostics to an .err file instead of the standard output.  The file name with be the same as the source file but with an .err extension.
+.TP
+-pdr
+Issue remarks, which are normally suppressed.
+.TP
+-pds=id
+Suppress diagnostic <id>
+.TP
+-pdse=id
+Treat diagnostic <id> as error
+.TP
+-pdsr=id
+Treat diagnostic <id> as remark
+.TP
+-pdsw=id
+Treat diagnostic <id> as warning
+.TP
+-pdv
+Enable verbose diagnostic information from the parser, including the source line of the error and an indicator of the error position within the line.
+.TP
+-pdw
+Suppress all parser warnings.
+.TP
+-q
+Suppress common compiler non-diagnostic output.  Remarks, errors and warnings will still be generated, as well as feature specific status.
+.TP
+-qq
+Suppress all compiler non-diagnostic output.  Remarks, errors and warnings will still be generated.
+.TP
+--section_sizes[=on,off]
+Output section size summary information for code, const, and data. The argument to the option is optional, and if not specified it will default to: on
+.TP
+--tool_versions
+Print version numbers for each tool [Same as -version, -versions]
+.TP
+--verbose
+Display progress information and toolset version when executing.
+.TP
+-version
+Print version numbers for each tool [Same as -versions, --tool_versions]
+.TP
+-versions
+Print version numbers for each tool [Same as -version, --tool_versions]
+.SS Runtime Model Options:
+.SS
+.TP
+--asm_code_fill=#
+A 16-bit fill value used by the assembler when creating holes for the .align directive in .text section or any section that has a valid instruction encoded.
+.TP
+--asm_data_fill=#
+A 16-bit fill value used by the assembler when creating holes for the .align directive in any section that does not have a valid instruction encoded.
+.TP
+--gen_data_subsections=on,off
+Placing structs and arrays in subsections allows the linker to remove unused data at link time. For C28x, this can have a negative impact on optimizing dp loads, which can result in less efficient code. If the option is not specified, the default behavior is off
+.TP
+-gpp
+Enable power profiling support by inserting NOPs into the frame code.  These NOPs can then be instrumented by the power profiling tooling to track power usage of functions.  If the power profiling tool is not used, this option will increase the cycle count of each function because of the NOPs.  This switch also disables optimizations that cannot be handled by the power-profiler.
+.TP
+-m20
+C2XLP source compatibility
+.TP
+-md
+No DP load optimization
+.TP
+-mi
+Don't generate RPT instructions
+.TP
+-mo[=on,off]
+Placing functions in subsections allows the linker to remove unused functions at link time. If the option is not specified, the default behavior for C28x is off. The default behavior for CLA is on The argument to the option is optional, and if not specified it will default to: on
+.TP
+-mv[=nops]
+Pipeline protect volatiles by <nops> nops (C27x) [def: 2]
+.TP
+--ramfunc[=on,off]
+Indicate that each function will be run out of RAM. Functions will be placed in RAM and optimized for RAM execution. Equivalent to specifying __attribute__((ramfunc)) on all functions in the translation units compiled with this option. For additional information, see http://processors.wiki.ti.com/index.php/Ramfunc_Attribute The argument to the option is optional, and if not specified it will default to: on
+.TP
+--rpt_threshold=0-256
+Specify max number of repetitions in a RPT instruction
+.TP
+--sat_reassoc=on,off
+Set to on to allow reassociation of saturating arithmetic even in cases where the reassociation will cause saturation to occur differently. When not specified by the user, the compiler defaults to off
+.SS Advanced Optimizations Options:
+.SS
+.TP
+-ma
+Assume called funcs create hidden aliases (rare)
+.TP
+-ms
+Optimize for code size
+.TP
+-oi[=size]
+Specify threshold for automatic inlining
+.TP
+-on=0-2
+Set the optimizer information file level, or disable with 0. Level 1 includes basic information.  Level 2 includes detailed information.  The file will be created in the assembly directory if a custom asm directory is specified on the command line otherwise it will be created in the object file directory.
+.TP
+-op=0-3
+Specify assumptions to make about function calls when optimizing.
+
+Level 0 (-op0) indicates that the module has functions that are called from other modules.
+
+Level 1 (-op1) indicates that the module does not have functions that are called by other modules but has global variables that are modified in other modules.
+
+Level 2 (-op2) indicates that the module does not have functions that are called or globals that are modified by other modules.
+
+Level 3 (-op3) indicates that the module has functions that are called by other modules but does not have globals that are modified by other modules.
+.TP
+--remove_hooks_when_inlining
+Remove the entry and exit hooks from the bodies of inlined functions.
+.TP
+--single_inline
+Inline function that are called only once.  Will inline these functions even if auto inlining has been turned off (-oi0)
+.SS Entry/Exit Hook Options:
+.SS
+.TP
+--entry_hook[=hook_function_name]
+Insert this call at entry to each function The argument to the option is optional, and if not specified it will default to: __entry_hook
+.TP
+--entry_parm=name,address,none
+Pass caller's name or address to entry hook
+.TP
+--exit_hook[=hook_function_name]
+Insert this call at exit from each function The argument to the option is optional, and if not specified it will default to: __exit_hook
+.TP
+--exit_parm=name,address,none
+Pass caller's name or address to exit hook
+.SS Feedback and Analysis Options:
+.SS
+.TP
+--analyze=codecov,callgraph
+Generate analysis information about code coverage or call graph information in the form of CSV files.  This information can then be read and interpreted by other tools.  For example, the cache layout tool, clt6x, can be used to interpret the call graph information and produce a preferred function order that can be incorporated into the application link.  The compiler can only generate one kind of analysis information for a given invocation of the compiler.
+.TP
+--analyze_only
+Generate analysis only; do not continue compilation. This option is used in combination with the --analyze option to instruct the compiler to halt the compilation after it has completed the generation of analysis information requested in the --analyze option.
+.TP
+--gen_profile_info
+Instrument the object code that is generated for a compilation with path profiling information.  The compiler will annotate the code that is generated for an application so that, when executed, the application can generate information about which code paths were executed and how often.  This profile data can then be used by subsequent compiles to analyze code coverage or call graph information to assist with subsequent development.
+.TP
+--use_profile_info[=filelist]
+This option is used in combination with the --analyze option to generate analysis information about code coverage or call graph information in the form of CSV files.  This information can then be read and interpreted by other tools.  For example, the cache layout tool, clt6x, can be used to interpret the call graph information and produce a preferred function order that can be incorporated into the application link.  The compiler can only generate one kind of analysis information for a given invocation of the compiler.
+.SS Library Function Assumptions Options:
+.SS
+.TP
+-ol0
+File redefines an RTS library function.
+.TP
+-ol1
+File contains an RTS library function.
+.TP
+-ol2
+File does not define any RTS library func (def.)
+.TP
+--printf_support=nofloat,minimal,full
+The printf and scanf families of functions are large because they provide complex formatting capabilities, which may not be required in typical embedded applications.  Use this option to reduce code size by eliminating features.  This option must be specified at link time.
+
+Use '--printf_support=nofloat' to exclude support for printing and scanning floating values.  All format specifiers except %f, %F, %g, %G, %e, and %E are supported.
+
+Use '--printf_support=minimal' to exclude support for width and precision flags and all format specifiers except %%, %d %o, %c, %s, and %x.
+.SS Assembler Options:
+.SS
+.TP
+-aa
+Generate absolute listing file
+.TP
+-ac
+Symbol names are not case-significant
+.TP
+-ad=NAME[=value]
+Pre-define the assembly symbol NAME, optionally setting its contents to 'value'.
+.TP
+-ahc=filename
+Simulate source '.copy filename'
+.TP
+-ahi=filename
+Simulate source '.include filename'
+.TP
+-al
+Generate listing file
+.TP
+-apd[=filename]
+Generate assembly dependency information.  Optionally, name the assembly dependency file.
+.TP
+-api
+Generate first-level assembly include file list
+.TP
+-as
+Keep local symbols in output file
+.TP
+-au=NAME
+Undefine assembly symbol NAME
+.TP
+-ax
+Generate cross reference file
+.TP
+--flash_prefetch_warn
+Assembler will issue a warning if a program data access instruction follows within 8 words of a BF/SBF instruction.  As outlined in TMS320C281X/TMS320F281X DSP Silicon Errata document SPRZ193K, page 7, section titled 'Memory: Flash and OTP Prefetch Buffer Overflow' the flash prefetch buffer may overflow if this instruction sequence is executed from flash or OTP with the flash prefetch buffer enabled. Whether or not an overflow actually occurs depends on the instruction sequence, flash wait states and CPU pipeline stall. If an overflow occurs it will result in execution of invalid opcodes. Instructions that use program memory addressing include MAC/XMAC, DMAC/XMACD, QMACL, IMACL, PREAD/XPREAD, and PWRITE/XPWRITE
+.TP
+-k
+Keep the generated assembly language (.asm) file
+.TP
+-mg
+Generate asm debug directive
+.TP
+-mw
+Generate asm extended warnings
+.TP
+-mx
+Preprocess assembly source, expand macros.
+.TP
+-s
+Generate interlisted assembly file
+.TP
+-ss
+Generate C source interlisted assembly file
+.SS File Type Specifier Options:
+.SS
+.TP
+-fa=filename
+File is an assembly file (default for .asm)
+.TP
+-fc=filename
+File is a C file (default for .c/no ext)
+.TP
+-fo=filename
+File is an object file (default for .obj)
+.TP
+-fp=filename
+File is a C++ file (default for .C .cpp .cc)
+.SS Directory Specifier Options:
+.SS
+.TP
+-fb=dir
+Absolute listing directory (default is .obj dir)
+.TP
+-fe=filename
+Compilation output file name, can override --obj_directory
+.TP
+-ff=dir
+Listing/xref file directory (default is .obj dir)
+.TP
+-fr=dir
+Object file directory (default is .)
+.TP
+-fs=dir
+Assembly file directory (default is .)
+.TP
+-ft=dir
+Temporary file directory (default is .)
+.TP
+--pp_directory=dir
+Place preprocessor output files in specified directory.  The directory must exist prior to compiler invocation.
+.SS Default File Extensions Options:
+.SS
+.TP
+-ea=.ext
+Extension for assembly files (default is .asm)
+.TP
+-ec=.ext
+Extension for C files (default is .c)
+.TP
+-eo=.ext
+Extension for object files (default is .obj)
+.TP
+-ep=.ext
+Extension for C++ files (default is .cpp)
+.TP
+-es=.ext
+Extension for listing files (default is .lst)
+.SS Command Files Options:
+.SS
+.TP
+-@=filename
+Read additional compile options the specified filename.
+.SS MISRA-C:2004 Options:
+.SS
+.TP
+--check_misra[=RULE]
+Enable verification of the MISRA-C:2004 rules, 'Guidelines for the use of the C language in critical systems.' For information on MISRA-C, see http://www.misra.org.uk.  MISRA and MISRA-C are trademarks of MIRA Ltd. The argument to the option is optional, and if not specified it will default to: all
+.TP
+--misra_advisory=error,warning,remark,suppress
+Set diagnostic severity level for the MISRA advisory class of rules.  See the --check_misra option for further information.
+.TP
+--misra_required=error,warning,remark,suppress
+Set the diagnostic severity level for the MISRA required class of rules.  See the --check_misra option for further information.
+.SH EXIT STATUS
+The following error values are returned:
+.PD 0
+.TP 10
+.B 0
+Successful completion.
+.TP
+.B >0
+Unsuccessful completion; an error occured.
+.PD
+.SH COPYRIGHT
+.TP
+Copyright (c) 2016, Texas Instruments, Inc.

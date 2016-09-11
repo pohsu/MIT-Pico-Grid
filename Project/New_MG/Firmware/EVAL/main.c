@@ -13,6 +13,7 @@
 //
 // Function Prototypes
 //
+void Init_Sys_all(void);
 void ConfigureADC(void);
 void ConfigureEPWM(void);
 void SetupADCEpwm(Uint16 channel);
