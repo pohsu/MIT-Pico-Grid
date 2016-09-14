@@ -1,24 +1,10 @@
-//###########################################################################
-//
-// FILE:   Resource.h
-//
-// TITLE:  Microsoft Visual C++ generated include file.
-//
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
-// $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
-//             http://www.ti.com/ ALL RIGHTS RESERVED $
-//###########################################################################
-
-//
 //{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
 // Used by lmusbdll.rc
 //
 
-//
 // Next default values for new objects
-//
+// 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        1000
@@ -28,6 +14,3 @@
 #endif
 #endif
 
-//
-// End of file
-//

@@ -13,6 +13,7 @@ ORDERED_OBJS += \
 "./F2837xD_Adc.obj" \
 "./F2837xD_CodeStartBranch.obj" \
 "./F2837xD_DefaultISR.obj" \
+"./F2837xD_EPwm.obj" \
 "./F2837xD_GlobalVariableDefs.obj" \
 "./F2837xD_Gpio.obj" \
 "./F2837xD_Ipc.obj" \
@@ -142,6 +143,12 @@ EVAL_CPU1.out \
 EXE_OUTPUTS__QUOTED += \
 "EVAL_CPU1.out" \
 
+BIN_OUTPUTS += \
+EVAL_CPU1.hex \
+
+BIN_OUTPUTS__QUOTED += \
+"EVAL_CPU1.hex" \
+
 
 # All Target
 all: EVAL_CPU1.out
@@ -150,15 +157,21 @@ all: EVAL_CPU1.out
 EVAL_CPU1.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -g --define=CPU1 --define=_FLASH --diag_warning=225 --display_error_number --diag_suppress=1311 -z -m"EVAL_CPU1.map" --stack_size=0x100 --warn_sections -i"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/lib" -i"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/include" -i"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/cmd" -i"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="EVAL_CPU1_linkInfo.xml" --rom_model -o "EVAL_CPU1.out" $(ORDERED_OBJS) $(A_SRCS)
+	"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --tmu_support=tmu0 --vcu_support=vcu2 --float_support=fpu32 -O3 --opt_for_speed=3 -g --define=CPU1 --define=_FLASH --display_error_number --diag_suppress=1311 --diag_warning=225 -z -m"EVAL_CPU1.map" --stack_size=0x100 --warn_sections -i"C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include" -i"C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/lib" -i"C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/cmd" -i"C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/cmd" --reread_libs --display_error_number --xml_link_info="EVAL_CPU1_linkInfo.xml" --rom_model -o "EVAL_CPU1.out" $(ORDERED_OBJS) $(A_SRCS)
 	@echo 'Finished building target: $@'
+	@echo ' '
+
+EVAL_CPU1.hex: $(EXE_OUTPUTS)
+	@echo 'Invoking: C2000 Hex Utility'
+	"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/bin/hex2000"  -o "EVAL_CPU1.hex" $(EXE_OUTPUTS__QUOTED)
+	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "F2837xD_Adc.d" "F2837xD_DefaultISR.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_Ipc.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "main.d" "Peripheral\Adc.d" "Peripheral\Epwm.d" "Peripheral\ISR.d" 
-	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_DefaultISR.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_Ipc.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "main.obj" "Peripheral\Adc.obj" "Peripheral\Epwm.obj" "Peripheral\ISR.obj" 
+	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
+	-$(RM) "F2837xD_Adc.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_Ipc.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "main.d" "Peripheral\Adc.d" "Peripheral\Epwm.d" "Peripheral\ISR.d" 
+	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_Ipc.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "main.obj" "Peripheral\Adc.obj" "Peripheral\Epwm.obj" "Peripheral\ISR.obj" 
 	-$(RM) "F2837xD_CodeStartBranch.d" "F2837xD_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

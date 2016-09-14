@@ -1,19 +1,17 @@
-//###########################################################################
-//
-// FILE:   ustdlib.c
-//
+//########################################################################### 
+// 
+// FILE:   ustdlib.c 
+// 
 // TITLE:  Simple standard library functions.
-//
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// 
+//########################################################################### 
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
 
-//
-// Included Files
-//
+
 #include <stdint.h>
 #include <stdbool.h>
 #include "driverlib/debug.h"
@@ -26,19 +24,13 @@
 //
 //*****************************************************************************
 
-//
-// Globals
-//
-
+//*****************************************************************************
 //
 // A mapping from an integer between 0 and 15 to its ASCII character
 // equivalent.
 //
+//*****************************************************************************
 static const char * const g_pcHex = "0123456789abcdef";
-
-//
-// Functions
-//
 
 //*****************************************************************************
 //
@@ -831,11 +823,12 @@ usnprintf(char * restrict s, size_t n, const char * restrict format, ...)
     return(ret);
 }
 
-
+//*****************************************************************************
 //
 // This array contains the number of days in a year at the beginning of each
 // month of the year, in a non-leap year.
 //
+//*****************************************************************************
 static const time_t g_psDaysToMonth[12] =
 {
     0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334
@@ -952,7 +945,7 @@ static int
 ucmptime(struct tm *t1, struct tm *t2)
 {
     //
-    // Compare each field in descending significance to determine if
+    // Compare each field in descending signficance to determine if
     // greater than, less than, or equal.
     //
     if(t1->tm_year > t2->tm_year)
@@ -1273,11 +1266,13 @@ ustrtoul(const char * restrict nptr, const char ** restrict endptr, int base)
     return(ulNeg ? (0 - ulRet) : ulRet);
 }
 
+//*****************************************************************************
 //
 // An array of the value of ten raised to the power-of-two exponents.  This is
 // used for converting the decimal exponent into the floating-point value of
 // 10^exp.
 //
+//*****************************************************************************
 static const float g_pfExponents[] =
 {
     1.0e+01,
@@ -1408,7 +1403,7 @@ ustrtof(const char *nptr, const char **endptr)
         pcPtr++;
 
         //
-        // Take a leading + or - from the exponent.
+        // Take a leading + or - from the exponenet.
         //
         ulExpNeg = 0;
         if(*pcPtr == '-')
@@ -1509,7 +1504,7 @@ ustrlen(const char *s)
     len = 0;
 
     //
-    // Step through the string looking for a zero character (marking its end).
+    // Step throug the string looking for a zero character (marking its end).
     //
     while(s[len])
     {
@@ -1762,9 +1757,11 @@ ustrcmp(const char *s1, const char *s2)
     return(ustrncmp(s1, s2, (size_t)-1));
 }
 
+//*****************************************************************************
 //
 // Random Number Generator Seed Value
 //
+//*****************************************************************************
 static unsigned int g_iRandomSeed = 1;
 
 //*****************************************************************************
@@ -1818,7 +1815,3 @@ urand(void)
 //! @}
 //
 //*****************************************************************************
-
-//
-// End of file
-//

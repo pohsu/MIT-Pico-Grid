@@ -10,12 +10,12 @@ PAGE 0 :  /* Program Memory */
    RAMD0           	: origin = 0x00B000, length = 0x000800
    RAMLS0          	: origin = 0x008000, length = 0x000800
    RAMLS1          	: origin = 0x008800, length = 0x000800
-   RAMLS2      		: origin = 0x009000, length = 0x000800
+   RAMLS2      		: origin = 0x009000, length = 0x000800 
    RAMLS4      		: origin = 0x00A000, length = 0x000800
-   RAMGS14          : origin = 0x01A000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
-   RAMGS15          : origin = 0x01B000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
+   RAMGS14          : origin = 0x01A000, length = 0x001000
+   RAMGS15          : origin = 0x01B000, length = 0x001000
    RESET           	: origin = 0x3FFFC0, length = 0x000002
-
+   
    /* Flash sectors */
    FLASHA           : origin = 0x080002, length = 0x001FFE	/* on-chip Flash */
    FLASHB           : origin = 0x082000, length = 0x002000	/* on-chip Flash */
@@ -30,7 +30,7 @@ PAGE 0 :  /* Program Memory */
    FLASHK           : origin = 0x0B8000, length = 0x002000	/* on-chip Flash */
    FLASHL           : origin = 0x0BA000, length = 0x002000	/* on-chip Flash */
    FLASHM           : origin = 0x0BC000, length = 0x002000	/* on-chip Flash */
-   FLASHN           : origin = 0x0BE000, length = 0x002000	/* on-chip Flash */
+   FLASHN           : origin = 0x0BE000, length = 0x002000	/* on-chip Flash */   
 
 PAGE 1 : /* Data Memory */
          /* Memory (RAM/FLASH) blocks can be moved to PAGE0 for program allocation */
@@ -54,9 +54,10 @@ PAGE 1 : /* Data Memory */
    RAMGS9      : origin = 0x015000, length = 0x001000
    RAMGS10     : origin = 0x016000, length = 0x001000
    RAMGS11     : origin = 0x017000, length = 0x001000
-   RAMGS12     : origin = 0x018000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
-   RAMGS13     : origin = 0x019000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
+   RAMGS12     : origin = 0x018000, length = 0x001000
+   RAMGS13     : origin = 0x019000, length = 0x001000
 
+   
    CPU2TOCPU1RAM   : origin = 0x03F800, length = 0x000400
    CPU1TOCPU2RAM   : origin = 0x03FC00, length = 0x000400
 }
@@ -78,7 +79,7 @@ SECTIONS
                          RUN_SIZE(_RamfuncsRunSize),
                          RUN_END(_RamfuncsRunEnd),
                          PAGE = 0, ALIGN(4)
-
+						 
    /* Allocate uninitalized data sections: */
    .stack              : > RAMLS3      PAGE = 1
    .ebss               : > RAMLS3      PAGE = 1
@@ -87,13 +88,13 @@ SECTIONS
    /* Initalized sections go in Flash */
    .econst             : > FLASHC      PAGE = 0, ALIGN(4)
    .switch             : > FLASHB      PAGE = 0, ALIGN(4)
-
+   
    .reset              : > RESET,     PAGE = 0, TYPE = DSECT /* not used, */
 
    Filter_RegsFile     : > RAMLS3,	   PAGE = 1
-
-#ifdef __TI_COMPILER_VERSION__
-   #if __TI_COMPILER_VERSION__ >= 15009000
+   
+#ifdef __TI_COMPILER_VERSION
+   #if __TI_COMPILER_VERSION >= 15009000
     .TI.ramfunc : {} LOAD = FLASHB,
                          RUN = RAMLS0 | RAMLS1 | RAMLS2,
                          LOAD_START(_RamfuncsLoadStart),
@@ -105,6 +106,7 @@ SECTIONS
                          PAGE = 0, ALIGN(4)
    #endif
 #endif
+    
 }
 
 /*

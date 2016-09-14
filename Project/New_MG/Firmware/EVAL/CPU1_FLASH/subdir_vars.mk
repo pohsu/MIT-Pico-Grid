@@ -4,24 +4,26 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 ASM_SRCS += \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_CodeStartBranch.asm \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_usDelay.asm 
+../F2837xD_common/source/F2837xD_CodeStartBranch.asm \
+../F2837xD_common/source/F2837xD_usDelay.asm 
 
 C_SRCS += \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Adc.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_DefaultISR.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Gpio.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Ipc.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieCtrl.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieVect.c \
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_SysCtrl.c \
+../F2837xD_common/source/F2837xD_Adc.c \
+../F2837xD_common/source/F2837xD_DefaultISR.c \
+../F2837xD_common/source/F2837xD_EPwm.c \
+../F2837xD_headers/source/F2837xD_GlobalVariableDefs.c \
+../F2837xD_common/source/F2837xD_Gpio.c \
+../F2837xD_common/source/F2837xD_Ipc.c \
+../F2837xD_common/source/F2837xD_PieCtrl.c \
+../F2837xD_common/source/F2837xD_PieVect.c \
+../F2837xD_common/source/F2837xD_SysCtrl.c \
 ../main.c 
 
 OBJS += \
 ./F2837xD_Adc.obj \
 ./F2837xD_CodeStartBranch.obj \
 ./F2837xD_DefaultISR.obj \
+./F2837xD_EPwm.obj \
 ./F2837xD_GlobalVariableDefs.obj \
 ./F2837xD_Gpio.obj \
 ./F2837xD_Ipc.obj \
@@ -38,6 +40,7 @@ ASM_DEPS += \
 C_DEPS += \
 ./F2837xD_Adc.d \
 ./F2837xD_DefaultISR.d \
+./F2837xD_EPwm.d \
 ./F2837xD_GlobalVariableDefs.d \
 ./F2837xD_Gpio.d \
 ./F2837xD_Ipc.d \
@@ -49,6 +52,7 @@ C_DEPS += \
 C_DEPS__QUOTED += \
 "F2837xD_Adc.d" \
 "F2837xD_DefaultISR.d" \
+"F2837xD_EPwm.d" \
 "F2837xD_GlobalVariableDefs.d" \
 "F2837xD_Gpio.d" \
 "F2837xD_Ipc.d" \
@@ -61,6 +65,7 @@ OBJS__QUOTED += \
 "F2837xD_Adc.obj" \
 "F2837xD_CodeStartBranch.obj" \
 "F2837xD_DefaultISR.obj" \
+"F2837xD_EPwm.obj" \
 "F2837xD_GlobalVariableDefs.obj" \
 "F2837xD_Gpio.obj" \
 "F2837xD_Ipc.obj" \
@@ -75,18 +80,18 @@ ASM_DEPS__QUOTED += \
 "F2837xD_usDelay.d" 
 
 C_SRCS__QUOTED += \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Adc.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_DefaultISR.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Gpio.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_Ipc.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieCtrl.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_PieVect.c" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_SysCtrl.c" \
-"../main.c" 
+"../F2837xD_common/source/F2837xD_Adc.c" \
+"../F2837xD_common/source/F2837xD_DefaultISR.c" \
+"../F2837xD_common/source/F2837xD_EPwm.c" \
+"../F2837xD_headers/source/F2837xD_GlobalVariableDefs.c" \
+"../F2837xD_common/source/F2837xD_Gpio.c" \
+"../F2837xD_common/source/F2837xD_Ipc.c" \
+"../F2837xD_common/source/F2837xD_PieCtrl.c" \
+"../F2837xD_common/source/F2837xD_PieVect.c" \
+"../F2837xD_common/source/F2837xD_SysCtrl.c" 
 
 ASM_SRCS__QUOTED += \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_CodeStartBranch.asm" \
-"C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_common/source/F2837xD_usDelay.asm" 
+"../F2837xD_common/source/F2837xD_CodeStartBranch.asm" \
+"../F2837xD_common/source/F2837xD_usDelay.asm" 
 
 

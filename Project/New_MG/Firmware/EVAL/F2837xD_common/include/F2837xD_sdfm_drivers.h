@@ -5,8 +5,8 @@
 // TITLE:  Defines and Macros for the SDFM driver Controller
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -19,156 +19,149 @@
 extern "C" {
 #endif
 
-//
-// Defines
-//
-
-//
+//*****************************************************************************
 // This is used to select either SDFM module 1 & SDFM module 2
-//
-#define SDFM1    1    //Can be used to select SDFM module 1
-#define SDFM2    2    //Can be used to select SDFM module 2
+//*****************************************************************************
+#define SDFM1 	1    //Can be used to select SDFM module 1
+#define SDFM2	2    //Can be used to select SDFM module 2
 
-//
+//*****************************************************************************
 // Max OSR values of different modules
-//
+//*****************************************************************************
 #define COMPARATOR_MAX_OSR 32    //Max OSR for comparator
 #define DATA_FILTER_MAX_OSR 256  //Max OSR for Data filter
 
-//
+
+//*****************************************************************************
 // Different Input Control modes
 // These values can be passed as argument to Sdfm_configureInputCtrl()
-//
-#define MODE_0    0   //Used to select Mode0 :
-                      //Modulator clock rate = Modulator data rate
-#define MODE_1    1   //Used to select MODE1 :
-                      //Modulator clock rate = (Modulator data rate / 2)
-#define MODE_2    2   //Used to select MODE2 :
-                      //Manchester encoded data
-                      //(Modulator clock is encoded into data)
-#define MODE_3    3   //Used to select MODE3 :
-                      //Modulator clock rate = (2 x Modulator data rate)
+//*****************************************************************************
 
-//
+#define MODE_0 	0    //Used to select Mode0 : Modulator clock rate = Modulator data rate
+#define MODE_1	1    //Used to select MODE1 : Modulator clock rate = (Modulator data rate / 2)
+#define MODE_2	2    //Used to select MODE2 : Manchester encoded data (Modulator clock is encoded into data)
+#define MODE_3	3    //Used to select MODE3 : Modulator clock rate = (2 x Modulator data rate)
+
+//*****************************************************************************
 // The following are values that can be passed to following functions
 //
 // (1) Sdfm_configureInputCtrl()
 // (2) Sdfm_configureComparator()
 // (3) Sdfm_configureData_filter()
 // (4) Sdfm_configureInterrupt()
-//
-#define FILTER1    0x01  //Used to select filter1 for comparator or Data filter
-#define FILTER2    0x02  //Used to select filter2 for comparator or Data filter
-#define FILTER3    0x04  //Used to select filter3 for comparator or Data filter
-#define FILTER4    0x08  //Used to select filter4 for comparator or Data filter
+//*****************************************************************************
+#define FILTER1			0x01   //Used to select filter1 for either comparator, Data filter
+#define FILTER2			0x02   //Used to select filter2 for either comparator, Data filter
+#define FILTER3			0x04   //Used to select filter3 for either comparator, Data filter
+#define FILTER4			0x08   //Used to select filter4 for either comparator, Data filter
 
-//
+
+//*****************************************************************************
 // The following are values that can be passed to Sdfm_configureData_filter()
-//
+//*****************************************************************************
 #define FILTER_DISABLE 0    //Used to disable filter
 #define FILTER_ENABLE  1    //Used to enable  filter
 
-//
+
+//*****************************************************************************
 // The following are values that can be passed to following functions
 //
 // (1) Sdfm_configureComparator()
 // (2) Sdfm_configureData_filter()
-//
-#define SINCFAST    0x00   //Used to select Sincfast filter type for comparator
-                           //or Data filter
-#define SINC1       0x01   //Used to select Sinc1 filter type for comparator
-                           //or Data filter
-#define SINC2       0x02   //Used to select Sinc2 filter type for comparator
-                           //or Data filter
-#define SINC3       0x03   //Used to select Sinc3 filter type for comparator
-                           //or Data filter
+//*****************************************************************************
+#define SINCFAST		0x00   //Used to select Sincfast filter type for either comparator, Data filter
+#define SINC1			0x01   //Used to select Sinc1 filter type for either comparator, Data filter
+#define SINC2			0x02   //Used to select Sinc2 filter type for either comparator, Data filter
+#define SINC3			0x03   //Used to select Sinc3 filter type for either comparator, Data filter
 
-//
+
+//*****************************************************************************
 // Enable / Disable High-level threshold interrupt for Comparator filter output
 // These values can be passed as argument to Sdfm_configureInterrupt()
-//
-#define IEH_DISABLE   0    //Used to disable over value interrupt to CPU
-#define IEH_ENABLE    1    //Used to enable  over value interrupt to CPU
+//*****************************************************************************
+#define IEH_DISABLE	0    //Used to disable over value interrupt to CPU
+#define IEH_ENABLE	1    //Used to enable  over value interrupt to CPU
 
-//
+//*****************************************************************************
 // Enable / Disable Low-level threshold interrupt for Comparator filter output
 // These values can be passed as argument to Sdfm_configureInterrupt()
-//
-#define IEL_DISABLE   0    //Used to disable under value interrupt to CPU
-#define IEL_ENABLE    1    //Used to enable  under value interrupt to CPU
+//*****************************************************************************
+#define IEL_DISABLE	0    //Used to disable under value interrupt to CPU
+#define IEL_ENABLE	1    //Used to enable  under value interrupt to CPU
 
-//
+//*****************************************************************************
 //Enable / Disable modulator failure interrupt
 // These values can be passed as argument to Sdfm_configureInterrupt()
-//
+//*****************************************************************************
 #define MFIE_DISABLE 0    //Used to disable modulator failure interrupt to CPU
 #define MFIE_ENABLE  1    //Used to enable  modulator failure interrupt to CPU
 
-//
+//*****************************************************************************
 // Enable / Disable Acknowledge flag
 // These values can be passed as argument to Sdfm_configureInterrupt()
-//
-#define AE_DISABLE 0    //Used to disable new filter data acknowledge
-                        //interrupt to CPU
-#define AE_ENABLE  1    //Used to enable  new filter data acknowledge
-                        //interrupt to CPU
+//*****************************************************************************
+#define AE_DISABLE 0    //Used to disable new filter data acknowledge interrupt to CPU
+#define AE_ENABLE  1    //Used to enable  new filter data acknowledge interrupt to CPU
 
-//
+
+
+//*****************************************************************************
 // Sinc Filter Reset enable / disable for External Reset from PWM Compare
 // output
 // This following value can be passed to Sdfm_configureExternalreset()
-//
-#define FILTER_1_EXT_RESET_DISABLE       0
-#define FILTER_1_EXT_RESET_ENABLE        1
-#define FILTER_2_EXT_RESET_DISABLE       0
-#define FILTER_2_EXT_RESET_ENABLE        1
-#define FILTER_3_EXT_RESET_DISABLE       0
-#define FILTER_3_EXT_RESET_ENABLE        1
-#define FILTER_4_EXT_RESET_DISABLE       0
-#define FILTER_4_EXT_RESET_ENABLE        1
+//*****************************************************************************
+#define FILTER_1_EXT_RESET_DISABLE		0
+#define FILTER_1_EXT_RESET_ENABLE		1
+#define FILTER_2_EXT_RESET_DISABLE		0
+#define FILTER_2_EXT_RESET_ENABLE		1
+#define FILTER_3_EXT_RESET_DISABLE		0
+#define FILTER_3_EXT_RESET_ENABLE		1
+#define FILTER_4_EXT_RESET_DISABLE		0
+#define FILTER_4_EXT_RESET_ENABLE		1
 
-//
-// Filter output data can be represented in 16 bit (or) 32 bit format
+//*****************************************************************************
+// Filter ouput data can be represented in 16 bit (or) 32 bit format
 // This value can be passed to Sdfm_configureData_filter()
-//
-#define DATA_16_BIT     0     //Data stored in 16b 2's complement
-#define DATA_32_BIT     1     //Data stored in 32b 2's complement
+//*****************************************************************************
+#define DATA_16_BIT		0	 //Data stored in 16b 2's complement
+#define DATA_32_BIT 	1	 //Data stored in 32b 2's complement
 
-//
+
+//*****************************************************************************
 // Macro to read the SDFM1 filter data in 16 bit format
-//
-#define SDFM1_READ_FILTER1_DATA_16BIT     *(Uint16 *)0x5E17
-#define SDFM1_READ_FILTER2_DATA_16BIT     *(Uint16 *)0x5E27
-#define SDFM1_READ_FILTER3_DATA_16BIT     *(Uint16 *)0x5E37
-#define SDFM1_READ_FILTER4_DATA_16BIT     *(Uint16 *)0x5E47
+//*****************************************************************************
+#define SDFM1_READ_FILTER1_DATA_16BIT 	*(Uint16 *)0x5E17
+#define SDFM1_READ_FILTER2_DATA_16BIT 	*(Uint16 *)0x5E27
+#define SDFM1_READ_FILTER3_DATA_16BIT 	*(Uint16 *)0x5E37
+#define SDFM1_READ_FILTER4_DATA_16BIT 	*(Uint16 *)0x5E47
 
-//
+//*****************************************************************************
 // Macro to read the SDFM1 filter data in 32 bit format
-//
-#define SDFM1_READ_FILTER1_DATA_32BIT    *(Uint32 *)0x5E16
-#define SDFM1_READ_FILTER2_DATA_32BIT    *(Uint32 *)0x5E26
-#define SDFM1_READ_FILTER3_DATA_32BIT    *(Uint32 *)0x5E36
-#define SDFM1_READ_FILTER4_DATA_32BIT    *(Uint32 *)0x5E46
+//*****************************************************************************
+#define SDFM1_READ_FILTER1_DATA_32BIT	*(Uint32 *)0x5E16
+#define SDFM1_READ_FILTER2_DATA_32BIT	*(Uint32 *)0x5E26
+#define SDFM1_READ_FILTER3_DATA_32BIT	*(Uint32 *)0x5E36
+#define SDFM1_READ_FILTER4_DATA_32BIT	*(Uint32 *)0x5E46
 
-//
+//*****************************************************************************
 // Macro to read the SDFM2 filter data in 16 bit format
-//
-#define SDFM2_READ_FILTER1_DATA_16BIT    *(Uint16 *)0x5E97
-#define SDFM2_READ_FILTER2_DATA_16BIT    *(Uint16 *)0x5EA7
-#define SDFM2_READ_FILTER3_DATA_16BIT    *(Uint16 *)0x5EB7
-#define SDFM2_READ_FILTER4_DATA_16BIT    *(Uint16 *)0x5EC7
+//*****************************************************************************
+#define SDFM2_READ_FILTER1_DATA_16BIT 	*(Uint16 *)0x5E97
+#define SDFM2_READ_FILTER2_DATA_16BIT 	*(Uint16 *)0x5EA7
+#define SDFM2_READ_FILTER3_DATA_16BIT 	*(Uint16 *)0x5EB7
+#define SDFM2_READ_FILTER4_DATA_16BIT 	*(Uint16 *)0x5EC7
 
-//
+//*****************************************************************************
 // Macro to read the SDFM2 filter data in 32 bit format
-//
-#define SDFM2_READ_FILTER1_DATA_32BIT    *(Uint16 *)0x5E96
-#define SDFM2_READ_FILTER2_DATA_32BIT    *(Uint16 *)0x5EA6
-#define SDFM2_READ_FILTER3_DATA_32BIT    *(Uint16 *)0x5EB6
-#define SDFM2_READ_FILTER4_DATA_32BIT    *(Uint16 *)0x5EC6
+//*****************************************************************************
+#define SDFM2_READ_FILTER1_DATA_32BIT 	*(Uint16 *)0x5E96
+#define SDFM2_READ_FILTER2_DATA_32BIT 	*(Uint16 *)0x5EA6
+#define SDFM2_READ_FILTER3_DATA_32BIT 	*(Uint16 *)0x5EB6
+#define SDFM2_READ_FILTER4_DATA_32BIT 	*(Uint16 *)0x5EC6
 
-//
+//*****************************************************************************
 // The following are defines for different OSR values
-//
+//*****************************************************************************
 #define OSR_1     0
 #define OSR_2     1
 #define OSR_3     2
@@ -426,9 +419,9 @@ extern "C" {
 #define OSR_255     254
 #define OSR_256     255
 
-//
+//*****************************************************************************
 // The following are defines for different OSR values
-//
+//*****************************************************************************
 #define SHIFT_0_BITS    0
 #define SHIFT_1_BITS    1
 #define SHIFT_2_BITS    2
@@ -462,40 +455,25 @@ extern "C" {
 #define SHIFT_30_BITS    30
 #define SHIFT_31_BITS    31
 
-//
+//*****************************************************************************
 // Function prototypes
-//
-extern void Sdfm_configureInputCtrl(Uint16 SDFM_number,
-                                    Uint16 Filter_number, Uint16 mode);
-extern void Sdfm_configureComparator(Uint16 SDFM_number,
-                                     Uint16 Filter_number, Uint16 Filter_type,
-                                     Uint16 OSR, Uint16 HLT, Uint16 LLT);
-extern void Sdfm_configureData_filter(Uint16 sdfmNumber, Uint16 filterNumber,
-                                      Uint16 Filter_switch, Uint16 filterType,
-                                      Uint16 OSR, Uint16 DR_switch,
-                                      Uint16 shift_bits);
+//*****************************************************************************
+
+extern void Sdfm_configureInputCtrl(Uint16 SDFM_number, Uint16 Filter_number, Uint16 mode);
+extern void Sdfm_configureComparator(Uint16 SDFM_number, Uint16 Filter_number, Uint16 Filter_type, Uint16 OSR, Uint16 HLT, Uint16 LLT);
+extern void Sdfm_configureData_filter(Uint16 sdfmNumber, Uint16 filterNumber, Uint16 Filter_switch, Uint16 filterType, Uint16 OSR, Uint16 DR_switch, Uint16 shift_bits);
 extern void Sdfm_enableMFE(Uint16 SDFM_number);
 extern void Sdfm_disableMFE(Uint16 SDFM_number);
-extern void Sdfm_configureInterrupt(Uint16 SDFM_number, Uint16 Filter_number,
-                                    Uint16 IEH_Switch, Uint16 IEL_Switch,
-                                    Uint16 MFIE_Switch, Uint16 AE_Switch);
+extern void Sdfm_configureInterrupt(Uint16 SDFM_number, Uint16 Filter_number,Uint16 IEH_Switch, Uint16 IEL_Switch, Uint16 MFIE_Switch, Uint16 AE_Switch);
 extern void Sdfm_enableMIE(Uint16 SDFM_number);
 extern void Sdfm_disableMIE(Uint16 SDFM_number);
-extern void Sdfm_configureExternalreset(Uint16 SDFM_number,
-                                        Uint16 filter1_Config_ext_reset,
-                                        Uint16 filter2_Config_ext_reset,
-                                        Uint16 filter3_Config_ext_reset,
-                                        Uint16 filter4_Config_ext_reset);
+extern void Sdfm_configureExternalreset(Uint16 SDFM_number, Uint16 filter1_Config_ext_reset, Uint16 filter2_Config_ext_reset, Uint16 filter3_Config_ext_reset, Uint16 filter4_Config_ext_reset);
+
 extern Uint32 Sdfm_readFlagRegister(Uint16 SDFM_number);
-extern void Sdfm_clearFlagRegister(Uint16 sdfmNumber,
-                                   Uint32 sdfmReadFlagRegister);
+extern void Sdfm_clearFlagRegister(Uint16 sdfmNumber,Uint32 sdfmReadFlagRegister);
 
 #ifdef __cplusplus
 }
 #endif /* extern "C" */
 
 #endif   // - end of F2837xD_SDFM_DRIVERS_H
-
-//
-// End of file
-//

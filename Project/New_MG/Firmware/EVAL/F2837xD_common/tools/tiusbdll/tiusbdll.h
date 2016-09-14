@@ -6,8 +6,8 @@
 //         read and write functionality.
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -26,15 +26,18 @@
 extern "C" {
 #endif
 
+//****************************************************************************
 //
 // A handle returned by InitializeDevice().
 //
+//****************************************************************************
 typedef void *TIUSB_HANDLE;
 
+//****************************************************************************
 //
-// Flags used in constructing the ucRequestType parameter to
-// Endpoint0Transfer().
+// Flags used in constructing the ucRequestType parameter to Endpoint0Transfer().
 //
+//****************************************************************************
 #define REQUEST_TRANSFER_IN             0x80
 #define REQUEST_TRANSFER_OUT            0x00
 
@@ -47,9 +50,11 @@ typedef void *TIUSB_HANDLE;
 #define REQUEST_RECIPIENT_ENDPOINT      0x02
 #define REQUEST_RECIPIENT_OTHER         0x03
 
+//****************************************************************************
 //
-// Function Prototypes exported by the DLL.
+// Prototypes for functions exported by the DLL.
 //
+//****************************************************************************
 TIUSB_HANDLE __stdcall InitializeDevice(unsigned short usVID,
                                         unsigned short usPID,
                                         LPGUID lpGUID,
@@ -76,11 +81,13 @@ BOOL __stdcall Endpoint0Transfer(TIUSB_HANDLE hHandle, UCHAR ucRequestType,
                                  USHORT usIndex, USHORT usLength,
                                  PUCHAR pucBuffer, PUSHORT pusCount);
 
+//****************************************************************************
 //
 // Typedefs for each of the exported functions.  This helps if applications
 // want to link the DLL dynamically using LoadLibrary rather than linking
 // directly to the lib file.
 //
+//****************************************************************************
 typedef TIUSB_HANDLE (__stdcall *tInitializeDevice)(unsigned short usVID,
                                                     unsigned short usPID,
                                                     LPGUID lpGUID,
@@ -106,6 +113,5 @@ typedef DWORD (__stdcall *tEndpoint0Transfer)(TIUSB_HANDLE hHandle,
 }
 #endif
 
-//
-// End of file
-//
+
+

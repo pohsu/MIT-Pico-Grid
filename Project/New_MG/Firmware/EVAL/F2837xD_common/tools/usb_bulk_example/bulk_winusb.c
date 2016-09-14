@@ -1,22 +1,9 @@
-//###########################################################################
 //
-// FILE:   bulk_winusb.c
+// Implementation of the bulk_usb interface using Microsoft's WinUSB API.
 //
-// TITLE: Implementation of the bulk_usb interface using Microsoft's
-//        WinUSB API.
-//
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
-// $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
-//             http://www.ti.com/ ALL RIGHTS RESERVED $
-//###########################################################################
 
 #ifdef USE_WINUSB
 
-//
-// Included Files
-//
 #include <windows.h>
 #include <setupapi.h>
 #include <devguid.h>
@@ -28,20 +15,19 @@
 #include "winusb.h"
 #include "usb100.h"
 
+//****************************************************************************
 //
-// Defines
+// Buffer size definitions.
 //
+//****************************************************************************
 #define MAX_DEVPATH_LENGTH 256
 
-
-//
-// Globals
-//
-
+//****************************************************************************
 //
 // Structure containing handles and information required to communicate with
 // the USB bulk device.
 //
+//****************************************************************************
 typedef struct
 {
     HANDLE deviceHandle;
@@ -54,9 +40,6 @@ typedef struct
 
 tDeviceInfoWinUSB devInfo;
 
-//
-// Functions
-//
 
 //****************************************************************************
 //
@@ -85,7 +68,6 @@ tDeviceInfoWinUSB devInfo;
 //     buffers.
 //     ERROR_INSUFFICIENT_BUFFER if the buffer passed is too small to hold
 //     the device path.
-//
 //****************************************************************************
 static DWORD GetDevicePath(LPGUID InterfaceGuid,
                     PCHAR  pcDevicePath,
@@ -414,11 +396,10 @@ BOOL TerminateDevice(void)
 //
 // \param pcBuffer points to the first byte of data to send.
 // \param ulSize contains the number of bytes of data to send.
-// \param pulWritten is a pointer which will be written with the number of
+// \param pulWritten is a pointer which will be written with the number of 
 // bytes of data actually written to the device.
 //
-// This function is used to send data to the USB device via its bulk OUT
-// endpoint.
+// This function is used to send data to the USB device via its bulk OUT endpoint.
 //
 // \return Returns \e TRUE on success or \e FALSE on failure.
 //
@@ -444,9 +425,9 @@ BOOL WriteUSBPacket(unsigned char *pcBuffer, unsigned long ulSize,
 //
 // \param pcBuffer points to a buffer into which the data from the device will
 // be written.
-// \param ulSize contains the number of bytes that are requested from the
+// \param ulSize contains the number of bytes that are requested from the 
 // device.
-// \param pulRead is a pointer which will be written with the number of
+// \param pulRead is a pointer which will be written with the number of 
 // bytes of data actually read from the device.
 //
 // This function is used to receivedata from the USB device via its bulk IN
@@ -491,6 +472,3 @@ BOOL ReadUSBPacket(unsigned char *pcBuffer, unsigned long ulSize,
 
 #endif // USE_WINUSB
 
-//
-// End of file
-//

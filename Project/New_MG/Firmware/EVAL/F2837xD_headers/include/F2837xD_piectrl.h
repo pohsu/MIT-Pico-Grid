@@ -5,8 +5,8 @@
 // TITLE:   F2837xD Device PIECTRL Register Definitions.
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -54,22 +54,22 @@ union PIEACK_REG {
 };
 
 struct PIEIER1_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 1.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 1.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 1.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 1.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 1.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 1.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 1.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 1.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 1.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 1.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 1.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 1.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 1.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 1.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 1.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 1.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT1.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT1.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT1.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT1.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT1.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT1.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT1.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT1.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT1.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT1.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT1.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT1.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT1.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT1.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT1.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT1.16
 };
 
 union PIEIER1_REG {
@@ -78,22 +78,22 @@ union PIEIER1_REG {
 };
 
 struct PIEIFR1_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 1.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 1.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 1.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 1.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 1.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 1.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 1.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 1.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 1.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 1.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 1.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 1.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 1.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 1.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 1.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 1.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT1.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT1.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT1.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT1.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT1.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT1.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT1.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT1.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT1.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT1.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT1.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT1.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT1.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT1.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT1.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT1.16
 };
 
 union PIEIFR1_REG {
@@ -102,22 +102,22 @@ union PIEIFR1_REG {
 };
 
 struct PIEIER2_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 2.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 2.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 2.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 2.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 2.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 2.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 2.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 2.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 2.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 2.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 2.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 2.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 2.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 2.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 2.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 2.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT2.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT2.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT2.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT2.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT2.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT2.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT2.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT2.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT2.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT2.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT2.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT2.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT2.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT2.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT2.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT2.16
 };
 
 union PIEIER2_REG {
@@ -126,22 +126,22 @@ union PIEIER2_REG {
 };
 
 struct PIEIFR2_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 2.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 2.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 2.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 2.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 2.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 2.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 2.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 2.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 2.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 2.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 2.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 2.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 2.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 2.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 2.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 2.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT2.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT2.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT2.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT2.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT2.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT2.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT2.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT2.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT2.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT2.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT2.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT2.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT2.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT2.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT2.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT2.16
 };
 
 union PIEIFR2_REG {
@@ -150,22 +150,22 @@ union PIEIFR2_REG {
 };
 
 struct PIEIER3_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 3.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 3.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 3.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 3.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 3.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 3.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 3.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 3.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 3.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 3.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 3.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 3.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 3.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 3.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 3.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 3.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT3.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT3.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT3.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT3.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT3.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT3.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT3.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT3.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT3.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT3.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT3.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT3.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT3.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT3.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT3.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT3.16
 };
 
 union PIEIER3_REG {
@@ -174,22 +174,22 @@ union PIEIER3_REG {
 };
 
 struct PIEIFR3_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 3.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 3.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 3.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 3.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 3.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 3.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 3.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 3.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 3.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 3.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 3.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 3.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 3.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 3.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 3.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 3.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT3.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT3.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT3.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT3.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT3.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT3.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT3.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT3.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT3.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT3.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT3.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT3.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT3.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT3.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT3.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT3.16
 };
 
 union PIEIFR3_REG {
@@ -198,22 +198,22 @@ union PIEIFR3_REG {
 };
 
 struct PIEIER4_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 4.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 4.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 4.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 4.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 4.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 4.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 4.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 4.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 4.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 4.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 4.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 4.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 4.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 4.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 4.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 4.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT4.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT4.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT4.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT4.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT4.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT4.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT4.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT4.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT4.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT4.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT4.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT4.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT4.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT4.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT4.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT4.16
 };
 
 union PIEIER4_REG {
@@ -222,22 +222,22 @@ union PIEIER4_REG {
 };
 
 struct PIEIFR4_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 4.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 4.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 4.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 4.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 4.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 4.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 4.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 4.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 4.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 4.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 4.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 4.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 4.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 4.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 4.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 4.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT4.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT4.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT4.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT4.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT4.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT4.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT4.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT4.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT4.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT4.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT4.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT4.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT4.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT4.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT4.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT4.16
 };
 
 union PIEIFR4_REG {
@@ -246,22 +246,22 @@ union PIEIFR4_REG {
 };
 
 struct PIEIER5_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 5.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 5.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 5.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 5.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 5.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 5.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 5.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 5.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 5.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 5.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 5.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 5.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 5.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 5.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 5.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 5.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT5.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT5.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT5.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT5.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT5.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT5.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT5.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT5.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT5.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT5.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT5.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT5.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT5.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT5.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT5.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT5.16
 };
 
 union PIEIER5_REG {
@@ -270,22 +270,22 @@ union PIEIER5_REG {
 };
 
 struct PIEIFR5_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 5.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 5.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 5.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 5.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 5.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 5.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 5.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 5.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 5.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 5.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 5.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 5.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 5.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 5.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 5.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 5.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT5.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT5.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT5.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT5.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT5.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT5.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT5.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT5.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT5.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT5.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT5.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT5.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT5.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT5.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT5.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT5.16
 };
 
 union PIEIFR5_REG {
@@ -294,22 +294,22 @@ union PIEIFR5_REG {
 };
 
 struct PIEIER6_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 6.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 6.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 6.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 6.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 6.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 6.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 6.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 6.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 6.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 6.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 6.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 6.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 6.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 6.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 6.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 6.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT6.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT6.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT6.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT6.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT6.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT6.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT6.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT6.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT6.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT6.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT6.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT6.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT6.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT6.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT6.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT6.16
 };
 
 union PIEIER6_REG {
@@ -318,22 +318,22 @@ union PIEIER6_REG {
 };
 
 struct PIEIFR6_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 6.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 6.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 6.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 6.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 6.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 6.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 6.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 6.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 6.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 6.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 6.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 6.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 6.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 6.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 6.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 6.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT6.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT6.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT6.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT6.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT6.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT6.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT6.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT6.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT6.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT6.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT6.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT6.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT6.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT6.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT6.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT6.16
 };
 
 union PIEIFR6_REG {
@@ -342,22 +342,22 @@ union PIEIFR6_REG {
 };
 
 struct PIEIER7_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 7.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 7.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 7.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 7.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 7.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 7.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 7.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 7.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 7.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 7.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 7.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 7.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 7.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 7.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 7.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 7.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT7.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT7.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT7.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT7.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT7.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT7.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT7.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT7.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT7.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT7.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT7.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT7.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT7.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT7.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT7.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT7.16
 };
 
 union PIEIER7_REG {
@@ -366,22 +366,22 @@ union PIEIER7_REG {
 };
 
 struct PIEIFR7_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 7.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 7.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 7.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 7.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 7.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 7.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 7.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 7.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 7.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 7.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 7.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 7.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 7.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 7.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 7.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 7.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT7.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT7.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT7.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT7.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT7.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT7.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT7.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT7.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT7.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT7.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT7.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT7.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT7.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT7.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT7.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT7.16
 };
 
 union PIEIFR7_REG {
@@ -390,22 +390,22 @@ union PIEIFR7_REG {
 };
 
 struct PIEIER8_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 8.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 8.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 8.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 8.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 8.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 8.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 8.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 8.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 8.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 8.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 8.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 8.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 8.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 8.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 8.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 8.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT8.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT8.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT8.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT8.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT8.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT8.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT8.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT8.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT8.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT8.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT8.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT8.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT8.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT8.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT8.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT8.16
 };
 
 union PIEIER8_REG {
@@ -414,22 +414,22 @@ union PIEIER8_REG {
 };
 
 struct PIEIFR8_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 8.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 8.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 8.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 8.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 8.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 8.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 8.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 8.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 8.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 8.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 8.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 8.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 8.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 8.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 8.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 8.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT8.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT8.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT8.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT8.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT8.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT8.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT8.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT8.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT8.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT8.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT8.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT8.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT8.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT8.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT8.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT8.16
 };
 
 union PIEIFR8_REG {
@@ -438,22 +438,22 @@ union PIEIFR8_REG {
 };
 
 struct PIEIER9_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 9.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 9.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 9.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 9.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 9.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 9.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 9.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 9.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 9.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 9.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 9.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 9.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 9.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 9.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 9.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 9.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT9.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT9.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT9.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT9.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT9.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT9.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT9.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT9.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT9.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT9.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT9.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT9.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT9.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT9.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT9.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT9.16
 };
 
 union PIEIER9_REG {
@@ -462,22 +462,22 @@ union PIEIER9_REG {
 };
 
 struct PIEIFR9_BITS {                   // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 9.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 9.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 9.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 9.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 9.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 9.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 9.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 9.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 9.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 9.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 9.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 9.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 9.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 9.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 9.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 9.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT9.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT9.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT9.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT9.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT9.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT9.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT9.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT9.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT9.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT9.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT9.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT9.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT9.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT9.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT9.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT9.16
 };
 
 union PIEIFR9_REG {
@@ -486,22 +486,22 @@ union PIEIFR9_REG {
 };
 
 struct PIEIER10_BITS {                  // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 10.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 10.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 10.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 10.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 10.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 10.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 10.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 10.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 10.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 10.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 10.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 10.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 10.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 10.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 10.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 10.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT10.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT10.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT10.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT10.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT10.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT10.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT10.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT10.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT10.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT10.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT10.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT10.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT10.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT10.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT10.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT10.16
 };
 
 union PIEIER10_REG {
@@ -510,22 +510,22 @@ union PIEIER10_REG {
 };
 
 struct PIEIFR10_BITS {                  // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 10.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 10.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 10.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 10.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 10.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 10.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 10.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 10.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 10.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 10.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 10.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 10.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 10.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 10.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 10.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 10.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT10.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT10.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT10.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT10.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT10.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT10.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT10.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT10.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT10.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT10.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT10.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT10.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT10.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT10.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT10.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT10.16
 };
 
 union PIEIFR10_REG {
@@ -534,22 +534,22 @@ union PIEIFR10_REG {
 };
 
 struct PIEIER11_BITS {                  // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 11.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 11.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 11.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 11.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 11.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 11.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 11.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 11.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 11.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 11.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 11.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 11.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 11.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 11.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 11.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 11.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT11.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT11.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT11.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT11.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT11.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT11.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT11.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT11.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT11.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT11.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT11.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT11.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT11.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT11.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT11.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT11.16
 };
 
 union PIEIER11_REG {
@@ -558,22 +558,22 @@ union PIEIER11_REG {
 };
 
 struct PIEIFR11_BITS {                  // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 11.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 11.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 11.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 11.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 11.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 11.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 11.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 11.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 11.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 11.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 11.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 11.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 11.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 11.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 11.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 11.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT11.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT11.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT11.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT11.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT11.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT11.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT11.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT11.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT11.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT11.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT11.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT11.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT11.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT11.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT11.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT11.16
 };
 
 union PIEIFR11_REG {
@@ -582,22 +582,22 @@ union PIEIFR11_REG {
 };
 
 struct PIEIER12_BITS {                  // bits description
-    Uint16 INTx1:1;                     // 0 Enable for Interrupt 12.1
-    Uint16 INTx2:1;                     // 1 Enable for Interrupt 12.2
-    Uint16 INTx3:1;                     // 2 Enable for Interrupt 12.3
-    Uint16 INTx4:1;                     // 3 Enable for Interrupt 12.4
-    Uint16 INTx5:1;                     // 4 Enable for Interrupt 12.5
-    Uint16 INTx6:1;                     // 5 Enable for Interrupt 12.6
-    Uint16 INTx7:1;                     // 6 Enable for Interrupt 12.7
-    Uint16 INTx8:1;                     // 7 Enable for Interrupt 12.8
-    Uint16 INTx9:1;                     // 8 Enable for Interrupt 12.9
-    Uint16 INTx10:1;                    // 9 Enable for Interrupt 12.10
-    Uint16 INTx11:1;                    // 10 Enable for Interrupt 12.11
-    Uint16 INTx12:1;                    // 11 Enable for Interrupt 12.12
-    Uint16 INTx13:1;                    // 12 Enable for Interrupt 12.13
-    Uint16 INTx14:1;                    // 13 Enable for Interrupt 12.14
-    Uint16 INTx15:1;                    // 14 Enable for Interrupt 12.15
-    Uint16 INTx16:1;                    // 15 Enable for Interrupt 12.16
+    Uint16 INTx1:1;                     // 0 Interrupt Enable for INT12.1
+    Uint16 INTx2:1;                     // 1 Interrupt Enable for INT12.2
+    Uint16 INTx3:1;                     // 2 Interrupt Enable for INT12.3
+    Uint16 INTx4:1;                     // 3 Interrupt Enable for INT12.4
+    Uint16 INTx5:1;                     // 4 Interrupt Enable for INT12.5
+    Uint16 INTx6:1;                     // 5 Interrupt Enable for INT12.6
+    Uint16 INTx7:1;                     // 6 Interrupt Enable for INT12.7
+    Uint16 INTx8:1;                     // 7 Interrupt Enable for INT12.8
+    Uint16 INTx9:1;                     // 8 Interrupt Enable for INT12.9
+    Uint16 INTx10:1;                    // 9 Interrupt Enable for INT12.10
+    Uint16 INTx11:1;                    // 10 Interrupt Enable for INT12.11
+    Uint16 INTx12:1;                    // 11 Interrupt Enable for INT12.12
+    Uint16 INTx13:1;                    // 12 Interrupt Enable for INT12.13
+    Uint16 INTx14:1;                    // 13 Interrupt Enable for INT12.14
+    Uint16 INTx15:1;                    // 14 Interrupt Enable for INT12.15
+    Uint16 INTx16:1;                    // 15 Interrupt Enable for INT12.16
 };
 
 union PIEIER12_REG {
@@ -606,22 +606,22 @@ union PIEIER12_REG {
 };
 
 struct PIEIFR12_BITS {                  // bits description
-    Uint16 INTx1:1;                     // 0 Flag for Interrupt 12.1
-    Uint16 INTx2:1;                     // 1 Flag for Interrupt 12.2
-    Uint16 INTx3:1;                     // 2 Flag for Interrupt 12.3
-    Uint16 INTx4:1;                     // 3 Flag for Interrupt 12.4
-    Uint16 INTx5:1;                     // 4 Flag for Interrupt 12.5
-    Uint16 INTx6:1;                     // 5 Flag for Interrupt 12.6
-    Uint16 INTx7:1;                     // 6 Flag for Interrupt 12.7
-    Uint16 INTx8:1;                     // 7 Flag for Interrupt 12.8
-    Uint16 INTx9:1;                     // 8 Flag for Interrupt 12.9
-    Uint16 INTx10:1;                    // 9 Flag for Interrupt 12.10
-    Uint16 INTx11:1;                    // 10 Flag for Interrupt 12.11
-    Uint16 INTx12:1;                    // 11 Flag for Interrupt 12.12
-    Uint16 INTx13:1;                    // 12 Flag for Interrupt 12.13
-    Uint16 INTx14:1;                    // 13 Flag for Interrupt 12.14
-    Uint16 INTx15:1;                    // 14 Flag for Interrupt 12.15
-    Uint16 INTx16:1;                    // 15 Flag for Interrupt 12.16
+    Uint16 INTx1:1;                     // 0 Interrupt Flag for INT12.1
+    Uint16 INTx2:1;                     // 1 Interrupt Flag for INT12.2
+    Uint16 INTx3:1;                     // 2 Interrupt Flag for INT12.3
+    Uint16 INTx4:1;                     // 3 Interrupt Flag for INT12.4
+    Uint16 INTx5:1;                     // 4 Interrupt Flag for INT12.5
+    Uint16 INTx6:1;                     // 5 Interrupt Flag for INT12.6
+    Uint16 INTx7:1;                     // 6 Interrupt Flag for INT12.7
+    Uint16 INTx8:1;                     // 7 Interrupt Flag for INT12.8
+    Uint16 INTx9:1;                     // 8 Interrupt Flag for INT12.9
+    Uint16 INTx10:1;                    // 9 Interrupt Flag for INT12.10
+    Uint16 INTx11:1;                    // 10 Interrupt Flag for INT12.11
+    Uint16 INTx12:1;                    // 11 Interrupt Flag for INT12.12
+    Uint16 INTx13:1;                    // 12 Interrupt Flag for INT12.13
+    Uint16 INTx14:1;                    // 13 Interrupt Flag for INT12.14
+    Uint16 INTx15:1;                    // 14 Interrupt Flag for INT12.15
+    Uint16 INTx16:1;                    // 15 Interrupt Flag for INT12.16
 };
 
 union PIEIFR12_REG {
@@ -630,32 +630,32 @@ union PIEIFR12_REG {
 };
 
 struct PIE_CTRL_REGS {
-    union   PIECTRL_REG                      PIECTRL;                      // ePIE Control Register
-    union   PIEACK_REG                       PIEACK;                       // Interrupt Acknowledge Register
-    union   PIEIER1_REG                      PIEIER1;                      // Interrupt Group 1 Enable Register
-    union   PIEIFR1_REG                      PIEIFR1;                      // Interrupt Group 1 Flag Register
-    union   PIEIER2_REG                      PIEIER2;                      // Interrupt Group 2 Enable Register
-    union   PIEIFR2_REG                      PIEIFR2;                      // Interrupt Group 2 Flag Register
-    union   PIEIER3_REG                      PIEIER3;                      // Interrupt Group 3 Enable Register
-    union   PIEIFR3_REG                      PIEIFR3;                      // Interrupt Group 3 Flag Register
-    union   PIEIER4_REG                      PIEIER4;                      // Interrupt Group 4 Enable Register
-    union   PIEIFR4_REG                      PIEIFR4;                      // Interrupt Group 4 Flag Register
-    union   PIEIER5_REG                      PIEIER5;                      // Interrupt Group 5 Enable Register
-    union   PIEIFR5_REG                      PIEIFR5;                      // Interrupt Group 5 Flag Register
-    union   PIEIER6_REG                      PIEIER6;                      // Interrupt Group 6 Enable Register
-    union   PIEIFR6_REG                      PIEIFR6;                      // Interrupt Group 6 Flag Register
-    union   PIEIER7_REG                      PIEIER7;                      // Interrupt Group 7 Enable Register
-    union   PIEIFR7_REG                      PIEIFR7;                      // Interrupt Group 7 Flag Register
-    union   PIEIER8_REG                      PIEIER8;                      // Interrupt Group 8 Enable Register
-    union   PIEIFR8_REG                      PIEIFR8;                      // Interrupt Group 8 Flag Register
-    union   PIEIER9_REG                      PIEIER9;                      // Interrupt Group 9 Enable Register
-    union   PIEIFR9_REG                      PIEIFR9;                      // Interrupt Group 9 Flag Register
-    union   PIEIER10_REG                     PIEIER10;                     // Interrupt Group 10 Enable Register
-    union   PIEIFR10_REG                     PIEIFR10;                     // Interrupt Group 10 Flag Register
-    union   PIEIER11_REG                     PIEIER11;                     // Interrupt Group 11 Enable Register
-    union   PIEIFR11_REG                     PIEIFR11;                     // Interrupt Group 11 Flag Register
-    union   PIEIER12_REG                     PIEIER12;                     // Interrupt Group 12 Enable Register
-    union   PIEIFR12_REG                     PIEIFR12;                     // Interrupt Group 12 Flag Register
+    union   PIECTRL_REG                      PIECTRL;                      // Control Register
+    union   PIEACK_REG                       PIEACK;                       // Acknowledge Register
+    union   PIEIER1_REG                      PIEIER1;                      // INT1 Group Enable Register
+    union   PIEIFR1_REG                      PIEIFR1;                      // INT1 Group Flag Register
+    union   PIEIER2_REG                      PIEIER2;                      // INT2 Group Enable Register
+    union   PIEIFR2_REG                      PIEIFR2;                      // INT2 Group Flag Register
+    union   PIEIER3_REG                      PIEIER3;                      // INT3 Group Enable Register
+    union   PIEIFR3_REG                      PIEIFR3;                      // INT3 Group Flag Register
+    union   PIEIER4_REG                      PIEIER4;                      // INT4 Group Enable Register
+    union   PIEIFR4_REG                      PIEIFR4;                      // INT4 Group Flag Register
+    union   PIEIER5_REG                      PIEIER5;                      // INT5 Group Enable Register
+    union   PIEIFR5_REG                      PIEIFR5;                      // INT5 Group Flag Register
+    union   PIEIER6_REG                      PIEIER6;                      // INT6 Group Enable Register
+    union   PIEIFR6_REG                      PIEIFR6;                      // INT6 Group Flag Register
+    union   PIEIER7_REG                      PIEIER7;                      // INT7 Group Enable Register
+    union   PIEIFR7_REG                      PIEIFR7;                      // INT7 Group Flag Register
+    union   PIEIER8_REG                      PIEIER8;                      // INT8 Group Enable Register
+    union   PIEIFR8_REG                      PIEIFR8;                      // INT8 Group Flag Register
+    union   PIEIER9_REG                      PIEIER9;                      // INT9 Group Enable Register
+    union   PIEIFR9_REG                      PIEIFR9;                      // INT9 Group Flag Register
+    union   PIEIER10_REG                     PIEIER10;                     // INT10 Group Enable Register
+    union   PIEIFR10_REG                     PIEIFR10;                     // INT10 Group Flag Register
+    union   PIEIER11_REG                     PIEIER11;                     // INT11 Group Enable Register
+    union   PIEIFR11_REG                     PIEIFR11;                     // INT11 Group Flag Register
+    union   PIEIER12_REG                     PIEIER12;                     // INT12 Group Enable Register
+    union   PIEIFR12_REG                     PIEIFR12;                     // INT12 Group Flag Register
 };
 
 //---------------------------------------------------------------------------

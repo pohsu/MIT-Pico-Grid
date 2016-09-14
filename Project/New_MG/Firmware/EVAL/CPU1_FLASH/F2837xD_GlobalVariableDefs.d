@@ -1,6 +1,6 @@
 # FIXED
 
-F2837xD_GlobalVariableDefs.obj: C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c
+F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c
 F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/include/F2837xD_device.h
 F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/assert.h
 F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/linkage.h
@@ -40,7 +40,7 @@ F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/
 F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/include/F2837xD_xbar.h
 F2837xD_GlobalVariableDefs.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/include/F2837xD_xint.h
 
-C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c: 
+C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_headers/include/F2837xD_device.h: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/assert.h: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/linkage.h: 

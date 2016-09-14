@@ -5,8 +5,8 @@
 // TITLE:  Global prototypes for F2837xD Examples
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -18,9 +18,7 @@
 extern "C" {
 #endif
 
-//
-// Function Prototypes (Shared)
-//
+/*---- shared global function prototypes -----------------------------------*/
 extern void EnableInterrupts(void);
 extern void InitAPwm1Gpio(void);
 extern void InitECap(void);
@@ -54,10 +52,8 @@ extern void InitPieVectTable(void);
 extern void InitSpiGpio(void);
 extern void InitSpiaGpio(void);
 extern void InitSysCtrl(void);
-extern void InitSysPll(Uint16 clock_source, Uint16 imult, Uint16 fmult,
-                       Uint16 divsel);
-extern void InitAuxPll(Uint16 clock_source, Uint16 imult, Uint16 fmult,
-                       Uint16 divsel);
+extern void InitSysPll(Uint16 clock_source, Uint16 imult, Uint16 fmult, Uint16 divsel);
+extern void InitAuxPll(Uint16 clock_source, Uint16 imult, Uint16 fmult, Uint16 divsel);
 
 #define KickDog ServiceDog     // For compatibility with previous versions
 extern void ServiceDog(void);
@@ -72,11 +68,9 @@ extern void AuxIntOsc2Sel (void);
 extern void AuxXtalOscSel (void);
 extern void AuxAuxClkSel (void);
 
-//
 //                 CAUTION
 // This function MUST be executed out of RAM. Executing it
 // out of OTP/Flash will yield unpredictable results
-//
 extern void InitFlash(void);
 extern void InitFlash_Bank0(void);
 extern void InitFlash_Bank1(void);
@@ -88,28 +82,19 @@ extern void SeizeFlashPump_Bank0(void);
 extern void SeizeFlashPump_Bank1(void);
 extern void ReleaseFlashPump(void);
 
-//
 //LPM functions in F2837xD_SysCtrl.c
-//
 void IDLE();
 void STANDBY();
 void HALT();
 void HIB();
 
-//
-//ADC functions
-//
+//ADC functions 
 extern void AdcSetMode(Uint16 adc, Uint16 resolution, Uint16 signalmode);
 extern void CalAdcINL(Uint16 adc);
 
-//
 // DMA Functions
-//
 extern void DMAInitialize(void);
-
-//
 // DMA Channel 1
-//
 extern void DMACH1AddrConfig(volatile Uint16 *DMA_Dest,
                              volatile Uint16 *DMA_Source);
 extern void DMACH1AddrConfig32bit(volatile Uint32 *DMA_Dest,
@@ -124,10 +109,7 @@ extern void DMACH1ModeConfig(Uint16 persel, Uint16 perinte, Uint16 oneshot,
                              Uint16 chintmode,
                              Uint16 chinte);
 extern void StartDMACH1(void);
-
-//
 // DMA Channel 2
-//
 extern void DMACH2AddrConfig(volatile Uint16 *DMA_Dest,
                              volatile Uint16 *DMA_Source);
 extern void DMACH2AddrConfig32bit(volatile Uint32 *DMA_Dest,
@@ -142,10 +124,7 @@ extern void DMACH2ModeConfig(Uint16 persel, Uint16 perinte, Uint16 oneshot,
                              Uint16 chintmode,
                              Uint16 chinte);
 extern void StartDMACH2(void);
-
-//
 // DMA Channel 3
-//
 extern void DMACH3AddrConfig(volatile Uint16 *DMA_Dest,
                              volatile Uint16 *DMA_Source);
 extern void DMACH3AddrConfig32bit(volatile Uint32 *DMA_Dest,
@@ -160,10 +139,7 @@ extern void DMACH3ModeConfig(Uint16 persel, Uint16 perinte, Uint16 oneshot,
                              Uint16 chintmode,
                              Uint16 chinte);
 extern void StartDMACH3(void);
-
-//
 // DMA Channel 4
-//
 extern void DMACH4AddrConfig(volatile Uint16 *DMA_Dest,
                              volatile Uint16 *DMA_Source);
 extern void DMACH4AddrConfig32bit(volatile Uint32 *DMA_Dest,
@@ -178,10 +154,7 @@ extern void DMACH4ModeConfig(Uint16 persel, Uint16 perinte, Uint16 oneshot,
                              Uint16 chintmode,
                              Uint16 chinte);
 extern void StartDMACH4(void);
-
-//
 // DMA Channel 5
-//
 extern void DMACH5AddrConfig(volatile Uint16 *DMA_Dest,
                              volatile Uint16 *DMA_Source);
 extern void DMACH5AddrConfig32bit(volatile Uint32 *DMA_Dest,
@@ -196,10 +169,7 @@ extern void DMACH5ModeConfig(Uint16 persel, Uint16 perinte, Uint16 oneshot,
                              Uint16 chintmode,
                              Uint16 chinte);
 extern void StartDMACH5(void);
-
-//
 // DMA Channel 6
-//
 extern void DMACH6AddrConfig(volatile Uint16 *DMA_Dest,
                              volatile Uint16 *DMA_Source);
 extern void DMACH6AddrConfig32bit(volatile Uint32 *DMA_Dest,
@@ -215,9 +185,8 @@ extern void DMACH6ModeConfig(Uint16 persel, Uint16 perinte, Uint16 oneshot,
                              Uint16 chinte);
 extern void StartDMACH6(void);
 
-//
+
 //GPIO Functions
-//
 extern void InitGpio();
 extern void GPIO_SetupPinMux(Uint16 pin, Uint16 cpu, Uint16 peripheral);
 extern void GPIO_SetupPinOptions(Uint16 pin, Uint16 output, Uint16 flags);
@@ -232,16 +201,14 @@ extern void GPIO_EnableUnbondedIOPullups(void);
 Uint16 GPIO_ReadPin(Uint16 pin);
 void GPIO_WritePin(Uint16 pin, Uint16 outVal);
 
-//
+
 //IPC Functions
-//
 extern void InitIpc();
 extern Uint64 ReadIpcTimer();
 extern void SendIpcData(void *data, Uint16 word_length, Uint16 flag);
 extern void RecvIpcData(void *recv_buf, Uint16 word_length);
 extern void FillIpcSendData(Uint16 fill_data);
-extern void SendIpcCommand(Uint32 command, Uint32 address, Uint32 data,
-                           Uint16 flag);
+extern void SendIpcCommand(Uint32 command, Uint32 address, Uint32 data, Uint16 flag);
 extern void SendIpcFlag(Uint16 flag);
 extern void AckIpcFlag(Uint16 flag);
 extern void CancelIpcFlag(Uint16 flag);
@@ -249,24 +216,18 @@ extern void WaitForIpcFlag(Uint16 flag);
 extern void WaitForIpcAck(Uint16 flag);
 extern void IpcSync(Uint16 flag);
 
-//
 // CAN Functions
-//
 extern void CanGpioPinMuxing(Uint32 ulBase, Uint16 canTxRxPin);
 extern void CanAGpioConfig(Uint16 canaTxRxPin);
 extern void CanBGpioConfig(Uint16 canbTxRxPin);
 extern void CanModuleClkSelect(Uint32 ulBase, Uint16 ucSource);
 
-//
 // I2C Functions
-//
 extern void I2cAGpioConfig(Uint16 I2caDataClkPin);
 extern void I2cBGpioConfig(Uint16 I2cbDataClkPin);
 
-//
 // McBSP functions
 // McBSPA
-//
 extern void InitMcbspa(void);
 extern void InitMcbspaInt(void);
 extern void InitMcbspa8bit(void);
@@ -277,10 +238,7 @@ extern void InitMcbspa24bit(void);
 extern void InitMcbspa32bit(void);
 extern void InitMcbspaGpio(void);
 extern void delay_loop(void);
-
-//
 // McBSPB
-//
 extern void InitMcbspb(void);
 extern void InitMcbspbInt(void);
 extern void InitMcbspb8bit(void);
@@ -291,19 +249,16 @@ extern void InitMcbspb24bit(void);
 extern void InitMcbspb32bit(void);
 extern void InitMcbspbGpio(void);
 
-//
 //Temp Sensor Functions
-//
 extern void InitTempSensor(float32 vrefhi_voltage);
 extern int16 GetTemperatureC(int16 sensorSample);
 extern int16 GetTemperatureK(int16 sensorSample);
 
-//
+//---------------------------------------------------------------------------
 // External symbols created by the linker cmd file
 // DSP28 examples will use these to relocate code from one LOAD location
 // in Flash to a different RUN location in internal
 // RAM
-//
 extern Uint16 RamfuncsLoadStart;
 extern Uint16 RamfuncsLoadEnd;
 extern Uint16 RamfuncsLoadSize;
@@ -311,12 +266,13 @@ extern Uint16 RamfuncsRunStart;
 extern Uint16 RamfuncsRunEnd;
 extern Uint16 RamfuncsRunSize;
 
+
 #ifdef __cplusplus
 }
 #endif /* extern "C" */
 
 #endif   // - end of F2837xD_GLOBALPROTOTYPES_H
 
-//
-// End of file
-//
+//===========================================================================
+// End of file.
+//===========================================================================

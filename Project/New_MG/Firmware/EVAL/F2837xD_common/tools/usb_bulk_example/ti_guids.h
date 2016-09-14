@@ -1,16 +1,26 @@
-//###########################################################################
+//*****************************************************************************
 //
-// FILE:   ti_guids.h
+// ti_guids.h - GUIDs associated with TI Micro USB examples
 //
-// TITLE:  GUIDs associated with TI Micro USB examples
+// Copyright (c) 2008-2011 Texas Instruments Incorporated.  All rights reserved.
+// Software License Agreement
+// 
+// Texas Instruments (TI) is supplying this software for use solely and
+// exclusively on TI's microcontroller products. The software is owned by
+// TI and/or its suppliers, and is protected under applicable copyright
+// laws. You may not combine this software with "viral" open-source
+// software in order to form a larger program.
+// 
+// THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
+// NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
+// NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
+// CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+// DAMAGES, FOR ANY REASON WHATSOEVER.
+// 
+// This is part of revision 7611 of the TI Firmware Development Package.
 //
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
-// $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
-//             http://www.ti.com/ ALL RIGHTS RESERVED $
-//###########################################################################
-
+//*****************************************************************************
 #ifndef _TI_GUIDS_
 #define _TI_GUIDS_
 
@@ -36,6 +46,3 @@ DEFINE_GUID(GUID_DEVINTERFACE_TI_BULK,
 
 #endif
 
-//
-// End of file
-//

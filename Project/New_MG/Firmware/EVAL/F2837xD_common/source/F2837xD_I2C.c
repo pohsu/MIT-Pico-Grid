@@ -5,19 +5,16 @@
 // TITLE:  F2837xD I2C Initialization & Support Functions.
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
 
-//
-// Included Files
-//
-#include "F2837xD_device.h"
-#include "F2837xD_Examples.h"
+#include "F2837xD_device.h"     // F2837xD Headerfile Include File
+#include "F2837xD_Examples.h"   // F2837xD Examples Include File
 
-//
+
 //---------------------------------------------------------------------------
 // Example: I2cAGpioConfig(), I2cBGpioConfig()
 //---------------------------------------------------------------------------
@@ -29,244 +26,160 @@
 //
 
 #ifdef CPU1
-//
-// I2cAGpioConfig - Configure I2CA GPIOs
-//                  'I2caDataClkPin' should be assign with one of the
-//                   possible I2C_A SDA - SDL GPIO pin Use defined Macros from
-//                   "F2837xD_I2c_defines.h" for  assignment
-//
+//************************************************************************************
+// 'I2caDataClkPin' should be assign with one of the possible I2C_A SDA - SDL GPIO pin
+// Use defined Macros from "F2837xD_I2c_defines.h" for  assignment
+//************************************************************************************
 void I2cAGpioConfig(Uint16 I2caDataClkPin)
 {
-    EALLOW;
+	EALLOW;
 
-    switch(I2caDataClkPin)
-    {
-        case I2C_A_GPIO0_GPIO1:
+	switch(I2caDataClkPin)
+	{
+		case I2C_A_GPIO0_GPIO1:
+			/* Enable internal pull-up for the selected I2C pins */
+			GpioCtrlRegs.GPAPUD.bit.GPIO0 = 0;     // Enable pull-up for GPIO0 (SDAA)
+			GpioCtrlRegs.GPAPUD.bit.GPIO1 = 0;     // Enable pull-up for GPIO1 (SDLA)
+		
+			/* Set qualification for the selected I2C pins */
+			GpioCtrlRegs.GPAQSEL1.bit.GPIO0 = 3;   // Async/no qualification (I/ps sync
+			GpioCtrlRegs.GPAQSEL1.bit.GPIO1 = 3;   // to SYSCLKOUT by default)
 
-            //
-            // Enable internal pull-up for the selected I2C pins
-            // Enable pull-up for GPIO0 (SDAA)
-            // Enable pull-up for GPIO1 (SDLA)
-            //
-            GpioCtrlRegs.GPAPUD.bit.GPIO0 = 0;
-            GpioCtrlRegs.GPAPUD.bit.GPIO1 = 0;
+			/* Configure which of the possible GPIO pins will be I2C_A pins using GPIO regs*/
+			GpioCtrlRegs.GPAGMUX1.bit.GPIO0 = 1;    // Configure GPIO0 for SDAA operation
+			GpioCtrlRegs.GPAMUX1.bit.GPIO0  = 2;    // Configure GPIO0 for SDAA operation
+		
+			GpioCtrlRegs.GPAGMUX1.bit.GPIO1 = 1;    // Configure GPIO1 for SDLA operation
+			GpioCtrlRegs.GPAMUX1.bit.GPIO1  = 2;    // Configure GPIO1 for SDLA operation
+	
+			break;
+		
+		
+		case I2C_A_GPIO32_GPIO33:
+			/* Enable internal pull-up for the selected I2C pins */
+			GpioCtrlRegs.GPBPUD.bit.GPIO32 = 0;
+			GpioCtrlRegs.GPBPUD.bit.GPIO33 = 0;
+			
+			/* Set qualification for the selected I2C pins */
+			GpioCtrlRegs.GPBQSEL1.bit.GPIO32 = 3;
+			GpioCtrlRegs.GPBQSEL1.bit.GPIO33 = 3;
+			
+			/* Configure which of the possible GPIO pins will be I2C_A pins using GPIO regs*/
+			GpioCtrlRegs.GPBMUX1.bit.GPIO32 = 1;
+			GpioCtrlRegs.GPBMUX1.bit.GPIO33 = 1;
 
-            //
-            // Set qualification for the selected I2C pins
-            // Async/no qualification (I/ps sync to SYSCLKOUT by default)
-            //
-            GpioCtrlRegs.GPAQSEL1.bit.GPIO0 = 3;
-            GpioCtrlRegs.GPAQSEL1.bit.GPIO1 = 3;
+			break;
+			
+		case I2C_A_GPIO42_GPIO43:
+			/* Enable internal pull-up for the selected I2C pins */
+			
+			/* Set qualification for the selected I2C pins */
+			
+			/* Configure which of the possible GPIO pins will be I2C_A pins using GPIO regs*/
+			break;
+			
+		case I2C_A_GPIO91_GPIO92:
+			/* Enable internal pull-up for the selected I2C pins */
+			GpioCtrlRegs.GPCPUD.bit.GPIO91 = 0;
+			GpioCtrlRegs.GPCPUD.bit.GPIO92 = 0;
+			
+			/* Set qualification for the selected I2C pins */
+	   		GpioCtrlRegs.GPCQSEL2.bit.GPIO91 = 3;
+	   		GpioCtrlRegs.GPCQSEL2.bit.GPIO92 = 3;
+			
+			/* Configure which of the possible GPIO pins will be I2C_A pins using GPIO regs*/
 
-            //
-            // Configure which of the possible GPIO pins will be I2C_A pins
-            // using GPIO regs
-            // Configure GPIO0 for SDAA operation
-            // Configure GPIO0 for SDAA operation
-            //
-            GpioCtrlRegs.GPAGMUX1.bit.GPIO0 = 1;
-            GpioCtrlRegs.GPAMUX1.bit.GPIO0  = 2;
+	   		GpioCtrlRegs.GPCGMUX2.bit.GPIO91 = 1;	GpioCtrlRegs.GPCMUX2.bit.GPIO91 = 2;
+	   		GpioCtrlRegs.GPCGMUX2.bit.GPIO92 = 1;	GpioCtrlRegs.GPCMUX2.bit.GPIO92 = 2;
+			break;
+			
+		case I2C_A_GPIO63104_GPIO105:
+			/* Enable internal pull-up for the selected I2C pins */
+			
+			/* Set qualification for the selected I2C pins */
+			
+			/* Configure which of the possible GPIO pins will be I2C_A pins using GPIO regs*/
+			break;
 
-            //
-            // Configure GPIO1 for SDLA operation
-            // Configure GPIO1 for SDLA operation
-            //
-            GpioCtrlRegs.GPAGMUX1.bit.GPIO1 = 1;
-            GpioCtrlRegs.GPAMUX1.bit.GPIO1  = 2;
+		default:
+			
+			break;
+			
+	} // End of Switch
+	EDIS;
+} //////////// End of I2cAGpioConfig ///////////////////////////////////////
 
-            break;
-
-        case I2C_A_GPIO32_GPIO33:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
-            GpioCtrlRegs.GPBPUD.bit.GPIO32 = 0;
-            GpioCtrlRegs.GPBPUD.bit.GPIO33 = 0;
-
-            //
-            // Set qualification for the selected I2C pins
-            //
-            GpioCtrlRegs.GPBQSEL1.bit.GPIO32 = 3;
-            GpioCtrlRegs.GPBQSEL1.bit.GPIO33 = 3;
-
-            //
-            // Configure which of the possible GPIO pins will be I2C_A pins
-            // using GPIO regs
-            //
-            GpioCtrlRegs.GPBMUX1.bit.GPIO32 = 1;
-            GpioCtrlRegs.GPBMUX1.bit.GPIO33 = 1;
-
-            break;
-
-        case I2C_A_GPIO42_GPIO43:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
-
-            //
-            // Set qualification for the selected I2C pins
-            //
-
-            //
-            // Configure which of the possible GPIO pins will be I2C_A pins
-            // using GPIO regs
-            //
-            break;
-
-        case I2C_A_GPIO91_GPIO92:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
-            GpioCtrlRegs.GPCPUD.bit.GPIO91 = 0;
-            GpioCtrlRegs.GPCPUD.bit.GPIO92 = 0;
-
-            //
-            // Set qualification for the selected I2C pins
-            //
-               GpioCtrlRegs.GPCQSEL2.bit.GPIO91 = 3;
-               GpioCtrlRegs.GPCQSEL2.bit.GPIO92 = 3;
-
-            //
-            // Configure which of the possible GPIO pins will be I2C_A pins
-            // using GPIO regs
-            //
-               GpioCtrlRegs.GPCGMUX2.bit.GPIO91 = 1;
-            GpioCtrlRegs.GPCMUX2.bit.GPIO91 = 2;
-               GpioCtrlRegs.GPCGMUX2.bit.GPIO92 = 1;
-            GpioCtrlRegs.GPCMUX2.bit.GPIO92 = 2;
-            break;
-
-        case I2C_A_GPIO63104_GPIO105:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
-
-            //
-            // Set qualification for the selected I2C pins
-            //
-
-            //
-            // Configure which of the possible GPIO pins will be I2C_A pins
-            // using GPIO regs
-            //
-            break;
-
-        default:
-
-            break;
-
-    } // End of Switch
-    EDIS;
-}
-
-//
-// I2cBGpioConfig - Configure I2CB GPIOs
-//                  'I2cbDataClkPin' should be assign with one of the possible
-//                  I2C_B SDA - SDL GPIO pin Use defined Macros from
-//                  "F2837xD_I2c_defines.h" for assignment
-//
+//************************************************************************************
+// 'I2cbDataClkPin' should be assign with one of the possible I2C_B SDA - SDL GPIO pin
+// Use defined Macros from "F2837xD_I2c_defines.h" for assignment
+//************************************************************************************
 void I2cBGpioConfig(Uint16 I2cbDataClkPin)
 {
-    EALLOW;
+	EALLOW;
 
-    switch(I2cbDataClkPin)
-    {
-        case I2C_B_GPIO2_GPIO3:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            // Enable pull-up for GPIO2 (SDAB)
-            // Enable pull-up for GPIO3 (SDLB)
-            //
-            GpioCtrlRegs.GPAPUD.bit.GPIO2 = 0;
-            GpioCtrlRegs.GPAPUD.bit.GPIO3 = 0;
+	switch(I2cbDataClkPin)
+	{
+		case I2C_B_GPIO2_GPIO3:
+			/* Enable internal pull-up for the selected I2C pins */
+			GpioCtrlRegs.GPAPUD.bit.GPIO2 = 0;     // Enable pull-up for GPIO0 (SDAB)
+			GpioCtrlRegs.GPAPUD.bit.GPIO3 = 0;     // Enable pull-up for GPIO1 (SDLB)
+		
+			/* Set qualification for the selected I2C pins */
+			GpioCtrlRegs.GPAQSEL1.bit.GPIO2 = 3;   // Async/no qualification (I/ps sync
+			GpioCtrlRegs.GPAQSEL1.bit.GPIO3 = 3;   // to SYSCLKOUT by default)
 
-            //
-            // Set qualification for the selected I2C pins
-            // Async/no qualification (I/ps sync to SYSCLKOUT by default)
-            //
-            GpioCtrlRegs.GPAQSEL1.bit.GPIO2 = 3;
-            GpioCtrlRegs.GPAQSEL1.bit.GPIO3 = 3;
+			/* Configure which of the possible GPIO pins will be I2C_B pins using GPIO regs*/
+			GpioCtrlRegs.GPAGMUX1.bit.GPIO2 = 1;    // Configure GPIO0 for SDAB operation
+			GpioCtrlRegs.GPAMUX1.bit.GPIO2  = 2;    // Configure GPIO0 for SDAB operation
+		
+			GpioCtrlRegs.GPAGMUX1.bit.GPIO3 = 1;    // Configure GPIO1 for SDLB operation
+			GpioCtrlRegs.GPAMUX1.bit.GPIO3  = 2;    // Configure GPIO1 for SDLB operation
+			
+			break;
 
-            //
-            // Configure which of the possible GPIO pins will be I2C_B pins
-            // using GPIO regs
-            // Configure GPIO2 for SDAB operation
-            // Configure GPIO3 for SDAB operation
-            // Configure GPIO1 for SDLB operation
-            // Configure GPIO1 for SDLB operation
-            //
-            GpioCtrlRegs.GPAGMUX1.bit.GPIO2 = 1;
-            GpioCtrlRegs.GPAMUX1.bit.GPIO2  = 2;
+		case I2C_B_GPIO134_GPIO35:
+			/* Enable internal pull-up for the selected I2C pins */
 
-            GpioCtrlRegs.GPAGMUX1.bit.GPIO3 = 1;
-            GpioCtrlRegs.GPAMUX1.bit.GPIO3  = 2;
+			/* Set qualification for the selected I2C pins */
 
-            break;
+			/* Configure which of the possible GPIO pins will be I2C_B pins using GPIO regs*/
+			break;
 
-        case I2C_B_GPIO134_GPIO35:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
+		case I2C_B_GPIO40_GPIO41:
+			/* Enable internal pull-up for the selected I2C pins */
 
-            //
-            // Set qualification for the selected I2C pins
-            //
+			/* Set qualification for the selected I2C pins */
 
-            //
-            // Configure which of the possible GPIO pins will be I2C_B pins
-            // using GPIO regs
-            //
-            break;
+			/* Configure which of the possible GPIO pins will be I2C_B pins using GPIO regs*/
+			break;
 
-        case I2C_B_GPIO40_GPIO41:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
+		case I2C_B_GPIO66_GPIO69:
+			/* Enable internal pull-up for the selected I2C pins */
+			GpioCtrlRegs.GPCPUD.bit.GPIO66 = 0;	//SDAB
+			GpioCtrlRegs.GPCPUD.bit.GPIO69 = 0;	//SCLB
 
-            //
-            // Set qualification for the selected I2C pins
-            //
+			/* Set qualification for the selected I2C pins */
+			GpioCtrlRegs.GPCQSEL1.bit.GPIO66 = 3;
+			GpioCtrlRegs.GPCQSEL1.bit.GPIO69 = 3;
 
-            //
-            // Configure which of the possible GPIO pins will be I2C_B pins
-            // using GPIO regs
-            //
-            break;
+			/* Configure which of the possible GPIO pins will be I2C_B pins using GPIO regs*/
+			GpioCtrlRegs.GPCGMUX1.bit.GPIO66 = 1;	//0x6
+			GpioCtrlRegs.GPCMUX1.bit.GPIO66 = 2;
 
-        case I2C_B_GPIO66_GPIO69:
-            //
-            // Enable internal pull-up for the selected I2C pins
-            //
-            GpioCtrlRegs.GPCPUD.bit.GPIO66 = 0;    //SDAB
-            GpioCtrlRegs.GPCPUD.bit.GPIO69 = 0;    //SCLB
+			GpioCtrlRegs.GPCGMUX1.bit.GPIO69 = 1;	//0x6
+			GpioCtrlRegs.GPCMUX1.bit.GPIO69 = 2;
+			break;
 
-            //
-            // Set qualification for the selected I2C pins
-            //
-            GpioCtrlRegs.GPCQSEL1.bit.GPIO66 = 3;
-            GpioCtrlRegs.GPCQSEL1.bit.GPIO69 = 3;
+		default:
+			break;
 
-            //
-            // Configure which of the possible GPIO pins will be I2C_B pins
-            // using GPIO regs
-            //
-            GpioCtrlRegs.GPCGMUX1.bit.GPIO66 = 1;    //0x6
-            GpioCtrlRegs.GPCMUX1.bit.GPIO66 = 2;
-
-            GpioCtrlRegs.GPCGMUX1.bit.GPIO69 = 1;    //0x6
-            GpioCtrlRegs.GPCMUX1.bit.GPIO69 = 2;
-            break;
-
-        default:
-            break;
-
-    }
-    EDIS;
+	}
+	EDIS;
 }
-
+//////////// End of I2cBGpioConfig///////////////////////////////////////
 #endif
 
 
-//
-// End of file
-//
+//===========================================================================
+// End of file.
+//===========================================================================

@@ -5,7 +5,7 @@
 	<deviceFamily value="C2000"/>
 	<codegenToolVersion value="6.3.0.A13150"/>
 	<isElfFormat value="false"/>
-	<connection value=""/>
+	<connection value="common/targetdb/connections/TIXDS100v2_Connection.xml"/>
 	<rts value="libc.a"/>
 	<templateProperties value="id=com.ti.common.project.core.emptyProjectTemplate,"/>
 	<isTargetManual value="false"/>

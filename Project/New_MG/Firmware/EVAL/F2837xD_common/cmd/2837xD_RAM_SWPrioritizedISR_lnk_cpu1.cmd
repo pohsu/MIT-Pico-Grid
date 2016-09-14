@@ -22,7 +22,7 @@ PAGE 1 :
    RAMD1           : origin = 0x00B800, length = 0x000800
 
    RAMLS5          : origin = 0x00A800, length = 0x000800
-
+                   
    RAMGS3          : origin = 0x00F000, length = 0x001000
    RAMGS4          : origin = 0x010000, length = 0x001000
    RAMGS5          : origin = 0x011000, length = 0x001000
@@ -32,17 +32,18 @@ PAGE 1 :
    RAMGS9          : origin = 0x015000, length = 0x001000
    RAMGS10         : origin = 0x016000, length = 0x001000
    RAMGS11         : origin = 0x017000, length = 0x001000
-   RAMGS12         : origin = 0x018000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
-   RAMGS13         : origin = 0x019000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
-   RAMGS14         : origin = 0x01A000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
-   RAMGS15         : origin = 0x01B000, length = 0x001000     /* Only Available on F28379D, F28377D, F28375D devices. Remove line on other devices. */
+   RAMGS12         : origin = 0x018000, length = 0x001000
+   RAMGS13         : origin = 0x019000, length = 0x001000
+   RAMGS14         : origin = 0x01A000, length = 0x001000
+   RAMGS15         : origin = 0x01B000, length = 0x001000
 
-   CANA_MSG_RAM     : origin = 0x049000, length = 0x000800
+   CANA_MSG_RAM     : origin = 0x049000, length = 0x000800 
    CANB_MSG_RAM     : origin = 0x04B000, length = 0x000800
-
+   
    CPU2TOCPU1RAM   : origin = 0x03F800, length = 0x000400
    CPU1TOCPU2RAM   : origin = 0x03FC00, length = 0x000400
 }
+
 
 SECTIONS
 {
@@ -59,26 +60,28 @@ SECTIONS
    .econst          : > RAMLS5,    PAGE = 1
    .esysmem         : > RAMLS5,    PAGE = 1
 
-#ifdef __TI_COMPILER_VERSION__
-   #if __TI_COMPILER_VERSION__ >= 15009000
+#ifdef __TI_COMPILER_VERSION
+   #if __TI_COMPILER_VERSION >= 15009000
     .TI.ramfunc : {} > RAMM0,      PAGE = 0
    #endif
 #endif
 
-   /* The following section definitions are required when using the IPC API Drivers */
-    GROUP : > CPU1TOCPU2RAM, PAGE = 1
+   
+   /* The following section definitions are required when using the IPC API Drivers */ 
+    GROUP : > CPU1TOCPU2RAM, PAGE = 1 
     {
-        PUTBUFFER
-        PUTWRITEIDX
-        GETREADIDX
+        PUTBUFFER 
+        PUTWRITEIDX 
+        GETREADIDX 
     }
-
+    
     GROUP : > CPU2TOCPU1RAM, PAGE = 1
     {
         GETBUFFER :    TYPE = DSECT
         GETWRITEIDX :  TYPE = DSECT
         PUTREADIDX :   TYPE = DSECT
-    }
+    }  
+   
 }
 
 /*

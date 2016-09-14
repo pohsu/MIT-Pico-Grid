@@ -28,52 +28,57 @@
 		<link>
 			<name>F2837xD_Adc.c</name>
 			<type>1</type>
-			<locationURI>PARENT-4-ORIGINAL_PROJECT_ROOT/F2837xD_common/source/F2837xD_Adc.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_Adc.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_CodeStartBranch.asm</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_CodeStartBranch.asm</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_CodeStartBranch.asm</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_DefaultISR.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_DefaultISR.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_DefaultISR.c</locationURI>
+		</link>
+		<link>
+			<name>F2837xD_EPwm.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_EPwm.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_GlobalVariableDefs.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_Gpio.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_Gpio.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_Gpio.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_Ipc.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_Ipc.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_Ipc.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_PieCtrl.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_PieCtrl.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_PieCtrl.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_PieVect.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_PieVect.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_PieVect.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_SysCtrl.c</name>
 			<type>1</type>
-			<locationURI>INSTALLROOT_F2837XD/F2837xD_common/source/F2837xD_SysCtrl.c</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_SysCtrl.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_usDelay.asm</name>
 			<type>1</type>
-			<locationURI>PARENT-4-ORIGINAL_PROJECT_ROOT/F2837xD_common/source/F2837xD_usDelay.asm</locationURI>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_usDelay.asm</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>

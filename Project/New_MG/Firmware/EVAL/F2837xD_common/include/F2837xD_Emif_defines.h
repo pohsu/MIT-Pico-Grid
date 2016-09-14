@@ -5,8 +5,8 @@
 // TITLE:  #defines used in EMIF examples
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -14,45 +14,28 @@
 #ifndef F2837xD_EMIF_DEFINES_H
 #define F2837xD_EMIF_DEFINES_H
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-//
-// Defines
-//
-
-//
 //cpu1 to cpu2 message for handshaking
-//
 #define CPU1_CPU2_MSG       0x3fd00
-
-//
 //cpu2_to_cpu1 message ram for handshaking
-//
 #define CPU2_CPU1_MSG       0x3fb00
 
 #define MSEL_EMIF1_CPU1 0x93A5CE71
 #define MSEL_EMIF1_CPU2 0x93A5CE72
-#define MSEL_DEF_3      0x93A5CE73
-#define MSEL_DEF_0      0x93A5CE70
-#define MSEL_DEF_1      0x93A5CE71
-#define MSEL_DEF_2      0x93A5CE72
+#define MSEL_DEF_3 0x93A5CE73
+#define MSEL_DEF_0 0x93A5CE70
+#define MSEL_DEF_1 0x93A5CE71
+#define MSEL_DEF_2 0x93A5CE72
 
-//
-//soft reset bit register
-//
-#define EMIF_SOFT_PRES_REG 0x5D084
+#define EMIF_SOFT_PRES_REG 0x5D084 //soft reset bit register
+#define EMIF_DEV_DC_REG 0x5D014    //Device capability/EMIF customization register
 
-//
-//Device capability/EMIF customization register
-//
-#define EMIF_DEV_DC_REG 0x5D014
-
-//
 // Values for ASYNC_CSx_CR Registers
-//
-#define EMIF_ASYNC_ASIZE_8  0x0
+#define EMIF_ASYNC_ASIZE_8 0x0
 #define EMIF_ASYNC_ASIZE_16 0x1
 #define EMIF_ASYNC_ASIZE_32 0x2
 
@@ -70,15 +53,15 @@ extern "C" {
 #define EMIF_ASYNC_RHOLD_7 0x60
 #define EMIF_ASYNC_RHOLD_8 0x70
 
-#define EMIF_ASYNC_RSTROBE_1  0x0000
-#define EMIF_ASYNC_RSTROBE_2  0x0080
-#define EMIF_ASYNC_RSTROBE_3  0x0100
-#define EMIF_ASYNC_RSTROBE_4  0x0180
-#define EMIF_ASYNC_RSTROBE_5  0x0200
-#define EMIF_ASYNC_RSTROBE_6  0x0280
-#define EMIF_ASYNC_RSTROBE_7  0x0300
-#define EMIF_ASYNC_RSTROBE_8  0x0380
-#define EMIF_ASYNC_RSTROBE_9  0x0400
+#define EMIF_ASYNC_RSTROBE_1 0x0000
+#define EMIF_ASYNC_RSTROBE_2 0x0080
+#define EMIF_ASYNC_RSTROBE_3 0x0100
+#define EMIF_ASYNC_RSTROBE_4 0x0180
+#define EMIF_ASYNC_RSTROBE_5 0x0200
+#define EMIF_ASYNC_RSTROBE_6 0x0280
+#define EMIF_ASYNC_RSTROBE_7 0x0300
+#define EMIF_ASYNC_RSTROBE_8 0x0380
+#define EMIF_ASYNC_RSTROBE_9 0x0400
 #define EMIF_ASYNC_RSTROBE_10 0x0480
 #define EMIF_ASYNC_RSTROBE_11 0x0500
 #define EMIF_ASYNC_RSTROBE_12 0x0580
@@ -135,15 +118,16 @@ extern "C" {
 #define EMIF_ASYNC_RSTROBE_63 0x1F00
 #define EMIF_ASYNC_RSTROBE_64 0x1F80
 
-#define EMIF_ASYNC_RSETUP_1  0x0000
-#define EMIF_ASYNC_RSETUP_2  0x2000
-#define EMIF_ASYNC_RSETUP_3  0x4000
-#define EMIF_ASYNC_RSETUP_4  0x6000
-#define EMIF_ASYNC_RSETUP_5  0x8000
-#define EMIF_ASYNC_RSETUP_6  0xA000
-#define EMIF_ASYNC_RSETUP_7  0xC000
-#define EMIF_ASYNC_RSETUP_8  0xE000
-#define EMIF_ASYNC_RSETUP_9  0x10000
+
+#define EMIF_ASYNC_RSETUP_1 0x0000
+#define EMIF_ASYNC_RSETUP_2 0x2000
+#define EMIF_ASYNC_RSETUP_3 0x4000
+#define EMIF_ASYNC_RSETUP_4 0x6000
+#define EMIF_ASYNC_RSETUP_5 0x8000
+#define EMIF_ASYNC_RSETUP_6 0xA000
+#define EMIF_ASYNC_RSETUP_7 0xC000
+#define EMIF_ASYNC_RSETUP_8 0xE000
+#define EMIF_ASYNC_RSETUP_9 0x10000
 #define EMIF_ASYNC_RSETUP_10 0x12000
 #define EMIF_ASYNC_RSETUP_11 0x14000
 #define EMIF_ASYNC_RSETUP_12 0x16000
@@ -244,40 +228,42 @@ extern "C" {
 #define EMIF_ASYNC_WSETUP_16 0x3C000000
 
 #define EMIF_ASYNC_EW_DISABLE 0x00000000
-#define EMIF_ASYNC_EW_ENABLE  0x40000000
+#define EMIF_ASYNC_EW_ENABLE 0x40000000
 
 #define EMIF_ASYNC_SS_DISABLE 0x00000000
-#define EMIF_ASYNC_SS_ENABLE  0x80000000
+#define EMIF_ASYNC_SS_ENABLE 0x80000000
 
-//
 // Values for ASYNC_WCCR Register
-//
+
 #define EMIF_ASYNC_WCCR_WP_LOW 0x00000000
 #define EMIF_ASYNC_WCCR_WP_HIGH 0x01000000
 
-//
-// Read mask for the registers which has reserved bits.
-//
-#define ASYNC_WCCR_RDMASK              0xF0FF00FF
-#define SDRAM_CR_RDMASK                0xE3FF7F7F
+
+// Read mask for the registers which has reserved bits. 
+#define ASYNC_WCCR_RDMASK             0xF0FF00FF
+#define SDRAM_CR_RDMASK                 0xE3FF7F7F
 #define SDRAM_RCR_RDMASK               0x00071FFF
-#define SDRAM_TR_RDMASK                0xFF77FF70
-#define SDR_EXT_TMNG_RDMASK            0x1F
-#define INT_RAW_RDMASK                 0x3F
-#define INT_MASK_RDMASK                0x3F
-#define IO_CTRL_RDMASK_RDMASK          0xFFFF
-#define IO_STAT_RDMASK_RDMASK          0xF
-#define NAND_FLASH_CTRL_RDMASK         0x3F3F
-#define NAND_FLASH_STAT_RDMASK         0x30F0F
-#define IODFT_TLECR_REG_RDMASK         0xFFFF
-#define IODFT_TLGCR_REG_RDMASK         0x71FF
-#define IODFT_TLAMR_REG_RDMASK         0x0FFFFFFF
-#define IODFT_TLDCMR_REG_RDMASK        0x3fff3f07
-#define  MODEL_REL_NUM_REG_RDMASK      0xFF
+#define SDRAM_TR_RDMASK                 0xFF77FF70
+#define SDR_EXT_TMNG_RDMASK         0x1F
+#define INT_RAW_RDMASK                   0x3F
+#define INT_MASK_RDMASK                  0x3F
+#define IO_CTRL_RDMASK_RDMASK       0xFFFF
+#define IO_STAT_RDMASK_RDMASK       0xF
+#define NAND_FLASH_CTRL_RDMASK      0x3F3F
+#define NAND_FLASH_STAT_RDMASK     0x30F0F
+#define IODFT_TLECR_REG_RDMASK      0xFFFF
+#define IODFT_TLGCR_REG_RDMASK      0x71FF
+#define IODFT_TLAMR_REG_RDMASK     0x0FFFFFFF
+#define IODFT_TLDCMR_REG_RDMASK    0x3fff3f07
+#define  MODEL_REL_NUM_REG_RDMASK   0xFF
 #define NAND_FLASH_4BIT_ECCLR_RDMASK   0x3F
-#define  NAND_FLASH_4BIT_ECCx_RDMASK   0x03ff03ff
+#define  NAND_FLASH_4BIT_ECCx_RDMASK    0x03ff03ff
 #define NAND_FLASH_ERR_ADDRx_RDMASK    0x03ff03ff
-#define NAND_FLASH_ERR_VALx_RDMASK     0x03ff03ff
+#define NAND_FLASH_ERR_VALx_RDMASK      0x03ff03ff
+
+//Write Mask to stop writing to control critical bit 
+//None
+
 
 #ifdef __cplusplus
 }
@@ -285,6 +271,6 @@ extern "C" {
 
 #endif   // - end of F2837xD_EMIF_DEFINES_H
 
-//
-// End of file
-//
+//===========================================================================
+// End of file.
+//===========================================================================

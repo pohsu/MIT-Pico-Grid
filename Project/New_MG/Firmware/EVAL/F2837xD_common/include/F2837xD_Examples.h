@@ -5,8 +5,8 @@
 // TITLE:  F2837xD Device Definitions.
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -18,14 +18,13 @@
 extern "C" {
 #endif
 
-//
-// Defines
-//
 
-//
+
+//*****************************************************************************
 // The following are values that can be passed to the
 // InitSysPll() & InitAuxPll() to select SYSPLL/AUXPLL integer multiplier
-//
+//*****************************************************************************
+
 #define   IMULT_0         0
 #define   IMULT_1         1
 #define   IMULT_2         2
@@ -155,19 +154,22 @@ extern "C" {
 #define   IMULT_126       126
 #define   IMULT_127       127
 
-//
+
+//*****************************************************************************
 // The following are values that can be passed to the
 // InitSysPll() & InitAuxPll() to select SYSPLL/AUXPLL fractional multiplier
-//
-#define   FMULT_0         0
+//*****************************************************************************
+
+#define   FMULT_0    	  0
 #define   FMULT_0pt25     1
 #define   FMULT_0pt5      2
 #define   FMULT_0pt75     3
 
-//
+//*****************************************************************************
 // The following are values that can be passed to the
 // InitSysPll() to select divsel for SYSPLL
-//
+//*****************************************************************************
+
 #define   PLLCLK_BY_1      0
 #define   PLLCLK_BY_2      1
 #define   PLLCLK_BY_4      2
@@ -233,52 +235,57 @@ extern "C" {
 #define   PLLCLK_BY_124    62
 #define   PLLCLK_BY_126    63
 
-//
+//*****************************************************************************
 // The following are values that can be passed to the
 // InitAuxPll() to select divsel for AUXPLL
-//
+//*****************************************************************************
 #define   AUXPLLRAWCLK_BY_1    0
 #define   AUXPLLRAWCLK_BY_2    1
 #define   AUXPLLRAWCLK_BY_4    2
 #define   AUXPLLRAWCLK_BY_8    3
 
-//
+//*****************************************************************************
 // The following are values that can be passed to the
 // IntOsc2Sel() & XtalOscSel() to select system PLL (or) AUX PLL
-//
-#define   SYSTEM_PLL    (Uint16) 0
-#define   AUX_PLL       (Uint16) 1
+//*****************************************************************************
+#define   SYSTEM_PLL 	(Uint16) 0
+#define   AUX_PLL		(Uint16) 1
 
-//
+//*****************************************************************************
 // The following are values that can be passed to the
 // InitSysPll() & InitAuxPll() to select clock source
-//
-#define   INT_OSC2     0
-#define   XTAL_OSC     1
-#define   INT_OSC1     2
-#define   AUXCLKIN     4
+//*****************************************************************************
 
-//
-//  Specify the clock rate of the CPU (SYSCLKOUT) in nS.
-//
-//  Take into account the input clock frequency and the PLL multiplier
-//  selected in step 1.
-//
-//  Use one of the values provided, or define your own.
-//  The trailing L is required tells the compiler to treat
-//  the number as a 64-bit value.
-//
-//  Only one statement should be uncommented.
-//
-//  Example:   200 MHz devices:
-//             CLKIN is a 10 MHz crystal or internal 10 MHz oscillator
-//
-//             In step 1 the user specified the PLL multiplier = 40 for a
-//             200 MHz CPU clock (SYSCLKOUT = 200 MHz).
-//
-//             In this case, the CPU_RATE will be 5.000L
-//             Uncomment the line: #define CPU_RATE 5.000L
-//
+#define   INT_OSC2		 0
+#define   XTAL_OSC		 1
+#define   INT_OSC1		 2
+#define   AUXCLKIN		 4
+
+
+//----------------------------------------------------------------------------
+
+/*-----------------------------------------------------------------------------
+      Specify the clock rate of the CPU (SYSCLKOUT) in nS.
+
+      Take into account the input clock frequency and the PLL multiplier
+      selected in step 1.
+
+      Use one of the values provided, or define your own.
+      The trailing L is required tells the compiler to treat
+      the number as a 64-bit value.
+
+      Only one statement should be uncommented.
+
+      Example:   200 MHz devices:
+                 CLKIN is a 10 MHz crystal or internal 10 MHz oscillator
+
+                 In step 1 the user specified the PLL multiplier = 40 for a
+                 200 MHz CPU clock (SYSCLKOUT = 200 MHz).
+
+                 In this case, the CPU_RATE will be 5.000L
+                 Uncomment the line: #define CPU_RATE 5.000L
+
+-----------------------------------------------------------------------------*/
 
 #define CPU_RATE   5.00L   // for a 200MHz CPU clock speed (SYSCLKOUT)
 //#define CPU_RATE   5.263L   // for a 190MHz CPU clock speed  (SYSCLKOUT)
@@ -290,44 +297,41 @@ extern "C" {
 //#define CPU_RATE   7.692L   // for a 130MHz CPU clock speed  (SYSCLKOUT)
 //#define CPU_RATE   8.333L   // for a 120MHz CPU clock speed  (SYSCLKOUT)
 
-//
-// The following pointer to a function call calibrates the ADC reference,
+//----------------------------------------------------------------------------
+
+// The following pointer to a function call calibrates the ADC reference, 
 // DAC offset, and internal oscillators
-//
 #define Device_cal (void   (*)(void))0x070282
 
-//
 // The following pointers to functions calibrate the ADC linearity.  Use this
 // in the AdcSetMode(...) function only
-//
 #define CalAdcaINL (void   (*)(void))0x0703B4
 #define CalAdcbINL (void   (*)(void))0x0703B2
 #define CalAdccINL (void   (*)(void))0x0703B0
 #define CalAdcdINL (void   (*)(void))0x0703AE
 
-//
-// The following pointer to a function call looks up the ADC offset trim for a
-// given condition. Use this in the AdcSetMode(...) function only.
-//
+// The following pointer to a function call looks up the ADC offset trim for a 
+// given condition. Use this in the AdcSetMode(...) function only.   
 #define GetAdcOffsetTrimOTP (Uint16 (*)(Uint16 OTPoffset))0x0703AC
 
+//---------------------------------------------------------------------------
+// Include Example Header Files:
 //
-// Includes
-//
-#include "F2837xD_GlobalPrototypes.h"       // Prototypes for global functions
-                                           // within the .c files.
+
+#include "F2837xD_GlobalPrototypes.h"         // Prototypes for global functions within the
+                                               // .c files.
 #include "F2837xD_cputimervars.h"
-#include "F2837xD_Cla_defines.h"            // Macros used for CLA examples.
-#include "F2837xD_EPwm_defines.h"           // Macros used for PWM examples.
-#include "F2837xD_Adc_defines.h"            // Macros used for ADC examples.
-#include "F2837xD_Emif_defines.h"           // Macros used for EMIF examples.
-#include "F2837xD_Gpio_defines.h"           // Macros used for GPIO support code
-#include "F2837xD_I2c_defines.h"            // Macros used for I2C examples.
-#include "F2837xD_Ipc_defines.h"            // Macros used for IPC support code.
-#include "F2837xD_Pie_defines.h"            // Macros used for PIE examples.
-#include "F2837xD_Dma_defines.h"            // Macros used for DMA examples.
-#include "F2837xD_SysCtrl_defines.h"        // Macros used for LPM support code
-#include "F2837xD_Upp_defines.h"            // Macros used for UPP examples.
+#include "F2837xD_Cla_defines.h"              // Macros used for CLA examples.
+#include "F2837xD_EPwm_defines.h"             // Macros used for PWM examples.
+#include "F2837xD_Adc_defines.h"              // Macros used for ADC examples.
+#include "F2837xD_Emif_defines.h"			 // Macros used for EMIF examples.
+#include "F2837xD_Gpio_defines.h"             // Macros used for GPIO support code
+#include "F2837xD_I2c_defines.h"              // Macros used for I2C examples.
+#include "F2837xD_Ipc_defines.h"              // Macros used for IPC support code.
+#include "F2837xD_Pie_defines.h"              // Macros used for PIE examples.
+#include "F2837xD_Dma_defines.h"              // Macros used for DMA examples.
+#include "F2837xD_SysCtrl_defines.h"          // Macros used for LPM support code
+#include "F2837xD_Upp_defines.h"              // Macros used for UPP examples.
 
 #define   PARTNO_2837xPACKAGEHERE 0x00
 
@@ -335,76 +339,50 @@ extern "C" {
 #define CPU_FRQ_150MHZ 0
 #define CPU_FRQ_120MHZ 0
 
-//
 // Include files not used with F/BIOS
-//
 #ifndef F28_BIOS
 #include "F2837xD_defaultisr.h"
 #endif
 
 extern void F28x_usDelay(long LoopCount);
-
-//
 // DO NOT MODIFY THIS LINE.
-//
 #define DELAY_US(A)  F28x_usDelay(((((long double) A * 1000.0L) / (long double)CPU_RATE) - 9.0L) / 5.0L)
 
-//
-// Timer Operations:
-//
-
+//---------------------------------------------------------------------------
+// Useful Timer Operations:
 //
 // Start Timer:
-//
 #define StartCpuTimer0()   CpuTimer0Regs.TCR.bit.TSS = 0
 
-//
 // Stop Timer:
-//
 #define StopCpuTimer0()   CpuTimer0Regs.TCR.bit.TSS = 1
 
-//
 // Reload Timer With period Value:
-//
 #define ReloadCpuTimer0() CpuTimer0Regs.TCR.bit.TRB = 1
 
-//
 // Read 32-Bit Timer Value:
-//
 #define ReadCpuTimer0Counter() CpuTimer0Regs.TIM.all
 
-//
 // Read 32-Bit Period Value:
-//
 #define ReadCpuTimer0Period() CpuTimer0Regs.PRD.all
 
-//
 // Start Timer:
-//
 #define StartCpuTimer1()   CpuTimer1Regs.TCR.bit.TSS = 0
 #define StartCpuTimer2()   CpuTimer2Regs.TCR.bit.TSS = 0
 
-//
 // Stop Timer:
-//
 #define StopCpuTimer1()   CpuTimer1Regs.TCR.bit.TSS = 1
 #define StopCpuTimer2()   CpuTimer2Regs.TCR.bit.TSS = 1
 
-//
 // Reload Timer With period Value:
-//
 #define ReloadCpuTimer1() CpuTimer1Regs.TCR.bit.TRB = 1
 #define ReloadCpuTimer2() CpuTimer2Regs.TCR.bit.TRB = 1
 
-//
 // Read 32-Bit Timer Value:
-//
 #define ReadCpuTimer1Counter() CpuTimer1Regs.TIM.all
 #define ReadCpuTimer2Counter() CpuTimer2Regs.TIM.all
 
-//
 // Read 32-Bit Period Value:
-//
 #define ReadCpuTimer1Period() CpuTimer1Regs.PRD.all
 #define ReadCpuTimer2Period() CpuTimer2Regs.PRD.all
 
@@ -414,6 +392,6 @@ extern void F28x_usDelay(long LoopCount);
 
 #endif  // end of F2837xD_EXAMPLES_H definition
 
-//
-// End of file
-//
+//===========================================================================
+// End of file.
+//===========================================================================

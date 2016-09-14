@@ -5,8 +5,8 @@
 // TITLE:  #defines used in CLA examples
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -18,32 +18,24 @@
 extern "C" {
 #endif
 
-//
-// Defines
-//
-
-//
 // MCTL Register
-//
+//==========================
 #define CLA_FORCE_RESET           0x1
 #define CLA_IACK_ENABLE           0x1
 #define CLA_IACK_DISABLE          0x0
 
-//
 // MMEMCFG Register
-//
+//==========================
 #define CLA_CLA_SPACE             0x1
 #define CLA_CPU_SPACE             0x0
 
-//
 // MIER Interrupt Enable Register
-//
+//==========================
 #define CLA_INT_ENABLE            0x1
 #define CLA_INT_DISABLE           0x0
 
-//
 // Peripheral Interrupt Source Select define for DMAnCLASourceSelect Register
-//
+//===========================================================================
 #define CLA_TRIG_NOPERPH	 0
 #define CLA_TRIG_ADCAINT1    1
 #define CLA_TRIG_ADCAINT2    2
@@ -119,10 +111,18 @@ extern "C" {
 #define CLA_TRIG_SPIRXINTB	112
 #define CLA_TRIG_SPITXINTC	113
 #define CLA_TRIG_SPIRXINTC	114
+// TODO
+
+
+
+//---------------------------------------------------------------------------
+// Useful CLA Operation Macros:
+//================================
 
 #define Cla1ForceTask1andWait()asm("  IACK  #0x0001");             \
                                asm("  RPT #3 || NOP");             \
                                 while(Cla1Regs.MIRUN.bit.INT1 == 1);
+
 
 #define Cla1ForceTask2andWait()asm("  IACK  #0x0002");             \
                                asm("  RPT #3 || NOP");             \
@@ -152,6 +152,7 @@ extern "C" {
                                asm("  RPT #3 || NOP");             \
                                 while(Cla1Regs.MIRUN.bit.INT8 == 1);
 
+
 #define Cla1ForceTask1()       asm("  IACK  #0x0001")
 #define Cla1ForceTask2()       asm("  IACK  #0x0002")
 #define Cla1ForceTask3()       asm("  IACK  #0x0004")
@@ -163,10 +164,10 @@ extern "C" {
 
 #ifdef __cplusplus
 }
-#endif
+#endif /* extern "C" */
 
 #endif   // - end of F2837xD_CLA_DEFINES_H
 
-//
-// End of file
-//
+//===========================================================================
+// End of file.
+//===========================================================================

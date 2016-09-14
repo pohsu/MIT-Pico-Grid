@@ -1,19 +1,17 @@
-//###########################################################################
-//
+//########################################################################### 
+// 
 // FILE:   uartstdio.c
-//
-// TITLE:  Utility driver to provide simple UART console functions.
-//
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// 
+// TITLE:  Utility driver to provide simple UART console functions. 
+// 
+//########################################################################### 
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
 
-//
-// Included Files
-//
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdarg.h>
@@ -36,12 +34,15 @@
 //
 //*****************************************************************************
 
+//*****************************************************************************
 //
 // If buffered mode is defined, set aside RX and TX buffers and read/write
 // pointers to control them.
 //
+//*****************************************************************************
 #ifdef UART_BUFFERED
 
+//*****************************************************************************
 //
 // This global controls whether or not we are echoing characters back to the
 // transmitter.  By default, echo is enabled but if using this module as a
@@ -49,27 +50,34 @@
 // you will be running an application protocol, you are likely to want to
 // disable echo by calling UARTEchoSet(false).
 //
+//*****************************************************************************
 static bool g_bDisableEcho;
 
+//*****************************************************************************
 //
 // Output ring buffer.  Buffer is full if g_ui32UARTTxReadIndex is one ahead of
 // g_ui32UARTTxWriteIndex.  Buffer is empty if the two indices are the same.
 //
+//*****************************************************************************
 static unsigned char g_pcUARTTxBuffer[UART_TX_BUFFER_SIZE];
 static volatile uint32_t g_ui32UARTTxWriteIndex = 0;
 static volatile uint32_t g_ui32UARTTxReadIndex = 0;
 
+//*****************************************************************************
 //
 // Input ring buffer.  Buffer is full if g_ui32UARTTxReadIndex is one ahead of
 // g_ui32UARTTxWriteIndex.  Buffer is empty if the two indices are the same.
 //
+//*****************************************************************************
 static unsigned char g_pcUARTRxBuffer[UART_RX_BUFFER_SIZE];
 static volatile uint32_t g_ui32UARTRxWriteIndex = 0;
 static volatile uint32_t g_ui32UARTRxReadIndex = 0;
 
+//*****************************************************************************
 //
 // Macros to determine number of free and used bytes in the transmit buffer.
 //
+//*****************************************************************************
 #define TX_BUFFER_USED          (GetBufferCount(&g_ui32UARTTxReadIndex,  \
                                                 &g_ui32UARTTxWriteIndex, \
                                                 UART_TX_BUFFER_SIZE))
@@ -82,9 +90,11 @@ static volatile uint32_t g_ui32UARTRxReadIndex = 0;
 #define ADVANCE_TX_BUFFER_INDEX(Index) \
                                 (Index) = ((Index) + 1) % UART_TX_BUFFER_SIZE
 
+//*****************************************************************************
 //
 // Macros to determine number of free and used bytes in the receive buffer.
 //
+//*****************************************************************************
 #define RX_BUFFER_USED          (GetBufferCount(&g_ui32UARTRxReadIndex,  \
                                                 &g_ui32UARTRxWriteIndex, \
                                                 UART_RX_BUFFER_SIZE))
@@ -98,43 +108,55 @@ static volatile uint32_t g_ui32UARTRxReadIndex = 0;
                                 (Index) = ((Index) + 1) % UART_RX_BUFFER_SIZE
 #endif
 
+//*****************************************************************************
 //
 // The base address of the chosen UART.
 //
+//*****************************************************************************
 static uint32_t g_ui32Base = 0;
 
+//*****************************************************************************
 //
 // A mapping from an integer between 0 and 15 to its ASCII character
 // equivalent.
 //
+//*****************************************************************************
 static const char * const g_pcHex = "0123456789abcdef";
 
+//*****************************************************************************
 //
 // The list of possible base addresses for the console UART.
 //
+//*****************************************************************************
 static const uint32_t g_ui32UARTBase[4] =
 {
     UARTA_BASE, UARTB_BASE, UARTC_BASE, UARTD_BASE
 };
 
 #ifdef UART_BUFFERED
+//*****************************************************************************
 //
 // The list of possible interrupts for the console UART.
 //
+//*****************************************************************************
 static const uint32_t g_ui32UARTInt[3] =
 {
     INT_UART0, INT_UART1, INT_UART2
 };
 
+//*****************************************************************************
 //
 // The port number in use.
 //
+//*****************************************************************************
 static uint32_t g_ui32PortNum;
 #endif
 
+//*****************************************************************************
 //
 // The list of UART peripherals.
 //
+//*****************************************************************************
 static const uint32_t g_ui32UARTPeriph[3] =
 {
     SYSCTL_PERIPH_SCI1, SYSCTL_PERIPH_SCI2, SYSCTL_PERIPH_SCI3
@@ -1738,7 +1760,3 @@ UARTStdioIntHandler(void)
 //! @}
 //
 //*****************************************************************************
-
-//
-// End of file
-//

@@ -5,8 +5,8 @@
 // TITLE:  F2837xD Device Definitions.
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -28,12 +28,12 @@ extern "C" {
 
 #define   TARGET   1
 
-//
+//---------------------------------------------------------------------------
 // User To Select Target Device:
 //
 #define   F28_2837xD    TARGET
 
-//
+//---------------------------------------------------------------------------
 // Common CPU Definitions:
 //
 extern __cregister volatile unsigned int IFR;
@@ -97,7 +97,7 @@ extern __cregister volatile unsigned int IER;
 #define BIT30   0x40000000
 #define BIT31   0x80000000
 
-//
+//---------------------------------------------------------------------------
 // For Portability, User Is Recommended To Use the C99 Standard integer types
 //
 #if !defined(__TMS320C28XX_CLA__)
@@ -108,22 +108,11 @@ extern __cregister volatile unsigned int IER;
 #include <stddef.h>
 #include <stdint.h>
 
-//
-// C++ Bool Compatibility
-//
-#if defined(__cplusplus)
-typedef bool _Bool;
-#endif
-
-//
 // C99 defines boolean type to be _Bool, but this doesn't match the format of
 // the other standard integer types.  bool_t has been defined to fill this gap.
-//
 typedef _Bool bool_t;
 
-//
 //used for a bool function return status
-//
 typedef _Bool status_t;
 
 #ifndef SUCCESS
@@ -134,7 +123,7 @@ typedef _Bool status_t;
 #define FAIL        false
 #endif
 
-//
+//---------------------------------------------------------------------------
 // The following data types are included for compatibility with legacy code,
 // they are not recommended for use in new software.  Please use the C99
 // types included above
@@ -151,7 +140,7 @@ typedef float           	float32;
 typedef long double     	float64;
 #endif
 
-//
+//---------------------------------------------------------------------------
 // Include All Peripheral Header Files:
 //
 #include "F2837xD_adc.h"
@@ -189,10 +178,10 @@ typedef long double     	float64;
 
 #ifdef __cplusplus
 }
-#endif                                  // extern "C"
+#endif                                  /* extern "C" */
 
 #endif                                  // end of F2837xD_DEVICE_H definition
 
-//
+//===========================================================================
 // End of file.
-//
+//===========================================================================

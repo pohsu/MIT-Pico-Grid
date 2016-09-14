@@ -1,10 +1,28 @@
-//###########################################################################
+//*****************************************************************************
 //
-// FILE:   usb_bulk_example.c
+// usb_bulk_example.c - A very simple command line application that attempts
+//      to open the TI Generic Bulk USB device and exchange data
+//      with it.
 //
-// TITLE:  A very simple command line application that attempts
-//         to open the TI Generic Bulk USB device and exchange data
-//         with it.
+// Copyright (c) 2008-2011 Texas Instruments Incorporated.  All rights reserved.
+// Software License Agreement
+// 
+// Texas Instruments (TI) is supplying this software for use solely and
+// exclusively on TI's microcontroller products. The software is owned by
+// TI and/or its suppliers, and is protected under applicable copyright
+// laws. You may not combine this software with "viral" open-source
+// software in order to form a larger program.
+// 
+// THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
+// NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
+// NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
+// CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+// DAMAGES, FOR ANY REASON WHATSOEVER.
+//
+//*****************************************************************************
+
+//****************************************************************************
 //
 // If the device is successfully opened, the user is prompted for a string
 // which is then sent to the device. The device toggles the case of any
@@ -28,66 +46,56 @@
 // rebuilt even without the DDK installed on the development system.  To
 // update and rebuild tiusbdll itself, however, the DDK is still required.
 //
-//
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
-// $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
-//             http://www.ti.com/ ALL RIGHTS RESERVED $
-//###########################################################################
-
-//
-// Included Files
-//
+//****************************************************************************
 #include <windows.h>
 #include <strsafe.h>
 #include <initguid.h>
 #include "tiusbdll.h"
 #include "ti_guids.h"
 
+//****************************************************************************
 //
 // Buffer size definitions.
 //
+//****************************************************************************
 #define MAX_STRING_LEN 256
 #define MAX_ENTRY_LEN 256
 #define USB_BUFFER_LEN 1216
 
-//
-// Defines
-//
-
+//****************************************************************************
 //
 // The build version number
 //
+//****************************************************************************
 #define BLDVER "7611"
 
+//****************************************************************************
 //
 // The number of bytes we read and write per transaction if in echo mode.
 //
+//****************************************************************************
 #define ECHO_PACKET_SIZE 64
 
-//
-// Globals
-//
-
+//****************************************************************************
 //
 // Buffer into which error messages are written.
 //
+//****************************************************************************
 TCHAR g_pcErrorString[MAX_STRING_LEN];
 
+//****************************************************************************
 //
-// The number of bytes transferred in the last measurement interval.
+// The number of bytes transfered in the last measurement interval.
 //
+//****************************************************************************
 ULONG g_ulByteCount = 0;
 
+//****************************************************************************
 //
-// The total number of packets transferred.
+// The total number of packets transfered.
 //
+//****************************************************************************
 ULONG g_ulPacketCount = 0;
-
-//
-// Functions
-//
 
 //****************************************************************************
 //
@@ -174,8 +182,9 @@ void UpdateThroughput(void)
     //
     if(ulElapsed > 1000)
     {
-        printf("\r%6dKbps Packets: %10d ", ((g_ulByteCount * 8) / ulElapsed),
-               g_ulPacketCount);
+
+        //printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+        printf("\r%6dKbps Packets: %10d ", ((g_ulByteCount * 8) / ulElapsed), g_ulPacketCount);
         g_ulByteCount = 0;
         ulStartTime = ulNow;
     }
@@ -294,8 +303,8 @@ int main(int argc, char *argv[])
                         // We failed to write the data for some reason.
                         //
                         dwError = GetLastError();
-                        printf("\n\nError %d (%S) writing to bulk OUT pipe.\n",
-                               dwError, GetSystemErrorString(dwError));
+                        printf("\n\nError %d (%S) writing to bulk OUT pipe.\n", dwError,
+                               GetSystemErrorString(dwError));
                         break;
                     }
 
@@ -316,8 +325,8 @@ int main(int argc, char *argv[])
             {
 
                 //
-                // The device was found and successfully configured.
-                // Now get a string from the user...
+                // The device was found and successfully configured. Now get a string from
+                // the user...
                 //
                 do
                 {
@@ -326,16 +335,14 @@ int main(int argc, char *argv[])
                     printf("\n");
 
                     //
-                    // How many characters were entered
-                    // (including the trailing '\n')?
+                    // How many characters were entered (including the trailing '\n')?
                     //
                     ulLength = (ULONG)strlen(szBuffer);
 
                     if(ulLength <= 1)
                     {
                         //
-                        // The string is either nothing at all or a single
-                        // '\n' so reprompt the user.
+                        // The string is either nothing at all or a single '\n' so reprompt the user.
                         //
                         printf("\nPlease enter some text.\n");
                         ulLength = 0;
@@ -398,8 +405,8 @@ int main(int argc, char *argv[])
                         //
                         // We failed to read from the device.
                         //
-                        printf("Error %d (%S) reading from bulk IN pipe.\n",
-                               dwError, GetSystemErrorString(dwError));
+                        printf("Error %d (%S) reading from bulk IN pipe.\n", dwError,
+                               GetSystemErrorString(dwError));
                     }
                     else
                     {
@@ -443,6 +450,3 @@ int main(int argc, char *argv[])
     return(0);
 }
 
-//
-// End of file
-//

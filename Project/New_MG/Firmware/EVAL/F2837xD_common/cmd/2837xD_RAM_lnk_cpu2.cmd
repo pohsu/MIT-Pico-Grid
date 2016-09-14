@@ -22,11 +22,11 @@ PAGE 1 :
 
    RAMLS5      : origin = 0x00A800, length = 0x000800
 
-   CANA_MSG_RAM     : origin = 0x049000, length = 0x000800
+   CANA_MSG_RAM     : origin = 0x049000, length = 0x000800 
    CANB_MSG_RAM     : origin = 0x04B000, length = 0x000800
-
+   
    CPU2TOCPU1RAM   : origin = 0x03F800, length = 0x000400
-   CPU1TOCPU2RAM   : origin = 0x03FC00, length = 0x000400
+   CPU1TOCPU2RAM   : origin = 0x03FC00, length = 0x000400  
 }
 
 
@@ -44,27 +44,28 @@ SECTIONS
    .ebss            : > RAMLS5,     PAGE = 1
    .econst          : > RAMLS5,     PAGE = 1
    .esysmem         : > RAMLS5,     PAGE = 1
-
-#ifdef __TI_COMPILER_VERSION__
-   #if __TI_COMPILER_VERSION__ >= 15009000
+   
+#ifdef __TI_COMPILER_VERSION
+   #if __TI_COMPILER_VERSION >= 15009000
     .TI.ramfunc : {} > RAMM0,      PAGE = 0
    #endif
-#endif
-
-   /* The following section definitions are required when using the IPC API Drivers */
-    GROUP : > CPU2TOCPU1RAM, PAGE = 1
+#endif   
+   
+   /* The following section definitions are required when using the IPC API Drivers */ 
+    GROUP : > CPU2TOCPU1RAM, PAGE = 1 
     {
-        PUTBUFFER
-        PUTWRITEIDX
-        GETREADIDX
+        PUTBUFFER 
+        PUTWRITEIDX 
+        GETREADIDX 
     }
-
+    
     GROUP : > CPU1TOCPU2RAM, PAGE = 1
     {
         GETBUFFER :    TYPE = DSECT
         GETWRITEIDX :  TYPE = DSECT
         PUTREADIDX :   TYPE = DSECT
-    }
+    }  
+    
 }
 
 /*

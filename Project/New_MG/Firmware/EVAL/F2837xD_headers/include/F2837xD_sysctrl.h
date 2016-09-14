@@ -5,8 +5,8 @@
 // TITLE:   F2837xD Device SYSCTRL Register Definitions.
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -176,6 +176,24 @@ struct DC5_BITS {                       // bits description
 union DC5_REG {
     Uint32  all;
     struct  DC5_BITS  bit;
+};
+
+struct DC6_BITS {                       // bits description
+    Uint16 rsvd1:1;                     // 0 Reserved
+    Uint16 rsvd2:1;                     // 1 Reserved
+    Uint16 rsvd3:1;                     // 2 Reserved
+    Uint16 rsvd4:1;                     // 3 Reserved
+    Uint16 rsvd5:1;                     // 4 Reserved
+    Uint16 rsvd6:1;                     // 5 Reserved
+    Uint16 rsvd7:1;                     // 6 Reserved
+    Uint16 rsvd8:1;                     // 7 Reserved
+    Uint16 rsvd9:8;                     // 15:8 Reserved
+    Uint16 rsvd10:16;                   // 31:16 Reserved
+};
+
+union DC6_REG {
+    Uint32  all;
+    struct  DC6_BITS  bit;
 };
 
 struct DC7_BITS {                       // bits description
@@ -681,6 +699,24 @@ union CPUSEL2_REG {
     struct  CPUSEL2_BITS  bit;
 };
 
+struct CPUSEL3_BITS {                   // bits description
+    Uint16 rsvd1:1;                     // 0 Reserved
+    Uint16 rsvd2:1;                     // 1 Reserved
+    Uint16 rsvd3:1;                     // 2 Reserved
+    Uint16 rsvd4:1;                     // 3 Reserved
+    Uint16 rsvd5:1;                     // 4 Reserved
+    Uint16 rsvd6:1;                     // 5 Reserved
+    Uint16 rsvd7:1;                     // 6 Reserved
+    Uint16 rsvd8:1;                     // 7 Reserved
+    Uint16 rsvd9:8;                     // 15:8 Reserved
+    Uint16 rsvd10:16;                   // 31:16 Reserved
+};
+
+union CPUSEL3_REG {
+    Uint32  all;
+    struct  CPUSEL3_BITS  bit;
+};
+
 struct CPUSEL4_BITS {                   // bits description
     Uint16 SD1:1;                       // 0 SD1 CPU select bit
     Uint16 SD2:1;                       // 1 SD2 CPU select bit
@@ -853,17 +889,6 @@ union LPMSTAT_REG {
     struct  LPMSTAT_BITS  bit;
 };
 
-struct SYSDBGCTL_BITS {                 // bits description
-    Uint16 BIT_0:1;                     // 0 Used in PLL startup. Only reset by POR.
-    Uint16 rsvd1:15;                    // 15:1 Reserved
-    Uint16 rsvd2:16;                    // 31:16 Reserved
-};
-
-union SYSDBGCTL_REG {
-    Uint32  all;
-    struct  SYSDBGCTL_BITS  bit;
-};
-
 struct DEV_CFG_REGS {
     union   DEVCFGLOCK1_REG                  DEVCFGLOCK1;                  // Lock bit for CPUSELx registers
     Uint16                                   rsvd1[6];                     // Reserved
@@ -877,7 +902,7 @@ struct DEV_CFG_REGS {
     union   DC3_REG                          DC3;                          // Device Capability: Peripheral Customization
     union   DC4_REG                          DC4;                          // Device Capability: Peripheral Customization
     union   DC5_REG                          DC5;                          // Device Capability: Peripheral Customization
-    Uint16                                   rsvd3[2];                     // Reserved
+    union   DC6_REG                          DC6;                          // Device Capability: Peripheral Customization
     union   DC7_REG                          DC7;                          // Device Capability: Peripheral Customization
     union   DC8_REG                          DC8;                          // Device Capability: Peripheral Customization
     union   DC9_REG                          DC9;                          // Device Capability: Peripheral Customization
@@ -887,55 +912,54 @@ struct DEV_CFG_REGS {
     union   DC13_REG                         DC13;                         // Device Capability: Peripheral Customization
     union   DC14_REG                         DC14;                         // Device Capability: Analog Modules Customization
     union   DC15_REG                         DC15;                         // Device Capability: Analog Modules Customization
-    Uint16                                   rsvd4[2];                     // Reserved
+    Uint16                                   rsvd3[2];                     // Reserved
     union   DC17_REG                         DC17;                         // Device Capability: Analog Modules Customization
     union   DC18_REG                         DC18;                         // Device Capability: CPU1 Lx SRAM Customization
     union   DC19_REG                         DC19;                         // Device Capability: CPU2 Lx SRAM Customization
     union   DC20_REG                         DC20;                         // Device Capability: GSx SRAM Customization
-    Uint16                                   rsvd5[38];                    // Reserved
+    Uint16                                   rsvd4[38];                    // Reserved
     union   PERCNF1_REG                      PERCNF1;                      // Peripheral Configuration register
-    Uint16                                   rsvd6[18];                    // Reserved
+    Uint16                                   rsvd5[18];                    // Reserved
     union   FUSEERR_REG                      FUSEERR;                      // e-Fuse error Status register
-    Uint16                                   rsvd7[12];                    // Reserved
+    Uint16                                   rsvd6[12];                    // Reserved
     union   SOFTPRES0_REG                    SOFTPRES0;                    // Processing Block Software Reset register
     union   SOFTPRES1_REG                    SOFTPRES1;                    // EMIF Software Reset register
     union   SOFTPRES2_REG                    SOFTPRES2;                    // Peripheral Software Reset register
     union   SOFTPRES3_REG                    SOFTPRES3;                    // Peripheral Software Reset register
     union   SOFTPRES4_REG                    SOFTPRES4;                    // Peripheral Software Reset register
-    Uint16                                   rsvd8[2];                     // Reserved
+    Uint16                                   rsvd7[2];                     // Reserved
     union   SOFTPRES6_REG                    SOFTPRES6;                    // Peripheral Software Reset register
     union   SOFTPRES7_REG                    SOFTPRES7;                    // Peripheral Software Reset register
     union   SOFTPRES8_REG                    SOFTPRES8;                    // Peripheral Software Reset register
     union   SOFTPRES9_REG                    SOFTPRES9;                    // Peripheral Software Reset register
-    Uint16                                   rsvd9[2];                     // Reserved
+    Uint16                                   rsvd8[2];                     // Reserved
     union   SOFTPRES11_REG                   SOFTPRES11;                   // Peripheral Software Reset register
-    Uint16                                   rsvd10[2];                    // Reserved
+    Uint16                                   rsvd9[2];                     // Reserved
     union   SOFTPRES13_REG                   SOFTPRES13;                   // Peripheral Software Reset register
     union   SOFTPRES14_REG                   SOFTPRES14;                   // Peripheral Software Reset register
-    Uint16                                   rsvd11[2];                    // Reserved
+    Uint16                                   rsvd10[2];                    // Reserved
     union   SOFTPRES16_REG                   SOFTPRES16;                   // Peripheral Software Reset register
-    Uint16                                   rsvd12[50];                   // Reserved
+    Uint16                                   rsvd11[50];                   // Reserved
     union   CPUSEL0_REG                      CPUSEL0;                      // CPU Select register for common peripherals
     union   CPUSEL1_REG                      CPUSEL1;                      // CPU Select register for common peripherals
     union   CPUSEL2_REG                      CPUSEL2;                      // CPU Select register for common peripherals
-    Uint16                                   rsvd13[2];                    // Reserved
+    union   CPUSEL3_REG                      CPUSEL3;                      // CPU Select register for common peripherals
     union   CPUSEL4_REG                      CPUSEL4;                      // CPU Select register for common peripherals
     union   CPUSEL5_REG                      CPUSEL5;                      // CPU Select register for common peripherals
     union   CPUSEL6_REG                      CPUSEL6;                      // CPU Select register for common peripherals
     union   CPUSEL7_REG                      CPUSEL7;                      // CPU Select register for common peripherals
     union   CPUSEL8_REG                      CPUSEL8;                      // CPU Select register for common peripherals
     union   CPUSEL9_REG                      CPUSEL9;                      // CPU Select register for common peripherals
-    Uint16                                   rsvd14[2];                    // Reserved
+    Uint16                                   rsvd12[2];                    // Reserved
     union   CPUSEL11_REG                     CPUSEL11;                     // CPU Select register for common peripherals
     union   CPUSEL12_REG                     CPUSEL12;                     // CPU Select register for common peripherals
-    Uint16                                   rsvd15[2];                    // Reserved
+    Uint16                                   rsvd13[2];                    // Reserved
     union   CPUSEL14_REG                     CPUSEL14;                     // CPU Select register for common peripherals
-    Uint16                                   rsvd16[46];                   // Reserved
+    Uint16                                   rsvd14[46];                   // Reserved
     union   CPU2RESCTL_REG                   CPU2RESCTL;                   // CPU2 Reset Control Register
     union   RSTSTAT_REG                      RSTSTAT;                      // Reset Status register for secondary C28x CPUs
     union   LPMSTAT_REG                      LPMSTAT;                      // LPM Status Register for secondary C28x CPUs
-    Uint16                                   rsvd17[6];                    // Reserved
-    union   SYSDBGCTL_REG                    SYSDBGCTL;                    // System Debug Control register
+    Uint16                                   rsvd15[8];                    // Reserved
 };
 
 struct CLKSEM_BITS {                    // bits description

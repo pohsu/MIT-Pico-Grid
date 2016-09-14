@@ -1,27 +1,17 @@
-//###########################################################################
 //
-// FILE:   bulk_libusb.c
+// Implementation of the bulk_usb interface using the linusb-win32 API.
 //
-// TITLE: Implementation of the bulk_usb interface using the linusb-win32 API.
-//
-//###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
-// $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
-//             http://www.ti.com/ ALL RIGHTS RESERVED $
-//###########################################################################
 
 #ifndef USE_WINUSB
 
-//
-// Included Files
-//
 #include "libusb-win32\include\usb.h"
 
+//****************************************************************************
 //
 // Structure containing handles and information required to communicate with
 // the USB bulk device.
 //
+//****************************************************************************
 typedef struct
 {
     usb_dev_handle *hDevice;
@@ -29,10 +19,6 @@ typedef struct
 } tDeviceInfo;
 
 tDeviceInfo devInfo;
-
-//
-// Functions
-//
 
 //****************************************************************************
 //
@@ -55,6 +41,10 @@ BOOL InitializeDevice(void)
     // Initialize the libusb-win32 subsystem.
     //
     usb_init();
+
+    //
+    // 
+    //
 
     return(TRUE);
 }
@@ -83,7 +73,7 @@ BOOL TerminateDevice(void)
 //
 // \param pcBuffer points to the first byte of data to send.
 // \param ulSize contains the number of bytes of data to send.
-// \param pulWritten is a pointer which will be written with the number of
+// \param pulWritten is a pointer which will be written with the number of 
 // bytes of data actually written to the device.
 //
 // This function is used to send data to the USB device via its bulk OUT endpoint.
@@ -103,9 +93,9 @@ BOOL WriteUSBPacket(unsigned char *pcBuffer, unsigned long ulSize,
 //
 // \param pcBuffer points to a buffer into which the data from the device will
 // be written.
-// \param ulSize contains the number of bytes that are requested from the
+// \param ulSize contains the number of bytes that are requested from the 
 // device.
-// \param pulRead is a pointer which will be written with the number of
+// \param pulRead is a pointer which will be written with the number of 
 // bytes of data actually read from the device.
 //
 // This function is used to receivedata from the USB device via its bulk IN
@@ -116,12 +106,10 @@ BOOL WriteUSBPacket(unsigned char *pcBuffer, unsigned long ulSize,
 //****************************************************************************
 BOOL ReadUSBPacket(unsigned char *pcBuffer, unsigned long ulSize,
                           unsigned long *pulRead)
+
 {
     return(TRUE);
 }
 
 #endif // not defined USE_WINUSB
 
-//
-// End of file
-//

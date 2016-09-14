@@ -5,8 +5,8 @@
 // TITLE:  Prototypes for SCI redirection to STDIO
 //
 //###########################################################################
-// $TI Release: F2837xD Support Library v200 $
-// $Release Date: Tue Jun 21 13:00:02 CDT 2016 $
+// $TI Release: F2837xD Support Library v190 $
+// $Release Date: Mon Feb  1 16:51:57 CST 2016 $
 // $Copyright: Copyright (C) 2013-2016 Texas Instruments Incorporated -
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
@@ -18,9 +18,10 @@
 extern "C" {
 #endif
 
-//
-// Function Prototypes
-//
+
+// **************************************************************************
+// the functions
+
 extern int SCI_open(const char * path, unsigned flags, int llv_fd);
 extern int SCI_close(int dev_fd);
 extern int SCI_read(int dev_fd, char * buf, unsigned count);
@@ -35,7 +36,4 @@ extern int SCI_rename(const char * old_name, const char * new_name);
 
 
 #endif
-
-//
-// End of file
-//
+// end of file

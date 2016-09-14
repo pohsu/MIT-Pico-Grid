@@ -19,9 +19,7 @@
 void Init_Sys_all(void);
 void Init_Peripheral(void);
 void Init_Peripheral(void);
-void SetupADCEpwm(Uint16 channel);
-
-
+interrupt void adca1_isr(void);
 //
 // Defines
 //
@@ -40,51 +38,81 @@ void main(void)
    
     Init_Peripheral(); // Init. Peripheral
 
-//
-// Initialize results buffer
-//
-    for(resultsIndex = 0; resultsIndex < RESULTS_BUFFER_SIZE; resultsIndex++)
+    EALLOW;
+    EPwm1Regs.CMPA.bit.CMPA = 2048;
+    EDIS;
+    //
+    // Initialize results buffer
+    //
+    // for(resultsIndex = 0; resultsIndex < RESULTS_BUFFER_SIZE; resultsIndex++)
+    // {
+    //     AdcaResults[resultsIndex] = 0;
+    // }
+    // resultsIndex = 0;
+    // bufferFull = 0;
+
+    // //
+    // //start ePWM
+    // //
+    // EPwm1Regs.ETSEL.bit.SOCAEN = 1;  //enable SOCA
+    // EPwm1Regs.TBCTL.bit.CTRMODE = 0; //unfreeze, and enter up count mode
+
+
+
+    // //
+    // //take conversions indefinitely in loop
+    // //
+    // do
+    // {
+
+
+    //     //
+    //     //wait while ePWM causes ADC conversions, which then cause interrupts,
+    //     //which fill the results buffer, eventually setting the bufferFull
+    //     //flag
+    //     //
+    //     while(!bufferFull);
+    //     bufferFull = 0; //clear the buffer full flag
+
+    //     //
+    //     //stop ePWM
+    //     //
+    //     EPwm1Regs.ETSEL.bit.SOCAEN = 0;  //disable SOCA
+    //     EPwm1Regs.TBCTL.bit.CTRMODE = 3; //freeze counter
+
+    //     //
+    //     //at this point, AdcaResults[] contains a sequence of conversions
+    //     //from the selected channel
+    //     //
+
+    //     //
+    //     //software breakpoint, hit run again to get updated conversions
+    //     //
+    //     asm("   ESTOP0");
+    // }while(1);
+    for(;;)
     {
-        AdcaResults[resultsIndex] = 0;
+        //
+        // Turn on LED
+        //
+        GPIO_WritePin(31, 0);
+
+        //
+        // Delay for a bit.
+        //
+        DELAY_US(1000*500);
+
+        //
+        // Turn off LED
+        //
+        GPIO_WritePin(31, 1);
+
+        //
+        // Delay for a bit.
+        //
+        DELAY_US(1000*500);
     }
-    resultsIndex = 0;
-    bufferFull = 0;
 
-//
-//take conversions indefinitely in loop
-//
-    do
-    {
-        //
-        //start ePWM
-        //
-        EPwm1Regs.ETSEL.bit.SOCAEN = 1;  //enable SOCA
-        EPwm1Regs.TBCTL.bit.CTRMODE = 0; //unfreeze, and enter up count mode
-
-        //
-        //wait while ePWM causes ADC conversions, which then cause interrupts,
-        //which fill the results buffer, eventually setting the bufferFull
-        //flag
-        //
-        while(!bufferFull);
-        bufferFull = 0; //clear the buffer full flag
-
-        //
-        //stop ePWM
-        //
-        EPwm1Regs.ETSEL.bit.SOCAEN = 0;  //disable SOCA
-        EPwm1Regs.TBCTL.bit.CTRMODE = 3; //freeze counter
-
-        //
-        //at this point, AdcaResults[] contains a sequence of conversions
-        //from the selected channel
-        //
-
-        //
-        //software breakpoint, hit run again to get updated conversions
-        //
-        asm("   ESTOP0");
-    }while(1);
 }
 
 
@@ -103,7 +131,8 @@ void Init_Sys_all(void)
     // illustrates how to set the GPIO to it's default state.
     //
     InitGpio(); // Skipped for this example
-
+    GPIO_SetupPinMux(31, GPIO_MUX_CPU1, 0);
+    GPIO_SetupPinOptions(31, GPIO_OUTPUT, GPIO_PUSHPULL);
     //
     // Step 3. Clear all interrupts and initialize PIE vector table:
     // Disable CPU interrupts
@@ -149,6 +178,10 @@ void Init_Peripheral(void)
 //
 interrupt void adca1_isr(void)
 {
+    //static bool toggle = 0;
+    // toggle = ~toggle;
+    // GPIO_WritePin(31, toggle);
+
     AdcaResults[resultsIndex++] = AdcaResultRegs.ADCRESULT0;
     if(RESULTS_BUFFER_SIZE <= resultsIndex)
     {

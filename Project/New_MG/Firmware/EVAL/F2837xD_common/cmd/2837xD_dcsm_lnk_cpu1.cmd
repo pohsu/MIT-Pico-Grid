@@ -4,13 +4,13 @@
  * This linker command file works as an addendum ot the already existing Flash/RAM linker command file
  * that the project has.
  * The sections in the *_ZoneSelectBlock.asm source file is linked as per the commands given in the file
- * NOTE - please note fill=0xFFFF, this helps if users include this file in the project by mistake and
- * doesn't provide the needed proper *_ZoneSelectBlock.asm sources .
+ * NOTE - please note fill=0xFFFF, this helps if users include this file in the project by mistake and 
+ * doesn't provide the needed proper *_ZoneSelectBlock.asm sources . 
  * Please refer to the Blinky DCSM example in the controlsuite examples for proper usage of this.
- *
+ * 
  * Once users are confident that they want to program the passwords in OTP, the DSECT section type can be removed.
- *
-*/
+ * 
+*/ 
 
 MEMORY
 {
