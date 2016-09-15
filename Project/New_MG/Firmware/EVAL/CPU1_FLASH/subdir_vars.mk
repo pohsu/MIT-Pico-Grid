@@ -9,6 +9,7 @@ ASM_SRCS += \
 
 C_SRCS += \
 ../F2837xD_common/source/F2837xD_Adc.c \
+../F2837xD_common/source/F2837xD_CpuTimers.c \
 ../F2837xD_common/source/F2837xD_DefaultISR.c \
 ../F2837xD_common/source/F2837xD_EPwm.c \
 ../F2837xD_headers/source/F2837xD_GlobalVariableDefs.c \
@@ -22,6 +23,7 @@ C_SRCS += \
 OBJS += \
 ./F2837xD_Adc.obj \
 ./F2837xD_CodeStartBranch.obj \
+./F2837xD_CpuTimers.obj \
 ./F2837xD_DefaultISR.obj \
 ./F2837xD_EPwm.obj \
 ./F2837xD_GlobalVariableDefs.obj \
@@ -39,6 +41,7 @@ ASM_DEPS += \
 
 C_DEPS += \
 ./F2837xD_Adc.d \
+./F2837xD_CpuTimers.d \
 ./F2837xD_DefaultISR.d \
 ./F2837xD_EPwm.d \
 ./F2837xD_GlobalVariableDefs.d \
@@ -51,6 +54,7 @@ C_DEPS += \
 
 C_DEPS__QUOTED += \
 "F2837xD_Adc.d" \
+"F2837xD_CpuTimers.d" \
 "F2837xD_DefaultISR.d" \
 "F2837xD_EPwm.d" \
 "F2837xD_GlobalVariableDefs.d" \
@@ -64,6 +68,7 @@ C_DEPS__QUOTED += \
 OBJS__QUOTED += \
 "F2837xD_Adc.obj" \
 "F2837xD_CodeStartBranch.obj" \
+"F2837xD_CpuTimers.obj" \
 "F2837xD_DefaultISR.obj" \
 "F2837xD_EPwm.obj" \
 "F2837xD_GlobalVariableDefs.obj" \
@@ -81,6 +86,7 @@ ASM_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../F2837xD_common/source/F2837xD_Adc.c" \
+"../F2837xD_common/source/F2837xD_CpuTimers.c" \
 "../F2837xD_common/source/F2837xD_DefaultISR.c" \
 "../F2837xD_common/source/F2837xD_EPwm.c" \
 "../F2837xD_headers/source/F2837xD_GlobalVariableDefs.c" \

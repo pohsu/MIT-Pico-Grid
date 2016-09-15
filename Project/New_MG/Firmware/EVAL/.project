@@ -36,6 +36,11 @@
 			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_CodeStartBranch.asm</locationURI>
 		</link>
 		<link>
+			<name>F2837xD_CpuTimers.c</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_CpuTimers.c</locationURI>
+		</link>
+		<link>
 			<name>F2837xD_DefaultISR.c</name>
 			<type>1</type>
 			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_DefaultISR.c</locationURI>
