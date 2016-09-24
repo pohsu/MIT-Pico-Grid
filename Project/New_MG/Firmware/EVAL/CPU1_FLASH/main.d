@@ -61,6 +61,11 @@ main.obj: ../Peripheral/EPWM.h
 main.obj: ../Peripheral/GPIO.h
 main.obj: ../Peripheral/ISR.h
 main.obj: ../Peripheral/Timer.h
+main.obj: ../Peripheral/DAC.h
+main.obj: ../Peripheral/SCI.h
+main.obj: ../Comm/Comm_USB.h
+main.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/math.h
+main.obj: C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/_defs.h
 
 ../main.c: 
 C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F28x_Project.h: 
@@ -123,3 +128,8 @@ C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/F2837xD_common/include/F283
 ../Peripheral/GPIO.h: 
 ../Peripheral/ISR.h: 
 ../Peripheral/Timer.h: 
+../Peripheral/DAC.h: 
+../Peripheral/SCI.h: 
+../Comm/Comm_USB.h: 
+C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/math.h: 
+C:/GitHub/MIT-Pico-Grid/Project/New_MG/Firmware/EVAL/c2000_15.12.3.LTS/include/_defs.h: 

@@ -23,10 +23,13 @@ ORDERED_OBJS += \
 "./F2837xD_SysCtrl.obj" \
 "./F2837xD_usDelay.obj" \
 "./main.obj" \
+"./Comm/Comm_USB.obj" \
 "./Peripheral/Adc.obj" \
+"./Peripheral/DAC.obj" \
 "./Peripheral/Epwm.obj" \
 "./Peripheral/GPIO.obj" \
 "./Peripheral/ISR.obj" \
+"./Peripheral/SCI.obj" \
 "./Peripheral/Timer.obj" \
 $(GEN_CMDS__FLAG) \
 -lrts2800_fpu32.lib \
@@ -42,8 +45,10 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include Comm/subdir_vars.mk
 -include Peripheral/subdir_vars.mk
 -include subdir_rules.mk
+-include Comm/subdir_rules.mk
 -include Peripheral/subdir_rules.mk
 -include objects.mk
 
@@ -173,8 +178,8 @@ EVAL_CPU1.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)$(BIN_OUTPUTS__QUOTED)
-	-$(RM) "F2837xD_Adc.d" "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_Ipc.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "main.d" "Peripheral\Adc.d" "Peripheral\Epwm.d" "Peripheral\GPIO.d" "Peripheral\ISR.d" "Peripheral\Timer.d" 
-	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_Ipc.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "main.obj" "Peripheral\Adc.obj" "Peripheral\Epwm.obj" "Peripheral\GPIO.obj" "Peripheral\ISR.obj" "Peripheral\Timer.obj" 
+	-$(RM) "F2837xD_Adc.d" "F2837xD_CpuTimers.d" "F2837xD_DefaultISR.d" "F2837xD_EPwm.d" "F2837xD_GlobalVariableDefs.d" "F2837xD_Gpio.d" "F2837xD_Ipc.d" "F2837xD_PieCtrl.d" "F2837xD_PieVect.d" "F2837xD_SysCtrl.d" "main.d" "Comm\Comm_USB.d" "Peripheral\Adc.d" "Peripheral\DAC.d" "Peripheral\Epwm.d" "Peripheral\GPIO.d" "Peripheral\ISR.d" "Peripheral\SCI.d" "Peripheral\Timer.d" 
+	-$(RM) "F2837xD_Adc.obj" "F2837xD_CodeStartBranch.obj" "F2837xD_CpuTimers.obj" "F2837xD_DefaultISR.obj" "F2837xD_EPwm.obj" "F2837xD_GlobalVariableDefs.obj" "F2837xD_Gpio.obj" "F2837xD_Ipc.obj" "F2837xD_PieCtrl.obj" "F2837xD_PieVect.obj" "F2837xD_SysCtrl.obj" "F2837xD_usDelay.obj" "main.obj" "Comm\Comm_USB.obj" "Peripheral\Adc.obj" "Peripheral\DAC.obj" "Peripheral\Epwm.obj" "Peripheral\GPIO.obj" "Peripheral\ISR.obj" "Peripheral\SCI.obj" "Peripheral\Timer.obj" 
 	-$(RM) "F2837xD_CodeStartBranch.d" "F2837xD_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

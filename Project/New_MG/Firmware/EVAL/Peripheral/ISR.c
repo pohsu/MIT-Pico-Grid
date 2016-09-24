@@ -1,6 +1,11 @@
 #include "F28x_Project.h"
 #include "ISR.h"
 
+//***********************************************************************//
+//                     G l o b a l  V a r i a b l e s                    //
+//***********************************************************************//
+
+
 void ISR_init(void)
 {
 	EALLOW;
@@ -39,7 +44,8 @@ void ISR_init(void)
 	//
     EALLOW;
     PieVectTable.ADCA1_INT = &adca1_isr; //function for ADCA interrupt 1
-    PieVectTable.TIMER0_INT = &cpu_timer_1kHz;
+    PieVectTable.TIMER0_INT = &cpu_timer_5kHz;
+    PieVectTable.SCIA_RX_INT = &SCIA_RX_isr;
     EDIS;
 }
 
@@ -50,6 +56,7 @@ void ISR_enable(void)
     // Enable global Interrupts and higher priority real-time debug events:
     //
     IER |= M_INT1; //Enable group 1 interrupts
+    IER |= M_INT9; //Enable group 9 interrupts
     EINT;  // Enable Global interrupt INTM
     ERTM;  // Enable Global realtime interrupt DBGM
 
@@ -58,5 +65,6 @@ void ISR_enable(void)
     //
     PieCtrlRegs.PIEIER1.bit.INTx1 = 1;  //Enable ADCA in PIE
     PieCtrlRegs.PIEIER1.bit.INTx7 = 1;  //Enable Cpu timer0 in PIE
+    PieCtrlRegs.PIEIER9.bit.INTx1 = 1;  //Enable SCIA RX interrupt
     EDIS;
 }

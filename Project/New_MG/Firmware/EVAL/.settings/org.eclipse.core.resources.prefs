@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//CPU1_FLASH/Comm/subdir_rules.mk=UTF-8
+encoding//CPU1_FLASH/Comm/subdir_vars.mk=UTF-8
 encoding//CPU1_FLASH/F2837xD_common/cmd/subdir_rules.mk=UTF-8
 encoding//CPU1_FLASH/F2837xD_common/cmd/subdir_vars.mk=UTF-8
 encoding//CPU1_FLASH/F2837xD_common/driverlib/subdir_rules.mk=UTF-8
