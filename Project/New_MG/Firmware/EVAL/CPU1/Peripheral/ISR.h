@@ -1,5 +1,7 @@
 void ISR_init(void);
 void ISR_enable(void);
+
+__interrupt void IPC_isr(void);
 __interrupt void adca1_isr(void);
 __interrupt void cpu_timer_5kHz(void);
 __interrupt void SCIA_RX_isr(void);

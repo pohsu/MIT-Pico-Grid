@@ -1,8 +1,4 @@
-
 #define SIZEOFDATA_TX 2 * (Uint16)(sizeof(struct_report_data) / sizeof(float32))
-#define SIZEOFDATA_RX 4
-#define BEGIN 111
-#define END 222
 #define START 111
 #define STOP 222
 #define FREF 100
@@ -18,8 +14,7 @@ typedef struct{
 	Uint16 Vref;
 } struct_console_data;
 
-void report_USB(void);
-
-void Decoder_Process_USB (void);
-
-
+void Send_to_CPU2(Uint16 * array);
+void Decoder_Process_IPC (Uint16 * array);
+void Reset_remote_IPC(void);
+void Grant_meomory_access(void);

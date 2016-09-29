@@ -1,24 +1,11 @@
 #include "F28x_Project.h"
 #include "SCI.h"
-#include "../Comm/Comm_USB.h"
+#include "../Comm/USB.h"
 
 void SCIA_init()
 {
-    //Configurate GPIO pins
-	EALLOW;
-    GpioCtrlRegs.GPAMUX2.bit.GPIO28 = 1; //Refer to datasheet
-    GpioCtrlRegs.GPADIR.bit.GPIO28 = 0; //SCI_A_RX as input
-    GpioCtrlRegs.GPAPUD.bit.GPIO28 = 0; //pull-up
-    GpioCtrlRegs.GPAQSEL2.bit.GPIO28 = 0; //syn
-//
-    GpioCtrlRegs.GPAMUX2.bit.GPIO29 = 1; //Refer to datasheet
-    GpioCtrlRegs.GPADIR.bit.GPIO29 = 1; //SCI_A_TX as output
-    GpioCtrlRegs.GPAPUD.bit.GPIO29 = 0; //pull-up
-    GpioCtrlRegs.GPAQSEL2.bit.GPIO29 = 3; //ascyn mode
-	EDIS;
-
     SCIA_fifo_init();
-
+    EALLOW;
     ClkCfgRegs.LOSPCP.bit.LSPCLKDIV = 2;//LSPCLK @ 50MHz = SYSCLK(200MHz)/4
     CpuSysRegs.PCLKCR7.bit.SCI_A = 1; //Initial SCI_A clock
  	SciaRegs.SCICCR.all =0x0007;   // 1 stop bit,  No loopback
@@ -35,14 +22,17 @@ void SCIA_init()
     SciaRegs.SCILBAUD.all    =0x0005;
 
 	SciaRegs.SCICTL1.all =0x0023;  // Relinquish SCI from Reset
+    EDIS;
 
 }
 
 void SCIA_fifo_init()
 {
+    EALLOW;
     SciaRegs.SCIFFTX.all=0xE040; //TXFFIL = 0 TXFFIENA = 1
     SciaRegs.SCIFFRX.all=0x2060 +4; //RXFFIL = 5 RXFFIENA = 1
     SciaRegs.SCIFFCT.all=0x0; //Auto BAUD disabled
+    EDIS;
 }
 
 void SCIA_xmit(int a)

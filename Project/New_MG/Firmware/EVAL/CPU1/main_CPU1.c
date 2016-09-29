@@ -9,22 +9,16 @@
 // Included Files
 //
 #include "F28x_Project.h"
-#include "Peripheral/Adc.h"
-#include "Peripheral/EPWM.h"
-#include "Peripheral/GPIO.h"
-#include "Peripheral/ISR.h"
-#include "Peripheral/Timer.h"
-#include "Peripheral/DAC.h"
-#include "Peripheral/SCI.h"
-#include "Comm/Comm_USB.h"
+#include "F2837xD_Ipc_drivers.h"
 #include <stdint.h>
 #include <math.h>
+
+#include "Peripheral\Peripheral.h"
+#include "Comm\Comm.h"
 
 //***********************************************************************//
 //                          P r o t o t y p e                            //
 //***********************************************************************//
-void Init_Peripheral(void);
-void Enable_Peripheral(void);
 void task_table (Uint32 * counter);
 
 //***********************************************************************//
@@ -49,26 +43,29 @@ extern struct_report_data report_data;
 extern struct_console_data console_data;
 
 //***********************************************************************//
-//                       L o c a l  V a r i a b l e s                    //                         
+//                        S h a r e d  M e m o r y                       //                         
 //***********************************************************************//
-Uint16 maxcount;
-Uint16 address1, address2, address3;
-Uint16 AdcaResults;
+Uint16 c1_r_array[256];   // mapped to GS0 of shared RAM owned by CPU02
+Uint16 c1_r_w_array[256]; // mapped to GS1 of shared RAM owned by CPU01
+#pragma DATA_SECTION(c1_r_array,"SHARERAMGS0");
+#pragma DATA_SECTION(c1_r_w_array,"SHARERAMGS1");
 
-char *msg;
-Uint16 *msg_unit;
-Uint16 ReceivedChar;
-Uint16 loopcount = 128;
 //***********************************************************************//
 //                          F u n c t i o n s                            //
 //***********************************************************************//
 void main(void)
 {
-    InitSysCtrl(); //Initialize System Control:PLL, WatchDog, enable Peripheral Clocks
+	InitSysCtrl(); //Initialize System Control:PLL, WatchDog, enable Peripheral Clocks
    
-    Init_Peripheral(); // Init. Peripheral
+	Owner_Peripheral(); // Transfering ownership to CPU2 before the Peripheral clock enabled
 
-    Enable_Peripheral(); // Enable Peripheral
+	Init_Peripheral();
+
+    Enable_Peripheral(); 
+
+    Enable_Comm();
+
+    IPCBootCPU2(C1C2_BROM_BOOTMODE_BOOT_FROM_FLASH); // Send boot command to allow the CPU2 application to begin execution
 
     EALLOW;
     EPwm1Regs.CMPA.bit.CMPA = 0.4f * PWM_PERIOD;
@@ -77,63 +74,23 @@ void main(void)
     for(;;); //Idle Loop
 }
 
-
-void Init_Peripheral(void)
+#pragma CODE_SECTION(IPC_isr, "ramfuncs")
+__interrupt void IPC_isr(void)
 {
-    GPIO_init();
-
-    ISR_init();
-
-    ADC_init(); 
-
-    EPWM_init();
-
-    Timer_init();
-
-    DAC_init();
-
-    SCIA_init();
-
-}
-
-void Enable_Peripheral(void)
-{
-    SetupADCEpwm(); //Setup the ADC 
-
-    ISR_enable();
-
-    EPWM_enable();
-}
-
-#pragma CODE_SECTION(SCIA_RX_isr, "ramfuncs")
-__interrupt void SCIA_RX_isr(void)
-{
-	// while(SciaRegs.SCIFFRX.bit.RXFFST != 0)
- //    {
-        Decoder_Process_USB();
-    // }
-
-	loopcount++;
-	loopcount = (loopcount>256)? 0:loopcount;
-
-    SciaRegs.SCIFFRX.bit.RXFIFORESET=1; //RESET RX FIFO
-
-    GpioDataRegs.GPBTOGGLE.bit.GPIO34 = 1; //Toggle LED3
-
-    SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1; //clear INT1 flag
-    PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
+    Decoder_Process_IPC(c1_r_array);
+    GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+    IpcRegs.IPCACK.bit.IPC0 = 1; //clear the remote CPU interrupt
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //clear INT Group1
 }
 
 #pragma CODE_SECTION(adca1_isr, "ramfuncs")
 __interrupt void adca1_isr(void)
 {
-    //GpioDataRegs.GPBTOGGLE.bit.GPIO34 = 1;
-
-    static Uint16 IL_adc[3] = {0};
-
-    IL_adc[0] = AdcaResultRegs.ADCRESULT0;
-    IL_adc[1] = AdcbResultRegs.ADCRESULT0;
-    IL_adc[2] = AdccResultRegs.ADCRESULT0;
+//    static Uint16 IL_adc[3] = {0};
+//
+//    IL_adc[0] = AdcaResultRegs.ADCRESULT0;
+//    IL_adc[1] = AdcbResultRegs.ADCRESULT0;
+//    IL_adc[2] = AdccResultRegs.ADCRESULT0;
 
     uDACA(99.0f, 100.0f);
     DACB(25.0f, 50.0f);
@@ -151,9 +108,7 @@ __interrupt void cpu_timer_5kHz(void)
     task_table(&CpuTimer0.InterruptCount);
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //clear INT Group1
 }
-//
-// End of file
-//
+
 void task_table (Uint32 * counter)
 {
     if (*counter % (Uint32)task_period.count_5kHz == 0)
@@ -165,7 +120,7 @@ void task_table (Uint32 * counter)
     {
         report_data.Volt = console_data.Vref;
         report_data.Freq = console_data.Fref;        
-        report_USB();
+        Send_to_CPU2(c1_r_w_array);
     }
 
     if (*counter % (Uint32)task_period.count_100Hz == 0)
@@ -174,11 +129,12 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_10Hz == 0)
     {
-        GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+        //GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
     }
 
     if (*counter % (Uint32)task_period.count_1Hz == 0)
     {
+    	//GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
     }
 
     if (*counter % (Uint32)TASK_MAX_COUNT == 0)
