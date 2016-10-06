@@ -1,0 +1,1150 @@
+C2000 C/C++ CODE GENERATION TOOLS
+15.12.3 June 2016
+Defect History
+
+-------------------------------------------------------------------------------
+Table of Contents
+-------------------------------------------------------------------------------
+1. Defects fixed in C2000 Code Generation Tools release 15.12.3.LTS
+2. Defects fixed in C2000 Code Generation Tools release 15.12.2.LTS
+3. Defects fixed in C2000 Code Generation Tools release 15.12.1.LTS
+4. Defects fixed in C2000 Code Generation Tools release 15.12.0.LTS
+5. Current Known Issues
+
+
+===============================================================================
+1. Defects fixed in C2000 Code Generation Tools release 15.12.3.LTS
+===============================================================================
+
+The following 5 defects were fixed in C2000 Code Generation Tools release
+15.12.3.LTS, released June 2016.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00050005
+-------------------------------------------------------------------------------
+
+Summary            : Compiler mistakenly issues MISRA diagnostic 12.9 for a
+                     float point type
+
+Fixed in           : 15.12.3.LTS
+Severity           : S3 - Minor
+Affected Component : C/C++ Compiler (cl)
+Duplicate Defects  : SDSCM00052908, SDSCM00050841
+
+Release Notes:
+  The compiler will mistakenly emit a warning for MISRA-C:2004 12.9/R ("The
+  unary minus operator shall not be applied to an expression whose underlying
+  type is unsigned") when the unary minus operator is applied to any type that
+  is not a signed integral type, such as a floating-point type.
+
+Workaround:
+  None.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052833
+-------------------------------------------------------------------------------
+
+Summary            : Linker INTERNAL ERROR with object files with DWARF
+                     information compiled by IAR compiler
+
+Fixed in           : 15.12.3.LTS
+Severity           : S2 - Major
+Affected Component : Linker
+Duplicate Defects  : SDSCM00052909
+
+Release Notes:
+  The IAR compiler generates some DWARF debugging entries that the TI linker
+  does not handle correctly. In some cases, the TI linker may crash with a
+  segmentation fault or other internal error.
+
+Workaround:
+  Add option --compress_dwarf=off
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052873
+-------------------------------------------------------------------------------
+
+Summary            : Mishandled condition codes set by CLA intrinsics
+                     __mmaxf32 and __mminf32
+
+Fixed in           : 15.12.3.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+  The CLA instructions MMAXF32 and MMINF32 set MSTF, but not in the same way as
+  a comparison of the destination register to zero would. When MMAXF32 or
+  MMINF32 should be followed by a MCMPF32 to 0.0, the compiler may mistakenly
+  remove the MCMPF32.
+
+Workaround:
+  None.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052881
+-------------------------------------------------------------------------------
+
+Summary            : unsigned array index not trucated as it should be
+
+Fixed in           : 15.12.3.LTS
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Release Notes:
+  In large model, if an array index expression has a type that is an unsigned
+  16-bit type (e.g. "unsigned int"), the compiler may convert the expression to
+  a 32-bit expression and lose the wraparound behavior that should occur for
+  large index values.
+
+Workaround:
+  Disable the optimizer with -Ooff
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052894
+-------------------------------------------------------------------------------
+
+Summary            : CLA does not correctly handle certain pragmas like UNROLL 
+                     which take an integer argument 
+
+Fixed in           : 15.12.3.LTS
+Severity           : S2 - Major
+Affected Component : Parser
+
+Release Notes:
+  This defect only appears in the CLA compiler.  Although this bug is exposed 
+  in internal debugging builds, we do not think this bug will appear in 
+  customer releases.  The symptom is that the optimizer would silently refuse 
+  to unroll that much.  Note that the optimizer will not unroll more than 64 
+  times even when the bug does not occur.
+
+Workaround:
+  None
+
+
+===============================================================================
+2. Defects fixed in C2000 Code Generation Tools release 15.12.2.LTS
+===============================================================================
+
+The following 5 defects were fixed in C2000 Code Generation Tools release
+15.12.2.LTS, released April 2016.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00039432
+-------------------------------------------------------------------------------
+
+Summary            : Must interrupt-protect RB restore in low-prority
+                     interrupt handler
+
+Fixed in           : 15.12.2.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+  The conceptual difference between a low-priority interrupt and a high-priority
+  interrupt is that low-priority interrupt handler functions may themselves be
+  interrupted, but high-priority interrupt handler functions may not. Thus, it
+  is common for low-priority interrupt handlers to re-enable interrupts at some
+  point in the handler.
+  
+  The compiler generates save/restore code for the RB register as needed, but
+  neglects to make sure that interrupts are disabled when restoring RB in a low-
+  priority interrupt function. The documentation clearly states that RB
+  save/restore operations in low-priority interrupt handler functions must only
+  be executed when interrupts are disabled. This is not necessary for high-
+  priority interrupt handler functions.
+
+Workaround:
+  At the end of every low-priority interrupt handler function which may have
+  enabled interrupts (possibly during a callee), add the intrinsic
+  __disable_interrupts.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052699
+-------------------------------------------------------------------------------
+
+Summary            : Compiler discards write to a volatile local struct
+                     member
+
+Fixed in           : 15.12.2.LTS
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Release Notes:
+  When volatile appears in a struct definition ...
+  
+      struct device {
+          volatile unsigned tcc;
+      } dev;
+  
+  The compiler doesn't honor it. References to dev.tcc still get optimized away.
+
+Workaround:
+  No workaround.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052737
+-------------------------------------------------------------------------------
+
+Summary            : Compiler reorders MOVDL or MOVD32 instruction with an
+                     instruction which reads the delayed memory
+
+Fixed in           : 15.12.2.LTS
+Severity           : S2 - Major
+Affected Component : Code Generator
+
+Release Notes:
+  For this code ...
+  
+  static inline FLOAT32 filter3rdOrder(FilterStruct* FilterToCalc)
+  //FLOAT32 filter3rdOrder(FilterStruct* FilterToCalc)
+  {
+  FilterToCalc->fl32out =
+  FilterToCalc->fl32b0 * FilterToCalc->fl32in
+      + FilterToCalc->fl32b1 * FilterToCalc->fl32in_k1
+      + FilterToCalc->fl32b2 * FilterToCalc->fl32in_k2
+      + FilterToCalc->fl32b3 * FilterToCalc->fl32in_k3
+      - FilterToCalc->fl32a1 * FilterToCalc->fl32out_k1
+      - FilterToCalc->fl32a2 * FilterToCalc->fl32out_k2
+      - FilterToCalc->fl32a3 * FilterToCalc->fl32out_k3;
+  
+      //Save outputs
+      FilterToCalc->fl32in_k3 = FilterToCalc->fl32in_k2;
+      FilterToCalc->fl32in_k2 = FilterToCalc->fl32in_k1;
+      FilterToCalc->fl32in_k1 = FilterToCalc->fl32in;
+      FilterToCalc->fl32out_k3 = FilterToCalc->fl32out_k2;
+      FilterToCalc->fl32out_k2 = FilterToCalc->fl32out_k1;
+      FilterToCalc->fl32out_k1 = FilterToCalc->fl32out;
+  
+      return FilterToCalc->fl32out;
+  }
+  
+  The compiler, when using --opt_level=2 or higher, does not write any value to
+  the field fl32in_k2.
+
+Workaround:
+  None.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052774
+-------------------------------------------------------------------------------
+
+Summary            : Using __IQsat with destination same as one input leads
+                     to bad code
+
+Fixed in           : 15.12.2.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+      if ( nWords2Send < 0 )
+      {
+          nWords2Send += 160 ; // Cyclic buffer roll
+      }
+  
+  
+  The operation inside the if statement has no code generated for it.
+
+Workaround:
+  No practical workaround
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052805
+-------------------------------------------------------------------------------
+
+Summary            : Decomposition error on while(*ptr++) where ptr points to
+                     volatile
+
+Fixed in           : 15.12.2.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+  The while(*ptr++) loop where ptr points to volatile is handled incorrectly 
+  by the code generation tool. 
+
+Workaround:
+  No workaround.
+
+
+===============================================================================
+3. Defects fixed in C2000 Code Generation Tools release 15.12.1.LTS
+===============================================================================
+
+The following 1 defect was fixed in C2000 Code Generation Tools release
+15.12.1.LTS, released January 2016.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052668
+-------------------------------------------------------------------------------
+
+Summary            : Linker fails to auto-build missing RTS library, because
+                     Windows executable mklib.exe is missing
+
+Fixed in           : 15.12.1.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+  No Information Available; please see defect details.
+
+Workaround:
+  None.
+
+
+===============================================================================
+4. Defects fixed in C2000 Code Generation Tools release 15.12.0.LTS
+===============================================================================
+
+The following 6 defects were fixed in C2000 Code Generation Tools release
+15.12.0.LTS, released December 2015.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052265
+-------------------------------------------------------------------------------
+
+Summary            : Flexible array with initializer not handle correctly
+
+Fixed in           : 15.12.0.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+  Zero-length arrays is a GCC extension supported by TI compilers. The zero-
+  length array extension also defines static initialization of C99 flex arrays.
+  Static initialization of flex arrays should work in C99 mode when GCC
+  extensions are enabled. Although the parser accepted these initializations,
+  they were not output in assembly.
+
+Workaround:
+  None.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052323
+-------------------------------------------------------------------------------
+
+Summary            : CLA parser accepts almost any invalid argument to the
+                     interrupt pragma
+
+Fixed in           : 15.12.0.LTS
+Severity           : S2 - Major
+Affected Component : Parser
+
+Release Notes:
+  The CLA parser will silently accept almost any invalid argument to the
+  interrupt pragma.
+
+Workaround:
+  None.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052339
+-------------------------------------------------------------------------------
+
+Summary            : demangler --output option does not work at all
+
+Fixed in           : 15.12.0.LTS
+Severity           : S2 - Major
+Affected Component : Demangler (dem)
+
+Release Notes:
+  The --output option of armdem does not work at all. You will always get the
+  error message ">> Cannot open output file '(null)'"
+
+Workaround:
+  armdem file.asm > file.dis
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052430
+-------------------------------------------------------------------------------
+
+Summary            : 64-bit CRC values are truncated to 32-bits in linker map
+                     file and linker XML info file
+
+Fixed in           : 15.12.0.LTS
+Severity           : S2 - Major
+Affected Component : Linker
+
+Release Notes:
+  The Windows version of the compiler does not print the CRC value correctly
+  for 64-bit CRC algorithms in the linker map file or the linker XML info
+  file. Only the lower 32 bits of the 64-bit CRC value are correctly
+  displayed. The value stored in the object file is correct. The Linux tools
+  do not have this problem.
+
+Workaround:
+  Use the Linux toolset to generate the linker map file and linker XML info
+  file, or just ignore the reported CRC value in those files.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052460
+-------------------------------------------------------------------------------
+
+Summary            : Automatic RTS builds for C2000 emit warnings
+
+Fixed in           : 15.12.0.LTS
+Severity           : S2 - Major
+Affected Component : C/C++ Compiler (cl)
+
+Release Notes:
+  No Information Available; please see defect details.
+
+Workaround:
+  None.
+
+-------------------------------------------------------------------------------
+FIXED SDSCM00052529
+-------------------------------------------------------------------------------
+
+Summary            : Optimizer assumes enum variable can only have value of
+                     enumeration constants
+
+Fixed in           : 15.12.0.LTS
+Severity           : S2 - Major
+Affected Component : Optimizer
+
+Release Notes:
+  If an enumerated type is defined to have only two constants that evaluate to 0
+  and 1, then the compiler will assume that only those two values are possible.
+  However, the C++ and C standards allow variables of enumerated types to hold
+  other values as well; if other values are used, the compiler may produce
+  incorrect code.
+
+Workaround:
+  Don't make enumerated types with constants only for 0 and 1 if other values
+  may be used. Either add a third value, or use values different than 0 and 1,
+  or avoid using values that aren't the enumeration constants.
+
+
+===============================================================================
+5. Current Known Issues
+===============================================================================
+
+The following 32 known issues exist for C2000 Code Generation Tools release
+15.12.3.LTS as of June 2016.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008248
+-------------------------------------------------------------------------------
+
+Summary            : Compilers on PC will not work without TMP set
+Affected Component : C/C++ Compiler (cl)
+Duplicate Defects  : SDSCM00034609
+
+Description:
+  
+  When compiling on the PC, the code generator cannot find the icode
+  file produced by the parser if the environment variable TMP is no
+  set. If TMP is set, then all appears well.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008465
+-------------------------------------------------------------------------------
+
+Summary            : Language Conformance: crash because of void pointer
+                     dereference
+Affected Component : Parser
+
+Description:
+  Compiler generates multiple INTERNAL ERRORs when code like the following
+  is compiled:
+  
+    void dr106_1(void *pv, int i)
+    {
+        *pv;
+        i ? *pv : *pv;
+        *pv, *pv;
+    }
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008534
+-------------------------------------------------------------------------------
+
+Summary            : Linker -xml_link_info option doesn't work when in a
+                     command file
+Affected Component : Linker
+
+Description:
+  
+  The option --xml_link_info=file.xml does not work when it is
+  placed inside a linker command file.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008537
+-------------------------------------------------------------------------------
+
+Summary            : assembler expression ~(0x80000000) evaulates as
+                     0x80000000
+Affected Component : Assembler
+
+Description:
+  The following expression is evaluating incorrectly in the assembler:
+  
+    .eval ~(0x80000000), mask
+  
+  mask ends up getting assigned 0x80000000, whereas I expect it to be
+  0x7FFFFFFF.
+  It seems that any constant with bit 31 set will incorrectly return 0x80000000
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008543
+-------------------------------------------------------------------------------
+
+Summary            : Forward reference in .space generates an internal error
+Affected Component : Assembler
+
+Description:
+  If you attempt to assemble:
+  
+     .space 0+a
+   b
+   a .set 1
+  
+  the assembler will generate an internal error.
+  
+  This happens with v3.83 and v4.1.0B1 on Solaris.
+  
+  If you change the code to:
+  
+     .space a
+   b
+   b .set 1
+  
+  the correct error message is generated, 'Absolute, well-defined integer value
+  expected'.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008652
+-------------------------------------------------------------------------------
+
+Summary            : pow(2,x) has fairly significant rounding error
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  The algorithm used for pow [exp(log(x),y)] is correct but sometimes leads
+  to a precision error for some inputs, due to rounding bugs in floating-
+  point handling.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008685
+-------------------------------------------------------------------------------
+
+Summary            : DWARF does not correctly represent variables stored in
+                     register pairs
+Affected Component : Code Generator
+
+Description:
+  
+  In the attached example, variables 'var1' and 'var2' are both long
+  long types, and are stored in A7:A6 and B5:B4. However, the DWARF
+  information shows var1 only to be in A6, and var2 only to be in B4:
+  
+        [000000e8] DW_TAG_variable
+        DW_AT_name var1
+        DW_AT_symbol_name _var1
+        DW_AT_type [00000113]
+        DW_AT_location { DW_OP_reg6 }
+  
+        [000000fa] DW_TAG_variable
+        DW_AT_name var2
+        DW_AT_symbol_name _var2
+        DW_AT_type [00000113]
+        DW_AT_location { DW_OP_reg20 }
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008691
+-------------------------------------------------------------------------------
+
+Summary            : Compiler round floats different than runtime support
+                     library
+Affected Component : Parser
+
+Description:
+  
+  If you look at float.h in C28x's RTS, you will see this line:
+  
+  #define FLT_ROUNDS 0 /* TRUNCATE TOWARDS ZERO */
+  
+  This macro 'FLT_ROUNDS', when set to zero, means that the result of any
+  floating point operation is rounded toward zero.
+  
+  However, the 'FPSIM' floating-point package that the parser, optimizer,
+  and assembler use to do floating-point calculations rounds toward
+  nearest.
+  
+  Thus, if the compiler performs any optimizations like constant-folding
+  on floating point numbers, the user may get an unexpected result.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00008928
+-------------------------------------------------------------------------------
+
+Summary            : Extern inline functions are not supported in the C/C++
+                     Compiler
+Affected Component : Parser
+Duplicate Defects  : SDSCM00018364
+
+Description:
+  Users cannot create global accessible code with INLINE functions.
+  The V3.00 compiler/code generator does not create globally accessible
+  code for functions which are declared inline. A simple example is:
+  
+    inline int x() { return 1; }
+    int y() {return 2;}
+  
+  When compiled with 'cl6x -k -c test.c', a warning is produced:
+  
+    'test.c', line 1: warning: function 'x' was declared but
+    never referenced
+  
+  and the resulting assembler file (test.asm) does not
+  contain any code for x(). The documentation states that code
+  declared inline will be inlined in that module but global code will
+  also be generated (section 2.10.3.2 in v3.00 C Compiler manual). The
+  new compiler is overly aggressive in its optimizations. If y() is
+  modified to call x() then code is generated for x() unless the
+  optimizer is also invoked (by using -x2).
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00014430
+-------------------------------------------------------------------------------
+
+Summary            : calloc doesn't check arguments to make sure the
+                     requested size is reasonable
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  The function calloc() is required to return a pointer to memory representing
+  "nelem" copies of "size" bytes, or NULL if the request cannot be satisfied.
+  However, for some values of "nelem" and "size" (specifically when the result
+  of nelem*size wraps around), calloc can return a pointer to an object that is
+  not large enough, rather than NULL.
+  
+  For example, on a 32-bit target, if the user calls calloc(0x00010001,
+  0x00010001), even though each argument by itself is reasonable, the request
+  cannot be satisfied because the product is 0x000100020001, which exceeds
+  size_t. (Note that we cannot check for overflow by checking if the product is
+  less than either argument, which is commonly done for unsigned addition.)
+  Arguably, we can try to claim that it is undefined behavior to make a call to
+  calloc where the product would exceed size_t, but there doesn't seem to be
+  anything in the standard which says so.
+  
+  The problem is worse on 16-bit targets, where calloc(0x0101, 0x0101) is enough
+  to overflow size_t. It may not be obvious to the user that this overflows.
+  
+  Another concern is that it is hard to figure out whether a multiplication will
+  overflow without having a double-width multiply available.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00016638
+-------------------------------------------------------------------------------
+
+Summary            : dis2000 does not handle disassembly of expanded BCND
+                     instruction properly
+Affected Component : Disassembler (dis)
+
+Description:
+  When C2XLP-specific instruction BCND is specified with multiple condition
+  operands, the disassembly output does not show the expanded instruction
+  sequence properly.
+  
+  Source code is attached, assemble with "asm2000 -v28 -m20 bcnd.asm", then
+  disassemble with "dis2000 bcnd.obj > bcnd.dis". Observe disassembly of
+  sequence of instructions that BCND expands to and you'll notice that the
+  disassembly of the XB instruction encoding is not handled properly.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00016646
+-------------------------------------------------------------------------------
+
+Summary            : strcmp doesn't correctly handle values with uppermost
+                     bit set
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  The standard says: "The sign of a nonzero value returned by the comparison
+  functions memcmp, strcmp, and strncmp is determined by the sign of the
+  difference between the values of the first pair of characters (both
+  interpreted as unsigned char) that differ in the objects being compared."
+  However, this is a problem for 16-bit targets where the size of char is the
+  same as the size of int. In this case, it's easy to mistakenly use an unsigned
+  subtract to do the comparison and return it directly; this value can overflow.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00018691
+-------------------------------------------------------------------------------
+
+Summary            : Linker gives misleading warning when dot expressions
+                     used in SECTION directive for .stack section
+Affected Component : Linker
+
+Description:
+  Linker gives the warning:
+  
+  warning: creating ".stack" section with default size of 0x800; use the -stack
+  option to change the default size
+  
+  even when the application does not link in boot code from RTS lib.
+  
+  A linker command file is used that contains a specialized SECTION directive
+  for the ".stack" section. Because of a series of ". += <number>" assignments
+  in the section spec, the linker is forced to increase the size of the .stack
+  section to 0xc00. The linker is doing the correct thing by making a .stack
+  section large enough to accommodate the dot expressions, but the diagnostic is
+  misleading, as 0x800 isn't the final size of the .stack section.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00037411
+-------------------------------------------------------------------------------
+
+Summary            : C2000 assembler segmentation fault on RPTB with syntax
+                     error
+Affected Component : Assembler
+
+Description:
+  The C2000 assembler will issue a segmentation fault if given a RPTB
+  instruction with faulty syntax. The syntax error is not issued. The attached
+  file rptb_mov32_FAIL.asm illustrates the problem.
+  
+   cl2000 --float_support=fpu32 -v28 rptb_mov32_FAIL.asm
+  
+   INTERNAL ERROR: asm2000 experienced a segmentation fault while
+   processing section .text file rptb_mov32_FAIL.asm line 23
+  
+   This is a serious problem. Please contact Customer
+   Support with this message and a copy of the input file
+   and help us to continue to make the tools more robust.
+  
+   >> Compilation failure
+  
+  We should see a syntax error on the RPTB instruction on line 21 of the
+  input file.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00037836
+-------------------------------------------------------------------------------
+
+Summary            : boot-time copy table (BINIT) not implemented in C2000
+                     RTS
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  The BINIT feature to trigger a copy-in at boot time is not implemented in the
+  RTS library.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00039054
+-------------------------------------------------------------------------------
+
+Summary            : Compiler reports a violation of Misra rule 12.8 for a
+                     structure variable
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  MISRA warning (MISRA-C:2004 12.8/R) The right-hand operand of a shift operator
+  shall lie between zero and one less than the width in bits of the underlying
+  type of the left-hand operand
+  
+  In the following code I get MISRA 12.8 warning on myVar = myStruct.aVar >> 16
+  shift. Note that shift of unstructured variable myVar = myVar >> 16 is okay.
+  
+      typedef struct
+      {
+          unsigned long aVar;
+      } myStruct_T;
+  
+      myStruct_T myStruct = {0xFFFFFFFFUL};
+      unsigned long myVar;
+  
+      myVar = myStruct.aVar >> 16;
+      myVar = myVar >> 16;
+  
+  
+  
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00039236
+-------------------------------------------------------------------------------
+
+Summary            : Sometimes MISRA rule 19.15 is incorrectly emitted.  The
+                     rule is about failing to use an inclusion guard in a
+                     header file.
+Affected Component : Parser
+
+Description:
+  In the attached test case rule 19.15 gets emitted even though the files
+  mentioned do have proper inclusion guards.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00040934
+-------------------------------------------------------------------------------
+
+Summary            : Structure is not initialized correctly when using -o2 or
+                     -o3 optimization
+Affected Component : Optimizer
+
+Description:
+  There is a problem with the initialization of a structure using symbols
+  generated in the linker command file. We use symbols generated in the linker
+  cmd file using the dot operator. These symbols are used as an initial value
+  for a class/struct with a constructor. In our case we want the difference of
+  two addresses that the linker generates.
+  
+  When using optimization -o2 or -o3, the compiler generates .cinit entries
+  instead of the constructor call. In those .init-entries it doesn't use the
+  difference of the addresses; instead it uses the first symbol.
+  
+  When turning off optimization or using lower level of opt than -o2, the
+  constructor calls are generated and the struct is initialized correctly.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00042344
+-------------------------------------------------------------------------------
+
+Summary            : Compiler generates internal error: illegal
+                     initialization or segmentation fault
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  The attached test case generates a segmentation fault when compiled with CGT
+  6.1.x and 7.0.x.
+  It generates the following error when compiled with 7.2.5 and 7.3.1 but does
+  generate a .obj file.
+  
+  Build with: cl6x --gcc seg_fault.c
+  
+  >> INTERNAL ERROR: ILLEGAL INITIALIZATION
+  
+  This may be a serious problem. Please contact customer support with a
+  description of this problem and a sample of the source files that caused this
+  INTERNAL ERROR message to appear.
+  
+  Note: May lose variable initialization information
+  
+  ... continuing compilation ...
+  
+  User would like to know if there is a workaround.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00042434
+-------------------------------------------------------------------------------
+
+Summary            : Compiler misreports Misra warning 6.4 for bitfield
+                     definitions
+Affected Component : C/C++ Compiler (cl)
+Duplicate Defects  : SDSCM00043122
+
+Description:
+  Compiler misreports Misra warning 6.4 for bitfield definitions.
+  
+  typedef unsigned int uint16_t;
+  typedef unsigned int bool_t;
+  #define FALSE ((bool_t)0U)
+  #define TRUE ((bool_t)1U)
+  
+  typedef struct mystructtag
+  {
+    uint16_t u16_hw_rev1;
+    bool_t bl_hardware_supported:1;       /* this violates rule 6.4 */ 
+  } st_software_info_t ;
+  
+  This generates the warning:
+  
+  "misra_test.c", line 9: warning: (MISRA-C:2004 6.4/R) Bit fields shall only be
+  defined to be of type unsigned int or signed int
+  
+  Related forum thread:
+  http://e2e.ti.com/support/development_tools/compiler/f/343/t/147639.aspx
+  
+  According to Misra, this is not a Misra violation.
+  http://www.misra-
+  c.com/forum/viewtopic.php?f=62&t=1167&sid=6fd53ec7591d33a4fa1b38e975c580bc
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00042435
+-------------------------------------------------------------------------------
+
+Summary            : Compiler misreports Misra warning 10.1
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  Compiler misreports Misra warning 10.1 with the following code:
+  
+  typedef unsigned int uint16_t;
+  typedef unsigned int bool_t;
+  #define FALSE ((bool_t)0U)
+  #define TRUE ((bool_t)1U)
+  
+  typedef struct mystructtag
+  {
+    uint16_t u16_hw_rev1;
+    bool_t bl_hardware_supported:1;       /* this violates rule 6.4 */ 
+  } st_software_info_t ;
+  
+  
+  void main(void)
+  {
+  
+  uint16_t u16_rev1_min, u16_tmp;
+  st_software_info_t sts_sw_info;
+  u16_rev1_min = 900U;
+  
+  sts_sw_info.bl_hardware_supported = FALSE;
+  
+  if (sts_sw_info.bl_hardware_supported == FALSE)     /* this violates rule 10.1 */
+  {
+    /* do something... */
+  }
+  
+  if (sts_sw_info.u16_hw_rev1 >= u16_rev1_min)       /* this violates rule 10.1 */
+  {
+    /* do something... */
+  }
+  
+  u16_tmp = sts_sw_info.u16_hw_rev1;
+  if (u16_tmp >= u16_rev1_min)       /* this does not violates rule 10.1 */
+  {
+    /* do something... */
+  }
+  
+  The warning is:
+  
+  "misra_test.c", line 22: warning: (MISRA-C:2004 10.1/R) The value of an
+  expression of integer type shall not be implicitly converted to a different
+  underlying type if it is not a conversion to a wider integer type of the same
+  signedness
+  "misra_test.c", line 27: warning: (MISRA-C:2004 10.1/R) The value of an
+  expression of integer type shall not be implicitly converted to a different
+  underlying type if it is not a conversion to a wider integer type of the same
+  signedness
+  
+  
+  Related forum thread:http://e2e.ti.com/support/development_tools/compiler/f/3-
+  43/t/147639.aspx
+  
+  Related Misra threads that say this is not a Misra violation:
+  http://www.misra-
+  c.com/forum/viewtopic.php?f=62&t=1167&sid=6fd53ec7591d33a4fa1b38e975c580bc
+  http://www.misra-
+  c.com/forum/viewtopic.php?f=66&t=1168&sid=6fd53ec7591d33a4fa1b38e975c580bc
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00043043
+-------------------------------------------------------------------------------
+
+Summary            : Array that is correctly initialized erroneously gets a
+                     MISRA diagnostic about size not being specified
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  For this input ...
+  
+      int16_t y[]={1,5,8};
+  
+  The compiler incorrectly issues this diagnostic ...
+  
+  "try1.c", line 2: warning: (MISRA-C:2004 8.12/R) When an array is declared
+  with external linkage, its size shall be stated explicitly or
+  defined implicitly by initialisation
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00044056
+-------------------------------------------------------------------------------
+
+Summary            : Compiler misreports Misra warning 10.1
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  Compiler misreports MISRA warning 10.1/R for the following code.
+  
+  
+  typedef enum _MyEnum { One, Two } MyEnum;
+  MyEnum MyVariable;
+  
+  int foo(void)  
+  {      
+      int result = 1;         
+      if (One == MyVariable)  // fails here with MISRA-C:2004 10.1/R      
+      {          result = 2;      }          
+      return result;  
+  } 
+  
+  Our coding style convention requires that the variable is at the right hand
+  side. Therefore I don't want to swap One and MyVariable, although that makes
+  the warning to disappear.
+  
+  Is that a bug in the MISRA checker? If not, why is the comparison of two terms
+  not commutable?
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00045452
+-------------------------------------------------------------------------------
+
+Summary            : Compiler misreports MISRA warning 17.6
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  Compiler misreports MISRA warning 17.6 with the attached code.
+  
+  (MISRA-C:2004 17.6/R) The address of an object with automatic storage shall
+  not be assigned to another object that may persist after the first object has
+  ceased to exist
+  
+  In the following code, the assignment of &myLocalStruct->data to myDataPtr in
+  myFunc has MISRA 17.6 reported. myDataPtr only persists for the duration of
+  the function, and therefore does not persist longer than data passed into
+  that function.
+  
+  typedef struct
+  {
+      uint8 data;
+  } Struct_T;
+  
+  void myFunc(Struct_T *myLocalStruct);
+  void main(void);
+  
+  void myFunc(Struct_T *myLocalStruct)
+  {
+      uint8 *myDataPtr;
+  
+      myDataPtr = &myLocalStruct->data; /* (MISRA-C:2004 17.6/R) reported here */
+  }
+  
+  void main(void)
+  {
+      Struct_T myStruct = { 0U };
+  
+      myFunc(&myStruct);
+  }
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00045473
+-------------------------------------------------------------------------------
+
+Summary            : Compiler misreports violation of Misra 9.2 for zero
+                     initialization of structures
+Affected Component : C/C++ Compiler (cl)
+
+Description:
+  Compiler misreports violation of Misra 9.2 for zero initialization of
+  structures.
+  
+  (MISRA-C:2004 9.2/R) Braces shall be used to indicate and match the structure
+  in the non-zero initialisation of arrays and structures
+  
+  
+  typedef struct
+  {
+  unsigned char nModuleId;
+  unsigned char nInstanceId;
+  unsigned char nApiId;
+  unsigned char nErrorId;
+  } DetLog_T;
+  
+  DetLog_T sctDetLog_M[0x100] = { 0U };
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00048321
+-------------------------------------------------------------------------------
+
+Summary            : C2000 binary file IO does not handle char data with more
+                     than 8-bits of data
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  On C2000 a char is 16 bits, but the fread and fwrite functions will only read
+  and write the lower 8 bits of every char. The problem looks to be in the
+  __TI_writemsg/__TI_readmsg functions and the PACKCHAR macro. The macro only
+  writes the lower 8 bits, but the function increments by 16 bits for every
+  invocation of PACKCHAR. I'm not sure which piece is wrong.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00049284
+-------------------------------------------------------------------------------
+
+Summary            : Compiler misreports Misra warning 10.1
+Affected Component : Parser
+
+Description:
+  Compiler misreports MISRA warning 10.1/R for the following code.
+  
+  typedef enum _MyEnum { One, Two } MyEnum;
+  MyEnum MyVariable;
+  
+  int foo(void)  
+  {      
+      int result = 1;        
+      if (One == MyVariable)  // fails here with MISRA-C:2004 10.1/R      
+      {          result = 2;      }          
+      return result;  
+  } 
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00050131
+-------------------------------------------------------------------------------
+
+Summary            : Local struct with non-constant initializer treated as
+                     static scope variable
+Affected Component : Parser
+
+Description:
+  We've discovered a problem where the C++ compiler places a local structure
+  variable not on the stack but in the data segment, as if it was a static
+  structure. The problem is especially insidious because the issue will only
+  have an impact on re-entrance.
+  
+  The problem seems to occur only for C++ files, and only if the structure
+  initializer list contains a variable. Constant initializer lists do not
+  trigger the issue.
+  
+  The structure in the first function will be allocated on the stack, but the
+  structure in the second will be compiled as if it was declared static.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00050540
+-------------------------------------------------------------------------------
+
+Summary            : CLA Assembler accepts invalid instruction MMOV32 mem,
+                     MRn, COND
+Affected Component : Assembler
+
+Description:
+  The CLA assembler accepts and invalid instruction and encodes a different
+  instruction, generating an object file. See the attached assembly and
+  disassembly output. There is no conditional MMOV32 to a memory destination.
+  The only valid conditional MMOV32 instructions have register (MRn)
+  destinations.
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00051384
+-------------------------------------------------------------------------------
+
+Summary            : C2000 can't print 0 with %a format
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  When you try to print the value 0.0 with the newly-supported C99 format %a,
+  you'll get an infinite loop. This is because the hand-coded assembly routine
+  which tries to perform 0.0-0.0 returns -0.0, and then doesn't understand
+  that 0.0==-0.0
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00051392
+-------------------------------------------------------------------------------
+
+Summary            : C2000 float software multiply doesn't handle -1*INF
+                     properly
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  Float emulation for multiplication does not correctly compute (-1*INFINITY)
+
+-------------------------------------------------------------------------------
+KNOWN ISSUE SDSCM00051510
+-------------------------------------------------------------------------------
+
+Summary            : macro CLOCKS_PER_SEC should be type clock_t
+Affected Component : Runtime Support Libraries (RTS)
+
+Description:
+  The C99 standard requires that CLOCKS_PER_SEC must be type clock_t
+
