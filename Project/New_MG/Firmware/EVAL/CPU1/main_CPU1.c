@@ -134,7 +134,7 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_1Hz == 0)
     {
-    	//GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+    	GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
     }
 
     if (*counter % (Uint32)TASK_MAX_COUNT == 0)
