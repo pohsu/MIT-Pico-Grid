@@ -4,10 +4,12 @@
 #include "..\Test_setting.h"
 #include "..\Peripheral\Peripheral.h"
 #include "Meas.h"
+#include "Control.h"
 
 //***********************************************************************//
 //                     G l o b a l  V a r i a b l e s                    //
 //***********************************************************************//
+extern struct_control_states control_states;
 struct_meas_states meas_states;
 
 //***********************************************************************//
@@ -17,19 +19,19 @@ struct_meas_states meas_states;
 void Measurement_step(const bool enable)
 {
 	struct_abc_states abc_states;
-
 	Oscillator();
 	ADC_process(enable, &abc_states);
 	Abc2dq(meas_states.IL_dq, abc_states.IL_abc, meas_states.theta);
 	Abc2dq(meas_states.VC_dq, abc_states.VC_abc, meas_states.theta);
 	Abc2dq(meas_states.IO_dq, abc_states.IO_abc, meas_states.theta);
+	Power_caculation(meas_states.PQ, meas_states.IO_dq, meas_states.VC_dq);
 }
 
 #pragma CODE_SECTION(Oscillator, "ramfuncs")
 void Oscillator(void)
 {
 	meas_states.theta = (meas_states.theta >= 2*PI? 0.0f: meas_states.theta);
-	meas_states.theta = meas_states.theta + 377.0f*ISR_PERIOD;
+	meas_states.theta = meas_states.theta + control_states.omega*ISR_PERIOD;
 }
 
 #pragma CODE_SECTION(ADC_process, "ramfuncs")
@@ -59,6 +61,18 @@ void ADC_process(const bool enable, struct_abc_states * states)
 	for(i=0; i<=1; i++) states->IO_abc[i] = ((float32)(adc_IO[i]) - IO_bias[i]) * IO_CONVERSION;
 
 }
+
+#pragma CODE_SECTION(Power_caculation, "ramfuncs")
+void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq[2])
+{
+	Uint16 i;
+	float32 PQ_temp[2];
+	PQ_temp[0] = VC_dq[0]*IO_dq[0] + VC_dq[1]*IO_dq[1];
+	PQ_temp[1] = -VC_dq[0]*IO_dq[1] + VC_dq[1]*IO_dq[0];
+	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, 1.5*PQ_temp[i]);
+}
+
+
 
 #pragma CODE_SECTION(Abc2dq, "ramfuncs")
 void Abc2dq(float32 dq[2], const float32 abc[2], const float32 theta)

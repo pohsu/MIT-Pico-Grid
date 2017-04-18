@@ -16,18 +16,27 @@ struct_control_states control_states;
 //                          F u n c t i o n s                            //
 //***********************************************************************//
 #pragma CODE_SECTION(Control_step, "ramfuncs")
-void Control_step(const float32 dq_ref[2], const bool enable)
+void Control_step(const float32 FV_ref[2], const bool enable)
 {
-	VC_control(enable, dq_ref);
+	Droop_control(enable, FV_ref);
+	VC_control(enable);
 	IL_control(enable);
 	VINV2Duty();
-	DACA(control_states.IL_dq_ref[0], 22.5f);
-	DACB(meas_states.IL_dq[0], 22.5f);
-	DACC(meas_states.IL_dq[1], 22.5f);
+	DACA(control_states.VC_dq_ref[0], 750.0f);
+	uDACB(control_states.omega, 400.0f);
+	uDACC(meas_states.PQ[0], 11e3f);
+}
+#pragma CODE_SECTION(Droop_control, "ramfuncs")
+void Droop_control(const bool enable, const float32 FV_ref[2])
+{
+		control_states.omega = FV_ref[0] - (enable? KP * W_NOM / SN * meas_states.PQ[0] : 0);
+		control_states.VC_dq_ref[0] = FV_ref[1]- (enable? KQ * V_NOM / SN * meas_states.PQ[1]: 0);
+		control_states.VC_dq_ref[1] = 0;
 }
 
+
 #pragma CODE_SECTION(VC_control, "ramfuncs")
-void VC_control(const bool enable, const float32 VC_dq_ref[2])
+void VC_control(const bool enable)
 {
 	float32 ff_dq[2] = {0}, error[2] = {0};
 	static float32 VC_PID_states[2] = {0};
@@ -36,7 +45,7 @@ void VC_control(const bool enable, const float32 VC_dq_ref[2])
 	ff_dq[0] = meas_states.IO_dq[0]*VC_FF_GAIN - 377.0f*CF*meas_states.VC_dq[1];
 	ff_dq[1] = meas_states.IO_dq[1]*VC_FF_GAIN + 377.0f*CF*meas_states.VC_dq[0];
 
-	for (i = 0;i<=1;i++) error[i] = VC_dq_ref[i] - meas_states.VC_dq[i];
+	for (i = 0;i<=1;i++) error[i] = control_states.VC_dq_ref[i] - meas_states.VC_dq[i];
 	PID_dq(control_states.IL_dq_ref, VC_PID_states, error, KPV, KIV);
 
 	// Reset PID integrator
