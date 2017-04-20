@@ -9,74 +9,101 @@
 //***********************************************************************//
 //                     G l o b a l  V a r i a b l e s                    //
 //***********************************************************************//
-extern struct_meas_states meas_states;
-struct_control_states control_states;
+extern struct_meas_states meas_states1, meas_states2;
+struct_control_states control_states1, control_states2;
 
 //***********************************************************************//
 //                          F u n c t i o n s                            //
 //***********************************************************************//
 #pragma CODE_SECTION(Control_step, "ramfuncs")
-void Control_step(const float32 FV_ref[2], const bool enable)
+void Control_step(const float32 Droop[2], const bool enable)
 {
-	Droop_control(enable, FV_ref);
-	VC_control(enable);
-	IL_control(enable);
-	VINV2Duty();
-	DACA(control_states.VC_dq_ref[0], 750.0f);
-	uDACB(control_states.omega, 400.0f);
-	uDACC(meas_states.PQ[0], 11e3f);
+	static float32 VC_PID_states1[2] = {0, 0}, IL_PID_states1[2] = {0, 0};
+	static float32 VC_PID_states2[2] = {0, 0}, IL_PID_states2[2] = {0, 0};
+
+	Droop_control(enable, Droop, &control_states1, &meas_states1);
+	VC_control(enable, &control_states1, &meas_states1, VC_PID_states1);
+	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
+
+	Droop_control(enable, Droop, &control_states2, &meas_states2);
+	VC_control(enable, &control_states2, &meas_states2, VC_PID_states2);
+	IL_control(enable, &control_states2, &meas_states2, IL_PID_states2);
+
+//	control_states1.VINV_dq[0] = control_states1.VC_dq_ref[0];
+//	control_states1.VINV_dq[1] = control_states1.VC_dq_ref[1];
+//
+//	control_states2.VINV_dq[0] = control_states2.VC_dq_ref[0];
+//	control_states2.VINV_dq[1] = control_states2.VC_dq_ref[1];
+
+	VINV2Duty(&control_states1, &meas_states1);
+	VINV2Duty(&control_states2, &meas_states2);
+
+	DACA(control_states1.IL_dq_ref[0], 500.0f);
+	DACB(control_states2.IL_dq_ref[0], 500.0f);
+	DACC(meas_states1.PQ[0], 10.0f);
 }
-#pragma CODE_SECTION(Droop_control, "ramfuncs")
-void Droop_control(const bool enable, const float32 FV_ref[2])
+//#pragma CODE_SECTION(Droop_control, "ramfuncs")
+void Droop_control(const bool enable, const float32 Droop[2], struct_control_states * c_states, struct_meas_states * m_states)
 {
-		control_states.omega = FV_ref[0] - (enable? KP * W_NOM / SN * meas_states.PQ[0] : 0);
-		control_states.VC_dq_ref[0] = FV_ref[1]- (enable? KQ * V_NOM / SN * meas_states.PQ[1]: 0);
-		control_states.VC_dq_ref[1] = 0;
+	c_states->omega = W_NOM - (enable? Droop[0] * W_NOM * m_states->PQ[0] : 0);
+	c_states->VC_dq_ref[0] = V_NOM - (enable? Droop[1] * V_NOM * m_states->PQ[1]: 0);
+	c_states->VC_dq_ref[1] = 0;
+
+	c_states->omega= (c_states->omega >  W_NOM*1.2?  W_NOM*1.2 : c_states->omega);
+	c_states->omega= (c_states->omega <  W_NOM*0.8?  W_NOM*0.8 : c_states->omega);
 }
 
 
 #pragma CODE_SECTION(VC_control, "ramfuncs")
-void VC_control(const bool enable)
+void VC_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 PID_states[2])
 {
 	float32 ff_dq[2] = {0}, error[2] = {0};
-	static float32 VC_PID_states[2] = {0};
 	Uint16 i;
 
-	ff_dq[0] = meas_states.IO_dq[0]*VC_FF_GAIN - 377.0f*CF*meas_states.VC_dq[1];
-	ff_dq[1] = meas_states.IO_dq[1]*VC_FF_GAIN + 377.0f*CF*meas_states.VC_dq[0];
+	ff_dq[0] = m_states->IO_dq[0]*VC_FF_GAIN - c_states->omega*CF*m_states->VC_dq[1];
+	ff_dq[1] = m_states->IO_dq[1]*VC_FF_GAIN + c_states->omega*CF*m_states->VC_dq[0];
 
-	for (i = 0;i<=1;i++) error[i] = control_states.VC_dq_ref[i] - meas_states.VC_dq[i];
-	PID_dq(control_states.IL_dq_ref, VC_PID_states, error, KPV, KIV);
+	for (i = 0;i<=1;i++) error[i] = c_states->VC_dq_ref[i] - m_states->VC_dq[i];
+	PID_dq(c_states->IL_dq_ref, PID_states, error, KPV, KIV);
 
 	// Reset PID integrator
 	if (enable == false){
-		for (i = 0;i<=1;i++) VC_PID_states[i] = 0;
+		for (i = 0;i<=1;i++) PID_states[i] = 0;
 	}
 
-	for (i = 0;i<=1;i++) control_states.IL_dq_ref[i] += ff_dq[i];
+	for (i = 0;i<=1;i++) c_states->IL_dq_ref[i] += ff_dq[i];
+
+//	for (i = 0;i<=1;i++){
+//		c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] >  25.0f?  25.0f : c_states->IL_dq_ref[i]);
+//		c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] < -25.0f? -25.0f : c_states->IL_dq_ref[i]);
+//	}
 }
 
 
 #pragma CODE_SECTION(IL_control, "ramfuncs")
-void IL_control(const bool enable)
+void IL_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 PID_states[2])
 {
 	float32 ff_dq[2] = {0}, error[2] = {0};
-	static float32 IL_PID_states[2] = {0};
 	Uint16 i;
 
-	ff_dq[0] = meas_states.VC_dq[0]*IL_FF_GAIN - 377.0f*LF*meas_states.IL_dq[1];
-	ff_dq[1] = meas_states.VC_dq[1]*IL_FF_GAIN + 377.0f*LF*meas_states.IL_dq[0];
+	ff_dq[0] = m_states->VC_dq[0]*IL_FF_GAIN - c_states->omega*LF*m_states->IL_dq[1];
+	ff_dq[1] = m_states->VC_dq[1]*IL_FF_GAIN + c_states->omega*LF*m_states->IL_dq[0];
 
-	for (i = 0;i<=1;i++) error[i] = control_states.IL_dq_ref[i] - meas_states.IL_dq[i];
-	PID_dq(control_states.VINV_dq, IL_PID_states, error, KPC, KIC);
+	for (i = 0;i<=1;i++) error[i] = c_states->IL_dq_ref[i] - m_states->IL_dq[i];
+	PID_dq(c_states->VINV_dq, PID_states, error, KPC, KIC);
 
 	// Reset PID integrator
 	if (enable == false)
 	{
-		for (i = 0;i<=1;i++) IL_PID_states[i] = 0;
+		for (i = 0;i<=1;i++) PID_states[i] = 0;
 	}
 
-	for (i = 0;i<=1;i++) control_states.VINV_dq[i] += ff_dq[i];
+	for (i = 0;i<=1;i++) c_states->VINV_dq[i] += ff_dq[i];
+
+//	for (i = 0;i<=1;i++){
+//		c_states->VINV_dq[i] = (c_states->VINV_dq[i] >  V_NOM*1.2f?  V_NOM*1.2f : c_states->VINV_dq[i]);
+////		c_states->VINV_dq[i] = (c_states->VINV_dq[i] <  -V_NOM*1.2f?  -V_NOM*1.2f : c_states->VINV_dq[i]);
+//	}
 
 }
 
@@ -92,14 +119,14 @@ void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const
 }
 
 #pragma CODE_SECTION(VINV2Duty, "ramfuncs")
-void VINV2Duty (void)
+void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
 {
 	float32 abc[3];
-	dq2abc(abc, control_states.VINV_dq, meas_states.theta);
+	dq2abc(abc, c_states->VINV_dq, m_states->theta);
 
-	control_states.Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
-	control_states.Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
-	control_states.Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
+	c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
+	c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
+	c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
 
 //	control_states.Duty[0] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta) + 1.0f) * PWM_PERIOD);
 //	control_states.Duty[1] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta-PHASE_120) + 1.0f) * PWM_PERIOD);

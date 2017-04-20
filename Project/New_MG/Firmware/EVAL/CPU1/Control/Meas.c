@@ -9,8 +9,8 @@
 //***********************************************************************//
 //                     G l o b a l  V a r i a b l e s                    //
 //***********************************************************************//
-extern struct_control_states control_states;
-struct_meas_states meas_states;
+extern struct_control_states control_states1, control_states2;
+struct_meas_states meas_states1, meas_states2;
 
 //***********************************************************************//
 //                          F u n c t i o n s                            //
@@ -18,47 +18,78 @@ struct_meas_states meas_states;
 #pragma CODE_SECTION(Measurement_step, "ramfuncs")
 void Measurement_step(const bool enable)
 {
-	struct_abc_states abc_states;
-	Oscillator();
-	ADC_process(enable, &abc_states);
-	Abc2dq(meas_states.IL_dq, abc_states.IL_abc, meas_states.theta);
-	Abc2dq(meas_states.VC_dq, abc_states.VC_abc, meas_states.theta);
-	Abc2dq(meas_states.IO_dq, abc_states.IO_abc, meas_states.theta);
-	Power_caculation(meas_states.PQ, meas_states.IO_dq, meas_states.VC_dq);
+
+	meas_states1.theta = Oscillator(enable, meas_states1.theta, control_states1.omega);
+	meas_states2.theta = Oscillator(enable, meas_states2.theta, control_states2.omega);
+
+	struct_abc_states abc_states1, abc_states2;
+	ADC_process(enable, &abc_states1, &abc_states2);
+
+	Abc2dq(meas_states1.IL_dq, abc_states1.IL_abc, meas_states1.theta);
+	Abc2dq(meas_states1.VC_dq, abc_states1.VC_abc, meas_states1.theta);
+	Abc2dq(meas_states1.IO_dq, abc_states1.IO_abc, meas_states1.theta);
+	Abc2dq(meas_states2.IL_dq, abc_states2.IL_abc, meas_states2.theta);
+	Abc2dq(meas_states2.VC_dq, abc_states2.VC_abc, meas_states2.theta);
+	Abc2dq(meas_states2.IO_dq, abc_states2.IO_abc, meas_states2.theta);
+
+
+
+	Power_caculation(meas_states1.PQ, meas_states1.IO_dq, meas_states1.VC_dq);
+	Power_caculation(meas_states2.PQ, meas_states2.IL_dq, meas_states2.VC_dq);
+
 }
 
 #pragma CODE_SECTION(Oscillator, "ramfuncs")
-void Oscillator(void)
+float32 Oscillator(const bool enable, float32 theta, const float32 omega)
 {
-	meas_states.theta = (meas_states.theta >= 2*PI? 0.0f: meas_states.theta);
-	meas_states.theta = meas_states.theta + control_states.omega*ISR_PERIOD;
+	theta = (enable? theta + omega*ISR_PERIOD : 0);
+	theta = (theta >= 2*PI? theta - 2*PI: theta);
+	return theta;
 }
 
 #pragma CODE_SECTION(ADC_process, "ramfuncs")
-void ADC_process(const bool enable, struct_abc_states * states)
+void ADC_process(const bool enable, struct_abc_states * states1, struct_abc_states * states2)
 {
 	Uint16 i;
-	static float32 IL_bias[2] = {4096.0f, 4096.0f}, VC_bias[2] = {2048.0f, 2048.0f}, IO_bias[2] = {2048.0f, 2048.0f};
-	static Uint16 adc_IL[2], adc_VC[2], adc_IO[2];
+	static float32 IL1_bias[2] = {4096.0f, 4096.0f}, VC1_bias[2] = {2048.0f, 2048.0f}, IO1_bias[2] = {2048.0f, 2048.0f};
+	static float32 IL2_bias[2] = {4096.0f, 4096.0f}, VC2_bias[2] = {2048.0f, 2048.0f}, IO2_bias[2] = {2048.0f, 2048.0f};
+	static Uint16 adc_IL1[2], adc_VC1[2], adc_IO1[2];
+	static Uint16 adc_IL2[2], adc_VC2[2], adc_IO2[2];
 
-	adc_IL[0] = AdcaResultRegs.ADCRESULT0 + AdcaResultRegs.ADCRESULT1;
-	adc_IL[1] = AdcbResultRegs.ADCRESULT0 + AdcbResultRegs.ADCRESULT1;
-	adc_VC[0] = AdcaResultRegs.ADCRESULT2;
-	adc_VC[1] = AdcbResultRegs.ADCRESULT2;
-	adc_IO[0] = AdcaResultRegs.ADCRESULT3;
-	adc_IO[1] = AdcbResultRegs.ADCRESULT3;
+	adc_IL1[0] = AdcaResultRegs.ADCRESULT0 + AdcaResultRegs.ADCRESULT2;
+	adc_IL1[1] = AdcbResultRegs.ADCRESULT0 + AdcbResultRegs.ADCRESULT2;
+	adc_IL2[0] = AdcaResultRegs.ADCRESULT1 + AdcaResultRegs.ADCRESULT3;
+	adc_IL2[1] = AdcbResultRegs.ADCRESULT1 + AdcbResultRegs.ADCRESULT3;
+
+	adc_VC1[0] = AdcaResultRegs.ADCRESULT4;
+	adc_VC1[1] = AdcbResultRegs.ADCRESULT4;
+	adc_VC2[0] = AdcaResultRegs.ADCRESULT5;
+	adc_VC2[1] = AdcbResultRegs.ADCRESULT5;
+
+	adc_IO1[0] = AdcaResultRegs.ADCRESULT6;
+	adc_IO1[1] = AdcdResultRegs.ADCRESULT6;
+	adc_IO2[0] = AdcaResultRegs.ADCRESULT7;
+	adc_IO2[1] = AdcdResultRegs.ADCRESULT7;
 
 	//Auto-calibrations
 	if(enable == false)
 	{
-		for(i=0; i<=1; i++) IL_bias[i] = LPF(IL_bias[i], 5.0f, (float32)(adc_IL[i]));
-		for(i=0; i<=1; i++) VC_bias[i] = LPF(VC_bias[i], 5.0f, (float32)(adc_VC[i]));
-		for(i=0; i<=1; i++) IO_bias[i] = LPF(IO_bias[i], 5.0f, (float32)(adc_IO[i]));
+		for(i=0; i<=1; i++) IL1_bias[i] = LPF(IL1_bias[i], 5.0f, (float32)(adc_IL1[i]));
+		for(i=0; i<=1; i++) VC1_bias[i] = LPF(VC1_bias[i], 5.0f, (float32)(adc_VC1[i]));
+		for(i=0; i<=1; i++) IO1_bias[i] = LPF(IO1_bias[i], 5.0f, (float32)(adc_IO1[i]));
+		for(i=0; i<=1; i++) IL2_bias[i] = LPF(IL2_bias[i], 5.0f, (float32)(adc_IL2[i]));
+		for(i=0; i<=1; i++) VC2_bias[i] = LPF(VC2_bias[i], 5.0f, (float32)(adc_VC2[i]));
+		for(i=0; i<=1; i++) IO2_bias[i] = LPF(IO2_bias[i], 5.0f, (float32)(adc_IO2[i]));
 	}
 
-	for(i=0; i<=1; i++) states->IL_abc[i] = 0.5f*((float32)(adc_IL[i]) - IL_bias[i]) * IL_CONVERSION;
-	for(i=0; i<=1; i++) states->VC_abc[i] = ((float32)(adc_VC[i]) - VC_bias[i]) * VC_CONVERSION;
-	for(i=0; i<=1; i++) states->IO_abc[i] = ((float32)(adc_IO[i]) - IO_bias[i]) * IO_CONVERSION;
+	for(i=0; i<=1; i++) states1->IL_abc[i] = 0.5f*((float32)(adc_IL1[i]) - IL1_bias[i]) * IL_CONVERSION;
+	for(i=0; i<=1; i++) states1->VC_abc[i] = ((float32)(adc_VC1[i]) - VC1_bias[i]) * VC_CONVERSION;
+	for(i=0; i<=1; i++) states1->IO_abc[i] = ((float32)(adc_IO1[i]) - IO1_bias[i]) * IO_CONVERSION;
+
+	for(i=0; i<=1; i++) states2->IL_abc[i] = 0.5f*((float32)(adc_IL2[i]) - IL2_bias[i]) * IL_CONVERSION;
+	for(i=0; i<=1; i++) states2->VC_abc[i] = ((float32)(adc_VC2[i]) - VC2_bias[i]) * VC_CONVERSION;
+	for(i=0; i<=1; i++) states2->IO_abc[i] = ((float32)(adc_IO2[i]) - IO2_bias[i]) * IO_CONVERSION;
+
 
 }
 
@@ -67,11 +98,10 @@ void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq
 {
 	Uint16 i;
 	float32 PQ_temp[2];
-	PQ_temp[0] = VC_dq[0]*IO_dq[0] + VC_dq[1]*IO_dq[1];
-	PQ_temp[1] = -VC_dq[0]*IO_dq[1] + VC_dq[1]*IO_dq[0];
-	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, 1.5*PQ_temp[i]);
+	PQ_temp[0] =  (VC_dq[0]/V_NOM)*(IO_dq[0]/I_NOM) + (VC_dq[1]/V_NOM)*(IO_dq[1]/I_NOM);
+	PQ_temp[1] = (-VC_dq[0]/V_NOM)*(IO_dq[1]/I_NOM) + (VC_dq[1]/V_NOM)*(IO_dq[0]/I_NOM);
+	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_temp[i]);
 }
-
 
 
 #pragma CODE_SECTION(Abc2dq, "ramfuncs")

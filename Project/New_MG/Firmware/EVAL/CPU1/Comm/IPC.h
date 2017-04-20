@@ -5,13 +5,13 @@
 #define VREF 101
 
 typedef struct{
-	float32 Volt;
-	float32 Freq;
+	float32 volt;
+	float32 freq;
 } struct_report_data;
 
 typedef struct{
-	Uint16 Fref;
-	Uint16 Vref;
+	Uint16 fref;
+	Uint16 vref;
 } struct_console_data;
 
 void Send_to_CPU2(Uint16 * array);

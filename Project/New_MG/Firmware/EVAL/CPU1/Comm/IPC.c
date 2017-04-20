@@ -5,17 +5,15 @@
 //***********************************************************************//
 //                     G l o b a l  V a r i a b l e s                    //
 //***********************************************************************//
-Uint16 sizeofdata_rx = 0;
-
 bool enable = 0; 
 
 struct_report_data report_data = {
-    .Volt  = 0, 
-    .Freq = 0,   
+    .volt  = 0,
+    .freq  = 0,
 };
 struct_console_data console_data = {
-	.Vref = 0,
-    .Fref  = 0,    
+	.vref  = 0,
+    .fref  = 0,
 };
 
 //***********************************************************************//
@@ -32,20 +30,20 @@ void Send_to_CPU2(Uint16 * array)
 
 void Decoder_Process_IPC (Uint16 * array)
 {
+	Uint16 sizeofdata_rx = 0;
+
 	sizeofdata_rx = array[0];
 
 	if (array[1] == STOP)
 	{
-		//stop PWM
-		enable = 0;
+		enable = 0; //stop PWM
 	} 
 
 	if (array[1] == START) enable = 1;
 
-	if (array[1] == FREF) console_data.Fref = (float32)array[4];
+	if (array[1] == FREF) console_data.fref = array[4];
 
-	if (array[1] == VREF) console_data.Vref = (float32)array[4];
-
+	if (array[1] == VREF) console_data.vref = array[4];
 }
 
 void Reset_remote_IPC(void)
