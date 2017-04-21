@@ -22,10 +22,12 @@ void Control_step(const float32 Droop[2], const bool enable)
 	static float32 VC_PID_states2[2] = {0, 0}, IL_PID_states2[2] = {0, 0};
 
 	Droop_control(enable, Droop, &control_states1, &meas_states1);
+	Virtual_component(enable, &control_states1, &meas_states1);
 	VC_control(enable, &control_states1, &meas_states1, VC_PID_states1);
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
 	Droop_control(enable, Droop, &control_states2, &meas_states2);
+	Virtual_component(enable, &control_states2, &meas_states2);
 	VC_control(enable, &control_states2, &meas_states2, VC_PID_states2);
 	IL_control(enable, &control_states2, &meas_states2, IL_PID_states2);
 
@@ -51,6 +53,14 @@ void Droop_control(const bool enable, const float32 Droop[2], struct_control_sta
 
 	c_states->omega= (c_states->omega >  W_NOM*1.2?  W_NOM*1.2 : c_states->omega);
 	c_states->omega= (c_states->omega <  W_NOM*0.8?  W_NOM*0.8 : c_states->omega);
+}
+void Virtual_component(const bool enable, struct_control_states * c_states, struct_meas_states * m_states)
+{
+	if (enable)
+	{
+		c_states->VC_dq_ref[0] = c_states->VC_dq_ref[0] + XM * meas_states2->Io_dq[1];
+		c_states->VC_dq_ref[1] = c_states->VC_dq_ref[1] - XM * meas_states2->Io_dq[0];
+	}
 }
 
 
