@@ -40,9 +40,9 @@ void Control_step(const float32 Droop[2], const bool enable)
 	VINV2Duty(&control_states1, &meas_states1);
 	VINV2Duty(&control_states2, &meas_states2);
 
-	DACA(control_states1.IL_dq_ref[0], 500.0f);
-	DACB(control_states2.IL_dq_ref[0], 500.0f);
-	DACC(meas_states1.PQ[0], 10.0f);
+//	DACA(control_states1.IL_dq_ref[0], 500.0f);
+//	DACB(control_states2.IL_dq_ref[0], 500.0f);
+//	DACC(meas_states1.PQ[0], 10.0f);
 }
 //#pragma CODE_SECTION(Droop_control, "ramfuncs")
 void Droop_control(const bool enable, const float32 Droop[2], struct_control_states * c_states, struct_meas_states * m_states)
@@ -54,12 +54,32 @@ void Droop_control(const bool enable, const float32 Droop[2], struct_control_sta
 	c_states->omega= (c_states->omega >  W_NOM*1.2?  W_NOM*1.2 : c_states->omega);
 	c_states->omega= (c_states->omega <  W_NOM*0.8?  W_NOM*0.8 : c_states->omega);
 }
+
+//#pragma CODE_SECTION(Virtual_component, "ramfuncs")
 void Virtual_component(const bool enable, struct_control_states * c_states, struct_meas_states * m_states)
 {
 	if (enable)
 	{
-		c_states->VC_dq_ref[0] = c_states->VC_dq_ref[0] + XM * meas_states2->Io_dq[1];
-		c_states->VC_dq_ref[1] = c_states->VC_dq_ref[1] - XM * meas_states2->Io_dq[0];
+		// Virtual X
+		c_states->VC_dq_ref[0] = c_states->VC_dq_ref[0] + XM * m_states->IO_dq[1];
+		c_states->VC_dq_ref[1] = c_states->VC_dq_ref[1] - XM * m_states->IO_dq[0];
+		// Virtual L
+		c_states->LPF_outL[0] = LPF(c_states->LPF_outL[0], WF, m_states->IO_dq[0]);
+		c_states->LPF_outL[1] = LPF(c_states->LPF_outL[1], WF, m_states->IO_dq[1]);
+		c_states->VC_dq_ref[0] = c_states->VC_dq_ref[0] - LM*WF*(m_states->IO_dq[0]-c_states->LPF_outL[0]);
+		c_states->VC_dq_ref[1] = c_states->VC_dq_ref[1] - LM*WF*(m_states->IO_dq[1]-c_states->LPF_outL[1]);
+		// Virtual C
+		c_states->LPF_outC[0] = LPF(c_states->LPF_outC[0], WRC, m_states->IO_dq[0]);
+		c_states->LPF_outC[1] = LPF(c_states->LPF_outC[1], WRC, m_states->IO_dq[1]);
+		c_states->VC_dq_ref[0] = c_states->VC_dq_ref[0] - RS*c_states->LPF_outC[0];
+		c_states->VC_dq_ref[1] = c_states->VC_dq_ref[1] - RS*c_states->LPF_outC[1];
+	}
+	else
+	{
+		c_states->LPF_outL[0] = 0;
+		c_states->LPF_outL[1] = 0;
+		c_states->LPF_outC[0] = 0;
+		c_states->LPF_outC[1] = 0;
 	}
 }
 
@@ -151,3 +171,4 @@ void dq2abc(float32 abc[3], const float32 dq[2], const float32 theta)
 	abc[1] = dq[0]*sinf(theta-PHASE_120) + dq[1]*cosf(theta-PHASE_120);
 	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
 }
+

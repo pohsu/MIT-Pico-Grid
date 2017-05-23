@@ -2,7 +2,7 @@
 #define IL_CONVERSION 3.0f/4095.0f*200.0f
 #define VC_CONVERSION 3.0f/4095.0f*700.0f
 #define IO_CONVERSION 3.0f/4095.0f*200.0f
-#define WC 31.4f/10.0f
+#define WC 31.4f
 
 typedef struct{
 	float32 VC_dq[2];

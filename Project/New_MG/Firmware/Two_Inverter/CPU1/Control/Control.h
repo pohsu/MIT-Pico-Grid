@@ -13,13 +13,20 @@
 #define W_NOM 314.16f
 #define V_NOM 380.0f
 #define I_NOM 17.54f
-#define XM 1.5f
+#define XM 0.5f
+#define LM 0
+#define WF 5000.0f
+#define CS 0.008f
+#define RS 0.5f
+#define WRC 1/(CS*RS)
 
 typedef struct{
   float32 omega;
   float32 VC_dq_ref[2];
   float32 IL_dq_ref[2];
   float32 VINV_dq[2];
+  float32 LPF_outL[2];
+  float32 LPF_outC[2];
   Uint16 Duty[3];
 }struct_control_states;
 
@@ -31,3 +38,4 @@ void IL_control(const bool enable, struct_control_states * c_states, struct_meas
 void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const float32 kp, const float32 ki);
 void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states);
 void dq2abc(float32 abc[3], const float32 dq[2], const float32 theta);
+

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>EVAL_CPU1</name>
+	<name>Two_INV_CPU1</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,67 +28,67 @@
 		<link>
 			<name>F2837xD_Adc.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_Adc.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_Adc.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_CodeStartBranch.asm</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_CodeStartBranch.asm</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_CodeStartBranch.asm</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_CpuTimers.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_CpuTimers.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_CpuTimers.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_DefaultISR.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_DefaultISR.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_DefaultISR.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_EPwm.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_EPwm.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_EPwm.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_GlobalVariableDefs.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_headers/source/F2837xD_GlobalVariableDefs.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_Gpio.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_Gpio.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_Gpio.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_Ipc.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_Ipc.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_Ipc.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_Ipc_Driver_Util.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/CPU2/F2837xD_common/source/F2837xD_Ipc_Driver_Util.c</locationURI>
+			<locationURI>copy_PARENT/CPU2/F2837xD_common/source/F2837xD_Ipc_Driver_Util.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_PieCtrl.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_PieCtrl.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_PieCtrl.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_PieVect.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_PieVect.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_PieVect.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_SysCtrl.c</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_SysCtrl.c</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_SysCtrl.c</locationURI>
 		</link>
 		<link>
 			<name>F2837xD_usDelay.asm</name>
 			<type>1</type>
-			<locationURI>PROJECT_LOC/F2837xD_common/source/F2837xD_usDelay.asm</locationURI>
+			<locationURI>copy_PROJECT_LOC/F2837xD_common/source/F2837xD_usDelay.asm</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>
@@ -99,6 +99,14 @@
 		<variable>
 			<name>ORIGINAL_PROJECT_ROOT</name>
 			<value>file:/C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_examples_Cpu1/adc_soc_epwm/cpu01/ccs</value>
+		</variable>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-1-copy_PROJECT_LOC%7D</value>
+		</variable>
+		<variable>
+			<name>copy_PROJECT_LOC</name>
+			<value>$%7BPARENT-2-TI_PRODUCTS_DIR%7D/git/MIT-Pico-Grid/Project/New_MG/Firmware/Two_Inverter/CPU1</value>
 		</variable>
 	</variableList>
 </projectDescription>

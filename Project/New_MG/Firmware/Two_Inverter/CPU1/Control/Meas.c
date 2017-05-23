@@ -111,7 +111,7 @@ void Abc2dq(float32 dq[2], const float32 abc[2], const float32 theta)
 	dq[1] = (abc[0]*(cosf(theta)-cosf(theta+PHASE_120)) + abc[1]*sinf(theta)*2.0f*SIN120)*0.66667f;
 }
 
-#pragma CODE_SECTION(notch, "ramfuncs")
+//#pragma CODE_SECTION(notch, "ramfuncs")
 // Filter design is based on http://dsp.stackexchange.com/questions/31028/transfer-function-of-second-order-notch-filter/31030
 float32 notch(float32 u[2], float32 y[2], const float32 omega, const float32 a, const float32 in)
 {
@@ -127,6 +127,7 @@ float32 notch(float32 u[2], float32 y[2], const float32 omega, const float32 a, 
 	return out;
 }
 
+//LPF: a/(s+a)
 #pragma CODE_SECTION(LPF, "ramfuncs")
 float32 LPF(const float32 y_past, const float32 a, const float32 in)
 {

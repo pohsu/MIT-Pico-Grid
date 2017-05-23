@@ -8,6 +8,6 @@
 	<connection value="common/targetdb/connections/TIXDS100v2_Connection.xml"/>
 	<rts value="libc.a"/>
 	<templateProperties value="id=com.ti.common.project.core.emptyProjectTemplate,"/>
-	<isTargetManual value="false"/>
+	<isTargetManual value="true"/>
 	<origin value="C:/ti/controlSUITE/device_support/F2837xD/v200/F2837xD_examples_Cpu1/adc_soc_epwm/cpu01/ccs"/>
 </projectOptions>
