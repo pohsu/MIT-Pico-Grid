@@ -74,7 +74,7 @@ void main(void)
 __interrupt void IPC_isr(void)
 {
     Decoder_Process_IPC(c1_r_array);
-//    GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+    GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
 
     IpcRegs.IPCACK.bit.IPC0 = 1; //clear the remote CPU interrupt
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; //clear INT Group1
@@ -123,9 +123,9 @@ __interrupt void adca1_isr(void)
 
 
 
-//	DACA(dq_ref[0], 675.0f);
-//	DACB(meas_states->VC_dq[0], 675.0f);
-//	DACC(meas_states->VC_dq[1], 675.0f);
+	DACA(meas_states1.PQ[0], 1.5f);
+	DACB(meas_states1.VC_dq[0], 675.0f);
+	DACC(50.0f, 100.0f);
 	GpioDataRegs.GPACLEAR.bit.GPIO31 = 1;
 
 	AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1; //clear INT1 flag

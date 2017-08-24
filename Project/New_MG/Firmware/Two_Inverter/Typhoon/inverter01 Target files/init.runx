@@ -10,12 +10,12 @@
     <components>
         <inputs>
             <input>
-                <name>Vs2</name>
+                <name>none</name>
                 <device>0</device>
             	<input_type>OnePhaseInput</input_type>
                 <waveform_type>Constant</waveform_type>
                 <waveform></waveform>
-                <constant_value>1800.0</constant_value>
+                <constant_value>0.0</constant_value>
                 <rms>0.0</rms>
                 <frequency>50.0</frequency>
                 <phase>0.0</phase>
@@ -24,12 +24,12 @@
                 <harmonics_type>per_rms_unit_harmonics</harmonics_type>
             </input>
             <input>
-                <name>none</name>
+                <name>Vs2</name>
                 <device>0</device>
             	<input_type>OnePhaseInput</input_type>
                 <waveform_type>Constant</waveform_type>
                 <waveform></waveform>
-                <constant_value>0.0</constant_value>
+                <constant_value>1800.0</constant_value>
                 <rms>0.0</rms>
                 <frequency>50.0</frequency>
                 <phase>0.0</phase>
@@ -61,7 +61,7 @@
                 <weight>0</weight>
                 <site>0</site>
                 <is_enabled>True</is_enabled>
-                <is_closed>True</is_closed>
+                <is_closed>False</is_closed>
             </contactor>
         </contactors>
         <machines>
@@ -94,7 +94,7 @@
             <analog_channel>
                 <number>3</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -106,7 +106,7 @@
             <analog_channel>
                 <number>4</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -118,7 +118,7 @@
             <analog_channel>
                 <number>5</number>
                 <device>0</device>
-                <scale>500.0</scale>
+                <scale>700.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -130,7 +130,7 @@
             <analog_channel>
                 <number>6</number>
                 <device>0</device>
-                <scale>500.0</scale>
+                <scale>700.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -142,7 +142,7 @@
             <analog_channel>
                 <number>7</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -154,7 +154,7 @@
             <analog_channel>
                 <number>8</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -190,7 +190,7 @@
             <analog_channel>
                 <number>11</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -202,7 +202,7 @@
             <analog_channel>
                 <number>12</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -214,7 +214,7 @@
             <analog_channel>
                 <number>13</number>
                 <device>0</device>
-                <scale>500.0</scale>
+                <scale>700.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -226,7 +226,7 @@
             <analog_channel>
                 <number>14</number>
                 <device>0</device>
-                <scale>500.0</scale>
+                <scale>700.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -238,7 +238,7 @@
             <analog_channel>
                 <number>15</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -250,7 +250,7 @@
             <analog_channel>
                 <number>16</number>
                 <device>0</device>
-                <scale>100.0</scale>
+                <scale>200.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
                 <analog_signal>
@@ -780,7 +780,7 @@
 	        </signal_parameters>
         </capture>
         <scope>
-            <decimation>10</decimation>
+            <decimation>20</decimation>
             <analog_signals_on_ch>[u'VO1a', u'VO2a', u'IO1a', u'IO2a', u'Cf1a', u'Cdc', u'HIL0 analog input 14', u'HIL0 analog input 16', u'HIL0 analog input 11', u'HIL0 analog input 10', u'HIL0 analog input 13', u'Vdc', u'HIL0 analog input 12', u'HIL0 analog input 9', u'HIL0 analog input 8', u'Vs1']</analog_signals_on_ch>
             <digital_signals_on_ch>[]</digital_signals_on_ch>
             <num_of_digital_ch>32</num_of_digital_ch>
@@ -789,7 +789,7 @@
             <num_of_selected>16</num_of_selected>
             <num_of_viewports>1</num_of_viewports>
             <capture_digital_ch>False</capture_digital_ch>
-            <time_base>(5, 0.001)</time_base>
+            <time_base>(10, 0.001)</time_base>
             <legend_state>True</legend_state>
             <color_style>light</color_style>
             <signal_insertion_order>[[u'VO1a', u'VO2a', u'IO1a', u'IO2a']]</signal_insertion_order>
@@ -931,7 +931,7 @@
 	        		<signal_description>
 	        			<name>IO1a</name>
 	        			<viewports>[True]</viewports>
-	        			<scales>[u'20']</scales>
+	        			<scales>[u'50']</scales>
 	        			<couplings>[False]</couplings>
 	        			<offsets>[0.0]</offsets>
 	        			<inversions>False</inversions>
@@ -940,7 +940,7 @@
 	        		<signal_description>
 	        			<name>IO2a</name>
 	        			<viewports>[True]</viewports>
-	        			<scales>[u'20']</scales>
+	        			<scales>[u'50']</scales>
 	        			<couplings>[False]</couplings>
 	        			<offsets>[0.0]</offsets>
 	        			<inversions>False</inversions>

@@ -40,9 +40,6 @@ void Control_step(const float32 Droop[2], const bool enable)
 	VINV2Duty(&control_states1, &meas_states1);
 	VINV2Duty(&control_states2, &meas_states2);
 
-//	DACA(control_states1.IL_dq_ref[0], 500.0f);
-//	DACB(control_states2.IL_dq_ref[0], 500.0f);
-//	DACC(meas_states1.PQ[0], 10.0f);
 }
 //#pragma CODE_SECTION(Droop_control, "ramfuncs")
 void Droop_control(const bool enable, const float32 Droop[2], struct_control_states * c_states, struct_meas_states * m_states)
