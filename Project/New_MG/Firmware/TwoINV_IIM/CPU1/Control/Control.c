@@ -59,8 +59,8 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 	float32 IIM_dq[2] = {0}, X = 0, R = 0, L = 0;
 	Uint16 i = 0;
 	X = Xm / Sn;
-	R = X * ETA;
-	L = X / W_NOM;
+	R = X * 0.5;
+	L = X / W_NOM * 1 ;
 
 	// Reset damper
 	if (enable == false){
@@ -85,7 +85,6 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 	// Iref
 //	for (i = 0;i<=1;i++) c_states->IL_dq_ref[i] = (1-FV) * 1/R * c_states->LPF_IIM[i];
 	for (i = 0;i<=1;i++) c_states->IL_dq_ref[i] = (1-FV) * c_states->LPF_IIM[i];
-
 
 	c_states->IL_dq_ref[0] += m_states->IO_dq[0]*FV - c_states->omega*CF*m_states->VC_dq[1];
 	c_states->IL_dq_ref[1] += m_states->IO_dq[1]*FV + c_states->omega*CF*m_states->VC_dq[0];
@@ -114,6 +113,11 @@ void Damper(const bool enable, struct_control_states * c_states, struct_meas_sta
 	}
 	c_states->IL_dq_ref[0] -= (1-FV) * c_states->damper_dq[0];//*(1-FV);// + m_states->VC_dq[0] / RNL;
 	c_states->IL_dq_ref[1] -= (1-FV) * c_states->damper_dq[1];//*(1-FV);// + m_states->VC_dq[1] / RNL;
+
+//	for (i = 0;i<=1;i++){
+//		c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] >  18.0f?  18.0f : c_states->IL_dq_ref[i]);
+//		c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] < -18.0f? -18.0f : c_states->IL_dq_ref[i]);
+//	}
 
 }
 

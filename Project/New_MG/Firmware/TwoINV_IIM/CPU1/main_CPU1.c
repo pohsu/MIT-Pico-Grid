@@ -124,9 +124,11 @@ __interrupt void adca1_isr(void)
 
 
 
-
-	DACA(meas_states1.IO_dq[0], I_NOM*2.0f*S1);
-	DACB(meas_states2.IO_dq[0], I_NOM*2.0f*S2);
+	float32 Vmag1, Vmag2;
+	Vmag1 = sqrt(meas_states1.VC_dq[0]*meas_states1.VC_dq[0] + meas_states1.VC_dq[1]*meas_states1.VC_dq[1]);
+	Vmag2 = sqrt(meas_states2.VC_dq[0]*meas_states2.VC_dq[0] + meas_states2.VC_dq[1]*meas_states2.VC_dq[1]);
+	uDACA(Vmag1, V_NOM*2.0f);
+	uDACB(Vmag2, V_NOM*2.0f);
 //	uDACC(meas_states2.PQ[0], 1.5f*S2);
 	GpioDataRegs.GPACLEAR.bit.GPIO31 = 1;
 
@@ -145,10 +147,10 @@ __interrupt void cpu_timer_5kHz(void)
 
 void task_table (Uint32 * counter)
 {
-    if (*counter % (Uint32)task_period.count_5kHz == 0)
-    {
-
-    }
+//    if (*counter % (Uint32)task_period.count_5kHz == 0)
+//    {
+//
+//    }
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
@@ -157,22 +159,22 @@ void task_table (Uint32 * counter)
         Send_to_CPU2(c1_r_w_array);
     }
 
-    if (*counter % (Uint32)task_period.count_100Hz == 0)
-    {
-    }
-
-    if (*counter % (Uint32)task_period.count_10Hz == 0)
-    {
-        //GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
-    }
-
-    if (*counter % (Uint32)task_period.count_1Hz == 0)
-    {
-//    	GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
-    }
-
-    if (*counter % (Uint32)TASK_MAX_COUNT == 0)
-    {
-        *counter = 0; //reset Timer0 counter
-    }
+//    if (*counter % (Uint32)task_period.count_100Hz == 0)
+//    {
+//    }
+//
+//    if (*counter % (Uint32)task_period.count_10Hz == 0)
+//    {
+//        //GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+//    }
+//
+//    if (*counter % (Uint32)task_period.count_1Hz == 0)
+//    {
+////    	GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
+//    }
+//
+//    if (*counter % (Uint32)TASK_MAX_COUNT == 0)
+//    {
+//        *counter = 0; //reset Timer0 counter
+//    }
 }

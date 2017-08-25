@@ -25,30 +25,32 @@ void Measurement_step(const bool enable)
 	struct_abc_states abc_states1, abc_states2;
 	ADC_process(enable, &abc_states1, &abc_states2);
 
-	Abc2dq(meas_states1.IL_dq, abc_states1.IL_abc, meas_states1.theta);
-	Abc2dq(meas_states1.VC_dq, abc_states1.VC_abc, meas_states1.theta);
-	Abc2dq(meas_states1.IO_dq, abc_states1.IO_abc, meas_states1.theta);
-	Abc2dq(meas_states2.IL_dq, abc_states2.IL_abc, meas_states2.theta);
-	Abc2dq(meas_states2.VC_dq, abc_states2.VC_abc, meas_states2.theta);
-	Abc2dq(meas_states2.IO_dq, abc_states2.IO_abc, meas_states2.theta);
+	float32 table[2]; //sin_theta, cos_theta, sin_theta120, cos_theta120;
+	table[0] = sinf(meas_states1.theta);
+	table[1] = cosf(meas_states1.theta);
+
+	Abc2dq_fast(meas_states1.IL_dq, abc_states1.IL_abc, table);
+	Abc2dq_fast(meas_states1.VC_dq, abc_states1.VC_abc, table);
+	Abc2dq_fast(meas_states1.IO_dq, abc_states1.IO_abc, table);
+
+	table[0] = sinf(meas_states2.theta);
+	table[1] = cosf(meas_states2.theta);
+	Abc2dq_fast(meas_states2.IL_dq, abc_states2.IL_abc, table);
+	Abc2dq_fast(meas_states2.VC_dq, abc_states2.VC_abc, table);
+	Abc2dq_fast(meas_states2.IO_dq, abc_states2.IO_abc, table);
 
 	Power_caculation(meas_states1.PQ, meas_states1.IO_dq, meas_states1.VC_dq);
 	Power_caculation(meas_states2.PQ, meas_states2.IO_dq, meas_states2.VC_dq);
 
-//	static float32 ud[2] = {0,0}, uq[2] = {0,0};
-//	static float32 yd[2] = {0,0}, yq[2] = {0,0};
-//	static float32 udd[2] = {0,0}, uqq[2] = {0,0};
-//	static float32 ydd[2] = {0,0}, yqq[2] = {0,0};
-
-//	if (enable == false){
-//		ud[0] = 0; uq[1] = 0; yd[0] = 0; yq[1] = 0;
-//		udd[0] = 0; uqq[1] = 0; ydd[0] = 0; yqq[1] = 0;
+//	static float32 LPF_IO_dq1[2] = {0,0},LPF_IO_dq2[2] = {0,0};
+//	Uint16 i;
+//	for(i=0; i<=1; i++){
+//		LPF_IO_dq1[i] = LPF(LPF_IO_dq1[i], 500.0f, meas_states1.IO_dq[i]);
+//		meas_states1.IO_dq[i] = LPF_IO_dq1[i];
 //	}
-//	else{
-//		meas_states1.IO_dq[0] = notch(ud, yd, control_states1.omega, 0.9995f, meas_states1.IO_dq[0]);
-//		meas_states1.IO_dq[1] = notch(uq, yq, control_states1.omega, 0.9995f, meas_states1.IO_dq[1]);
-//		meas_states2.IO_dq[0] = notch(udd, ydd, control_states2.omega, 0.9995f, meas_states2.IO_dq[0]);
-//		meas_states2.IO_dq[1] = notch(uqq, yqq, control_states2.omega, 0.9995f, meas_states2.IO_dq[1]);
+//	for(i=0; i<=1; i++){
+//		LPF_IO_dq2[i] = LPF(LPF_IO_dq2[i], 500.0f, meas_states2.IO_dq[i]);
+//		meas_states2.IO_dq[i] = LPF_IO_dq2[i];
 //	}
 
 }
@@ -118,38 +120,41 @@ void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq
 }
 
 
-#pragma CODE_SECTION(Abc2dq, "ramfuncs")
-void Abc2dq(float32 dq[2], const float32 abc[2], const float32 theta)
+#pragma CODE_SECTION(Abc2dq_fast, "ramfuncs")
+void Abc2dq_fast(float32 dq[2], const float32 abc[2], const float32 table[2])
 {
-	dq[0] = (abc[0]*(sinf(theta)-sinf(theta+PHASE_120)) - abc[1]*cosf(theta)*2.0f*SIN120)*0.66667f;
-	dq[1] = (abc[0]*(cosf(theta)-cosf(theta+PHASE_120)) + abc[1]*sinf(theta)*2.0f*SIN120)*0.66667f;
+
+//	dq[0] = (abc[0]*(table[0]-table[2]) - abc[1]*table[1]*2.0f*SIN120)*0.66667f;
+	dq[0] = abc[0]*table[0] - table[1]*0.577350269189626f*(abc[0]+ 2*abc[1]);
+
+//	dq[1] = (abc[0]*(table[1]-table[3]) + abc[1]*table[0]*2.0f*SIN120)*0.66667f;
+	dq[1] = abc[0]*table[1] + table[0]*0.577350269189626f*(abc[0]+ 2*abc[1]);
 }
 
-#pragma CODE_SECTION(notch, "ramfuncs")
+//#pragma CODE_SECTION(notch, "ramfuncs")
 // Filter design is based on http://dsp.stackexchange.com/questions/31028/transfer-function-of-second-order-notch-filter/31030
-float32 notch(float32 u[2], float32 y[2], const float32 omega, const float32 a, const float32 in)
-{
-	float32 wn, out, coswn;
-	wn = omega*ISR_PERIOD;
-	coswn = cosf(wn);
-	out = in - 2.0f*coswn*u[1] + u[0] + 2.0f*a*coswn*y[1] - a*a*y[0];
-
-	u[0] = u[1];
-	u[1] = in;
-	y[0] = y[1];
-	y[1] = out;
-
-	return out;
-}
+//float32 notch(float32 u[2], float32 y[2], const float32 omega, const float32 a, const float32 in)
+//{
+//	float32 wn, out;
+//	wn = omega*ISR_PERIOD  ;
+//	out = in - 2.0f*cosf(wn)*u[1] + u[0] + 2.0f*a*cosf(wn)*y[1] - a*a*y[0];
+//
+//	u[0] = u[1];
+//	u[1] = in;
+//	y[0] = y[1];
+//	y[1] = out;
+//
+//	return out;
+//}
 
 //LPF: a/(s+a)
 #pragma CODE_SECTION(LPF, "ramfuncs")
 float32 LPF(const float32 y_past, const float32 a, const float32 in)
 {
-	float32 expAT, out;
+	float32 out;
 //	expAT = expf(-a*ISR_PERIOD);
-	expAT = 1 - a*ISR_PERIOD;
-	out = in*(1-expAT) + y_past*expAT;
+//	expAT = 1 - a*ISR_PERIOD;
+	out = in*(a*ISR_PERIOD) + y_past*(1 - a*ISR_PERIOD);
 
 	return out;
 }

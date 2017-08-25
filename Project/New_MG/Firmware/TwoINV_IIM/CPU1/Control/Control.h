@@ -1,7 +1,7 @@
 #define Zb 21.8f
 #define LF 1.35e-3f
 #define CF 50e-6f
-#define FV 0.0f
+#define FV 0.75f
 #define KPC 5.0f
 #define KIC 16000.0f
 #define VDC 1000.0f
@@ -15,7 +15,7 @@
 #define CD 25e-5f
 #define RD 10.0f
 #define WDAMP 400.0f // 1/Cd/Rd
-#define GDAMP 0.1f   // 1/Rd
+#define GDAMP 0.2f   // 1/Rd
 #define RNL 100.0f
 //#define XC 1/CF/W_NOM
 

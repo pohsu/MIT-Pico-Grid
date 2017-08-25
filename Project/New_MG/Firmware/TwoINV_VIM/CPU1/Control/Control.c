@@ -184,34 +184,56 @@ void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const
 	}
 }
 
+//#pragma CODE_SECTION(VINV2Duty, "ramfuncs")
+//void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
+//{
+//	float32 abc[3];
+//	float32 table[4]; //sin_theta, cos_theta, sin_theta120, cos_theta120;
+//
+//	table[0] = sinf(m_states->theta);
+//	table[1] = cosf(m_states->theta);
+//	table[2] = table[0]*COS120  - table[1]*SIN120;
+//	table[3] = table[1]*COS120  + table[0]*SIN120;
+//	dq2abc_fast(abc, c_states->VINV_dq, table);
+//
+//	c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
+//	c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
+//	c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
+//
+////	control_states.Duty[0] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta) + 1.0f) * PWM_PERIOD);
+////	control_states.Duty[1] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta-PHASE_120) + 1.0f) * PWM_PERIOD);
+////	control_states.Duty[2] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta+PHASE_120) + 1.0f) * PWM_PERIOD);
+//
+//}
+//
+//#pragma CODE_SECTION(dq2abc_fast, "ramfuncs")
+//void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[4])
+//{
+//	abc[0] = dq[0]*table[0]+ dq[1]*table[1];
+//	abc[1] = dq[0]*table[2]+ dq[1]*table[3];
+////	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
+//	abc[2] = -abc[0] - abc[1];
+//}
+
 #pragma CODE_SECTION(VINV2Duty, "ramfuncs")
 void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
 {
 	float32 abc[3];
-	float32 table[4]; //sin_theta, cos_theta, sin_theta120, cos_theta120;
-
-	table[0] = sinf(m_states->theta);
-	table[1] = cosf(m_states->theta);
-	table[2] = table[0]*COS120  - table[1]*SIN120;
-	table[3] = table[1]*COS120  + table[0]*SIN120;
-	dq2abc_fast(abc, c_states->VINV_dq, table);
+//	c_states->VINV_dq[0] = notch(c_states->Notch_ud, c_states->Notch_yd, c_states->omega, 0.9f, c_states->VINV_dq[0]);
+//	c_states->VINV_dq[1] = notch(c_states->Notch_uq, c_states->Notch_yq, c_states->omega, 0.9f, c_states->VINV_dq[1]);
+	dq2abc(abc, c_states->VINV_dq, m_states->theta);
 
 	c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
 	c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
 	c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
 
-//	control_states.Duty[0] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta) + 1.0f) * PWM_PERIOD);
-//	control_states.Duty[1] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta-PHASE_120) + 1.0f) * PWM_PERIOD);
-//	control_states.Duty[2] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta+PHASE_120) + 1.0f) * PWM_PERIOD);
-
 }
 
-#pragma CODE_SECTION(dq2abc_fast, "ramfuncs")
-void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[4])
+#pragma CODE_SECTION(dq2abc, "ramfuncs")
+void dq2abc(float32 abc[3], const float32 dq[2], const float32 theta)
 {
-	abc[0] = dq[0]*table[0]+ dq[1]*table[1];
-	abc[1] = dq[0]*table[2]+ dq[1]*table[3];
-//	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
-	abc[2] = -abc[0] - abc[1];
+	abc[0] = dq[0]*sinf(theta) + dq[1]*cosf(theta);
+	abc[1] = dq[0]*sinf(theta-PHASE_120) + dq[1]*cosf(theta-PHASE_120);
+	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
 }
 
