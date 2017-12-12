@@ -827,493 +827,493 @@ ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 64) analysing configuration c000000111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 1.321760e-016
+DAEs STABLE !
+DAEs largest real part of eigenvalues -8.930586e-016
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
-DAEs STABLE !
-DAEs largest real part of eigenvalues -3.346895e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 8.934077e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 65) analysing configuration c010000111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -4.717213e-014
+DAEs largest real part of eigenvalues -3.935681e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 66) analysing configuration c100000111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -4.717213e-014
+DAEs largest real part of eigenvalues -3.935681e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 67) analysing configuration c110000111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.467129e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 5.172207e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 68) analysing configuration c000100111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -4.717213e-014
+DAEs largest real part of eigenvalues -3.935681e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 69) analysing configuration c010100111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 4.039755e-013
+DAEs STABLE !
+DAEs largest real part of eigenvalues -1.115551e-012
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 70) analysing configuration c100100111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 5.534950e-013
+DAEs largest real part of eigenvalues 3.570894e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 71) analysing configuration c110100111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -3.075417e-013
+DAEs largest real part of eigenvalues -9.395595e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 72) analysing configuration c001000111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -4.717213e-014
+DAEs largest real part of eigenvalues -3.935681e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 73) analysing configuration c011000111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 5.534950e-013
+DAEs largest real part of eigenvalues 3.570894e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 74) analysing configuration c101000111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 8.280941e-014
+DAEs STABLE !
+DAEs largest real part of eigenvalues -2.873726e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 75) analysing configuration c111000111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -3.075417e-013
+DAEs largest real part of eigenvalues -9.395595e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 76) analysing configuration c001100111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.467129e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 5.172207e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 77) analysing configuration c011100111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -3.075417e-013
+DAEs largest real part of eigenvalues -9.395595e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 78) analysing configuration c101100111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -3.075417e-013
+DAEs largest real part of eigenvalues -9.395595e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 79) analysing configuration c111100111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -1.222719e-013
+DAEs largest real part of eigenvalues -2.778877e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
-DAEs STABLE !
-DAEs largest real part of eigenvalues -1.898355e-013
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 3.975175e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 80) analysing configuration c000001111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -4.717213e-014
+DAEs largest real part of eigenvalues -3.935681e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 81) analysing configuration c010001111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.883675e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 5.525509e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 82) analysing configuration c100001111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 1.965588e-013
+DAEs largest real part of eigenvalues 7.780763e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 83) analysing configuration c110001111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.683154e-013
+DAEs largest real part of eigenvalues -6.569271e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 84) analysing configuration c000101111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.126334e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 3.969366e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 85) analysing configuration c010101111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 2.114766e-013
+DAEs largest real part of eigenvalues 1.419850e+019
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 86) analysing configuration c100101111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 5.566153e-013
+DAEs STABLE !
+DAEs largest real part of eigenvalues -9.266171e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 87) analysing configuration c110101111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 88) analysing configuration c001001111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -6.140846e-013
+DAEs largest real part of eigenvalues -1.842919e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 89) analysing configuration c011001111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -1.942987e-013
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.441846e+019
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 90) analysing configuration c101001111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 1.045031e-012
+DAEs STABLE !
+DAEs largest real part of eigenvalues -4.739079e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 91) analysing configuration c111001111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 92) analysing configuration c001101111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -2.259556e-017
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.240533e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 93) analysing configuration c011101111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 94) analysing configuration c101101111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 95) analysing configuration c111101111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
-DAEs STABLE !
-DAEs largest real part of eigenvalues -6.980873e-013
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 6.091323e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 96) analysing configuration c000010111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -4.717213e-014
+DAEs largest real part of eigenvalues -3.935681e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 97) analysing configuration c010010111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 1.965588e-013
+DAEs largest real part of eigenvalues 7.780763e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 98) analysing configuration c100010111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.883675e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 5.525509e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 99) analysing configuration c110010111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.683154e-013
+DAEs largest real part of eigenvalues -6.569271e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 100) analysing configuration c000110111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 2.007462e-012
+DAEs largest real part of eigenvalues 1.972086e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 101) analysing configuration c010110111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 1.045031e-012
+DAEs STABLE !
+DAEs largest real part of eigenvalues -4.739079e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 102) analysing configuration c100110111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -1.942987e-013
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.441846e+019
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 103) analysing configuration c110110111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 104) analysing configuration c001010111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.126334e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 3.969366e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 105) analysing configuration c011010111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 5.566153e-013
+DAEs STABLE !
+DAEs largest real part of eigenvalues -9.266171e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 106) analysing configuration c101010111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 2.114766e-013
+DAEs largest real part of eigenvalues 1.419850e+019
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 107) analysing configuration c111010111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 108) analysing configuration c001110111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -2.259556e-017
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.240533e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 109) analysing configuration c011110111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 110) analysing configuration c101110111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 111) analysing configuration c111110111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.498450e-014
+DAEs largest real part of eigenvalues -1.808033e-012
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 112) analysing configuration c000011111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -4.467129e-014
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 5.172207e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 113) analysing configuration c010011111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.683154e-013
+DAEs largest real part of eigenvalues -6.569271e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 114) analysing configuration c100011111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.683154e-013
+DAEs largest real part of eigenvalues -6.569271e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 115) analysing configuration c110011111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.426609e-013
+DAEs largest real part of eigenvalues -7.119718e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 2.864649e-013
+DAEs largest real part of eigenvalues 1.091861e-012
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 116) analysing configuration c000111111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -2.259556e-017
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.240533e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 117) analysing configuration c010111111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 118) analysing configuration c100111111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 119) analysing configuration c110111111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 6.830282e-013
+DAEs largest real part of eigenvalues 2.607589e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
-DAEs STABLE !
-DAEs largest real part of eigenvalues -5.182242e-013
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 4.061211e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 120) analysing configuration c001011111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -2.259556e-017
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.240533e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 121) analysing configuration c011011111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 122) analysing configuration c101011111...
 DAEs STABLE !
-DAEs largest real part of eigenvalues -9.014668e-014
+DAEs largest real part of eigenvalues -5.149912e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 123) analysing configuration c111011111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 6.830282e-013
+DAEs largest real part of eigenvalues 2.607589e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 3.094325e-013
+DAEs STABLE !
+DAEs largest real part of eigenvalues -1.380855e-012
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 124) analysing configuration c001111111...
-DAEs STABLE !
-DAEs largest real part of eigenvalues -2.259556e-017
+DAEs UNSTABLE !
+DAEs largest real part of eigenvalues 1.343691e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 4.702698e-014
+DAEs largest real part of eigenvalues 2.520711e-012
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 125) analysing configuration c011111111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 6.830282e-013
+DAEs largest real part of eigenvalues 2.607589e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.083072e-014
+DAEs largest real part of eigenvalues -4.704948e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 126) analysing configuration c101111111...
 DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 6.830282e-013
+DAEs largest real part of eigenvalues 2.607589e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 DAEs STABLE !
-DAEs largest real part of eigenvalues -2.079361e-014
+DAEs largest real part of eigenvalues -4.704948e-014
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 
 -----------------------------------
 127) analysing configuration c111111111...
-DAEs UNSTABLE !
-DAEs largest real part of eigenvalues 7.194113e-015
+DAEs STABLE !
+DAEs largest real part of eigenvalues -3.073368e-013
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 DAEs STABLE !
-DAEs largest real part of eigenvalues -1.069241e-015
+DAEs largest real part of eigenvalues -9.066547e-015
 ODEs STABLE !
 ODEs largest real part of eigenvalues -1.000000e-002
 Modes have been generated analysed for subcircuit 1 !
@@ -2568,7 +2568,7 @@ Discretizing state space equations for subcircuit 1 with time step 5e-007 ...
 -----------------------------------
 Discretizing & packing modes...
 Mode 
-Mode -7.177874e-251
+Mode 
 Mode c111111111
 Discretizied ss is STABLE !
 Largest amplitude of discrete eigenvalue is: 1.000000e+000
@@ -3523,7 +3523,7 @@ Discretizing state space equations for subcircuit 1 with time step 1e-006 ...
 -----------------------------------
 Discretizing & packing modes...
 Mode 
-Mode 2.583543e-266
+Mode -3.799633e-270
 Mode c111111111
 Discretizied ss is STABLE !
 Largest amplitude of discrete eigenvalue is: 1.000000e+000
@@ -4193,7 +4193,7 @@ Discretizing state space equations for subcircuit 3 with time step 1e-006 ...
 -----------------------------------
 Discretizing & packing modes...
 Mode 
-Mode -4.129592e-270
+Mode 
 Mode c
 Mapping subcircuit 1 to processor core 1...
 Building mapping directives for inputs...
@@ -4464,7 +4464,7 @@ SP controlled sources utilization summary:
 	SP sources utilization in SPC2:                 0   out of  16        0%
 	SP sources utilization in SPC3:                 0   out of  16        0%
 Matrix memory utilization summary:
-	Standard Processing Core 1:      50%
+	Standard Processing Core 1:      49%
 	Standard Processing Core 2:      46%
 	Standard Processing Core 3:       0%
 Running timing analysis...

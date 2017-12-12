@@ -59,7 +59,7 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 	float32 IIM_dq[2] = {0}, X = 0, R = 0, L = 0;
 	Uint16 i = 0;
 	X = Xm / Sn;
-	R = X * 0.5;
+	R = X * 0.2;
 	L = X / W_NOM * 1 ;
 
 	// Reset damper
@@ -165,7 +165,11 @@ void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
 	float32 abc[3];
 //	c_states->VINV_dq[0] = notch(c_states->Notch_ud, c_states->Notch_yd, c_states->omega, 0.9f, c_states->VINV_dq[0]);
 //	c_states->VINV_dq[1] = notch(c_states->Notch_uq, c_states->Notch_yq, c_states->omega, 0.9f, c_states->VINV_dq[1]);
-	dq2abc(abc, c_states->VINV_dq, m_states->theta);
+	float32 table[2] = {0,0};
+	table[0] = sinf(m_states->theta);
+	table[1] = cosf(m_states->theta);
+
+	dq2abc_fast(abc, c_states->VINV_dq, table);
 
 	c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
 	c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
@@ -173,11 +177,16 @@ void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
 
 }
 
-#pragma CODE_SECTION(dq2abc, "ramfuncs")
-void dq2abc(float32 abc[3], const float32 dq[2], const float32 theta)
+#pragma CODE_SECTION(dq2abc_fast, "ramfuncs")
+void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[2])
 {
-	abc[0] = dq[0]*sinf(theta) + dq[1]*cosf(theta);
-	abc[1] = dq[0]*sinf(theta-PHASE_120) + dq[1]*cosf(theta-PHASE_120);
-	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
+//	abc[0] = dq[0]*sinf(theta) + dq[1]*cosf(theta);
+//	abc[1] = dq[0]*sinf(theta-PHASE_120) + dq[1]*cosf(theta-PHASE_120);
+//	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
+	abc[0] = dq[0]*table[0] + dq[1]*table[1];
+	abc[1] = 0.5f*( table[0]*(-dq[0]+1.732050807568f*dq[1]) + table[1]*(-1.732050807568f*dq[0] - dq[1]));
+	abc[2] = 0.5f*( table[0]*(-dq[0]-1.732050807568f*dq[1]) + table[1]*(+1.732050807568f*dq[0] - dq[1]));
 }
+
+
 

@@ -2,7 +2,7 @@
 #define LF 1.35e-3f
 #define CF 50e-6f
 #define FV 0.75f
-#define KPC 5.0f
+#define KPC 10.0f
 #define KIC 16000.0f
 #define VDC 1000.0f
 #define Sb 10e3
@@ -12,12 +12,9 @@
 #define S1 1.0f
 #define S2 0.5f
 #define ETA 0.5f
-#define CD 25e-5f
-#define RD 10.0f
-#define WDAMP 400.0f // 1/Cd/Rd
+#define WDAMP 800.0f // 1/Cd/Rd
 #define GDAMP 0.2f   // 1/Rd
 #define RNL 100.0f
-//#define XC 1/CF/W_NOM
 
 typedef struct{
   float32 omega;
@@ -36,5 +33,5 @@ void Damper(const bool enable, struct_control_states * c_states, struct_meas_sta
 void IL_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 IL_PID_states[2]);
 void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const float32 kp, const float32 ki);
 void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states);
-void dq2abc(float32 abc[3], const float32 dq[2], const float32 theta);
+void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[2]);
 

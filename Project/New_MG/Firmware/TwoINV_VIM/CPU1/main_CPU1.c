@@ -122,8 +122,10 @@ __interrupt void adca1_isr(void)
 	EPwm5Regs.CMPA.bit.CMPA = control_states2.Duty[1] ;
 	EPwm6Regs.CMPA.bit.CMPA = control_states2.Duty[2] ;
 
-	DACA(meas_states1.VC_dq[0] - 0.8*V_NOM, V_NOM*0.3f*S1);
-	DACB(meas_states1.VC_dq[1], V_NOM*0.3f*S1);
+//	DACA(meas_states2.VC_dq[0] - 300.0f, 150.0f);
+//	DACB(meas_states2.VC_dq[1], 150.0f);
+	DACA(control_states1.omega - W_NOM, 12.0f);
+	DACB(control_states2.omega - W_NOM, 12.0f);
 //	uDACC(meas_states2.PQ[0], 1.5f*S2);
 	GpioDataRegs.GPACLEAR.bit.GPIO31 = 1;
 

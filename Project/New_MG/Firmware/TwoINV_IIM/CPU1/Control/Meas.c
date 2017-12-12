@@ -39,8 +39,8 @@ void Measurement_step(const bool enable)
 	Abc2dq_fast(meas_states2.VC_dq, abc_states2.VC_abc, table);
 	Abc2dq_fast(meas_states2.IO_dq, abc_states2.IO_abc, table);
 
-	Power_caculation(meas_states1.PQ, meas_states1.IO_dq, meas_states1.VC_dq);
-	Power_caculation(meas_states2.PQ, meas_states2.IO_dq, meas_states2.VC_dq);
+	Power_caculation(meas_states1.PQ, meas_states1.PQ_raw, meas_states1.IO_dq, meas_states1.VC_dq);
+	Power_caculation(meas_states2.PQ, meas_states2.PQ_raw, meas_states2.IO_dq, meas_states2.VC_dq);
 
 //	static float32 LPF_IO_dq1[2] = {0,0},LPF_IO_dq2[2] = {0,0};
 //	Uint16 i;
@@ -110,13 +110,12 @@ void ADC_process(const bool enable, struct_abc_states * states1, struct_abc_stat
 }
 
 #pragma CODE_SECTION(Power_caculation, "ramfuncs")
-void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq[2])
+void Power_caculation(float32 PQ[2], float32 PQ_raw[2],  const float32 IO_dq[2], const float32 VC_dq[2])
 {
 	Uint16 i;
-	float32 PQ_temp[2];
-	PQ_temp[0] =  (VC_dq[0])*(IO_dq[0]) + (VC_dq[1])*(IO_dq[1]);
-	PQ_temp[1] = (-VC_dq[0])*(IO_dq[1]) + (VC_dq[1])*(IO_dq[0]);
-	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_temp[i]/6692.9f);
+	PQ_raw[0] = ( VC_dq[0]*IO_dq[0] + VC_dq[1]*IO_dq[1])/6692.9f;
+	PQ_raw[1] = (-VC_dq[0]*IO_dq[1] + VC_dq[1]*IO_dq[0])/6692.9f;
+	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_raw[i]);
 }
 
 

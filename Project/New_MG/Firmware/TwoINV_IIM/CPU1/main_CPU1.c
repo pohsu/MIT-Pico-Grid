@@ -127,8 +127,10 @@ __interrupt void adca1_isr(void)
 	float32 Vmag1, Vmag2;
 	Vmag1 = sqrt(meas_states1.VC_dq[0]*meas_states1.VC_dq[0] + meas_states1.VC_dq[1]*meas_states1.VC_dq[1]);
 	Vmag2 = sqrt(meas_states2.VC_dq[0]*meas_states2.VC_dq[0] + meas_states2.VC_dq[1]*meas_states2.VC_dq[1]);
-	uDACA(Vmag1, V_NOM*2.0f);
-	uDACB(Vmag2, V_NOM*2.0f);
+	DACA(Vmag1 - 320.0f, 75.0f);
+	DACB(Vmag2 - 320.0f, 75.0f);
+//	uDACA(meas_states1.PQ[0], 2.0f);
+//	uDACB(meas_states2.PQ[0], 2.0f);
 //	uDACC(meas_states2.PQ[0], 1.5f*S2);
 	GpioDataRegs.GPACLEAR.bit.GPIO31 = 1;
 

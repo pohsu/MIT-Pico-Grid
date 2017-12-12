@@ -67,8 +67,8 @@ void InitEPwm1()
     EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;
 
     // Setup shadowing
-    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW; //Load immediately
-    EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW; //Load immediately
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE; //Load immediately
+    EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE; //Load immediately
     EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD; // no effect
     EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO_PRD; // no effect
 
@@ -113,8 +113,8 @@ void InitEPwm2()
     EPwm2Regs.TBCTL.bit.CLKDIV = TB_DIV1;
 
     // Setup shadowing
-    EPwm2Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW; //Load immediately
-    EPwm2Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW; //Load immediately
+    EPwm2Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE; //Load immediately
+    EPwm2Regs.CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE; //Load immediately
     EPwm2Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD; // no effect
     EPwm2Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO_PRD; // no effect
 
@@ -159,8 +159,8 @@ void InitEPwm3()
     EPwm3Regs.TBCTL.bit.CLKDIV = TB_DIV1;
 
     // Setup shadowing
-    EPwm3Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW; //Load immediately
-    EPwm3Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW; //Load immediately
+    EPwm3Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE; //Load immediately
+    EPwm3Regs.CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE; //Load immediately
     EPwm3Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD; // no effect
     EPwm3Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO_PRD; // no effect
 
@@ -205,8 +205,8 @@ void InitEPwm4()
     EPwm4Regs.TBCTL.bit.CLKDIV = TB_DIV1;
 
     // Setup shadowing
-    EPwm4Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW; //Load immediately
-    EPwm4Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW; //Load immediately
+    EPwm4Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE; //Load immediately
+    EPwm4Regs.CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE; //Load immediately
     EPwm4Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD; // no effect
     EPwm4Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO_PRD; // no effect
 
@@ -251,8 +251,8 @@ void InitEPwm5()
     EPwm5Regs.TBCTL.bit.CLKDIV = TB_DIV1;
 
     // Setup shadowing
-    EPwm5Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW; //Load immediately
-    EPwm5Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW; //Load immediately
+    EPwm5Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE; //Load immediately
+    EPwm5Regs.CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE; //Load immediately
     EPwm5Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD; // no effect
     EPwm5Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO_PRD; // no effect
 
@@ -297,8 +297,8 @@ void InitEPwm6()
     EPwm6Regs.TBCTL.bit.CLKDIV = TB_DIV1;
 
     // Setup shadowing
-    EPwm6Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW; //Load immediately
-    EPwm6Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW; //Load immediately
+    EPwm6Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE; //Load immediately
+    EPwm6Regs.CMPCTL.bit.SHDWBMODE = CC_IMMEDIATE; //Load immediately
     EPwm6Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD; // no effect
     EPwm6Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO_PRD; // no effect
 
