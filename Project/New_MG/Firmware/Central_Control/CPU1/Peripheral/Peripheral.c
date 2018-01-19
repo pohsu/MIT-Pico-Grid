@@ -1,13 +1,6 @@
 #include "F28x_Project.h"
 #include "Peripheral.h"
 
-//void Owner_Peripheral(void)
-//{
-//    EALLOW;
-//    DevCfgRegs.CPUSEL5.bit.SCI_A = 1; ////Transfer ownership of SCI_A to cpu2
-//    EDIS;
-//}
-
 void Init_Peripheral(void)
 {
     GPIO_init();
@@ -17,6 +10,8 @@ void Init_Peripheral(void)
     Timer_init();
 
     SCIA_init();
+
+    SCIB_init();
 }
 
 void Enable_Peripheral(void)

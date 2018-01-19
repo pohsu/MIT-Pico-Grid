@@ -53,20 +53,32 @@ void GPIO_init (void)
     GpioCtrlRegs.GPAMUX2.bit.GPIO29 = 1; //Refer to datasheet
     GpioCtrlRegs.GPADIR.bit.GPIO29 = 1; //SCI_A_TX as output
     GpioCtrlRegs.GPAPUD.bit.GPIO29 = 0; //pull-up
-    GpioCtrlRegs.GPAQSEL2.bit.GPIO29 = 3; //ascyn mode
+    GpioCtrlRegs.GPAQSEL2.bit.GPIO29 = 3; //Asyn mode
 
     //SCIB
     GpioCtrlRegs.GPACSEL2.bit.GPIO15 = 0b00; //CPU1
-    GpioCtrlRegs.GPAMUX1.bit.GPIO15 = 1; //Refer to datasheet
+    GpioCtrlRegs.GPAMUX1.bit.GPIO15 = 2; //Refer to datasheet
     GpioCtrlRegs.GPADIR.bit.GPIO15 = 0; //SCI_B_RX as input
     GpioCtrlRegs.GPAPUD.bit.GPIO15 = 0; //pull-up
     GpioCtrlRegs.GPAQSEL1.bit.GPIO15 = 0; //syn
 
     GpioCtrlRegs.GPACSEL2.bit.GPIO14 = 0b00; //CPU1
-    GpioCtrlRegs.GPAMUX1.bit.GPIO14 = 1; //Refer to datasheet
+    GpioCtrlRegs.GPAMUX1.bit.GPIO14 = 2; //Refer to datasheet
     GpioCtrlRegs.GPADIR.bit.GPIO14 = 1; //SCI_B_TX as output
     GpioCtrlRegs.GPAPUD.bit.GPIO14 = 0; //pull-up
-    GpioCtrlRegs.GPAQSEL1.bit.GPIO14 = 3; //ascyn mode
+    GpioCtrlRegs.GPAQSEL1.bit.GPIO14 = 3; //Asyn mode
+
+    //RS485 DEN
+    GpioCtrlRegs.GPACSEL2.bit.GPIO13 = 0b00; //CPU1
+    GpioCtrlRegs.GPAMUX1.bit.GPIO13 = 0;
+    GpioCtrlRegs.GPADIR.bit.GPIO13 = 1; //output
+    GpioCtrlRegs.GPAPUD.bit.GPIO13 = 1; //disable pull-up
+
+    //RS485 ~RE
+    GpioCtrlRegs.GPACSEL2.bit.GPIO12 = 0b00; //CPU1
+    GpioCtrlRegs.GPAMUX1.bit.GPIO12 = 0;
+    GpioCtrlRegs.GPADIR.bit.GPIO12 = 1; //output
+    GpioCtrlRegs.GPAPUD.bit.GPIO12 = 0; //pull-up
 
     //LED1 on PCB
     GpioCtrlRegs.GPCCSEL2.bit.GPIO73 = 0b00; //CPU1

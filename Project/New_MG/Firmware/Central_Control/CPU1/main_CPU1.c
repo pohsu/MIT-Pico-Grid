@@ -25,13 +25,17 @@ void task_table (Uint32 * counter);
 const struct_task_period task_period = {
     .count_5kHz  = 1,
     .count_1kHz  = 5,
-    .count_100Hz = 50,
+    .count_200Hz = 25,
     .count_10Hz  = 500,
     .count_1Hz   = 5000,
 };
 
-extern Uint16 data_rx[SIZEOFDATA_RX];
-extern Uint16 data_tx[SIZEOFDATA_TX/2];
+Uint16 device, device_rx = 0;
+
+extern Uint16 usb_tx[SIZEOFUSB_TX];
+extern Uint16 usb_rx[SIZEOFUSB_RX];
+
+
 
 //***********************************************************************//
 //                        S h a r e d  M e m o r y                       //
@@ -48,7 +52,7 @@ void main(void)
 
 	Enable_Peripheral();
 
-//	Enable_Comm();
+	Enable_Comm();
 
 	for(;;); //Idle Loop
 }
@@ -56,15 +60,19 @@ void main(void)
 #pragma CODE_SECTION(SCIA_RX_isr, "ramfuncs")
 __interrupt void SCIA_RX_isr(void)
 {
-    Receive_from_USB();
-    data_tx[0] = data_rx[3];
-    data_tx[1] = data_rx[3];
-
-    GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1;
-
+    USB_RX();
+    USB_TO_RS485Interpreter();
+    GpioDataRegs.GPCTOGGLE.bit.GPIO75 = 1; //LED2
     SciaRegs.SCIFFRX.bit.RXFIFORESET=1; //RESET RX FIFO
-
     SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1; //clear INT1 flag
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
+}
+
+#pragma CODE_SECTION(SCIB_RX_isr, "ramfuncs")
+__interrupt void SCIB_RX_isr(void)
+{
+    GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1; //LED5
+    RS485_RX(device_rx);
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
 }
 
@@ -87,22 +95,27 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
-        Report_to_USB();
+        USB_TX();
+        RS485_TX(device);
+        device_rx = device;
+        device++;
+        if (device == NUMOFDEVICE) device = 0;
     }
 
-//    if (*counter % (Uint32)task_period.count_100Hz == 0)
-//    {
+    if (*counter % (Uint32)task_period.count_200Hz == 0)
+    {
+
+
+    }
 //
-//    }
-//
-//    if (*counter % (Uint32)task_period.count_10Hz == 0)
-//    {
-//        GpioDataRegs.GPATOGGLE.bit.GPIO31 = 1;
-//    }
+    if (*counter % (Uint32)task_period.count_10Hz == 0)
+    {
+        GpioDataRegs.GPCTOGGLE.bit.GPIO73 = 1;
+    }
 //
     if (*counter % (Uint32)task_period.count_1Hz == 0)
     {
-    	GpioDataRegs.GPCTOGGLE.bit.GPIO73 = 1;
+
     }
 
     if (*counter % (Uint32)TASK_MAX_COUNT == 0)

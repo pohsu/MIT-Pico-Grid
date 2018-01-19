@@ -44,6 +44,7 @@ void ISR_init(void)
 	//
     EALLOW;
     PieVectTable.SCIA_RX_INT = &SCIA_RX_isr;
+    PieVectTable.SCIB_RX_INT = &SCIB_RX_isr;
     PieVectTable.TIMER0_INT = &cpu_timer_5kHz;
     EDIS;
 }
@@ -64,5 +65,6 @@ void ISR_enable(void)
     //
     PieCtrlRegs.PIEIER1.bit.INTx7 = 1;  //Enable Cpu timer0 in PIE
     PieCtrlRegs.PIEIER9.bit.INTx1 = 1;  //Enable SCIA RX interrupt
+    PieCtrlRegs.PIEIER9.bit.INTx3 = 1;  //Enable SCIB RX interrupt
     EDIS;
 }
