@@ -37,6 +37,7 @@ void Virtual_component(const bool enable, const float32 Xm, const float32 Sn, st
 void VC_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 VC_PID_states[2]);
 void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 void Damper(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 LPF_state[2]);
+void limiter(float32 dq[2], const float32 limit);
 void IL_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 IL_PID_states[2]);
 void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const float32 kp, const float32 ki);
 void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states);

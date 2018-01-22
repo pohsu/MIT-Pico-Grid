@@ -56,13 +56,15 @@ void InitEPwm1()
     EPwm1Regs.CMPC = 3800;           // Set Compare C value 4800
     EPwm1Regs.CMPD = 1200;           // Set Compare D value 200
     //on TI control card
-    // IL1 A1 R29 100ohm C20 0.1uF
-    // IL2 A2 R41 100ohm C32 0.1uF
-    // VC1 A4 R31 100ohm C22 0.1uF
-    // VC2 A5 R43 100ohm C34 0.1uF
-    // VC3 A6 R47 100ohm C38 0.1uF
-    // IO1 A7 R39 100ohm C30 1uF
-    // IO2 A8 R35 100ohm C26 1uF
+    // IL1 A1  R29 100ohm C20 0.1uF
+    // IL2 A2  R41 100ohm C32 0.1uF
+    // VC1 A4  R31 100ohm C22 0.1uF
+    // VC2 A5  R43 100ohm C34 0.1uF
+    // VC3 A6  R47 100ohm C38 0.1uF
+    // IO  A7  R39 100ohm C30 1uF
+    // IO  A8  R35 100ohm C26 1uF
+    // IO  A9  R42 100ohm C33 1uF
+    // Vdc A11 R44 100ohm C35 0.1uF
 
     // Setup counter mode
     EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN; // Count up and down

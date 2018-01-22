@@ -8,7 +8,7 @@
 #else
     #define IL_CONVERSION 0.00464268f //Calibrated on 12/06/2017
     #define IO_CONVERSION 0.00464268f //Calibrated on 12/06/2017
-    #define VC_CONVERSION 0.066276f //Calibrated on 12/06/2017
+    #define VC_CONVERSION 0.06627600f //Calibrated on 12/06/2017
 #endif
 
 #define VDC_CONVERSION 0.094f //Calibrated on 11/22/2017

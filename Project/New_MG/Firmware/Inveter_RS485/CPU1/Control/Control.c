@@ -36,25 +36,28 @@ void Control_step(const float32 Droop[2], const float32 Xm, const bool enable)
     DACB(meas_states1.VC_dq[0], 50.0f);
     DACC(meas_states1.IO_dq[0], 2.0f);
 
-    //add current limiter
+    limiter(&control_states1.IL_dq_ref, I_LIMIT);
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
-//	control_states1.VINV_dq[0] = 50.0f;
+//	control_states1.VINV_dq[0] = 25.0f;
 //	control_states1.VINV_dq[1] = 0.0f;
 	VINV2Duty(&control_states1, &meas_states1);
 }
 #pragma CODE_SECTION(Droop_control, "ramfuncs")
 void Droop_control(const bool enable, const float32 Droop[2], const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states)
 {
-	if (enable){
+	static float32 vref;
+    if (enable){
+	    vref += (V_NOM-vref) * 0.005f; //slew rate voltage references
 		c_states->omega = W_NOM -  Droop[0] / Sn* W_NOM * m_states->PQ[0];
-		c_states->VC_dq_ref[0] = V_NOM - Droop[1] / Sn * V_NOM * m_states->PQ[1];
+		c_states->VC_dq_ref[0] = vref - Droop[1] / Sn * V_NOM * m_states->PQ[1];
 		c_states->VC_dq_ref[1] = 0;
 	}
 	else{
 		c_states->omega = W_NOM;
-		c_states->VC_dq_ref[0] = V_NOM;
+		c_states->VC_dq_ref[0] = 0;
 		c_states->VC_dq_ref[1] = 0;
+		vref = 0;
 	}
 
 //	c_states->omega= (c_states->omega >  W_NOM*1.2?  W_NOM*1.2 : c_states->omega);
@@ -177,11 +180,21 @@ void Damper(const bool enable, struct_control_states * c_states, struct_meas_sta
 //    c_states->IL_dq_ref[0] -= c_states->damper_dq[0];//*(1-FV);// + m_states->VC_dq[0] / RNL;
 //    c_states->IL_dq_ref[1] -= c_states->damper_dq[1];//*(1-FV);// + m_states->VC_dq[1] / RNL;
 
-    for (i = 0;i<=1;i++){
-        c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] >  I_LIMIT?  I_LIMIT : c_states->IL_dq_ref[i]);
-        c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] < -I_LIMIT? -I_LIMIT : c_states->IL_dq_ref[i]);
-    }
+//    for (i = 0;i<=1;i++){
+//        c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] >  I_LIMIT?  I_LIMIT : c_states->IL_dq_ref[i]);
+//        c_states->IL_dq_ref[i] = (c_states->IL_dq_ref[i] < -I_LIMIT? -I_LIMIT : c_states->IL_dq_ref[i]);
+//    }
 
+}
+
+#pragma CODE_SECTION(limiter, "ramfuncs")
+void limiter(float32 dq[2], const float32 limit)
+{
+    int i = 0;
+    for (i = 0;i<=1;i++){
+        dq[i] = (dq[i] >  limit?  limit : dq[i]);
+        dq[i] = (dq[i] < -limit? -limit : dq[i]);
+    }
 }
 
 
@@ -222,37 +235,6 @@ void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const
 		out[i] = kp*error[i] + PID_states[i];
 	}
 }
-
-//#pragma CODE_SECTION(VINV2Duty, "ramfuncs")
-//void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
-//{
-//	float32 abc[3];
-//	float32 table[4]; //sin_theta, cos_theta, sin_theta120, cos_theta120;
-//
-//	table[0] = sinf(m_states->theta);
-//	table[1] = cosf(m_states->theta);
-//	table[2] = table[0]*COS120  - table[1]*SIN120;
-//	table[3] = table[1]*COS120  + table[0]*SIN120;
-//	dq2abc_fast(abc, c_states->VINV_dq, table);
-//
-//	c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
-//	c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
-//	c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
-//
-////	control_states.Duty[0] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta) + 1.0f) * PWM_PERIOD);
-////	control_states.Duty[1] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta-PHASE_120) + 1.0f) * PWM_PERIOD);
-////	control_states.Duty[2] = (Uint16)( 0.5f* (0.8f*sinf(meas_states.theta+PHASE_120) + 1.0f) * PWM_PERIOD);
-//
-//}
-//
-//#pragma CODE_SECTION(dq2abc_fast, "ramfuncs")
-//void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[4])
-//{
-//	abc[0] = dq[0]*table[0]+ dq[1]*table[1];
-//	abc[1] = dq[0]*table[2]+ dq[1]*table[3];
-////	abc[2] = dq[0]*sinf(theta+PHASE_120) + dq[1]*cosf(theta+PHASE_120);
-//	abc[2] = -abc[0] - abc[1];
-//}
 
 #pragma CODE_SECTION(VINV2Duty, "ramfuncs")
 void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
