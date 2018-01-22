@@ -28,18 +28,12 @@ void Measurement_step(const bool enable)
 	table[0] = sinf(meas_states1.theta);
 	table[1] = cosf(meas_states1.theta);
 
-//	Abc2dq(meas_states1.IL_dq,  abc_states1.IL_abc, meas_states1.theta);
-//	Abc2dq(meas_states1.VC_dq,  abc_states1.VC_abc, meas_states1.theta);
-//	Abc2dq(meas_states1.IO_dq,  abc_states1.IO_abc, meas_states1.theta);
 	Abc2dq_fast(meas_states1.IL_dq, abc_states1.IL_abc, table);
 	Abc2dq_fast(meas_states1.VC_dq, abc_states1.VC_abc, table);
 	Abc2dq_fast(meas_states1.IO_dq, abc_states1.IO_abc, table);
 
-
 	Power_caculation(meas_states1.PQ, meas_states1.IO_dq, meas_states1.VC_dq);
 
-//    DACA(meas_states1.PQ[0], 1.0f);
-//    DACB(meas_states1.PQ[1], 1.0f);
 }
 
 #pragma CODE_SECTION(Oscillator, "ramfuncs")
@@ -91,12 +85,12 @@ void ADC_process(const bool enable, struct_abc_states * states1, struct_meas_sta
 	m_states->Vdc = (float32)(adc_Vdc) * VDC_CONVERSION;
 
 //	Correction for zero-sequence bias
-//	VN = (states1->VC_abc[0]+states1->VC_abc[1]+states1->VC_abc[2])*0.333333333333f;
-//	for(i=0; i<=1; i++) states1->VC_abc[i] -= VN;
-
-    DACA(states1->IO_abc[0], 1.0f);
-    DACB(states1->IO_abc[1], 1.0f);
-    DACC(states1->VC_abc[2], 25.0f);
+	VN = (states1->VC_abc[0]+states1->VC_abc[1]+states1->VC_abc[2])*0.333333333333f;
+	for(i=0; i<=1; i++) states1->VC_abc[i] -= VN;
+//
+//    DACA(states1->IL_abc[0], 2.0f);
+//    DACB(states1->IO_abc[0], 2.0f);
+//	DACC(states1->IO_abc[1], 2.0f);
 
 }
 
@@ -107,7 +101,7 @@ void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq
 	float32 PQ_temp[2];
 	PQ_temp[0] =  (VC_dq[0])*(IO_dq[0]) + (VC_dq[1])*(IO_dq[1]);
 	PQ_temp[1] = (-VC_dq[0])*(IO_dq[1]) + (VC_dq[1])*(IO_dq[0]);
-	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_temp[i]/25.0f);
+	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_temp[i]/P_NOM);
 }
 
 //#pragma CODE_SECTION(Abc2dq, "ramfuncs")
@@ -121,10 +115,7 @@ void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq
 void Abc2dq_fast(float32 dq[2], const float32 abc[2], const float32 table[2])
 {
 
-//	dq[0] = (abc[0]*(table[0]-table[2]) - abc[1]*table[1]*2.0f*SIN120)*0.66667f;
 	dq[0] = abc[0]*table[0] - table[1]*0.577350269189626f*(abc[0]+ 2*abc[1]);
-
-//	dq[1] = (abc[0]*(table[1]-table[3]) + abc[1]*table[0]*2.0f*SIN120)*0.66667f;
 	dq[1] = abc[0]*table[1] + table[0]*0.577350269189626f*(abc[0]+ 2*abc[1]);
 }
 

@@ -62,7 +62,7 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 	R = X * 0.2;
 	L = X / W_NOM * 1 ;
 
-	// Reset damper
+	// Reset
 	if (enable == false){
 		for (i = 0;i<=1;i++){
 			c_states->LPF_IIM[i] = 0;
