@@ -23,7 +23,12 @@ void USB_TX(void)
 {
     SCIA_xmit(BEGIN);
     Uint16 i;
-    for(i=0;i<SIZEOFUSB_TX;i++) SCIA_xmit(usb_tx[i]);
+    for(i=0;i<SIZEOFUSB_TX;i++)
+    {
+        SCIA_xmit(usb_tx[i]);
+//        usb_tx[i] = 0; //reset USB_TX data
+    }
+
     SCIA_xmit(END);
 }
 

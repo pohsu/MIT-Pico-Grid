@@ -148,9 +148,11 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
-        IPC_tx.volt = meas_states1.VC_dq[0]/V_NOM*100.0f;
-//        IPC_tx.volt = meas_states1.IL_dq[0]/I_NOM*100.0f;
-        IPC_tx.freq = (control_states1.omega - 0.8*W_NOM)/W_NOM*500.0f;
+//        IPC_tx.volt = meas_states1.VC_dq[0]/V_NOM*100.0f;
+//        IPC_tx.freq = (control_states1.omega - 0.8*W_NOM)/W_NOM*500.0f;
+
+        IPC_tx.volt = IPC_rx.vref;
+        IPC_tx.freq = IPC_rx.fref;
         IPC_TX(c1_r_w_array);
     }
 

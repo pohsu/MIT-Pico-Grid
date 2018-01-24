@@ -24,7 +24,7 @@ void RS485_RX(void)
     if (ScibRegs.SCICTL1.bit.SLEEP)
     {
         addr = ScibRegs.SCIRXBUF.all;
-        if ((addr == ADDR_BROADCAST)||(addr == ADDR_DEVICE))
+        if (addr == ADDR_DEVICE)
         {
             ScibRegs.SCICTL1.bit.SLEEP = 0; //if address detected wake up
         }

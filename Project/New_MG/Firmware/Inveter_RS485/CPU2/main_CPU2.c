@@ -126,6 +126,7 @@ void task_table (Uint32 * counter)
     if (*counter % (Uint32)task_period.count_10Hz == 0)
     {
         GpioDataRegs.GPCTOGGLE.bit.GPIO79 = 1;
+
     }
 
     if (*counter % (Uint32)task_period.count_1Hz == 0)

@@ -9,6 +9,8 @@ Uint16 device_flag[NUMOFDEVICE] = {0};
 Uint16 RS485_addr[NUMOFDEVICE] = {0};
 Uint16 RS485_tx[NUMOFDEVICE][SIZEOFRS485_TX] = {0};
 Uint16 RS485_rx[NUMOFDEVICE][SIZEOFRS485_RX] = {0};
+Uint16 RX_ctr = 0;
+
 
 extern Uint16 usb_tx[SIZEOFUSB_TX];
 
@@ -18,10 +20,11 @@ extern Uint16 usb_tx[SIZEOFUSB_TX];
 void RS485_init(void)
 {
     ScibRegs.SCICTL1.bit.RXENA = 1; //Enable SCIB RX
-    GpioDataRegs.GPACLEAR.bit.GPIO13 = 0; //Diable RS485 Driver
+    GpioDataRegs.GPACLEAR.bit.GPIO13 = 0; //Disable RS485 Driver
     GpioDataRegs.GPACLEAR.bit.GPIO12 = 1; //Initialize RS485 Receiver
 
     RS485_addr[0] = ADDR_DEVICE1; //device addr
+    RS485_addr[1] = ADDR_DEVICE2; //device addr
     Uint16 i;
     for (i = 0; i < NUMOFDEVICE; i++)
     {
@@ -32,9 +35,8 @@ void RS485_init(void)
 
 void RS485_RX(Uint16 device_rx)
 {
-    static Uint16 RX_ctr = 0;
     Uint16 addr = 0;
-    if (ScibRegs.SCICTL1.bit.SLEEP)
+    if (ScibRegs.SCICTL1.bit.SLEEP && RX_ctr == 0)
     {
         addr = ScibRegs.SCIRXBUF.all;
         if (addr == ADDR_HOST)
@@ -53,7 +55,7 @@ void RS485_RX(Uint16 device_rx)
         ScibRegs.SCICTL1.bit.SLEEP = 1; //back to sleep
         RX_ctr = 0; //ctr reset
         Uint16 i;
-        for (i = 0; i < SIZEOFRS485_TX; i++) usb_tx[i] = RS485_rx[device_rx][i];
+        for (i = 0; i < SIZEOFRS485_TX; i++) usb_tx[4*device_rx+i] = RS485_rx[device_rx][i];
 
     }
 

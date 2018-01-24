@@ -34,7 +34,7 @@ Uint16 device, device_rx = 0;
 
 extern Uint16 usb_tx[SIZEOFUSB_TX];
 extern Uint16 usb_rx[SIZEOFUSB_RX];
-
+extern Uint16 RX_ctr;
 
 
 //***********************************************************************//
@@ -71,7 +71,8 @@ __interrupt void SCIA_RX_isr(void)
 #pragma CODE_SECTION(SCIB_RX_isr, "ramfuncs")
 __interrupt void SCIB_RX_isr(void)
 {
-    GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1; //LED5
+    if (device_rx == 0) GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1; //LED5
+    if (device_rx == 1) GpioDataRegs.GPCTOGGLE.bit.GPIO83 = 1; //LED6
     RS485_RX(device_rx);
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
 }
@@ -96,8 +97,15 @@ void task_table (Uint32 * counter)
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
         USB_TX();
+        // even if receive fails the next call is still processing by forcing a entire reset
+        ScibRegs.SCICTL1.bit.SWRESET = 0;
+        ScibRegs.SCICTL1.bit.SWRESET = 1;
+        ScibRegs.SCICTL1.bit.SLEEP = 1; //back to sleep
+        RX_ctr = 0; //ctr reset
+        device_rx = device; //device_rx is global
+        Uint16 i;
+        for (i = 0; i < SIZEOFRS485_TX; i++) usb_tx[4*device_rx+i] = 0; //reset usb_tx for the deivce
         RS485_TX(device);
-        device_rx = device;
         device++;
         if (device == NUMOFDEVICE) device = 0;
     }
