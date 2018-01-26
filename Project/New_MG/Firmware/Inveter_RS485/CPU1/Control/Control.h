@@ -2,7 +2,7 @@
 #define LF 1.0e-3f
 #define CF 30e-6f
 #define FV 0.75f
-#define KPC 8.0f //8.0f
+#define KPC 10.0f //8.0f
 #define KIC 18000.0f //18000.0f
 #define KPV 0.15f //0.15
 #define KIV 350.0f //350
@@ -15,8 +15,8 @@
 #define S1 1.0f
 #define WF 2000.0f
 #define WDAMP 800.0f // 1/Cd/Rd 800.0f
-#define GDAMP 0.4f   // 1/Rd 0.4f
-#define I_LIMIT 2.5f
+#define GDAMP 0.2f   // 1/Rd 0.1f
+#define I_LIMIT 3.5f
 
 
 
@@ -31,7 +31,7 @@ typedef struct{
   Uint16 Duty[3];
 }struct_control_states;
 
-void Control_step(const float32 Droop[2], const float32 Xm, const bool enable);
+void Control_step(float32 Droop[2], float32 Xm, const bool enable);
 void Droop_control(const bool enable, const float32 Droop[2], const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 void Virtual_component(const bool enable, const float32 Xm, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 void VC_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 VC_PID_states[2]);

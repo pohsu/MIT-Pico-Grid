@@ -28,7 +28,7 @@ void SCIB_init()
     ScibRegs.SCIHBAUD.all = 0x0000;
     ScibRegs.SCILBAUD.all = 0x002E; //0x2E = 46
 
-    ScibRegs.SCICTL1.bit.SWRESET = 1;  // Software Reset
+    ScibRegs.SCICTL1.bit.SWRESET = 0;  // Software Reset (need to be unreset)
     EDIS;
 
 }

@@ -126,6 +126,7 @@ void task_table (Uint32 * counter)
     if (*counter % (Uint32)task_period.count_10Hz == 0)
     {
         GpioDataRegs.GPCTOGGLE.bit.GPIO79 = 1;
+        ScibRegs.SCICTL1.bit.SWRESET = 1; //un-reset and once it's asserted it has no function
 
     }
 
