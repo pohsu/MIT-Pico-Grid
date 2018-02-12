@@ -1,6 +1,5 @@
 #define ADC_SCALE 4095.0f
 
-
 #if VERSION
     #define IL_CONVERSION 0.00376244f //Calibrated on 01/21/2018
     #define IO_CONVERSION 0.00376244f //Calibrated on 01/21/2018
@@ -9,6 +8,14 @@
     #define IL_CONVERSION 0.00464268f //Calibrated on 12/06/2017
     #define IO_CONVERSION 0.00464268f //Calibrated on 12/06/2017
     #define VC_CONVERSION 0.06627600f //Calibrated on 12/06/2017
+#endif
+
+#if HIL
+    //PCB_test folder
+    //#define IL_CONVERSION 0.00376244f //Calibrated on 01/21/2018
+    #define IL_CONVERSION 0.003634f //Calibrated on 02/01/2018 considering delay and sampling points
+    #define IO_CONVERSION 0.00378f //Calibrated on 01/21/2018
+    #define VC_CONVERSION 0.0379404f //Calibrated on 01/19/2018
 #endif
 
 #define VDC_CONVERSION 0.094f //Calibrated on 11/22/2017

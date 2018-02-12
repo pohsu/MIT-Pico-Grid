@@ -3,10 +3,10 @@ version = 4.2
 
 //
 // Saved by sw version: 2016.4
-// Save timestamp: 05-Oct-2017 @ 07:22:03 PM
+// Save timestamp: 30-Jan-2018 @ 10:45:34 PM
 //
 
-model "pcb01" {
+model "PCB01" {
     configuration {
         hil_device = "HIL402"
         hil_configuration_id = 1
@@ -32,35 +32,6 @@ model "pcb01" {
     
     component Subsystem "My model" {
 
-        
-        component pas_capacitor "Cdc" {
-            
-            capacitance = "1e-3"
-	    
-        }
-        [
-            position = 1728, 1984
-            rotation = right
-        ]
-        
-        component msr_voltage "Vdc" {
-            
-            execution_rate = "inherit"
-	    
-        }
-        [
-            position = 1792, 1984
-            rotation = right
-        ]
-        
-        component pas_resistor "Rs" {
-            
-            resistance = "0.1"
-	    
-        }
-        [
-            position = 1616, 1888
-        ]
         
         component src_voltage "Vs1" {
             
@@ -168,7 +139,7 @@ model "pcb01" {
 	    
         }
         [
-            position = 3216, 1888
+            position = 2856, 1888
         ]
         
         component msr_current "IO1b" {
@@ -177,7 +148,7 @@ model "pcb01" {
 	    
         }
         [
-            position = 3232, 1984
+            position = 2872, 1984
         ]
         
         component pas_capacitor "Cf1a" {
@@ -260,43 +231,114 @@ model "pcb01" {
             rotation = right
         ]
         
-        component pas_resistor "RL1a8" {
+        component msr_voltage "Vdc" {
             
-            resistance = "RL3"
+            execution_rate = "inherit"
 	    
         }
         [
-            position = 3672, 2480
+            position = 1792, 1984
             rotation = right
         ]
         
-        component pas_resistor "RL1a9" {
+        component pas_capacitor "Cdc" {
             
-            resistance = "RL3"
+            capacitance = "1e-3"
 	    
         }
         [
-            position = 3864, 2480
+            position = 1728, 1984
             rotation = right
         ]
         
-        component pas_resistor "RL1a10" {
+        component pas_resistor "Rs" {
             
-            resistance = "RL3"
+            resistance = "0.01"
 	    
         }
         [
-            position = 3768, 2480
+            position = 1616, 1888
+        ]
+        
+        component msr_voltage "VO1c" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2600, 2168
             rotation = right
         ]
         
-        component ctc_tpst "S2" {
+        component ctc_tpst "S1" {
             
 	    
         }
         [
-            position = 3768, 2328
-            rotation = right
+            position = 3688, 1984
+        ]
+        
+        component src_voltage_3ph "Vs2" {
+            
+	    
+        }
+        [
+            position = 3880, 1984
+            scale = -1, 1
+        ]
+        
+        component pas_resistor "Rt1" {
+            
+            resistance = "Rt"
+	    
+        }
+        [
+            position = 3088, 1888
+        ]
+        
+        component pas_inductor "Lt1" {
+            
+            inductance = "Lt"
+	    
+        }
+        [
+            position = 3200, 1888
+        ]
+        
+        component pas_resistor "Rt2" {
+            
+            resistance = "Rt"
+	    
+        }
+        [
+            position = 3088, 1984
+        ]
+        
+        component pas_inductor "Lt2" {
+            
+            inductance = "Lt"
+	    
+        }
+        [
+            position = 3200, 1984
+        ]
+        
+        component pas_resistor "Rt3" {
+            
+            resistance = "Rt"
+	    
+        }
+        [
+            position = 3088, 2080
+        ]
+        
+        component pas_inductor "Lt3" {
+            
+            inductance = "Lt"
+	    
+        }
+        [
+            position = 3200, 2080
         ]
         component "core/Three Phase Inverter" "3ph_inverter_1"{
             
@@ -433,12 +475,25 @@ model "pcb01" {
         
         
         
-        comment Comment1 START <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times'; font-size:8pt; font-weight:400; font-style:normal;"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:12pt;">DC source; inverter; filter; grid</span></p></body></html>                                   ENDCOMMENT 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        comment Comment1 START <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times'; font-size:8pt; font-weight:400; font-style:normal;"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:12pt;">DC source; inverter; filter; grid</span></p></body></html>                                    ENDCOMMENT 
         [
             position = 1568, 1760
         ]
         
-        comment Comment2 START <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times'; font-size:8pt; font-weight:400; font-style:normal;"><p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; font-weight:600;">Note:</span><span style=" font-family:'Arial'; font-size:9pt;"> Inverter pin assignment is compatible with dsPIC demo controller card. </span></p></body></html>                                   ENDCOMMENT 
+        comment Comment2 START <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times'; font-size:8pt; font-weight:400; font-style:normal;"><p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; font-weight:600;">Note:</span><span style=" font-family:'Arial'; font-size:9pt;"> Inverter pin assignment is compatible with dsPIC demo controller card. </span></p></body></html>                                    ENDCOMMENT 
         [
             position = 1736, 2144
         ]
@@ -488,42 +543,47 @@ model "pcb01" {
             position = 1728, 2080
         ]
         
-        junction "Junction70" pe
-        [
-            position = 2768, 1984
-        ]
-        
-        junction "Junction72" pe
-        [
-            position = 2696, 1888
-        ]
-        
-        junction "Junction132" pe
-        [
-            position = 3424, 1888
-        ]
-        
-        junction "Junction133" pe
-        [
-            position = 3504, 1984
-        ]
-        
         junction "Junction135" pe
         [
             position = 3504, 2312
         ]
         
-        junction "Junction146" pe
+        junction "Junction148" pe
         [
-            position = 3752, 2600
+            position = 2600, 2080
         ]
         
-        junction "Junction147" pe
+        junction "Junction149" pe
+        [
+            position = 2600, 2352
+        ]
+        
+        junction "Junction150" pe
+        [
+            position = 2696, 1888
+        ]
+        
+        junction "Junction151" pe
+        [
+            position = 3424, 1888
+        ]
+        
+        junction "Junction152" pe
+        [
+            position = 3504, 1984
+        ]
+        
+        junction "Junction153" pe
+        [
+            position = 2768, 1984
+        ]
+        
+        junction "Junction154" pe
         [
             position = 2840, 2080
         ]
         
-        junction "Junction148" pe
+        junction "Junction155" pe
         [
             position = 3576, 2080
         ]
@@ -537,15 +597,21 @@ model "pcb01" {
         connect "Cdc.p_node" Junction63 as Connection298
         
         
-        connect "Cf1a.n_node" Junction39 as Connection187
-        
-        
-        connect "Cf1a.p_node" Junction72 as Connection393
+        connect "Cf1a.p_node" Junction150 as Connection850
         [
             breakpoints =2696, 2192
         ]
         
+        connect "Cf1a.n_node" Junction39 as Connection187
+        
+        
+        connect "Cf1b.p_node" Junction153 as Connection861
+        
+        
         connect "Cf1b.n_node" Junction40 as Connection190
+        
+        
+        connect "Cf1c.p_node" Junction154 as Connection868
         
         
         connect "Cf1c.n_node" Junction40 as Connection192
@@ -567,16 +633,11 @@ model "pcb01" {
         connect "IL1b.n_node" "Rf1b.p_node" as Connection16
         
         
-        connect "IO1a.n_node" Junction132 as Connection724
+        connect "IO1a.p_node" Junction150 as Connection852
         
         
-        connect "IO1b.n_node" Junction133 as Connection727
+        connect "IO1b.p_node" Junction153 as Connection863
         
-        
-        connect "IO1b.p_node" Junction70 as Connection774
-        [
-            breakpoints =3088, 1984;2768, 1984
-        ]
         
         connect Junction135 "RL1a3.n_node" as Connection735
         [
@@ -591,22 +652,44 @@ model "pcb01" {
             breakpoints =1792, 2080
         ]
         
-        connect Junction146 "RL1a10.n_node" as Connection780
+        connect Junction149 Junction39 as Connection827
         [
-            breakpoints =3744, 2600
+            breakpoints =2688, 2352
         ]
         
-        connect Junction147 "Cf1c.p_node" as Connection815
+        connect Junction150 Junction60 as Connection851
         [
-            breakpoints =2840, 2080;2840, 2080
+            breakpoints =2696, 1888;2696, 1888;2696, 1888;2696, 1888;2696, 1888;2624, 1888;2432, 1888;2432, 1888;2432, 1888;2432, 1888;2432, 1888
         ]
         
-        connect Junction148 Junction147 as Connection818
-        
-        
-        connect Junction35 Junction39 as Connection635
+        connect Junction151 "S1.a_in" as Connection855
         [
-            breakpoints =2504, 2352;2504, 2352;2512, 2352;2576, 2352;2576, 2352;2576, 2352;2576, 2352;2688, 2352
+            breakpoints =3424, 1888
+        ]
+        
+        connect Junction152 "RL1a3.p_node" as Connection858
+        [
+            breakpoints =3504, 1984;3504, 1984
+        ]
+        
+        connect Junction153 Junction61 as Connection862
+        [
+            breakpoints =2768, 1984;2768, 1984;2768, 1984;2768, 1984;2624, 1984;2504, 1984;2504, 1984
+        ]
+        
+        connect Junction154 Junction148 as Connection869
+        [
+            breakpoints =2840, 2088;2840, 2080;2840, 2080;2840, 2080
+        ]
+        
+        connect Junction155 "S1.c_in" as Connection872
+        [
+            breakpoints =3576, 2080;3576, 2080
+        ]
+        
+        connect Junction35 Junction149 as Connection826
+        [
+            breakpoints =2504, 2352;2504, 2352;2512, 2352;2576, 2352;2576, 2352;2576, 2352;2576, 2352
         ]
         
         connect Junction35 "VO1b.n_node" as Connection131
@@ -616,11 +699,6 @@ model "pcb01" {
         
         connect Junction40 Junction39 as Connection191
         
-        
-        connect Junction61 Junction70 as Connection636
-        [
-            breakpoints =2504, 1984;2504, 1984;2624, 1984
-        ]
         
         connect Junction61 "VO1b.p_node" as Connection291
         [
@@ -637,31 +715,22 @@ model "pcb01" {
             breakpoints =1728, 2080;1728, 2080
         ]
         
-        connect Junction70 "Cf1b.p_node" as Connection329
-        [
-            breakpoints =2768, 1984;2768, 1984;2768, 1984
-        ]
-        
-        connect Junction72 "IO1a.p_node" as Connection775
-        [
-            breakpoints =2696, 1888;3000, 1888;3168, 1888
-        ]
-        
-        connect Junction72 Junction60 as Connection637
-        [
-            breakpoints =2696, 1888;2696, 1888;2696, 1888;2696, 1888;2624, 1888;2432, 1888;2432, 1888;2432, 1888;2432, 1888;2432, 1888
-        ]
-        
         connect "Lf1a.n_node" Junction60 as Connection289
         
         
         connect "Lf1b.n_node" Junction61 as Connection292
         
         
-        connect "Lf1c.n_node" Junction147 as Connection814
+        connect "Lf1c.n_node" Junction148 as Connection823
         
         
-        connect "RL1a2.p_node" Junction132 as Connection726
+        connect "Lt1.n_node" Junction151 as Connection856
+        
+        
+        connect "Lt2.n_node" Junction152 as Connection859
+        
+        
+        connect "Lt3.n_node" Junction155 as Connection873
         
         
         connect "RL1a2.n_node" Junction135 as Connection734
@@ -669,19 +738,13 @@ model "pcb01" {
             breakpoints =3424, 2312
         ]
         
-        connect "RL1a3.p_node" Junction133 as Connection729
+        connect "RL1a2.p_node" Junction151 as Connection854
         
         
         connect "RL1a4.n_node" Junction135 as Connection736
         
         
-        connect "RL1a4.p_node" Junction148 as Connection817
-        
-        
-        connect "RL1a8.n_node" Junction146 as Connection781
-        
-        
-        connect "RL1a9.n_node" Junction146 as Connection779
+        connect "RL1a4.p_node" Junction155 as Connection871
         
         
         connect "Rf1a.n_node" "Lf1a.p_node" as Connection41
@@ -701,26 +764,33 @@ model "pcb01" {
             breakpoints =1576, 2304
         ]
         
-        connect "S2.a_in" Junction132 as Connection813
+        connect "Rt1.p_node" "IO1a.n_node" as Connection853
         [
-            breakpoints =3864, 1888;3672, 1888;3672, 1888;3664, 1888;3424, 1888
+            breakpoints =2912, 1888
         ]
         
-        connect "S2.b_in" Junction133 as Connection808
-        [
-            breakpoints =3768, 1984;3736, 1984;3736, 1984
-        ]
-        
-        connect "S2.c_in" Junction148 as Connection819
+        connect "Rt1.n_node" "Lt1.p_node" as Connection847
         
         
-        connect "S2.b_out" "RL1a10.p_node" as Connection795
+        connect "Rt2.p_node" "IO1b.n_node" as Connection860
         
         
-        connect "S2.c_out" "RL1a8.p_node" as Connection796
+        connect "Rt2.n_node" "Lt2.p_node" as Connection848
         
         
-        connect "S2.a_out" "RL1a9.p_node" as Connection794
+        connect "Rt3.p_node" Junction154 as Connection870
+        
+        
+        connect "Rt3.n_node" "Lt3.p_node" as Connection849
+        
+        
+        connect "S1.b_in" Junction152 as Connection857
+        
+        
+        connect "S1.a_out" "Vs2.a_node" as Connection829
+        
+        
+        connect "S1.c_out" "Vs2.c_node" as Connection831
         
         
         connect "VO1a.n_node" Junction35 as Connection130
@@ -729,6 +799,12 @@ model "pcb01" {
         ]
         
         connect "VO1a.p_node" Junction60 as Connection287
+        
+        
+        connect "VO1c.p_node" Junction148 as Connection825
+        
+        
+        connect "VO1c.n_node" Junction149 as Connection828
         
         
         connect "Vdc.p_node" Junction12 as Connection66
@@ -743,6 +819,9 @@ model "pcb01" {
         ]
         
         connect "Vs1.p_node" "Rs.p_node" as Connection301
+        
+        
+        connect "Vs2.b_node" "S1.b_out" as Connection830
         
         
         connect "none.p_node" "Rs1.p_node" as Connection320
@@ -919,14 +998,16 @@ model "pcb01" {
     CODE model_init
         # Numpy module is imported as 'np'
         
-        RL1 = 21.8*1;
+        RL1 = 25;
         RL3 = 15;
         
-        Cf = 25e-6
+        Cf = 30e-6
         Lf = 1.0e-3
-        Rf = 0.4
+        Rf = 0.08
         
-        Rd = 1500;
-        Cd = 0.2*Cf;
+        line = 0.65
+        
+        Rt = 0.03 + line * 0.165
+        Lt = 0.35e-3 + line * 0.26e-3 
     ENDCODE
 }

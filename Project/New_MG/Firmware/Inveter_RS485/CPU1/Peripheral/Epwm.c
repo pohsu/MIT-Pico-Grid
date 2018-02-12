@@ -52,12 +52,18 @@ void InitEPwm1()
     EPwm1Regs.CMPA.bit.CMPA = 0;    // Set compare A value
     EPwm1Regs.CMPB.bit.CMPB = 0;    // Set Compare B value
 
+    #if HIL
+    //Tuning done on 1/21/2018
+    EPwm1Regs.CMPC = 4300;           // Set Compare C value 3500 0.1uF
+    EPwm1Regs.CMPD = 700;           // Set Compare D value 1500 0.1uF
+    #else
     //Tuning done on 1/21/2018
     EPwm1Regs.CMPC = 3800;           // Set Compare C value 4800
     EPwm1Regs.CMPD = 1200;           // Set Compare D value 200
+    #endif
     //on TI control card
-    // IL1 A1  R29 100ohm C20 0.1uF
-    // IL2 A2  R41 100ohm C32 0.1uF
+    // IL1 A1  R29 100ohm C20 0.01uF new
+    // IL2 A2  R41 100ohm C32 0.01uF new
     // VC1 A4  R31 100ohm C22 0.1uF
     // VC2 A5  R43 100ohm C34 0.1uF
     // VC3 A6  R47 100ohm C38 0.1uF

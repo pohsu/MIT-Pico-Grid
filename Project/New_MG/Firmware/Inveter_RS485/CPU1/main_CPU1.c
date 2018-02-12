@@ -113,6 +113,7 @@ __interrupt void adca1_isr(void)
 		EDIS;
 
 		static Uint16 ctr_PWM = 0;
+		(void) ctr_PWM;
 
 		//Resolve PWM Freq mismatch issues
         #if VERSION == 0

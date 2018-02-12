@@ -34,14 +34,16 @@ void Control_step(float32 Droop[2], float32 Xm, const bool enable)
 //	control_states1.IL_dq_ref[0] = Xm*10.0f / Zb;
 //	control_states1.IL_dq_ref[1] = 0.0f;
 
-    DACA(meas_states1.IL_dq[0], 1.0f);
-    DACB(meas_states1.IO_dq[0], 1.0f);
-    uDACC(control_states1.omega/W_NOM - 0.97f, 0.01f);
+    DACA(meas_states1.IL_dq[0], 2.023f);
+    DACB(meas_states1.VC_dq[0], 50.0f);
+    DACC(meas_states1.IO_dq[0], 2.0f);
+
+//    uDACC(control_states1.omega/W_NOM - 0.971f, 0.01f);
 
     limiter(control_states1.IL_dq_ref, I_LIMIT);
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
-//	control_states1.VINV_dq[0] = 25.0f;
+//	control_states1.VINV_dq[0] = 50.0f;
 //	control_states1.VINV_dq[1] = 0.0f;
 	VINV2Duty(&control_states1, &meas_states1);
 }
@@ -72,9 +74,9 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 {
     float32 IIM_dq[2] = {0}, X = 0, R = 0, L = 0;
     Uint16 i = 0;
-    X = Xm / Sn;
-    R = X * 0.5f;
-    L = X / W_NOM * 1 ;
+    X = Xm ;
+    R = Xm * 0.5f;
+    L = X / W_NOM  ;
 
     // Reset damper
     if (enable == false){
@@ -255,12 +257,12 @@ void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
 
 	dq2abc_fast(abc, c_states->VINV_dq, table);
 
-	c_states->Duty[0] = (Uint16)( (abc[0]/m_states->Vdc + 0.5f) * PWM_PERIOD);
-	c_states->Duty[1] = (Uint16)( (abc[1]/m_states->Vdc + 0.5f) * PWM_PERIOD);
-	c_states->Duty[2] = (Uint16)( (abc[2]/m_states->Vdc + 0.5f) * PWM_PERIOD);
-//    c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
-//    c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
-//    c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
+//	c_states->Duty[0] = (Uint16)( (abc[0]/m_states->Vdc + 0.5f) * PWM_PERIOD);
+//	c_states->Duty[1] = (Uint16)( (abc[1]/m_states->Vdc + 0.5f) * PWM_PERIOD);
+//	c_states->Duty[2] = (Uint16)( (abc[2]/m_states->Vdc + 0.5f) * PWM_PERIOD);
+    c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
+    c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
+    c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
 
 }
 
