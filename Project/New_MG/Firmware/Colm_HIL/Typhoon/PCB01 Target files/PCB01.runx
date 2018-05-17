@@ -1,11 +1,12 @@
 <hil_settings>
-    <format_version>2.1</format_version>
+    <format_version>2.4</format_version>
     <number_of_devices>1</number_of_devices>
+    <ao_limiting_forced>False</ao_limiting_forced>
     <hw_properties>
         <product_id>402</product_id>
         <hardware_id>3</hardware_id>
         <configuration_id>1</configuration_id>
-        <fw_release_date>132123665</fw_release_date>
+        <fw_release_date>132252436</fw_release_date>
     </hw_properties>
     <components>
         <inputs>
@@ -40,8 +41,8 @@
             <input>
                 <name>Vs2</name>
                 <device>0</device>
-                <input_address>4</input_address>
-                <child_input_address>['2', '3', '4']</child_input_address>
+                <input_address>3</input_address>
+                <child_input_address>['1', '2', '3']</child_input_address>
                 <device>0</device>
             	<input_type>ThreePhaseInput</input_type>
                 <waveform_type>Sine</waveform_type>
@@ -65,6 +66,8 @@
                 <is_closed>False</is_closed>
             </contactor>
         </contactors>
+        <dtsm_contactors>
+        </dtsm_contactors>
         <machines>
         </machines>
         <analog_channels>
@@ -74,6 +77,9 @@
                 <scale>1.0</scale>
                 <offset>0.0</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -86,6 +92,9 @@
                 <scale>1.0</scale>
                 <offset>0.0</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -98,6 +107,9 @@
                 <scale>20.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>IL1a</name>
                 	<show>True</show>
@@ -110,6 +122,9 @@
                 <scale>20.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>IL1b</name>
                 	<show>True</show>
@@ -122,6 +137,9 @@
                 <scale>403.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>VO1a</name>
                 	<show>True</show>
@@ -134,6 +152,9 @@
                 <scale>403.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>VO1b</name>
                 	<show>True</show>
@@ -146,6 +167,9 @@
                 <scale>403.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>VO1c</name>
                 	<show>True</show>
@@ -158,6 +182,9 @@
                 <scale>20.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>IO1a</name>
                 	<show>True</show>
@@ -170,6 +197,9 @@
                 <scale>20.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>IO1b</name>
                 	<show>True</show>
@@ -182,6 +212,9 @@
                 <scale>1.0</scale>
                 <offset>0.0</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -194,6 +227,9 @@
                 <scale>1.0</scale>
                 <offset>0.0</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -206,6 +242,9 @@
                 <scale>1.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -218,6 +257,9 @@
                 <scale>1.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -230,6 +272,9 @@
                 <scale>1.0</scale>
                 <offset>1.5</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -242,6 +287,9 @@
                 <scale>1.0</scale>
                 <offset>0.0</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -254,6 +302,9 @@
                 <scale>1.0</scale>
                 <offset>0.0</offset>
                 <locked>True</locked>
+                <ao_limiting_enabled>False</ao_limiting_enabled>
+                <ao_lower_limit>-1.0</ao_lower_limit>
+                <ao_upper_limit>1.0</ao_upper_limit>
                 <analog_signal>
                 	<name>none</name>
                 	<show>True</show>
@@ -270,7 +321,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.Inverter_stf1</name>
+                	<name>3ph_inverter_1.IGBT Leg1.PWM_Modulator_BOT_1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -282,7 +333,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.Inverter_stf2</name>
+                	<name>3ph_inverter_1.IGBT Leg1.PWM_Modulator_TOP_1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -294,7 +345,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.Inverter_stf3</name>
+                	<name>3ph_inverter_1.IGBT Leg1_stf</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -306,7 +357,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.PWM_Modulator_BOT_1</name>
+                	<name>3ph_inverter_1.IGBT Leg2.PWM_Modulator_BOT_1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -318,7 +369,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.PWM_Modulator_BOT_2</name>
+                	<name>3ph_inverter_1.IGBT Leg2.PWM_Modulator_TOP_1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -330,7 +381,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.PWM_Modulator_BOT_3</name>
+                	<name>3ph_inverter_1.IGBT Leg2_stf</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -342,7 +393,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.PWM_Modulator_TOP_1</name>
+                	<name>3ph_inverter_1.IGBT Leg3.PWM_Modulator_BOT_1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -354,7 +405,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.PWM_Modulator_TOP_2</name>
+                	<name>3ph_inverter_1.IGBT Leg3.PWM_Modulator_TOP_1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -366,7 +417,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>3ph_inverter_1.PWM_Modulator_TOP_3</name>
+                	<name>3ph_inverter_1.IGBT Leg3_stf</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -378,7 +429,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 1</name>
+                	<name>HIL0 digital input 1</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -390,7 +441,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 10</name>
+                	<name>HIL0 digital input 10</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -402,7 +453,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 11</name>
+                	<name>HIL0 digital input 11</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -414,7 +465,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 12</name>
+                	<name>HIL0 digital input 12</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -426,7 +477,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 13</name>
+                	<name>HIL0 digital input 13</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -438,7 +489,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 14</name>
+                	<name>HIL0 digital input 14</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -450,7 +501,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 15</name>
+                	<name>HIL0 digital input 15</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -462,7 +513,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 16</name>
+                	<name>HIL0 digital input 16</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -474,7 +525,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 17</name>
+                	<name>HIL0 digital input 17</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -486,7 +537,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 18</name>
+                	<name>HIL0 digital input 18</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -498,7 +549,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 19</name>
+                	<name>HIL0 digital input 19</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -510,7 +561,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 2</name>
+                	<name>HIL0 digital input 2</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -522,7 +573,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 20</name>
+                	<name>HIL0 digital input 20</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -534,7 +585,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 21</name>
+                	<name>HIL0 digital input 21</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -546,7 +597,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 22</name>
+                	<name>HIL0 digital input 22</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -558,7 +609,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 23</name>
+                	<name>HIL0 digital input 23</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -570,7 +621,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 24</name>
+                	<name>HIL0 digital input 24</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -582,7 +633,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 25</name>
+                	<name>HIL0 digital input 25</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -594,7 +645,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 26</name>
+                	<name>HIL0 digital input 26</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -606,7 +657,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 27</name>
+                	<name>HIL0 digital input 27</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -618,7 +669,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 28</name>
+                	<name>HIL0 digital input 28</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -630,7 +681,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 29</name>
+                	<name>HIL0 digital input 29</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -642,7 +693,7 @@
                 <software_value>0</software_value>
                 <locked>False</locked>
                 <digital_signal>
-                	<name>digital input 3</name>
+                	<name>HIL0 digital input 3</name>
                 	<device>0</device>
                 </digital_signal>
             </digital_channel>
@@ -655,13 +706,6 @@
                 <site>0</site>
                 <switches>
                     <switch>
-                        <name>Sa_top</name>
-                        <device>0</device>
-                        <weight>[1]</weight>
-                        <software_control>False</software_control>
-                        <software_value>0</software_value>
-                    </switch>
-                    <switch>
                         <name>Sa_bot</name>
                         <device>0</device>
                         <weight>[0]</weight>
@@ -669,9 +713,9 @@
                         <software_value>0</software_value>
                     </switch>
                     <switch>
-                        <name>Sb_top</name>
+                        <name>Sa_top</name>
                         <device>0</device>
-                        <weight>[7]</weight>
+                        <weight>[1]</weight>
                         <software_control>False</software_control>
                         <software_value>0</software_value>
                     </switch>
@@ -683,9 +727,9 @@
                         <software_value>0</software_value>
                     </switch>
                     <switch>
-                        <name>Sc_top</name>
+                        <name>Sb_top</name>
                         <device>0</device>
-                        <weight>[13]</weight>
+                        <weight>[7]</weight>
                         <software_control>False</software_control>
                         <software_value>0</software_value>
                     </switch>
@@ -696,190 +740,19 @@
                         <software_control>False</software_control>
                         <software_value>0</software_value>
                     </switch>
+                    <switch>
+                        <name>Sc_top</name>
+                        <device>0</device>
+                        <weight>[13]</weight>
+                        <software_control>False</software_control>
+                        <software_value>0</software_value>
+                    </switch>
                 </switches>
             </switching_block>
         </switching_blocks>
-        <temperatures>
-        </temperatures>
-        <power_sources>
-        </power_sources>
         <batteries>
         </batteries>
-        <cp_io>
-        </cp_io>
-        <capture>
-            <decimation>1</decimation>
-            <analog_signals_on_ch>[u'none', u'HIL0 analog input 10', u'HIL0 analog input 2', u'HIL0 analog input 9', u'Cf1b', u'Cdc', u'Cf1a', u'HIL0 analog input 3', u'HIL0 analog input 14', u'HIL0 analog input 15', u'HIL0 analog input 16', u'Vdc', u'HIL0 analog input 11', u'HIL0 analog input 13', u'HIL0 analog input 12', u'Vs1']</analog_signals_on_ch>
-            <digital_signals_on_ch>[]</digital_signals_on_ch>
-            <num_of_digital_ch>32</num_of_digital_ch>
-            <num_of_analog_ch>16</num_of_analog_ch>
-            <num_of_samples>100000</num_of_samples>
-            <num_of_selected>16</num_of_selected>
-            <num_of_viewports>1</num_of_viewports>
-            <capture_digital_ch>False</capture_digital_ch>
-            <legend_state>True</legend_state>
-            <color_style>light</color_style>
-            <signal_insertion_order>[]</signal_insertion_order>
-            <trigger_settings>
-	            <trigger_source>(u'none', 8448)</trigger_source>
-	            <trigger_type>Analog</trigger_type>
-	            <trigger_threshold>0.0</trigger_threshold>
-	            <trigger_offset>0</trigger_offset>
-	            <trigger_edge>Rising edge</trigger_edge>
-	        </trigger_settings>
-	        <signal_parameters>
-	        </signal_parameters>
-        </capture>
-        <scope>
-            <decimation>10</decimation>
-            <analog_signals_on_ch>[u'VO1a', u'VO1b', u'IO1a', u'IO1b', u'IL1a', u'IL1b', u'VO1b', u'VO1c', u'IL1b', u'Vs2_a', u'HIL0 analog input 13', u'Vdc', u'HIL0 analog input 12', u'HIL0 analog input 9', u'HIL0 analog input 8', u'Vs1']</analog_signals_on_ch>
-            <digital_signals_on_ch>[]</digital_signals_on_ch>
-            <num_of_digital_ch>32</num_of_digital_ch>
-            <num_of_analog_ch>16</num_of_analog_ch>
-            <num_of_samples>5000</num_of_samples>
-            <num_of_selected>14</num_of_selected>
-            <num_of_viewports>1</num_of_viewports>
-            <capture_digital_ch>False</capture_digital_ch>
-            <time_base>(5, 0.001)</time_base>
-            <legend_state>True</legend_state>
-            <color_style>light</color_style>
-            <signal_insertion_order>[[u'IO1a', u'VO1a', u'Vs2_a']]</signal_insertion_order>
-            <trigger_settings>
-	            <trigger_source>(u'VO1a', 8)</trigger_source>
-	            <trigger_type>Analog</trigger_type>
-	            <trigger_threshold>0.0</trigger_threshold>
-	            <trigger_offset>2500</trigger_offset>
-	            <trigger_edge>Rising edge</trigger_edge>
-	            <trigger_mode>Auto</trigger_mode>
-	        </trigger_settings>
-	        <signal_parameters>
-	        		<signal_description>
-	        			<name>Vdc</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>Vs1</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>HIL0 analog input 13</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>HIL0 analog input 12</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>HIL0 analog input 9</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>HIL0 analog input 8</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>VO1a</name>
-	        			<viewports>[True]</viewports>
-	        			<scales>[u'10']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>['#FF0000']</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>IO1a</name>
-	        			<viewports>[True]</viewports>
-	        			<scales>[u'500m']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>['#0099FF']</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>VO1b</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'10']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>IO1b</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'Auto']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>IL1a</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'500m']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>IL1b</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'1']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>VO1c</name>
-	        			<viewports>[False]</viewports>
-	        			<scales>[u'10']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>[None]</colors>
-	        		</signal_description>
-	        		<signal_description>
-	        			<name>Vs2_a</name>
-	        			<viewports>[True]</viewports>
-	        			<scales>[u'10']</scales>
-	        			<couplings>[False]</couplings>
-	        			<offsets>[0.0]</offsets>
-	        			<inversions>False</inversions>
-	        			<colors>['#00CC00']</colors>
-	        		</signal_description>
-	        </signal_parameters>
-        </scope>
+        <scada_inputs>
+        </scada_inputs>
     </components>
 </hil_settings>

@@ -48,11 +48,11 @@ typedef double real;
                  double _3ph_inverter_1_inb_const__out = 1.0;
                  double _3ph_inverter_1_ina_const__out = 1.0;
                  double _3ph_inverter_1_en_const__out = 1.0;
-        unsigned int _3ph_inverter_1_pwm_modulator__channels[3] = {3, 4, 5};
+        unsigned int _3ph_inverter_1_pwm_modulator__channels[3] = {0, 1, 2};
     double _3ph_inverter_1_pwm_modulator__limited_in[3];
     unsigned int _3ph_inverter_1_pwm_modulator__update_mask;
 
-            unsigned int _3ph_inverter_2_pwm_modulator__channels[3] = {0, 1, 2};
+            unsigned int _3ph_inverter_2_pwm_modulator__channels[3] = {3, 4, 5};
     double _3ph_inverter_2_pwm_modulator__limited_in[3];
     unsigned int _3ph_inverter_2_pwm_modulator__update_mask;
 
@@ -77,7 +77,7 @@ void ReInit_user_sp_cpu_dev0(){
     
     
     
-                                                                        _3ph_inverter_1_pwm_modulator__update_mask = 56;
+                                                                        _3ph_inverter_1_pwm_modulator__update_mask = 7;
                                 HIL_OutInt32(HIL_PM_MAX_CNT + _3ph_inverter_1_pwm_modulator__channels[0], 2500);// divide by 2 is already implemented in hw
                 HIL_OutInt32(HIL_PM_D_TIME + _3ph_inverter_1_pwm_modulator__channels[0], 0);
                         HIL_OutInt32(HIL_PM_MAX_CNT + _3ph_inverter_1_pwm_modulator__channels[1], 2500);// divide by 2 is already implemented in hw
@@ -102,7 +102,7 @@ void ReInit_user_sp_cpu_dev0(){
             HIL_OutInt32(HIL_PM_MASK, _3ph_inverter_1_pwm_modulator__update_mask);
 
 
-                                                                        _3ph_inverter_2_pwm_modulator__update_mask = 7;
+                                                                        _3ph_inverter_2_pwm_modulator__update_mask = 56;
                                 HIL_OutInt32(HIL_PM_MAX_CNT + _3ph_inverter_2_pwm_modulator__channels[0], 2500);// divide by 2 is already implemented in hw
                 HIL_OutInt32(HIL_PM_D_TIME + _3ph_inverter_2_pwm_modulator__channels[0], 0);
                         HIL_OutInt32(HIL_PM_MAX_CNT + _3ph_inverter_2_pwm_modulator__channels[1], 2500);// divide by 2 is already implemented in hw

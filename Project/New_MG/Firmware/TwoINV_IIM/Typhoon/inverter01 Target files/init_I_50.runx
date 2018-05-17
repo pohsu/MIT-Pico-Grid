@@ -10,7 +10,7 @@
     <components>
         <inputs>
             <input>
-                <name>Vs2</name>
+                <name>Vs1</name>
                 <device>0</device>
             	<input_type>OnePhaseInput</input_type>
                 <waveform_type>Constant</waveform_type>
@@ -24,7 +24,7 @@
                 <harmonics_type>per_rms_unit_harmonics</harmonics_type>
             </input>
             <input>
-                <name>Vs1</name>
+                <name>Vs2</name>
                 <device>0</device>
             	<input_type>OnePhaseInput</input_type>
                 <waveform_type>Constant</waveform_type>

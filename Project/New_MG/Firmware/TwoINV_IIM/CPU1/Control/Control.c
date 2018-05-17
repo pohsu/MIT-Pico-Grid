@@ -59,7 +59,7 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 	float32 IIM_dq[2] = {0}, X = 0, R = 0, L = 0;
 	Uint16 i = 0;
 	X = Xm / Sn;
-	R = X * 0.2;
+	R = X * 1;
 	L = X / W_NOM * 1 ;
 
 	// Reset

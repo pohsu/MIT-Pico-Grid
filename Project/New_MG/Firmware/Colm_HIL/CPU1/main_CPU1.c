@@ -84,50 +84,50 @@ __interrupt void IPC_isr(void)
 __interrupt void adca1_isr(void)
 {
     GpioDataRegs.GPASET.bit.GPIO31 = 1; //LED2 on Control Card
-//    uDACB(2.99f, 1.0f);
-//	static float32 Droop[2], Xm;
-//
-//	Droop[0] = (float32)console_data.vref/1000.0f;
-//	Droop[1] = (float32)console_data.vref/1000.0f;
-//	Xm = (float32)console_data.fref;
-//	Measurement_step(enable);
-//	Control_step(Droop, Xm, enable);
-//
-//	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
-//	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];
-//	EPwm2Regs.CMPA.bit.CMPA = control_states1.Duty[1];
-//	EPwm2Regs.CMPB.bit.CMPB = control_states1.Duty[1];
-//	EPwm3Regs.CMPA.bit.CMPA = control_states1.Duty[2];
-//	EPwm3Regs.CMPB.bit.CMPB = control_states1.Duty[2];
-//
-////	EPwm1Regs.CMPA.bit.CMPA = 2500;
-//
-//	if (enable)
-//	{
-//		GpioDataRegs.GPCSET.bit.GPIO85 = 1; //EMSTOP
-//		GpioDataRegs.GPCSET.bit.GPIO87 = 1; //NTCBYPASS
-//		EALLOW;
-//		EPwm1Regs.TZCLR.bit.OST = 1;
-//		EPwm2Regs.TZCLR.bit.OST = 1;
-//		EPwm3Regs.TZCLR.bit.OST = 1;
-//		EPwm4Regs.TZCLR.bit.OST = 1;
-//		EPwm5Regs.TZCLR.bit.OST = 1;
-//		EPwm6Regs.TZCLR.bit.OST = 1;
-//		EDIS;
-//	}
-//	else
-//	{
-//		GpioDataRegs.GPCCLEAR.bit.GPIO85 = 1; //EMSTOP
-//		GpioDataRegs.GPCCLEAR.bit.GPIO87 = 1; //NTCBYPASS
-//		EALLOW;
-//		EPwm1Regs.TZFRC.bit.OST = 1;
-//		EPwm2Regs.TZFRC.bit.OST = 1;
-//		EPwm3Regs.TZFRC.bit.OST = 1;
-//		EPwm4Regs.TZFRC.bit.OST = 1;
-//		EPwm5Regs.TZFRC.bit.OST = 1;
-//		EPwm6Regs.TZFRC.bit.OST = 1;
-//		EDIS;
-//	}
+    uDACB(2.99f, 1.0f);
+	static float32 Droop[2], Xm;
+
+	Droop[0] = (float32)console_data.vref/1000.0f;
+	Droop[1] = (float32)console_data.vref/1000.0f;
+	Xm = (float32)console_data.fref;
+	Measurement_step(enable);
+	Control_step(Droop, Xm, enable);
+
+	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
+	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];
+	EPwm2Regs.CMPA.bit.CMPA = control_states1.Duty[1];
+	EPwm2Regs.CMPB.bit.CMPB = control_states1.Duty[1];
+	EPwm3Regs.CMPA.bit.CMPA = control_states1.Duty[2];
+	EPwm3Regs.CMPB.bit.CMPB = control_states1.Duty[2];
+
+//	EPwm1Regs.CMPA.bit.CMPA = 2500;
+
+	if (enable)
+	{
+		GpioDataRegs.GPCSET.bit.GPIO85 = 1; //EMSTOP
+		GpioDataRegs.GPCSET.bit.GPIO87 = 1; //NTCBYPASS
+		EALLOW;
+		EPwm1Regs.TZCLR.bit.OST = 1;
+		EPwm2Regs.TZCLR.bit.OST = 1;
+		EPwm3Regs.TZCLR.bit.OST = 1;
+		EPwm4Regs.TZCLR.bit.OST = 1;
+		EPwm5Regs.TZCLR.bit.OST = 1;
+		EPwm6Regs.TZCLR.bit.OST = 1;
+		EDIS;
+	}
+	else
+	{
+		GpioDataRegs.GPCCLEAR.bit.GPIO85 = 1; //EMSTOP
+		GpioDataRegs.GPCCLEAR.bit.GPIO87 = 1; //NTCBYPASS
+		EALLOW;
+		EPwm1Regs.TZFRC.bit.OST = 1;
+		EPwm2Regs.TZFRC.bit.OST = 1;
+		EPwm3Regs.TZFRC.bit.OST = 1;
+		EPwm4Regs.TZFRC.bit.OST = 1;
+		EPwm5Regs.TZFRC.bit.OST = 1;
+		EPwm6Regs.TZFRC.bit.OST = 1;
+		EDIS;
+	}
 // Hint: sinf
 
 	AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1; //clear INT1 flag

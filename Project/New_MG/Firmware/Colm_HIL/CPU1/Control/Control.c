@@ -44,8 +44,8 @@ void Control_step(const float32 Droop[2], const float32 Xm, const bool enable)
 
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
-//	control_states1.VINV_dq[0] = 25.0f;
-//	control_states1.VINV_dq[1] = 0.0f;
+	control_states1.VINV_dq[0] = 25.0f;
+	control_states1.VINV_dq[1] = 0.0f;
 
 //    DACA(meas_states1.IL_dq[0], 1.0f);
 //	DACB(meas_states1.VC_dq[0], 25.0f);

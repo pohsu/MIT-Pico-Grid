@@ -6,7 +6,7 @@
 #define KIC 18000.0f //18000.0f
 #define KPV 0.15f //0.15
 #define KIV 350.0f //350
-#define VDC 75.0f
+#define VDC 120.0f
 #define Sb 250
 #define W_NOM 314.16f
 #define V_NOM 50.0f

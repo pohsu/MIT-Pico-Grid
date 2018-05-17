@@ -3,15 +3,15 @@
 
 *************** Writting SPC1 Modes ***************
 Definition of switches for switches possition vector
-SWITCH: S1_0 	related to COMPONENT: 3ph_inverter_2.Inverter
-SWITCH: S2_0 	related to COMPONENT: 3ph_inverter_2.Inverter
 SWITCH: S1_1 	related to COMPONENT: 3ph_inverter_2.Inverter
 SWITCH: S2_1 	related to COMPONENT: 3ph_inverter_2.Inverter
 SWITCH: S1_2 	related to COMPONENT: 3ph_inverter_2.Inverter
 SWITCH: S2_2 	related to COMPONENT: 3ph_inverter_2.Inverter
-SWITCH: SA_3 	related to COMPONENT: S1
-SWITCH: SB_3 	related to COMPONENT: S1
-SWITCH: SC_3 	related to COMPONENT: S1
+SWITCH: S1_3 	related to COMPONENT: 3ph_inverter_2.Inverter
+SWITCH: S2_3 	related to COMPONENT: 3ph_inverter_2.Inverter
+SWITCH: SA_0 	related to COMPONENT: S1
+SWITCH: SB_0 	related to COMPONENT: S1
+SWITCH: SC_0 	related to COMPONENT: S1
 Modes value relation to switches possition
 [ MODE NUMBER: 1 	SWITCHES POSSITION: 000000000 ] 	merged to 000000000 
 [ MODE NUMBER: 2 	SWITCHES POSSITION: 010000000 ] 	merged to 010000000 
