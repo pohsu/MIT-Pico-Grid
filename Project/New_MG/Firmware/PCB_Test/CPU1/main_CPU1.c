@@ -93,12 +93,19 @@ __interrupt void adca1_isr(void)
 	Measurement_step(enable);
 	Control_step(Droop, Xm, enable);
 
-	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
-	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];
-	EPwm2Regs.CMPA.bit.CMPA = control_states1.Duty[1];
-	EPwm2Regs.CMPB.bit.CMPB = control_states1.Duty[1];
-	EPwm3Regs.CMPA.bit.CMPA = control_states1.Duty[2];
-	EPwm3Regs.CMPB.bit.CMPB = control_states1.Duty[2];
+//	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
+//	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];
+//	EPwm2Regs.CMPA.bit.CMPA = control_states1.Duty[1];
+//	EPwm2Regs.CMPB.bit.CMPB = control_states1.Duty[1];
+//	EPwm3Regs.CMPA.bit.CMPA = control_states1.Duty[2];
+//	EPwm3Regs.CMPB.bit.CMPB = control_states1.Duty[2];
+
+    EPwm1Regs.CMPA.bit.CMPA = PWM_PERIOD * (float32)console_data.vref/100.0f;
+    EPwm1Regs.CMPB.bit.CMPB = PWM_PERIOD * (float32)console_data.vref/100.0f;
+    EPwm2Regs.CMPA.bit.CMPA = PWM_PERIOD * (float32)console_data.vref/100.0f;
+    EPwm2Regs.CMPB.bit.CMPB = PWM_PERIOD * (float32)console_data.vref/100.0f;
+    EPwm3Regs.CMPA.bit.CMPA = PWM_PERIOD * (float32)console_data.vref/100.0f;
+    EPwm3Regs.CMPB.bit.CMPB = PWM_PERIOD * (float32)console_data.vref/100.0f;
 
 //	EPwm1Regs.CMPA.bit.CMPA = 2500;
 
@@ -153,8 +160,8 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
-        report_data.volt = meas_states1.Vdc;
-        report_data.freq = (control_states1.omega - 0.8*W_NOM)/W_NOM*500.0f;
+        report_data.volt = console_data.vref;
+        report_data.freq = console_data.fref;
         Send_to_CPU2(c1_r_w_array);
     }
 
