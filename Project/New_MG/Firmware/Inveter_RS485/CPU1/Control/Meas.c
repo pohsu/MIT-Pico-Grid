@@ -88,10 +88,10 @@ void ADC_process(const bool enable, struct_abc_states * states1, struct_meas_sta
 //	Correction for zero-sequence bias
 	VN = (states1->VC_abc[0]+states1->VC_abc[1]+states1->VC_abc[2])*0.333333333333f;
 	for(i=0; i<=1; i++) states1->VC_abc[i] -= VN;
-
-//    DACA(states1->IL_abc[0], 1.886f);
-//    DACB(states1->VC_abc[0], 50.0f);
-//    DACC(states1->IO_abc[0], 2.0f);
+//
+//    DACA(states1->VC_abc[2], 50.0f);
+//    DACB(states1->VC_abc[1], 50.0f);
+//    DACC(states1->VC_abc[0], 50.0f);
 
 }
 

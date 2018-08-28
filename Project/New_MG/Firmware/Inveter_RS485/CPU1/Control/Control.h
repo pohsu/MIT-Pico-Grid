@@ -1,7 +1,7 @@
 #define Zb 25.0f
 #define LF 1.0e-3f
 #define CF 30e-6f
-#define FV 0.75f
+#define FV 0.5f
 #define KPC 8.0f //8.0f
 #define KIC 18000.0f //18000.0f
 #define KPV 0.15f //0.15

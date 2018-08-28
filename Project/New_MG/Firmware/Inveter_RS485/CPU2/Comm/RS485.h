@@ -2,7 +2,7 @@
 #define SIZEOFRS485_RX 2
 #define ADDR_BROADCAST 0
 #define ADDR_HOST 1
-#define ADDR_DEVICE 101
+#define ADDR_DEVICE 102
 #define CMD_NTH 0
 
 

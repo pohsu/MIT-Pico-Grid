@@ -25,6 +25,7 @@ void RS485_init(void)
 
     RS485_addr[0] = ADDR_DEVICE1; //device addr
     RS485_addr[1] = ADDR_DEVICE2; //device addr
+    RS485_addr[2] = ADDR_DEVICE3; //device addr
     Uint16 i;
     for (i = 0; i < NUMOFDEVICE; i++)
     {

@@ -30,7 +30,7 @@ const struct_task_period task_period = {
     .count_1Hz   = 5000,
 };
 
-Uint16 device, device_rx = 0;
+Uint16 device = 0, device_rx = 0;
 
 extern Uint16 usb_tx[SIZEOFUSB_TX];
 extern Uint16 usb_rx[SIZEOFUSB_RX];
@@ -72,7 +72,7 @@ __interrupt void SCIA_RX_isr(void)
 __interrupt void SCIB_RX_isr(void)
 {
     if (device_rx == 0) GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1; //LED5
-    if (device_rx == 1) GpioDataRegs.GPCTOGGLE.bit.GPIO83 = 1; //LED6
+    if (device_rx == 2) GpioDataRegs.GPCTOGGLE.bit.GPIO83 = 1; //LED6
     RS485_RX(device_rx);
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
 }

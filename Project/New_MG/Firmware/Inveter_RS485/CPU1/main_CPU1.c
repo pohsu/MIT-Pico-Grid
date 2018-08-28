@@ -83,7 +83,7 @@ __interrupt void IPC_isr(void)
 __interrupt void adca1_isr(void)
 {
     GpioDataRegs.GPASET.bit.GPIO31 = 1; //LED2 on Control Card
-	static float32 Droop[2], Xm;
+	volatile static float32 Droop[2], Xm;
 
 
 	Droop[0] = (float32)IPC_rx.vref/1000.0f;
@@ -115,29 +115,29 @@ __interrupt void adca1_isr(void)
 		static Uint16 ctr_PWM = 0;
 		(void) ctr_PWM;
 
-		//Resolve PWM Freq mismatch issues
-        #if VERSION == 0
-
-		ctr_PWM++;
-
-		if (ctr_PWM == 4){
-		    ctr_PWM = 0;
-            EALLOW;
-            EPwm1Regs.TBPRD = PWM_PERIOD + 1;
-            EPwm2Regs.TBPRD = PWM_PERIOD + 1;
-            EPwm3Regs.TBPRD = PWM_PERIOD + 1;
-            EDIS;
-		}
-		else
-		{
-            EALLOW;
-            EPwm1Regs.TBPRD = PWM_PERIOD;
-            EPwm2Regs.TBPRD = PWM_PERIOD;
-            EPwm3Regs.TBPRD = PWM_PERIOD;
-            EDIS;
-		}
-
-        #endif
+//		//Resolve PWM Freq mismatch issues
+//        #if VERSION == 0
+//
+//		ctr_PWM++;
+//
+//		if (ctr_PWM == 4){
+//		    ctr_PWM = 0;
+//            EALLOW;
+//            EPwm1Regs.TBPRD = PWM_PERIOD + 1;
+//            EPwm2Regs.TBPRD = PWM_PERIOD + 1;
+//            EPwm3Regs.TBPRD = PWM_PERIOD + 1;
+//            EDIS;
+//		}
+//		else
+//		{
+//            EALLOW;
+//            EPwm1Regs.TBPRD = PWM_PERIOD;
+//            EPwm2Regs.TBPRD = PWM_PERIOD;
+//            EPwm3Regs.TBPRD = PWM_PERIOD;
+//            EDIS;
+//		}
+//
+//        #endif
 
 	}
 	else
@@ -151,6 +151,12 @@ __interrupt void adca1_isr(void)
 		EPwm4Regs.TZFRC.bit.OST = 1;
 		EPwm5Regs.TZFRC.bit.OST = 1;
 		EPwm6Regs.TZFRC.bit.OST = 1;
+		EPwm1Regs.TBCTR = 0x0000;
+		EPwm2Regs.TBCTR = 0x0000;
+		EPwm3Regs.TBCTR = 0x0000;
+		EPwm4Regs.TBCTR = 0x0000;
+		EPwm5Regs.TBCTR = 0x0000;
+		EPwm6Regs.TBCTR = 0x0000;
 		EDIS;
 	}
 
@@ -170,33 +176,28 @@ __interrupt void cpu_timer_5kHz(void)
 
 void task_table (Uint32 * counter)
 {
-//    if (*counter % (Uint32)task_period.count_5kHz == 0)
-//    {
-//
-//    }
+    if (*counter % (Uint32)task_period.count_5kHz == 0)
+    {
+    }
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
         IPC_tx.volt = meas_states1.VC_dq[0]/V_NOM*100.0f;
         IPC_tx.freq = (control_states1.omega - 0.8*W_NOM)/W_NOM*500.0f;
-
-//        IPC_tx.volt = IPC_rx.vref;
-//        IPC_tx.freq = IPC_rx.fref;
         IPC_TX(c1_r_w_array);
     }
 
-//    if (*counter % (Uint32)task_period.count_100Hz == 0)
-//    {
-//    }
-//
+    if (*counter % (Uint32)task_period.count_100Hz == 0)
+    {
+    }
+
     if (*counter % (Uint32)task_period.count_10Hz == 0)
     {
         GpioDataRegs.GPCTOGGLE.bit.GPIO73 = 1;
     }
-//
+
     if (*counter % (Uint32)task_period.count_1Hz == 0)
     {
-
     }
 
     if (*counter % (Uint32)TASK_MAX_COUNT == 0)

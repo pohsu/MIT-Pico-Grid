@@ -34,17 +34,17 @@ void Control_step(float32 Droop[2], float32 Xm, const bool enable)
 //	control_states1.IL_dq_ref[0] = Xm*10.0f / Zb;
 //	control_states1.IL_dq_ref[1] = 0.0f;
 
-    DACA(meas_states1.IL_dq[0], 2.023f);
+    DACA(meas_states1.IL_dq[0], 2.0f);
     DACB(meas_states1.VC_dq[0], 50.0f);
     DACC(meas_states1.IO_dq[0], 2.0f);
-
-//    uDACC(control_states1.omega/W_NOM - 0.971f, 0.01f);
+//    uDACC(meas_states1.Vdc, 100.0f);
 
     limiter(control_states1.IL_dq_ref, I_LIMIT);
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
-//	control_states1.VINV_dq[0] = 50.0f;
-//	control_states1.VINV_dq[1] = 0.0f;
+	control_states1.VINV_dq[0] = 50.0f;
+	control_states1.VINV_dq[1] = 0.0f;
+
 	VINV2Duty(&control_states1, &meas_states1);
 }
 #pragma CODE_SECTION(Droop_control, "ramfuncs")
@@ -52,7 +52,7 @@ void Droop_control(const bool enable, const float32 Droop[2], const float32 Sn, 
 {
 	static float32 vref;
     if (enable){
-	    vref += (V_NOM-vref) * 0.0001f; //slew rate voltage references
+	    vref += (V_NOM-vref) * 0.00001f; //slew rate voltage references
 
 		c_states->omega = W_NOM -  Droop[0] / Sn* W_NOM * m_states->PQ[0];
 		c_states->VC_dq_ref[0] = vref - Droop[1] / Sn * V_NOM * m_states->PQ[1];
@@ -95,7 +95,6 @@ void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_s
 
     // Iref
     for (i = 0;i<=1;i++) c_states->IL_dq_ref[i] = (1-FV) * c_states->LPF_IIM[i];
-
 
 
     c_states->IL_dq_ref[0] += m_states->IO_dq[0]*FV - c_states->omega*CF*m_states->VC_dq[1];

@@ -1,6 +1,6 @@
 #define SIZEOFUSB_RX 4 //1 unit = 1 bytes or more via IPC
-#define NUMOFDEVICE 2 // number of devices
-#define SIZEOFUSB_TX 8 //1 unit = 4 bytes
+#define NUMOFDEVICE 3 // number of devices
+#define SIZEOFUSB_TX 12 //1 unit = 4 bytes
 #define BEGIN 111
 #define END 222
 

@@ -85,6 +85,7 @@ void SetupADCEpwm(void)
 	AdcdRegs.ADCSOC2CTL.bit.ACQPS = ACQPS_SIZE; //sample window
 	AdcdRegs.ADCSOC2CTL.bit.TRIGSEL = 6; //trigger on ePWM1 SOCB
 
+	//Output Current
     #if VERSION
 	AdcaRegs.ADCSOC3CTL.bit.CHSEL = 14;  //SOC4 will convert ADCINA14
 	AdcaRegs.ADCSOC3CTL.bit.ACQPS = ACQPS_SIZE; //sample window
