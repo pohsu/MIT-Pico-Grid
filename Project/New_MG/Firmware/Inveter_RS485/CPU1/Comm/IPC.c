@@ -13,7 +13,10 @@ struct_IPC_tx IPC_tx = {
 };
 struct_IPC_rx IPC_rx = {
 	.vref = 0,
-    .fref = 0,
+    .kp = 0,
+    .kq = 0,
+    .xm = 0,
+    .rm = 0,
 };
 
 //***********************************************************************//
@@ -40,7 +43,13 @@ void Decoder_Process_IPC (Uint16 * array)
 		GpioDataRegs.GPCCLEAR.bit.GPIO77 = 1; //LED3
 	}
 
-	if (array[0] == CMD_FREF) IPC_rx.fref = array[1];
+	if (array[0] == CMD_RM) IPC_rx.rm = array[1];
+
+	if (array[0] == CMD_XM) IPC_rx.xm = array[1];
+
+	if (array[0] == CMD_KP) IPC_rx.kp = array[1];
+
+	if (array[0] == CMD_KQ) IPC_rx.kq = array[1];
 
 	if (array[0] == CMD_VREF) IPC_rx.vref = array[1];
 }

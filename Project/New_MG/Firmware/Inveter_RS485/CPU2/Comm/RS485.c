@@ -8,7 +8,7 @@
 
 Uint16 RS485_tx[SIZEOFRS485_TX] = {0};
 Uint16 RS485_rx[SIZEOFRS485_RX] = {0};
-Uint16 RX_complete = 0;
+Uint16 RX_complete = 0, RX_cast = 0;
 
 //***********************************************************************//
 //                     L o c a l  V a r i a b l e s                      //
@@ -24,9 +24,13 @@ void RS485_RX(void)
     if (ScibRegs.SCICTL1.bit.SLEEP)
     {
         addr = ScibRegs.SCIRXBUF.all;
-        if (addr == ADDR_DEVICE)
+        if (addr == ADDR_DEVICE || addr == ADDR_BROADCAST)
         {
             ScibRegs.SCICTL1.bit.SLEEP = 0; //if address detected wake up
+            if(addr == ADDR_BROADCAST)
+                RX_cast = 1;
+            else
+                RX_cast = 0;
         }
     }
     else

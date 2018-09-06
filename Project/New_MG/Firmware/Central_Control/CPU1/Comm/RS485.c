@@ -6,6 +6,7 @@
 //                     G l o b a l  V a r i a b l e s                    //
 //***********************************************************************//
 Uint16 device_flag[NUMOFDEVICE] = {0};
+Uint16 cast_flag[NUMOFDEVICE] = {0};
 Uint16 RS485_addr[NUMOFDEVICE] = {0};
 Uint16 RS485_tx[NUMOFDEVICE][SIZEOFRS485_TX] = {0};
 Uint16 RS485_rx[NUMOFDEVICE][SIZEOFRS485_RX] = {0};
@@ -70,12 +71,16 @@ void RS485_TX(Uint16 device)
     EALLOW;
     ScibRegs.SCICTL1.bit.TXENA = 1; //Enable TX
     ScibRegs.SCICTL1.bit.TXWAKE = 1;
-    SCIB_xmit(RS485_addr[device]); //send addr
+    if(cast_flag[device])
+        SCIB_xmit(ADDR_BROADCAST); //send addr
+    else
+        SCIB_xmit(RS485_addr[device]); //send addr
     SCIB_xmit(device_flag[device]? RS485_tx[device][0]: 0); // if device is flagged send command else send do nth
     SCIB_xmit(device_flag[device]? RS485_tx[device][1]: 0); // if device is flagged send value else send 0
     ScibRegs.SCICTL1.bit.TXENA = 0; //Disable TX
     EDIS;
     while (ScibRegs.SCICTL2.bit.TXEMPTY == 0) {}
+    cast_flag[device] = 0;//Unflag
     device_flag[device] = 0; //Unflag
     GpioDataRegs.GPACLEAR.bit.GPIO13 = 1; // Disable RS485 Driver
     GpioDataRegs.GPACLEAR.bit.GPIO12 = 1; // Enable RS485 Receiver

@@ -31,11 +31,11 @@ typedef struct{
   Uint16 Duty[3];
 }struct_control_states;
 
-void Control_step(float32 Droop[2], float32 Xm, const bool enable);
-void Droop_control(const bool enable, const float32 Droop[2], const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
+void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, const bool enable);
+void Droop_control(const bool enable, const float32 Droop[2], const float32 vref, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 void Virtual_component(const bool enable, const float32 Xm, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 void VC_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 VC_PID_states[2]);
-void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
+void IIM(const bool enable, const float32 XRm[2], const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 void Damper(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 LPF_state[2]);
 void limiter(float32 dq[2], const float32 limit);
 void IL_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 IL_PID_states[2]);

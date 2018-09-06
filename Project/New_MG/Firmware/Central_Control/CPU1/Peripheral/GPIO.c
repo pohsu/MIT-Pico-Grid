@@ -12,7 +12,35 @@ void GPIO_init (void)
 	InitGpio(); // Skipped for this example
 
 	EALLOW;
-    
+
+	//GPIO0
+	GpioCtrlRegs.GPACSEL1.bit.GPIO0 = 0b00; //CPU1
+	GpioCtrlRegs.GPAMUX1.bit.GPIO0 = 0;
+	GpioCtrlRegs.GPADIR.bit.GPIO0 = 1;
+	GpioCtrlRegs.GPAPUD.bit.GPIO0 = 0; //pull-up
+	GpioDataRegs.GPASET.bit.GPIO0 = 1;
+
+    //GPIO1
+    GpioCtrlRegs.GPACSEL1.bit.GPIO1 = 0b00; //CPU1
+    GpioCtrlRegs.GPAMUX1.bit.GPIO1 = 0;
+    GpioCtrlRegs.GPADIR.bit.GPIO1 = 1;
+    GpioCtrlRegs.GPAPUD.bit.GPIO1 = 0; //pull-up
+    GpioDataRegs.GPASET.bit.GPIO1 = 1;
+
+    //GPIO2
+    GpioCtrlRegs.GPACSEL1.bit.GPIO2 = 0b00; //CPU1
+    GpioCtrlRegs.GPAMUX1.bit.GPIO2 = 0;
+    GpioCtrlRegs.GPADIR.bit.GPIO2 = 1;
+    GpioCtrlRegs.GPAPUD.bit.GPIO2 = 0; //pull-up
+    GpioDataRegs.GPASET.bit.GPIO2 = 1;
+
+    //GPIO3
+    GpioCtrlRegs.GPACSEL1.bit.GPIO3 = 0b00; //CPU1
+    GpioCtrlRegs.GPAMUX1.bit.GPIO3 = 0;
+    GpioCtrlRegs.GPADIR.bit.GPIO3 = 1;
+    GpioCtrlRegs.GPAPUD.bit.GPIO3 = 0; //pull-up
+    GpioDataRegs.GPASET.bit.GPIO3 = 1;
+
     //LED2 on Control Card
 	GpioCtrlRegs.GPACSEL4.bit.GPIO31 = 0b00; //CPU1
 	GpioCtrlRegs.GPAMUX2.bit.GPIO31 = 0;

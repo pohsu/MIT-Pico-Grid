@@ -10,6 +10,16 @@
     #define VC_CONVERSION 0.06627600f //Calibrated on 12/06/2017
 #endif
 
+//#if VERSION
+//    #define IL_CONVERSION 0.00366210f //name para
+//    #define IO_CONVERSION 0.00366210f //name para
+//    #define VC_CONVERSION 0.03689575f //name para
+//#else
+//    #define IL_CONVERSION 0.00456848f //name para
+//    #define IO_CONVERSION 0.00456848f //name para
+//    #define VC_CONVERSION 0.06097412f //name para
+//#endif
+
 #if HIL
     //PCB_test folder
     //#define IL_CONVERSION 0.00376244f //Calibrated on 01/21/2018

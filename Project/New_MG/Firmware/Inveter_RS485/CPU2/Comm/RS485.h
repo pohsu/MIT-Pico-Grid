@@ -3,6 +3,7 @@
 #define ADDR_BROADCAST 0
 #define ADDR_HOST 1
 #define ADDR_DEVICE 102
+#define ADDR_BROADCAST 0
 #define CMD_NTH 0
 
 

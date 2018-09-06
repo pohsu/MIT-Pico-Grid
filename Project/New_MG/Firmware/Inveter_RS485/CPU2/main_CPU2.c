@@ -43,7 +43,7 @@ const struct_task_period task_period = {
 
 extern Uint16 RS485_tx[SIZEOFRS485_TX];
 extern Uint16 RS485_rx[SIZEOFRS485_RX];
-extern Uint16 RX_complete;
+extern Uint16 RX_complete, RX_cast;
 
 //***********************************************************************//
 //                        S h a r e d  M e m o r y                       //                         
@@ -84,7 +84,8 @@ __interrupt void SCIB_RX_isr(void)
 {
     RS485_RX();
     if (RX_complete){
-        RS485_TX();
+        if (!RX_cast)
+            RS485_TX();
         RX_complete = 0; //reset RX_complete
         if (RS485_rx[0] != CMD_NTH)
         {

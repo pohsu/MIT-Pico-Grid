@@ -1,8 +1,11 @@
 #define SIZEOFIPC_TX 2
 #define CMD_START 111
 #define CMD_STOP 222
-#define CMD_FREF 100
-#define CMD_VREF 101
+#define CMD_RM 99
+#define CMD_XM 100
+#define CMD_KP 101
+#define CMD_KQ 102
+#define CMD_VREF 103
 
 typedef struct{
     Uint16 volt;
@@ -10,8 +13,11 @@ typedef struct{
 } struct_IPC_tx;
 
 typedef struct{
-	Uint16 vref;
-	Uint16 fref;
+    Uint16 vref;
+	Uint16 kp;
+	Uint16 kq;
+	Uint16 xm;
+	Uint16 rm;
 } struct_IPC_rx;
 
 void IPC_TX(Uint16 * array);

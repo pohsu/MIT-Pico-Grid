@@ -16,53 +16,54 @@ struct_control_states control_states1;
 //                          F u n c t i o n s                            //
 //***********************************************************************//
 #pragma CODE_SECTION(Control_step, "ramfuncs")
-void Control_step(float32 Droop[2], float32 Xm, const bool enable)
+void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, const bool enable)
 {
-	static float32 VC_PID_states1[2] = {0, 0}, IL_PID_states1[2] = {0, 0};
+//	static float32 VC_PID_states1[2] = {0, 0};
+	static float32 IL_PID_states1[2] = {0, 0};
 	static float32 LPF_damper_states1[2] = {0};
 
-	Droop[0] = fmaxf(0.01f, Droop[0]);
-	Droop[1] = fmaxf(0.01f, Droop[1]);
-	Droop_control(enable, Droop, S1, &control_states1, &meas_states1);
+//	Droop[0] = fmaxf(0.01f, Droop[0]);
+//	Droop[1] = fmaxf(0.01f, Droop[1]);
+	Droop_control(enable, Droop, vref, S1, &control_states1, &meas_states1);
 
 //	Virtual_component(enable, Xm, S1, &control_states1, &meas_states1);
 //	VC_control(enable, &control_states1, &meas_states1, VC_PID_states1);
-	Xm = fmaxf(0.1f, Xm);
-	IIM(enable, Xm, S1, &control_states1, &meas_states1);
+	XRm[0] = fmaxf(0.1f, XRm[0]);
+	XRm[1] = fmaxf(0.1f, XRm[1]);
+	IIM(enable, XRm, S1, &control_states1, &meas_states1);
     Damper(enable, &control_states1, &meas_states1, LPF_damper_states1);
 
 //	control_states1.IL_dq_ref[0] = Xm*10.0f / Zb;
 //	control_states1.IL_dq_ref[1] = 0.0f;
 
     DACA(meas_states1.IL_dq[0], 2.0f);
-    DACB(meas_states1.VC_dq[0], 50.0f);
-    DACC(meas_states1.IO_dq[0], 2.0f);
+    DACB(control_states1.omega-0.98f*W_NOM, 0.02f);
 //    uDACC(meas_states1.Vdc, 100.0f);
 
     limiter(control_states1.IL_dq_ref, I_LIMIT);
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
-	control_states1.VINV_dq[0] = 50.0f;
-	control_states1.VINV_dq[1] = 0.0f;
+//	control_states1.VINV_dq[0] = 50.0f;
+//	control_states1.VINV_dq[1] = 0.0f;
 
 	VINV2Duty(&control_states1, &meas_states1);
 }
 #pragma CODE_SECTION(Droop_control, "ramfuncs")
-void Droop_control(const bool enable, const float32 Droop[2], const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states)
+void Droop_control(const bool enable, const float32 Droop[2], const float32 vref, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states)
 {
-	static float32 vref;
+	static float32 vref_slew;
     if (enable){
-	    vref += (V_NOM-vref) * 0.00001f; //slew rate voltage references
+        vref_slew += (vref - vref_slew) * 0.00005f; //slew rate voltage references
 
 		c_states->omega = W_NOM -  Droop[0] / Sn* W_NOM * m_states->PQ[0];
-		c_states->VC_dq_ref[0] = vref - Droop[1] / Sn * V_NOM * m_states->PQ[1];
+		c_states->VC_dq_ref[0] = vref_slew - Droop[1] / Sn * V_NOM * m_states->PQ[1];
 		c_states->VC_dq_ref[1] = 0;
 	}
 	else{
 		c_states->omega = W_NOM;
 		c_states->VC_dq_ref[0] = 0;
 		c_states->VC_dq_ref[1] = 0;
-		vref = 0;
+		vref_slew = 0;
 	}
 
 //	c_states->omega= (c_states->omega >  W_NOM*1.2?  W_NOM*1.2 : c_states->omega);
@@ -70,12 +71,12 @@ void Droop_control(const bool enable, const float32 Droop[2], const float32 Sn, 
 }
 
 #pragma CODE_SECTION(IIM, "ramfuncs")
-void IIM(const bool enable, const float32 Xm, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states)
+void IIM(const bool enable, const float32 XRm[2], const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states)
 {
     float32 IIM_dq[2] = {0}, X = 0, R = 0, L = 0;
     Uint16 i = 0;
-    X = Xm ;
-    R = Xm * 0.5f;
+    X = XRm[0];
+    R = XRm[1];
     L = X / W_NOM  ;
 
     // Reset damper
@@ -256,12 +257,12 @@ void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states)
 
 	dq2abc_fast(abc, c_states->VINV_dq, table);
 
-//	c_states->Duty[0] = (Uint16)( (abc[0]/m_states->Vdc + 0.5f) * PWM_PERIOD);
-//	c_states->Duty[1] = (Uint16)( (abc[1]/m_states->Vdc + 0.5f) * PWM_PERIOD);
-//	c_states->Duty[2] = (Uint16)( (abc[2]/m_states->Vdc + 0.5f) * PWM_PERIOD);
-    c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
-    c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
-    c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
+	c_states->Duty[0] = (Uint16)( (abc[0]/m_states->Vdc + 0.5f) * PWM_PERIOD);
+	c_states->Duty[1] = (Uint16)( (abc[1]/m_states->Vdc + 0.5f) * PWM_PERIOD);
+	c_states->Duty[2] = (Uint16)( (abc[2]/m_states->Vdc + 0.5f) * PWM_PERIOD);
+//    c_states->Duty[0] = (Uint16)( (abc[0]/VDC + 0.5f) * PWM_PERIOD);
+//    c_states->Duty[1] = (Uint16)( (abc[1]/VDC + 0.5f) * PWM_PERIOD);
+//    c_states->Duty[2] = (Uint16)( (abc[2]/VDC + 0.5f) * PWM_PERIOD);
 
 }
 

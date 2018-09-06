@@ -71,8 +71,8 @@ __interrupt void SCIA_RX_isr(void)
 #pragma CODE_SECTION(SCIB_RX_isr, "ramfuncs")
 __interrupt void SCIB_RX_isr(void)
 {
-    if (device_rx == 0) GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1; //LED5
-    if (device_rx == 2) GpioDataRegs.GPCTOGGLE.bit.GPIO83 = 1; //LED6
+//    if (device_rx == 0) GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1; //LED5
+//    if (device_rx == 2) GpioDataRegs.GPCTOGGLE.bit.GPIO83 = 1; //LED6
     RS485_RX(device_rx);
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
 }
@@ -124,6 +124,10 @@ void task_table (Uint32 * counter)
     if (*counter % (Uint32)task_period.count_1Hz == 0)
     {
 
+//        GpioDataRegs.GPATOGGLE.bit.GPIO0 = 1;
+//        GpioDataRegs.GPATOGGLE.bit.GPIO1 = 1;
+//        GpioDataRegs.GPATOGGLE.bit.GPIO2 = 1;
+//        GpioDataRegs.GPATOGGLE.bit.GPIO3 = 1;
     }
 
     if (*counter % (Uint32)TASK_MAX_COUNT == 0)

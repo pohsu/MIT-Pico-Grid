@@ -83,14 +83,16 @@ __interrupt void IPC_isr(void)
 __interrupt void adca1_isr(void)
 {
     GpioDataRegs.GPASET.bit.GPIO31 = 1; //LED2 on Control Card
-	volatile static float32 Droop[2], Xm;
+	static float32 Droop[2], XRm[2], vref;
 
 
-	Droop[0] = (float32)IPC_rx.vref/1000.0f;
-	Droop[1] = (float32)IPC_rx.vref/1000.0f;
-	Xm = (float32)IPC_rx.fref/1000.0f *  Zb;
+	Droop[0] = (float32)IPC_rx.kp/1000.0f;
+	Droop[1] = (float32)IPC_rx.kq/1000.0f;
+	XRm[0] = (float32)IPC_rx.xm/1000.0f*Zb;
+	XRm[1] = (float32)IPC_rx.rm/1000.0f*Zb;
+	vref = (float32)IPC_rx.vref;
 	Measurement_step(enable);
-	Control_step(Droop, Xm, enable);
+	Control_step(Droop, XRm, vref, enable);
 
 	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
 	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];
@@ -182,8 +184,8 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
-        IPC_tx.volt = meas_states1.VC_dq[0]/V_NOM*100.0f;
-        IPC_tx.freq = (control_states1.omega - 0.8*W_NOM)/W_NOM*500.0f;
+        IPC_tx.volt = meas_states1.VC_dq[0];
+        IPC_tx.freq = (control_states1.omega - 0.9*W_NOM)/W_NOM*1000.0f;
         IPC_TX(c1_r_w_array);
     }
 

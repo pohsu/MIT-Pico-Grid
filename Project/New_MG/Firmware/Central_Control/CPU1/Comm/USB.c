@@ -10,6 +10,7 @@ Uint16 usb_tx[SIZEOFUSB_TX] = {0};
 Uint16 usb_rx[SIZEOFUSB_RX] = {0};
 
 extern Uint16 device_flag[NUMOFDEVICE];
+extern Uint16 cast_flag[NUMOFDEVICE];
 extern Uint16 RS485_addr[NUMOFDEVICE];
 extern Uint16 RS485_tx[NUMOFDEVICE][SIZEOFRS485_TX];
 extern Uint16 RS485_rx[NUMOFDEVICE][SIZEOFRS485_RX];
@@ -50,13 +51,24 @@ void USB_TO_RS485Interpreter(void)
     Uint16 i = 0;
     addr = usb_rx[1];
     //Matching Address
-    for (i = 0; i < NUMOFDEVICE; i++)
-    {
-        if  ((RS485_addr[i] == addr)||(addr == ADDR_BROADCAST))
+    if (addr == ADDR_HOST){
+        if (usb_rx[0] == 191) GpioDataRegs.GPACLEAR.bit.GPIO0 = 1;
+        if (usb_rx[0] == 192) GpioDataRegs.GPASET.bit.GPIO0 = 1;
+        if (usb_rx[0] == 193) GpioDataRegs.GPACLEAR.bit.GPIO1 = 1;
+        if (usb_rx[0] == 194) GpioDataRegs.GPASET.bit.GPIO1 = 1;
+        if (usb_rx[0] == 195) GpioDataRegs.GPACLEAR.bit.GPIO2 = 1;
+        if (usb_rx[0] == 196) GpioDataRegs.GPASET.bit.GPIO2 = 1;
+    }
+    else{
+        for (i = 0; i < NUMOFDEVICE; i++)
         {
-            RS485_tx[i][0] = usb_rx[0]; // command
-            RS485_tx[i][1] = usb_rx[3]; // value
-            device_flag[i] = 1;
+            if (addr == ADDR_BROADCAST || RS485_addr[i] == addr){
+                RS485_tx[i][0] = usb_rx[0]; // command
+                RS485_tx[i][1] = usb_rx[3]; // value
+                device_flag[i] = 1;
+                if (addr == ADDR_BROADCAST)
+                    cast_flag[i] = 1;
+            }
         }
     }
 }
