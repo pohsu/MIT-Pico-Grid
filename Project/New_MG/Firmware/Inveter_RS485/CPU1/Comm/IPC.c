@@ -9,7 +9,7 @@ bool enable = 0;
 
 struct_IPC_tx IPC_tx = {
     .volt  = 0,
-    .freq  = 0,
+    .freq  = 0
 };
 struct_IPC_rx IPC_rx = {
 	.vref = 0,
@@ -17,6 +17,7 @@ struct_IPC_rx IPC_rx = {
     .kq = 0,
     .xm = 0,
     .rm = 0,
+    .si = 0
 };
 
 //***********************************************************************//
@@ -52,6 +53,8 @@ void Decoder_Process_IPC (Uint16 * array)
 	if (array[0] == CMD_KQ) IPC_rx.kq = array[1];
 
 	if (array[0] == CMD_VREF) IPC_rx.vref = array[1];
+
+	if (array[0] == CMD_SI) IPC_rx.si = array[1];
 }
 
 void Reset_remote_IPC(void)

@@ -83,16 +83,17 @@ __interrupt void IPC_isr(void)
 __interrupt void adca1_isr(void)
 {
     GpioDataRegs.GPASET.bit.GPIO31 = 1; //LED2 on Control Card
-	static float32 Droop[2], XRm[2], vref;
+	static float32 Droop[2] = {0.05f, 0.05f}, XRm[2] = {2.5f, 2.5f}, vref = 0.0f, Si = 1.0f;
 
 
 	Droop[0] = (float32)IPC_rx.kp/1000.0f;
 	Droop[1] = (float32)IPC_rx.kq/1000.0f;
 	XRm[0] = (float32)IPC_rx.xm/1000.0f*Zb;
 	XRm[1] = (float32)IPC_rx.rm/1000.0f*Zb;
+	Si = (float32)IPC_rx.si/100.0f;
 	vref = (float32)IPC_rx.vref;
 	Measurement_step(enable);
-	Control_step(Droop, XRm, vref, enable);
+	Control_step(Droop, XRm, vref, Si, enable);
 
 	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
 	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];

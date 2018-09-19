@@ -32,7 +32,7 @@ void Measurement_step(const bool enable)
 	Abc2dq_fast(meas_states1.VC_dq, abc_states1.VC_abc, table);
 	Abc2dq_fast(meas_states1.IO_dq, abc_states1.IO_abc, table);
 
-	Power_caculation(meas_states1.PQ, meas_states1.IO_dq, meas_states1.VC_dq);
+//	Power_caculation(meas_states1.PQ, meas_states1.IO_dq, meas_states1.VC_dq);
 
 }
 
@@ -89,20 +89,20 @@ void ADC_process(const bool enable, struct_abc_states * states1, struct_meas_sta
 	VN = (states1->VC_abc[0]+states1->VC_abc[1]+states1->VC_abc[2])*0.333333333333f;
 	for(i=0; i<=1; i++) states1->VC_abc[i] -= VN;
 //
-//    DACA(states1->VC_abc[2], 50.0f);
-//    DACB(states1->VC_abc[1], 50.0f);
-//    DACC(states1->VC_abc[0], 50.0f);
+    DACA(states1->VC_abc[0], 50.0f);
+    DACB(states1->VC_abc[1], 50.0f);
+    DACC(states1->VC_abc[2], 50.0f);
 
 }
 
 #pragma CODE_SECTION(Power_caculation, "ramfuncs")
 void Power_caculation(float32 PQ[2], const float32 IO_dq[2], const float32 VC_dq[2])
 {
-	Uint16 i;
-	float32 PQ_temp[2];
-	PQ_temp[0] =  (VC_dq[0])*(IO_dq[0]) + (VC_dq[1])*(IO_dq[1]);
-	PQ_temp[1] = (-VC_dq[0])*(IO_dq[1]) + (VC_dq[1])*(IO_dq[0]);
-	for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_temp[i]/P_NOM);
+  Uint16 i;
+  float32 PQ_temp[2];
+  PQ_temp[0] =  (VC_dq[0])*(IO_dq[0]) + (VC_dq[1])*(IO_dq[1]);
+  PQ_temp[1] = (-VC_dq[0])*(IO_dq[1]) + (VC_dq[1])*(IO_dq[0]);
+  for(i=0; i<=1; i++) PQ[i] = LPF(PQ[i], WC, PQ_temp[i]/P_NOM);
 }
 
 //#pragma CODE_SECTION(Abc2dq, "ramfuncs")
