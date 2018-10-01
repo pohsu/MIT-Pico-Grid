@@ -1,4 +1,4 @@
-#define Zb 25.0f
+#define Zb 29.04f
 #define LF 1.0e-3f
 #define CF 30e-6f
 #define LC 3.5e-4f
@@ -9,11 +9,11 @@
 #define KPV 0.15f //0.15
 #define KIV 350.0f //350
 #define VDC 120.0f
-#define Sb 150.0f
+#define Sb 174.24f
 #define W_NOM 314.15926f
-#define V_NOM 50.0f
+#define V_NOM 58.08f
 #define I_NOM 2.0f
-#define P_NOM 100.0f
+#define P_NOM 116.16f
 #define WF 2000.0f
 #define WDAMP 400.0f // 1/Cd/Rd 800.0f
 #define GDAMP 0.2f   // 1/Rd 0.2f

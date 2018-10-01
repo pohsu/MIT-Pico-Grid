@@ -5,9 +5,12 @@
     #define IO_CONVERSION 0.00376244f //Calibrated on 01/21/2018
     #define VC_CONVERSION 0.04021688f //Calibrated on 01/19/2018
 #else
+//    #define IL_CONVERSION 0.00464268f //Calibrated on 12/06/2017
+//    #define IO_CONVERSION 0.00464268f //Calibrated on 12/06/2017
+//    #define VC_CONVERSION 0.06627600f //Calibrated on 12/06/2017
     #define IL_CONVERSION 0.00464268f //Calibrated on 12/06/2017
     #define IO_CONVERSION 0.00464268f //Calibrated on 12/06/2017
-    #define VC_CONVERSION 0.06627600f //Calibrated on 12/06/2017
+    #define VC_CONVERSION 0.04021688f //Calibrated on 12/06/2017
 #endif
 
 //#if VERSION
