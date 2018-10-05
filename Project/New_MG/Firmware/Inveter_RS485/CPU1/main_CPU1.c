@@ -92,8 +92,9 @@ __interrupt void adca1_isr(void)
 	XRm[1] = (float32)IPC_rx.rm/1000.0f*Zb;
 	Si = (float32)IPC_rx.si/100.0f;
 	vref = (float32)IPC_rx.vref;
+	Uint16 dac = IPC_rx.dac;
 	Measurement_step(enable);
-	Control_step(Droop, XRm, vref, Si, enable);
+	Control_step(Droop, XRm, vref, Si, enable, dac);
 
 	EPwm1Regs.CMPA.bit.CMPA = control_states1.Duty[0];
 	EPwm1Regs.CMPB.bit.CMPB = control_states1.Duty[0];
@@ -185,10 +186,26 @@ void task_table (Uint32 * counter)
 
     if (*counter % (Uint32)task_period.count_1kHz == 0)
     {
-        IPC_tx.volt = meas_states1.VC_dq[0];
-        IPC_tx.freq = (control_states1.omega - 0.9*W_NOM)/W_NOM*1000.0f;
+        float32 w = control_states1.omega/W_NOM;
+        float32 Vc_mag = 0;
+        switch(IPC_rx.dac){
+        case 0:
+            IPC_tx.volt = meas_states1.VC_dq[0];
+            IPC_tx.freq = w * 100.0f;
+            break;
+        case 1:
+            IPC_tx.volt = (meas_states1.PQ[0] - 0.6f)*213.33f + 128.0f;
+            IPC_tx.freq = (meas_states1.PQ[1] - 0.3f)*426.66f + 128.0f;
+            break;
+        case 2:
+            Vc_mag = sqrtf(meas_states1.VC_dq[0]*meas_states1.VC_dq[0] + meas_states1.VC_dq[1]*meas_states1.VC_dq[1])/V_NOM;
+            IPC_tx.volt = (Vc_mag - 0.95f)*2560.0f + 128.0f;
+            IPC_tx.freq = (w - 0.985f) * 8533.33f + 128.0f;
+            break;
+        }
         IPC_TX(c1_r_w_array);
     }
+
 
     if (*counter % (Uint32)task_period.count_100Hz == 0)
     {

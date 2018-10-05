@@ -16,7 +16,7 @@ struct_control_states control_states1;
 //                          F u n c t i o n s                            //
 //***********************************************************************//
 #pragma CODE_SECTION(Control_step, "ramfuncs")
-void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, float32 Si, const bool enable)
+void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, float32 Si, const bool enable, const Uint16 dac)
 {
 //	static float32 VC_PID_states1[2] = {0, 0};
 	static float32 IL_PID_states1[2] = {0, 0};
@@ -38,15 +38,13 @@ void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, float32 Si, co
 //	control_states1.IL_dq_ref[0] = Xm*10.0f / Zb;
 //	control_states1.IL_dq_ref[1] = 0.0f;
 
-//    DACA(meas_states1.VC_dq[0], 50.0f);
-//    DACB(meas_states1.VC_dq[1], 50.0f);
-//    DACC(meas_states1.VC_dq[2], 50.0f);
-
     limiter(control_states1.IL_dq_ref, I_LIMIT);
 	IL_control(enable, &control_states1, &meas_states1, IL_PID_states1);
 
 //	control_states1.VINV_dq[0] = vref;
 //	control_states1.VINV_dq[1] = 0.0f;
+
+	dac_report(dac, &control_states1, &meas_states1);
 
 	VINV2Duty(&control_states1, &meas_states1);
 }
@@ -265,3 +263,31 @@ void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[2])
 	abc[2] = 0.5f*( table[0]*(-dq[0]-1.732050807568f*dq[1]) + table[1]*(+1.732050807568f*dq[0] - dq[1]));
 }
 
+void dac_report(Uint16 dac, const struct_control_states * c_states, const struct_meas_states * m_states){
+    float32 Vc_mag = 0;
+    float32 wf = 0;
+    switch(dac){
+        case 0:
+            Vc_mag = sqrtf(m_states->VC_dq[0]*m_states->VC_dq[0] + m_states->VC_dq[1]*m_states->VC_dq[1])/V_NOM;
+            uDACA(Vc_mag, 0.5f);
+            DACB(Vc_mag - 0.9f, 0.1f);
+            DACB(Vc_mag - 0.8f, 0.2f);
+            break;
+        case 1:
+            DACA(m_states->PQ[0], 1.0f);
+            DACB(m_states->PQ[0], 1.0f);
+            DACC(m_states->PQ[0], 1.0f);
+            break;
+        case 2:
+            DACA(m_states->PQ[1], 1.0f);
+            DACB(m_states->PQ[1], 1.0f);
+            DACC(m_states->PQ[1], 1.0f);
+            break;
+        case 3:
+            wf = c_states->omega / W_NOM;
+            DACA(wf - 0.98f, 0.02f);
+            DACB(wf - 0.96f, 0.04f);
+            DACC(wf - 0.94f, 0.06f);
+            break;
+    }
+}

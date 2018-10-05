@@ -32,7 +32,7 @@ typedef struct{
   Uint16 Duty[3];
 }struct_control_states;
 
-void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, float32 Si, const bool enable);
+void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, float32 Si, const bool enable, const Uint16 dac);
 void Droop_control(const bool enable, const float32 Droop[2], const float32 vref, const float32 Si, struct_control_states * c_states, struct_meas_states * m_states);
 //void Virtual_component(const bool enable, const float32 Xm, const float32 Sn, struct_control_states * c_states, struct_meas_states * m_states);
 //void VC_control(const bool enable, struct_control_states * c_states, struct_meas_states * m_states, float32 VC_PID_states[2]);
@@ -43,5 +43,5 @@ void IL_control(const bool enable, struct_control_states * c_states, struct_meas
 void PID_dq(float32 out[2], float32 PID_states[2], const float32 error[2], const float32 kp, const float32 ki);
 void VINV2Duty (struct_control_states * c_states, struct_meas_states * m_states);
 void dq2abc_fast(float32 abc[3], const float32 dq[2], const float32 table[2]);
-
+void dac_report(const Uint16 dac, const struct_control_states * c_states, const struct_meas_states * m_states);
 

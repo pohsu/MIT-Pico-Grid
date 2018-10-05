@@ -7,6 +7,7 @@
 #define CMD_KQ 102
 #define CMD_VREF 103
 #define CMD_SI 104
+#define CMD_DAC 200
 
 typedef struct{
     Uint16 volt;
@@ -20,6 +21,7 @@ typedef struct{
 	Uint16 xm;
 	Uint16 rm;
 	Uint16 si;
+	Uint16 dac;
 } struct_IPC_rx;
 
 void IPC_TX(Uint16 * array);

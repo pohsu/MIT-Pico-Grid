@@ -1,5 +1,5 @@
 #define HIL 0 // HILing?
-#define VERSION 1// 0: green v1, 1: blue v2
+#define VERSION 0// 0: green v1, 1: blue v2
 
 #define ISR_PERIOD 1e-4f
 #define PI 3.14159265359f
