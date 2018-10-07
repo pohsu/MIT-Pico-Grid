@@ -18,6 +18,7 @@ struct_IPC_rx IPC_rx = {
     .xm = 0,
     .rm = 0,
     .si = 0,
+    .dt = 0,
     .dac = 0,
 };
 
@@ -56,6 +57,8 @@ void Decoder_Process_IPC (Uint16 * array)
 	if (array[0] == CMD_VREF) IPC_rx.vref = array[1];
 
 	if (array[0] == CMD_SI) IPC_rx.si = array[1];
+
+	if (array[0] == CMD_DT) IPC_rx.dt = 1;
 
 	if (array[0] == CMD_DAC) IPC_rx.dac = array[1];
 }

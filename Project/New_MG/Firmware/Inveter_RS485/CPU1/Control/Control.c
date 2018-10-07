@@ -271,23 +271,23 @@ void dac_report(Uint16 dac, const struct_control_states * c_states, const struct
             Vc_mag = sqrtf(m_states->VC_dq[0]*m_states->VC_dq[0] + m_states->VC_dq[1]*m_states->VC_dq[1])/V_NOM;
             uDACA(Vc_mag, 0.5f);
             DACB(Vc_mag - 0.9f, 0.1f);
-            DACB(Vc_mag - 0.8f, 0.2f);
+            uDACC(Vc_mag - 0.7f, 0.13333f);
             break;
         case 1:
-            DACA(m_states->PQ[0], 1.0f);
-            DACB(m_states->PQ[0], 1.0f);
-            DACC(m_states->PQ[0], 1.0f);
+            DACA(m_states->PQ[0], 1.2f);
+            DACB(m_states->PQ[0], 1.2f);
+            uDACC(m_states->PQ[0], 0.5f);
             break;
         case 2:
-            DACA(m_states->PQ[1], 1.0f);
-            DACB(m_states->PQ[1], 1.0f);
-            DACC(m_states->PQ[1], 1.0f);
+            DACA(m_states->PQ[1], 0.6f);
+            DACB(m_states->PQ[1], 0.6f);
+            uDACC(m_states->PQ[1], 0.33f);
             break;
         case 3:
             wf = c_states->omega / W_NOM;
             DACA(wf - 0.98f, 0.02f);
             DACB(wf - 0.96f, 0.04f);
-            DACC(wf - 0.94f, 0.06f);
+            uDACC(wf - 0.96f, 0.0133333f);
             break;
     }
 }

@@ -90,7 +90,10 @@ __interrupt void adca1_isr(void)
 	Droop[1] = (float32)IPC_rx.kq/1000.0f;
 	XRm[0] = (float32)IPC_rx.xm/1000.0f*Zb;
 	XRm[1] = (float32)IPC_rx.rm/1000.0f*Zb;
-	Si = (float32)IPC_rx.si/100.0f;
+	if(IPC_rx.dt == 1){
+	    Si = (float32)IPC_rx.si/100.0f;
+	    IPC_rx.dt = 0;
+	}
 	vref = (float32)IPC_rx.vref;
 	Uint16 dac = IPC_rx.dac;
 	Measurement_step(enable);
