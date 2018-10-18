@@ -287,7 +287,7 @@ void dac_report(Uint16 dac, const struct_control_states * c_states, const struct
             wf = c_states->omega / W_NOM;
             DACA(wf - 0.98f, 0.02f);
             DACB(wf - 0.96f, 0.04f);
-            uDACC(wf - 0.96f, 0.0133333f);
+            uDACC(wf - 0.96f, 0.015f);
             break;
     }
 }

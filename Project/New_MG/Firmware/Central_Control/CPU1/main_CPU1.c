@@ -104,7 +104,7 @@ void task_table (Uint32 * counter)
         RX_ctr = 0; //ctr reset
         device_rx = device; //device_rx is global
         Uint16 i;
-        for (i = 0; i < SIZEOFRS485_TX; i++) usb_tx[4*device_rx+i] = 0; //reset usb_tx for the deivce
+        for (i = 0; i < SIZEOFRS485_TX; i++) usb_tx[4*device_rx+i] = 0; //reset usb_tx for the device
         RS485_TX(device);
         device++;
         if (device == NUMOFDEVICE) device = 0;
