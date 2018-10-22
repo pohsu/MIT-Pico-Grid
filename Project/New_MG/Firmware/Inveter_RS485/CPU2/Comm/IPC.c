@@ -19,12 +19,18 @@ void IPC_RX(Uint16 * array)
 {
     IPC_rx[0] = array[0];
     IPC_rx[1] = array[1];
+    IPC_rx[2] = array[2];
+    IPC_rx[3] = array[3];
 }
 
 void IPC_TX(Uint16 * array)
 {
     array[0] = RS485_rx[0];
     array[1] = RS485_rx[1];
+    array[2] = RS485_rx[2];
+    array[3] = RS485_rx[3];
+    array[4] = RS485_rx[4];
+    array[5] = RS485_rx[5];
 	IpcRegs.IPCSET.bit.IPC0 = 1; //Set the remote CPU interrupt
 }
 
@@ -44,9 +50,8 @@ void Wait_memory_access(void)
 void IPC_TO_RS485Interpreter(void)
 {
     Uint16 i;
-    for(i=0;i<SIZEOFRS485_TX/2;i++)
+    for(i=0;i<SIZEOFRS485_TX;i++)
     {
-        RS485_tx[2*i] = IPC_rx[i];
-        RS485_tx[2*i+1] = IPC_rx[i]/256;
+        RS485_tx[i] = IPC_rx[i];
     }
 }

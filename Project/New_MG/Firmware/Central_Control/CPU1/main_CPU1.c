@@ -11,6 +11,7 @@
 //                          P r o t o t y p e                            //
 //***********************************************************************//
 void task_table (Uint32 * counter);
+void dispatchment_step();
 
 //***********************************************************************//
 //                             D e f i n e                               //
@@ -34,8 +35,13 @@ Uint16 device = 0, device_rx = 0;
 
 extern Uint16 usb_tx[SIZEOFUSB_TX];
 extern Uint16 usb_rx[SIZEOFUSB_RX];
+extern Uint16 RS485_tx[NUMOFDEVICE][SIZEOFRS485_TX];
+extern Uint16 RS485_rx[NUMOFDEVICE][SIZEOFRS485_RX];
 extern Uint16 RX_ctr;
 
+//dispatch ratios
+extern float32 lp[NUMOFDEVICE];
+extern float32 lq[NUMOFDEVICE];
 
 //***********************************************************************//
 //                        S h a r e d  M e m o r y                       //
@@ -53,6 +59,11 @@ void main(void)
 	Enable_Peripheral();
 
 	Enable_Comm();
+	Uint16 i;
+	for(i = 0; i < NUMOFDEVICE; i++){
+	    lp[i] = 1;
+	    lq[i] = 1;
+	}
 
 	for(;;); //Idle Loop
 }
@@ -78,7 +89,7 @@ __interrupt void SCIB_RX_isr(void)
 }
 
 
-//#pragma CODE_SECTION(cpu_timer_5kHz, "ramfuncs")
+#pragma CODE_SECTION(cpu_timer_5kHz, "ramfuncs")
 __interrupt void cpu_timer_5kHz(void)
 {
 	CpuTimer0.InterruptCount++; //Start counting
@@ -106,8 +117,12 @@ void task_table (Uint32 * counter)
         Uint16 i;
         for (i = 0; i < SIZEOFRS485_TX; i++) usb_tx[4*device_rx+i] = 0; //reset usb_tx for the device
         RS485_TX(device);
+        //wait for RS485 RX
         device++;
-        if (device == NUMOFDEVICE) device = 0;
+        if (device == NUMOFDEVICE){
+            device = 0;
+        }
+        GpioDataRegs.GPCTOGGLE.bit.GPIO77 = 1; //LED3
     }
 
     if (*counter % (Uint32)task_period.count_200Hz == 0)
@@ -119,6 +134,7 @@ void task_table (Uint32 * counter)
     if (*counter % (Uint32)task_period.count_10Hz == 0)
     {
         GpioDataRegs.GPCTOGGLE.bit.GPIO73 = 1;
+        dispatchment_step();
     }
 //
     if (*counter % (Uint32)task_period.count_1Hz == 0)
@@ -134,4 +150,28 @@ void task_table (Uint32 * counter)
     {
         *counter = 0; //reset Timer0 counter
     }
+}
+
+void dispatchment_step()
+{
+    float32 P_tot = 0, Q_tot = 0, w_avg, V_avg, lp_tot, lq_tot;
+    Uint16 i;
+    for(i = 0; i < NUMOFDEVICE; i++){
+        V_avg += RS485_rx[i][0];
+        w_avg += RS485_rx[i][1];
+        P_tot += RS485_rx[i][2] - 100.0f; // 100.0f offset
+        Q_tot += RS485_rx[i][3] - 100.0f; // 100.0f offset
+        lp_tot += lp[i];
+        lq_tot += lq[i];
+    }
+    w_avg /= NUMOFDEVICE;
+    V_avg /= NUMOFDEVICE;
+    for(i = 0; i < NUMOFDEVICE; i++){
+        RS485_tx[i][2] = V_avg;
+        RS485_tx[i][3] = w_avg;
+        RS485_tx[i][4] = P_tot * lp[i] / lp_tot + 100.0f; // 100.0f offset
+        RS485_tx[i][5] = Q_tot * lq[i] / lq_tot + 100.0f; // 100.0f offset
+
+    }
+
 }

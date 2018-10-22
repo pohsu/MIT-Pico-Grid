@@ -5,11 +5,12 @@
 #include "..\Peripheral\Peripheral.h"
 #include "Meas.h"
 #include "control.h"
-
+#include "..\Comm\IPC.h"
 //***********************************************************************//
 //                     G l o b a l  V a r i a b l e s                    //
 //***********************************************************************//
 extern struct_meas_states meas_states1;
+extern struct_IPC_rx IPC_rx;
 struct_control_states control_states1;
 
 //***********************************************************************//
@@ -52,11 +53,23 @@ void Control_step(float32 Droop[2], float32 XRm[2], float32 vref, float32 Si, co
 void Droop_control(const bool enable, const float32 Droop[2], const float32 vref, const float32 Si, struct_control_states * c_states, struct_meas_states * m_states)
 {
 	static float32 vref_slew;
+	static float32 dw, dV;
+	float32 V_avg = IPC_rx.V_avg/100.0f;
+	float32 w_avg = IPC_rx.w_avg/100.0f;
+	float32 P_ref = (IPC_rx.P_ref-100.0f)/100.0f;
+	float32 Q_ref = (IPC_rx.Q_ref-100.0f)/100.0f;
     if (enable){
         vref_slew += (vref - vref_slew) * 0.00005f; //slew rate voltage references
-
-		c_states->omega = W_NOM -  Droop[0] / Si* W_NOM * m_states->PQ[0];
-		c_states->VC_dq_ref[0] = vref_slew - Droop[1] / Si * V_NOM * m_states->PQ[1];
+        float32 error_w = (P_ref - m_states->PQ[0])*R_P + (1.0f - w_avg);
+        float32 error_v = (Q_ref - m_states->PQ[1])*R_Q + (1.0f - V_avg);
+        dw += error_w*ISR_PERIOD*KI_SEC_W;
+        dV += error_v*ISR_PERIOD*KI_SEC_V;
+        if(IPC_rx.sc_enable == 0){
+            dw = 0;
+            dV = 0;
+        }
+		c_states->omega = W_NOM -  Droop[0] / Si* W_NOM * m_states->PQ[0] + dw;
+		c_states->VC_dq_ref[0] = vref_slew - Droop[1] / Si * V_NOM * m_states->PQ[1] +dV;
 		c_states->VC_dq_ref[1] = 0;
 	}
 	else{
@@ -64,6 +77,8 @@ void Droop_control(const bool enable, const float32 Droop[2], const float32 vref
 		c_states->VC_dq_ref[0] = 0;
 		c_states->VC_dq_ref[1] = 0;
 		vref_slew = 0;
+		dw = 0;
+		dV = 0;
 	}
 
 //	c_states->omega= (c_states->omega >  W_NOM*1.2?  W_NOM*1.2 : c_states->omega);

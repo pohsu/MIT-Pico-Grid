@@ -15,7 +15,8 @@ extern Uint16 RS485_addr[NUMOFDEVICE];
 extern Uint16 RS485_tx[NUMOFDEVICE][SIZEOFRS485_TX];
 extern Uint16 RS485_rx[NUMOFDEVICE][SIZEOFRS485_RX];
 
-
+float32 lp[NUMOFDEVICE] = {100.0f, 100.0f, 100.0f};
+float32 lq[NUMOFDEVICE] = {100.0f, 100.0f, 100.0f};
 
 //***********************************************************************//
 //                          F u n c t i o n s                            //
@@ -47,6 +48,7 @@ void USB_RX (void)
 
 void USB_TO_RS485Interpreter(void)
 {
+    //LabView command -  0: command; 1: address; 2: N/A; 3:value
     Uint16 addr = 0;
     Uint16 i = 0;
     addr = usb_rx[1];
@@ -58,6 +60,12 @@ void USB_TO_RS485Interpreter(void)
         if (usb_rx[0] == 194) GpioDataRegs.GPASET.bit.GPIO1 = 1;
         if (usb_rx[0] == 195) GpioDataRegs.GPACLEAR.bit.GPIO2 = 1;
         if (usb_rx[0] == 196) GpioDataRegs.GPASET.bit.GPIO2 = 1;
+        if (usb_rx[0] == 181) lp[0] = usb_rx[3];
+        if (usb_rx[0] == 182) lq[0] = usb_rx[3];
+        if (usb_rx[0] == 183) lp[1] = usb_rx[3];
+        if (usb_rx[0] == 184) lq[1] = usb_rx[3];
+        if (usb_rx[0] == 185) lp[2] = usb_rx[3];
+        if (usb_rx[0] == 186) lq[2] = usb_rx[3];
     }
     else{
         for (i = 0; i < NUMOFDEVICE; i++)

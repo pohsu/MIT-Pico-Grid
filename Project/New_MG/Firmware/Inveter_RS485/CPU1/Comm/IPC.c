@@ -8,8 +8,10 @@
 bool enable = 0; 
 
 struct_IPC_tx IPC_tx = {
-    .volt  = 0,
-    .freq  = 0
+    .V = 0,
+    .w = 0,
+    .P  = 0,
+    .Q  = 0,
 };
 struct_IPC_rx IPC_rx = {
 	.vref = 0,
@@ -20,6 +22,11 @@ struct_IPC_rx IPC_rx = {
     .si = 0,
     .dt = 0,
     .dac = 0,
+    .V_avg = 0,
+    .w_avg = 0,
+    .P_ref =  0,
+    .Q_ref =  0,
+    .sc_enable = 0,
 };
 
 //***********************************************************************//
@@ -27,8 +34,10 @@ struct_IPC_rx IPC_rx = {
 //***********************************************************************//
 void IPC_TX(Uint16 * array)
 {
-	array[0] = IPC_tx.volt;
-	array[1] = IPC_tx.freq;
+	array[0] = IPC_tx.V;
+	array[1] = IPC_tx.w;
+	array[2] = IPC_tx.P;
+	array[3] = IPC_tx.Q;
 	IpcRegs.IPCSET.bit.IPC0 = 1; //Set the remote CPU interrupt
 }
 
@@ -61,6 +70,13 @@ void Decoder_Process_IPC (Uint16 * array)
 	if (array[0] == CMD_DT) IPC_rx.dt = 1;
 
 	if (array[0] == CMD_DAC) IPC_rx.dac = array[1];
+
+	if (array[0] == CMD_SC) IPC_rx.sc_enable = array[1];
+
+    IPC_rx.V_avg = array[2];
+    IPC_rx.w_avg = array[3];
+    IPC_rx.P_ref = array[4];
+    IPC_rx.Q_ref = array[5];
 }
 
 void Reset_remote_IPC(void)

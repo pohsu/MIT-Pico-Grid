@@ -71,12 +71,11 @@ void RS485_TX(Uint16 device)
     EALLOW;
     ScibRegs.SCICTL1.bit.TXENA = 1; //Enable TX
     ScibRegs.SCICTL1.bit.TXWAKE = 1;
-    if(cast_flag[device])
-        SCIB_xmit(ADDR_BROADCAST); //send addr
-    else
-        SCIB_xmit(RS485_addr[device]); //send addr
-    SCIB_xmit(device_flag[device]? RS485_tx[device][0]: 0); // if device is flagged send command else send do nth
-    SCIB_xmit(device_flag[device]? RS485_tx[device][1]: 0); // if device is flagged send value else send 0
+    SCIB_xmit(cast_flag[device]? ADDR_BROADCAST: RS485_addr[device]);
+    SCIB_xmit(device_flag[device]? RS485_tx[device][0]: CMD_NTH); // cmd or nth
+    Uint16 i;
+    for(i = 1; i < SIZEOFRS485_TX; i++)
+        SCIB_xmit(RS485_tx[device][i]); // value, P_ref, Q_ref, w_avg, V_avg
     ScibRegs.SCICTL1.bit.TXENA = 0; //Disable TX
     EDIS;
     while (ScibRegs.SCICTL2.bit.TXEMPTY == 0) {}

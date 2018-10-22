@@ -27,7 +27,6 @@ void SCIB_init()
     // or Baud = LSPCLK / ((BRR + 1) *8)  @ 132.978kbps / 5 ms update rate
     ScibRegs.SCIHBAUD.all = 0x0000;
     ScibRegs.SCILBAUD.all = 0x002E; //0x2E = 46
-
     ScibRegs.SCICTL1.bit.SWRESET = 0;  // Software Reset (need to be unreset)
     EDIS;
 

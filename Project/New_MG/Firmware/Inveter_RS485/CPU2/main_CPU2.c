@@ -89,9 +89,9 @@ __interrupt void SCIB_RX_isr(void)
         RX_complete = 0; //reset RX_complete
         if (RS485_rx[0] != CMD_NTH)
         {
-            IPC_TX(c2_r_w_array); //if cmd is not do-nth then send data to CPU1
             GpioDataRegs.GPCTOGGLE.bit.GPIO81 = 1;
         }
+        IPC_TX(c2_r_w_array); //send data to CPU1
     }
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP9; //clear INT Group9
 }

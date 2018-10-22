@@ -19,6 +19,10 @@
 #define GDAMP 0.2f   // 1/Rd 0.2f
 #define I_LIMIT 8.0f
 #define RNL 100.0f
+#define KI_SEC_W 1000.0f
+#define KI_SEC_V 500.0f
+#define R_P 0.05f
+#define R_Q 0.05f
 
 
 typedef struct{
