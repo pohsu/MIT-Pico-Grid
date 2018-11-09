@@ -1,7 +1,7 @@
 # MIT PicoGrid
 The goal of this project is to develop controller firmware for inverter-based microgrids.
 
-## Test-bed Configuration
+## Test-Bed Configuration
 The system diagram of the "PicoGrid" looks like:
 
 <img src="./assets/diagram.png" width = "600"/>
