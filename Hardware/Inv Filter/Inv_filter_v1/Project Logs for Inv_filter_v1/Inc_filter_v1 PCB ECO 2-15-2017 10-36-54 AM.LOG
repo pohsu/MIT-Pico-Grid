@@ -1,0 +1,24 @@
+Change Component Description : Designator=R11 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R14 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R20 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R23 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R29 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R32 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R44 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R52 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R56 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R64 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R68 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R76 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R78 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R81 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R87 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R90 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R96 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R99 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=U31 Old Description=Series Voltage Reference IC กำ0.2% 25mA SOT-23-3 New Description=Series Voltage Reference IC ฑ0.2% 25mA SOT-23-3
+Change Component Description : Designator=U32 Old Description=Series Voltage Reference IC กำ0.2% 25mA SOT-23-3 New Description=Series Voltage Reference IC ฑ0.2% 25mA SOT-23-3
+Change Component Description : Designator=U39 Old Description=Series Voltage Reference IC กำ0.2% 25mA SOT-23-3 New Description=Series Voltage Reference IC ฑ0.2% 25mA SOT-23-3
+Added Component: Designator=J1(Connector D-Sub Receptacle 25 pos)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=LCL Member=Component J1 DB25 conn

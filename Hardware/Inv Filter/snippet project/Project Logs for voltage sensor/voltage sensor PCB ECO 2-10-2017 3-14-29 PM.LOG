@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetR1004_2 Pin=R1007-2
+Added Pin To Net: NetName=NetR1007_2 Pin=R1007-2
+Added Net: Name=NetR1007_2
+Added Room: Name=voltage sensor

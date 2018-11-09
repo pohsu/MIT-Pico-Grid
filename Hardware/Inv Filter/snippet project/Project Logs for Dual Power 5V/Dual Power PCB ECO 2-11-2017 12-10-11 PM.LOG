@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=NetC1013_2 Pin=C1009-1
+Added Pin To Net: NetName=NetC1013_2 Pin=C1010-1
+Added Pin To Net: NetName=NetC1013_2 Pin=D1003-1
+Change Net Name : Old Net Name=NetC1013_2 New Net Name=-6V_USH1
+Added Room: Name=Dual Power

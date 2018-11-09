@@ -1,0 +1,186 @@
+Removed Pin From Net: NetName=1V5 Pin=R105-1
+Removed Pin From Net: NetName=1V5 Pin=U31-2
+Added Pin To Net: NetName=GND_LV Pin=C1000-1
+Added Pin To Net: NetName=+5V_AD Pin=C1000-2
+Added Pin To Net: NetName=GND_LV Pin=C1001-1
+Added Pin To Net: NetName=+5V_AD Pin=C1001-2
+Added Pin To Net: NetName=NetC208_1 Pin=C1002-1
+Added Pin To Net: NetName=GND_LV Pin=C1003-1
+Added Pin To Net: NetName=GND_LV Pin=C1004-1
+Added Pin To Net: NetName=+5V_AD Pin=C1004-2
+Added Pin To Net: NetName=GND_LV Pin=C1005-1
+Added Pin To Net: NetName=+5V_AD Pin=C1005-2
+Added Pin To Net: NetName=-5V_AD Pin=C1006-1
+Added Pin To Net: NetName=GND_LV Pin=C1006-2
+Added Pin To Net: NetName=-5V_AD Pin=C1007-1
+Added Pin To Net: NetName=GND_LV Pin=C1007-2
+Added Pin To Net: NetName=NetC214_1 Pin=C1008-1
+Added Pin To Net: NetName=NetC215_1 Pin=C1009-1
+Added Pin To Net: NetName=GND_LV Pin=C1010-1
+Added Pin To Net: NetName=GND_LV Pin=C1011-1
+Added Pin To Net: NetName=+5V_AD Pin=C1011-2
+Added Pin To Net: NetName=GND_LV Pin=C1012-1
+Added Pin To Net: NetName=+5V_AD Pin=C1012-2
+Added Pin To Net: NetName=-5V_AD Pin=C1013-1
+Added Pin To Net: NetName=GND_LV Pin=C1013-2
+Added Pin To Net: NetName=-5V_AD Pin=C1014-1
+Added Pin To Net: NetName=GND_LV Pin=C1014-2
+Added Pin To Net: NetName=NetC221_1 Pin=C1015-1
+Added Pin To Net: NetName=NetC222_1 Pin=C1016-1
+Added Pin To Net: NetName=GND_LV Pin=C1017-1
+Added Pin To Net: NetName=GND_LV Pin=C1018-1
+Added Pin To Net: NetName=+5V_AD Pin=C1018-2
+Added Pin To Net: NetName=GND_LV Pin=C1019-1
+Added Pin To Net: NetName=+5V_AD Pin=C1019-2
+Added Pin To Net: NetName=-5V_AD Pin=C1020-1
+Added Pin To Net: NetName=GND_LV Pin=C1020-2
+Added Pin To Net: NetName=-5V_AD Pin=C1021-1
+Added Pin To Net: NetName=GND_LV Pin=C1021-2
+Added Pin To Net: NetName=NetC228_1 Pin=C1022-1
+Added Pin To Net: NetName=NetC208_1 Pin=R1000-1
+Added Pin To Net: NetName=NetR21_2 Pin=R1002-2
+Added Pin To Net: NetName=NetR21_2 Pin=R1003-1
+Added Pin To Net: NetName=GND_LV Pin=R1003-2
+Added Pin To Net: NetName=NetC208_1 Pin=R1004-1
+Added Pin To Net: NetName=NetC214_1 Pin=R1004-2
+Added Pin To Net: NetName=NetR22_2 Pin=R1005-2
+Added Pin To Net: NetName=NetR22_2 Pin=R1006-1
+Added Pin To Net: NetName=GND_LV Pin=R1006-2
+Added Pin To Net: NetName=NetC214_1 Pin=R1007-1
+Added Pin To Net: NetName=NetC215_1 Pin=R1008-1
+Added Pin To Net: NetName=NetR12_2 Pin=R1010-2
+Added Pin To Net: NetName=NetR12_2 Pin=R1011-1
+Added Pin To Net: NetName=GND_LV Pin=R1011-2
+Added Pin To Net: NetName=NetC215_1 Pin=R1012-1
+Added Pin To Net: NetName=NetC221_1 Pin=R1012-2
+Added Pin To Net: NetName=NetR13_2 Pin=R1013-2
+Added Pin To Net: NetName=NetR13_2 Pin=R1014-1
+Added Pin To Net: NetName=GND_LV Pin=R1014-2
+Added Pin To Net: NetName=NetC221_1 Pin=R1015-1
+Added Pin To Net: NetName=NetC222_1 Pin=R1016-1
+Added Pin To Net: NetName=NetR30_2 Pin=R1018-2
+Added Pin To Net: NetName=NetR30_2 Pin=R1019-1
+Added Pin To Net: NetName=GND_LV Pin=R1019-2
+Added Pin To Net: NetName=NetC222_1 Pin=R1020-1
+Added Pin To Net: NetName=NetC228_1 Pin=R1020-2
+Added Pin To Net: NetName=NetR31_2 Pin=R1021-2
+Added Pin To Net: NetName=NetR31_2 Pin=R1022-1
+Added Pin To Net: NetName=GND_LV Pin=R1022-2
+Added Pin To Net: NetName=NetC228_1 Pin=R1023-1
+Added Pin To Net: NetName=+5V_AD Pin=U1000-1
+Added Pin To Net: NetName=GND_LV Pin=U1000-3
+Added Pin To Net: NetName=+5V_AD Pin=U1001-3
+Added Pin To Net: NetName=NetC214_1 Pin=U1001-4
+Added Pin To Net: NetName=NetC208_1 Pin=U1001-5
+Added Pin To Net: NetName=-5V_AD Pin=U1001-6
+Added Pin To Net: NetName=+5V_AD Pin=U1002-3
+Added Pin To Net: NetName=NetC221_1 Pin=U1002-4
+Added Pin To Net: NetName=NetC215_1 Pin=U1002-5
+Added Pin To Net: NetName=-5V_AD Pin=U1002-6
+Added Pin To Net: NetName=+5V_AD Pin=U1003-3
+Added Pin To Net: NetName=NetC228_1 Pin=U1003-4
+Added Pin To Net: NetName=NetC222_1 Pin=U1003-5
+Added Pin To Net: NetName=-5V_AD Pin=U1003-6
+Change Net Name : Old Net Name=Vocm1 New Net Name=Vocm_IL1
+Change Net Name : Old Net Name=Vocm2 New Net Name=Vocm_IL2
+Change Net Name : Old Net Name=Vocm3 New Net Name=Vocm_IL3
+Added Pin To Net: NetName=1V5_IL Pin=R105-1
+Added Pin To Net: NetName=1V5_IL Pin=U31-2
+Added Net: Name=1V5_IL
+Added Pin To Net: NetName=1V5_Vo1 Pin=R1001-1
+Added Pin To Net: NetName=1V5_Vo1 Pin=R1009-1
+Added Pin To Net: NetName=1V5_Vo1 Pin=R1017-1
+Added Net: Name=1V5_Vo1
+Added Pin To Net: NetName=1V5_Vo Pin=U1000-2
+Added Net: Name=1V5_Vo
+Added Pin To Net: NetName=NetC1002_2 Pin=C1002-2
+Added Pin To Net: NetName=NetC1002_2 Pin=R1000-2
+Added Pin To Net: NetName=NetC1002_2 Pin=R1002-1
+Added Pin To Net: NetName=NetC1002_2 Pin=U1001-8
+Added Net: Name=NetC1002_2
+Added Pin To Net: NetName=NetC1008_2 Pin=C1008-2
+Added Pin To Net: NetName=NetC1008_2 Pin=R1005-1
+Added Pin To Net: NetName=NetC1008_2 Pin=R1007-2
+Added Pin To Net: NetName=NetC1008_2 Pin=U1001-1
+Added Net: Name=NetC1008_2
+Added Pin To Net: NetName=NetC1009_2 Pin=C1009-2
+Added Pin To Net: NetName=NetC1009_2 Pin=R1008-2
+Added Pin To Net: NetName=NetC1009_2 Pin=R1010-1
+Added Pin To Net: NetName=NetC1009_2 Pin=U1002-8
+Added Net: Name=NetC1009_2
+Added Pin To Net: NetName=NetC1015_2 Pin=C1015-2
+Added Pin To Net: NetName=NetC1015_2 Pin=R1013-1
+Added Pin To Net: NetName=NetC1015_2 Pin=R1015-2
+Added Pin To Net: NetName=NetC1015_2 Pin=U1002-1
+Added Net: Name=NetC1015_2
+Added Pin To Net: NetName=NetC1016_2 Pin=C1016-2
+Added Pin To Net: NetName=NetC1016_2 Pin=R1016-2
+Added Pin To Net: NetName=NetC1016_2 Pin=R1018-1
+Added Pin To Net: NetName=NetC1016_2 Pin=U1003-8
+Added Net: Name=NetC1016_2
+Added Pin To Net: NetName=NetC1022_2 Pin=C1022-2
+Added Pin To Net: NetName=NetC1022_2 Pin=R1021-1
+Added Pin To Net: NetName=NetC1022_2 Pin=R1023-2
+Added Pin To Net: NetName=NetC1022_2 Pin=U1003-1
+Added Net: Name=NetC1022_2
+Added Pin To Net: NetName=Vocm_Vo1 Pin=C1003-2
+Added Pin To Net: NetName=Vocm_Vo1 Pin=R1001-2
+Added Pin To Net: NetName=Vocm_Vo1 Pin=U1001-2
+Added Net: Name=Vocm_Vo1
+Added Pin To Net: NetName=Vocm_Vo2 Pin=C1010-2
+Added Pin To Net: NetName=Vocm_Vo2 Pin=R1009-2
+Added Pin To Net: NetName=Vocm_Vo2 Pin=U1002-2
+Added Net: Name=Vocm_Vo2
+Added Pin To Net: NetName=Vocm_Vo3 Pin=C1017-2
+Added Pin To Net: NetName=Vocm_Vo3 Pin=R1017-2
+Added Pin To Net: NetName=Vocm_Vo3 Pin=U1003-2
+Added Net: Name=Vocm_Vo3
+Added Member To Class: ClassName=Analog Transmission Member=Component C1000 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1001 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1002 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1003 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1004 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1005 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1006 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1007 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1008 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1009 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1010 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1011 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1012 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1013 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1014 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1015 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1016 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1017 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1018 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1019 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1020 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component R1000 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1001 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1002 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1003 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1004 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1005 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1006 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1007 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1008 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1009 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1010 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1011 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1012 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1013 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1014 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1015 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1016 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1017 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1018 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1019 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1020 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1021 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1022 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R1023 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component U1000 ISL21010
+Added Member To Class: ClassName=Analog Transmission Member=Component U1001 AD8132
+Added Member To Class: ClassName=Analog Transmission Member=Component U1002 AD8132
+Added Member To Class: ClassName=Analog Transmission Member=Component U1003 AD8132

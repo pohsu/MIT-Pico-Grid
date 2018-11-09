@@ -1,0 +1,129 @@
+Change Component Comment : Designator=C195 Old Comment=* New Comment=Cap 1812
+Change Component Comment : Designator=C196 Old Comment=* New Comment=Cap 1812
+Change Component Comment : Designator=C197 Old Comment=* New Comment=Cap 1812
+Change Component Comment : Designator=U4 Old Comment=* New Comment=TPS7A30
+Change Component Comment : Designator=U8 Old Comment=* New Comment=TPS7A30
+Change Component Comment : Designator=U12 Old Comment=* New Comment=TPS7A30
+Change Component Comment : Designator=U22 Old Comment=* New Comment=TPS7A30
+Change Component Comment : Designator=U26 Old Comment=* New Comment=TPS7A30
+Change Component Comment : Designator=U30 Old Comment=* New Comment=TPS7A30
+Change Component Comment : Designator=D1 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D2 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D9 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D10 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D17 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D18 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D31 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D32 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D33 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D34 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D35 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D36 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D37 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D38 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D45 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D46 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D53 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Comment : Designator=D54 Old Comment=Diode_ESD New Comment=TVS - Diodes
+Change Component Description : Designator=D1 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D2 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D9 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D10 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D17 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D18 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D31 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D32 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D33 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D34 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D35 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D36 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D37 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D38 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D45 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D46 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D53 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=D54 Old Description= New Description=TVS DIODE 70VWM 8VC SOT323
+Change Component Description : Designator=C195 Old Description=C4532C0G3F221K200KA New Description=CAP CER 220PF 3KV C0G 1812
+Change Component Description : Designator=C196 Old Description=C4532C0G3F221K200KA New Description=CAP CER 220PF 3KV C0G 1812
+Change Component Description : Designator=C197 Old Description=C4532C0G3F221K200KA New Description=CAP CER 220PF 3KV C0G 1812
+Change component parameters: Designator = "C195"; Footprint = "1812 (4532 Metric)"; UniqueID = "\OHTKOFJN"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "445-2380-1-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C196"; Footprint = "1812 (4532 Metric)"; UniqueID = "\IFGSCBOV"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "445-2380-1-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C197"; Footprint = "1812 (4532 Metric)"; UniqueID = "\GGDTBKLG"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "445-2380-1-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D1"; Footprint = "SOT323_ESD"; UniqueID = "\OKJSPUWI"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D2"; Footprint = "SOT323_ESD"; UniqueID = "\IYHMKPMB"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D9"; Footprint = "SOT323_ESD"; UniqueID = "\EFENPBRS"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D10"; Footprint = "SOT323_ESD"; UniqueID = "\CMEABMIE"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D17"; Footprint = "SOT323_ESD"; UniqueID = "\AVSHAEAX"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D18"; Footprint = "SOT323_ESD"; UniqueID = "\RMIHDSTI"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D31"; Footprint = "SOT323_ESD"; UniqueID = "\OKKOBBTU"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D32"; Footprint = "SOT323_ESD"; UniqueID = "\JNALYJWX"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D33"; Footprint = "SOT323_ESD"; UniqueID = "\AWIFSTRK"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D34"; Footprint = "SOT323_ESD"; UniqueID = "\UVUIORMN"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D35"; Footprint = "SOT323_ESD"; UniqueID = "\HBJUTUFV"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D36"; Footprint = "SOT323_ESD"; UniqueID = "\HWUTKFLX"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D37"; Footprint = "SOT323_ESD"; UniqueID = "\MDHIMJYC"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D38"; Footprint = "SOT323_ESD"; UniqueID = "\JHKVVBSC"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D45"; Footprint = "SOT323_ESD"; UniqueID = "\QTFQETLM"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D46"; Footprint = "SOT323_ESD"; UniqueID = "\HDBBFAHD"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D53"; Footprint = "SOT323_ESD"; UniqueID = "\NWLTSAMS"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Change component parameters: Designator = "D54"; Footprint = "SOT323_ESD"; UniqueID = "\HYAANIUD"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7DICT-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"

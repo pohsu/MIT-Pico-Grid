@@ -1,0 +1,7 @@
+Added Component: Designator=U4(8-TSSOP)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "296-27750-1-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC30_2 Pin=U4-2
+Added Pin To Net: NetName=GND_VSH1 Pin=U4-3
+Added Pin To Net: NetName=GND_VSH1 Pin=U4-4
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U4 TPS7A30

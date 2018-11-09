@@ -1,0 +1,42 @@
+Change Component Designator: OldDesignator=C1002 NewDesignator=C1003
+Change Component Designator: OldDesignator=C1003 NewDesignator=C1004
+Change Component Designator: OldDesignator=C1004 NewDesignator=C1005
+Change Component Designator: OldDesignator=C1005 NewDesignator=C1006
+Change Component Designator: OldDesignator=C1006 NewDesignator=C1007
+Change Component Designator: OldDesignator=C1007 NewDesignator=C1008
+Change Component Designator: OldDesignator=C1008 NewDesignator=C1009
+Change Component Designator: OldDesignator=C1009 NewDesignator=C1010
+Change Component Designator: OldDesignator=C1010 NewDesignator=C1011
+Change Component Designator: OldDesignator=C1011 NewDesignator=C1012
+Change Component Designator: OldDesignator=C1012 NewDesignator=C1013
+Change Component Designator: OldDesignator=C1013 NewDesignator=C1014
+Change Component Designator: OldDesignator=C1014 NewDesignator=C1015
+Change Component Designator: OldDesignator=C1015 NewDesignator=C1016
+Change Component Designator: OldDesignator=C1016 NewDesignator=C1018
+Change Component Designator: OldDesignator=C1017 NewDesignator=C1019
+Change Component Designator: OldDesignator=C NewDesignator=C1002
+Change Component Designator: OldDesignator=C NewDesignator=C1017
+Change Component Designator: OldDesignator=D1000 NewDesignator=D1001
+Change Component Designator: OldDesignator=D1001 NewDesignator=D1002
+Change Component Designator: OldDesignator=D1002 NewDesignator=D1003
+Change Component Designator: OldDesignator=D1003 NewDesignator=D1004
+Change Component Designator: OldDesignator=D NewDesignator=D1000
+Change Component Designator: OldDesignator=D NewDesignator=D1005
+Change Component Designator: OldDesignator=R1001 NewDesignator=R1002
+Change Component Designator: OldDesignator=R1002 NewDesignator=R1003
+Change Component Designator: OldDesignator=R NewDesignator=R1001
+Change Component Designator: OldDesignator=U NewDesignator=U1001
+Change Net Name : Old Net Name=NetC1005_2 New Net Name=NetC1006_2
+Change Net Name : Old Net Name=NetC1014_1 New Net Name=NetC1015_1
+Change Net Name : Old Net Name=NetC1014_2 New Net Name=NetC1015_2
+Change Net Name : Old Net Name=NetD1000_K New Net Name=NetD1001_K
+Change Net Name : Old Net Name=NetD1002_2 New Net Name=NetD1000_1
+Change Net Name : Old Net Name=NetD1003_A New Net Name=NetD1004_A
+Added Pin To Net: NetName=NetC1013_2 Pin=C1013-2
+Added Pin To Net: NetName=NetC1013_2 Pin=C1014-2
+Added Net: Name=NetC1013_2
+Added Pin To Net: NetName=NetC1019_2 Pin=C1019-2
+Added Net: Name=NetC1019_2
+Added Member To Class: ClassName=Dual Power Member=Component C1018 Cap 0603_new
+Added Member To Class: ClassName=Dual Power Member=Component D1004 LED
+Added Room: Name=Dual Power
