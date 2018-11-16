@@ -54,8 +54,8 @@ void Droop_control(const bool enable, const float32 Droop[2], const float32 vref
 {
 	static float32 vref_slew;
 	static float32 dw, dV;
-	float32 V_avg = IPC_rx.V_avg/100.0f;
-	float32 w_avg = IPC_rx.w_avg/100.0f;
+	float32 V_avg = IPC_rx.V_avg/1000.0f + 0.9f;
+	float32 w_avg = IPC_rx.w_avg/1000.0f + 0.9f;
 	float32 P_ref = (IPC_rx.P_ref-100.0f)/100.0f;
 	float32 Q_ref = (IPC_rx.Q_ref-100.0f)/100.0f;
     if (enable){
@@ -302,7 +302,7 @@ void dac_report(Uint16 dac, const struct_control_states * c_states, const struct
             wf = c_states->omega / W_NOM;
             DACA(wf - 0.98f, 0.02f);
             DACB(wf - 0.96f, 0.04f);
-            uDACC(wf - 0.96f, 0.015f);
+            uDACC(wf - 0.95f, 0.02f);
             break;
     }
 }

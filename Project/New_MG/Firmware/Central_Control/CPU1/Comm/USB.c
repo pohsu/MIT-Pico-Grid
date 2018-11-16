@@ -59,7 +59,7 @@ void USB_TO_RS485Interpreter(void)
         if (usb_rx[0] == 193) GpioDataRegs.GPACLEAR.bit.GPIO1 = 1;
         if (usb_rx[0] == 194) GpioDataRegs.GPASET.bit.GPIO1 = 1;
         if (usb_rx[0] == 195) GpioDataRegs.GPACLEAR.bit.GPIO2 = 1;
-        if (usb_rx[0] == 196) GpioDataRegs.GPASET.bit.GPIO2 = 1;
+        if (usb_rx[0] == 196) GpioDataRegs.GPASET.bit.GPIO2  = 1;
         if (usb_rx[0] == 181) lp[0] = usb_rx[3];
         if (usb_rx[0] == 182) lq[0] = usb_rx[3];
         if (usb_rx[0] == 183) lp[1] = usb_rx[3];

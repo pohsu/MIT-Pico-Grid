@@ -154,11 +154,11 @@ void task_table (Uint32 * counter)
 
 void dispatchment_step()
 {
-    float32 P_tot = 0, Q_tot = 0, w_avg, V_avg, lp_tot, lq_tot;
+    float32 P_tot = 0, Q_tot = 0, w_avg = 0, V_avg = 0, lp_tot = 0, lq_tot = 0;
     Uint16 i;
     for(i = 0; i < NUMOFDEVICE; i++){
-        V_avg += RS485_rx[i][0];
-        w_avg += RS485_rx[i][1];
+        V_avg += RS485_rx[i][0]/10.0f+90.0f;
+        w_avg += RS485_rx[i][1]/10.0f+90.0f;
         P_tot += RS485_rx[i][2] - 100.0f; // 100.0f offset
         Q_tot += RS485_rx[i][3] - 100.0f; // 100.0f offset
         lp_tot += lp[i];
@@ -167,8 +167,8 @@ void dispatchment_step()
     w_avg /= NUMOFDEVICE;
     V_avg /= NUMOFDEVICE;
     for(i = 0; i < NUMOFDEVICE; i++){
-        RS485_tx[i][2] = V_avg;
-        RS485_tx[i][3] = w_avg;
+        RS485_tx[i][2] = (V_avg-90.0f)*10.0f;
+        RS485_tx[i][3] = (w_avg-90.0f)*10.0f;
         RS485_tx[i][4] = P_tot * lp[i] / lp_tot + 100.0f; // 100.0f offset
         RS485_tx[i][5] = Q_tot * lq[i] / lq_tot + 100.0f; // 100.0f offset
 

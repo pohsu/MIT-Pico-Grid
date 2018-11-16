@@ -192,8 +192,8 @@ void task_table (Uint32 * counter)
         float32 w = control_states1.omega/W_NOM;
         float32 Vc_mag = 0;
         Vc_mag = sqrtf(meas_states1.VC_dq[0]*meas_states1.VC_dq[0] + meas_states1.VC_dq[1]*meas_states1.VC_dq[1])/V_NOM;
-        IPC_tx.V = Vc_mag * 100.0f;
-        IPC_tx.w = w * 100.0f;
+        IPC_tx.V = (Vc_mag - 0.9f) * 1000.0f;
+        IPC_tx.w = (w - 0.9f) * 1000.0f;
         IPC_tx.P = meas_states1.PQ[0]*100.0f+100.0f;
         IPC_tx.Q = meas_states1.PQ[1]*100.0f+100.0f;
 //        IPC_tx.V = IPC_rx.P_ref;
