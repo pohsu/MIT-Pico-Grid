@@ -1,0 +1,22 @@
+Change Component Designator: OldDesignator=D1 NewDesignator=D1000
+Change Component Designator: OldDesignator=Q1 NewDesignator=Q1000
+Change Component Designator: OldDesignator=Q2 NewDesignator=Q1001
+Change Component Designator: OldDesignator=R1 NewDesignator=R1000
+Change Component Designator: OldDesignator=R2 NewDesignator=R1001
+Change Component Designator: OldDesignator=R3 NewDesignator=R1002
+Change Component Designator: OldDesignator=R4 NewDesignator=R1003
+Change Component Designator: OldDesignator=R5 NewDesignator=R1004
+Change Net Name : Old Net Name=NetD1_1 New Net Name=NetD1000_1
+Change Net Name : Old Net Name=NetQ1_2 New Net Name=NetQ1000_2
+Change Net Name : Old Net Name=NetQ1_3 New Net Name=NetQ1000_3
+Change Net Name : Old Net Name=NetQ2_2 New Net Name=NetQ1001_2
+Change Net Name : Old Net Name=NetQ2_3 New Net Name=NetQ1001_3
+Change Net Name : Old Net Name=NetR5_2 New Net Name=NetR1004_2
+Added Member To Class: ClassName=sch1 Member=Component D1000 Diode SB140
+Added Member To Class: ClassName=sch1 Member=Component Q1000 2N3904
+Added Member To Class: ClassName=sch1 Member=Component Q1001 2N3904
+Added Member To Class: ClassName=sch1 Member=Component R1000 Res1
+Added Member To Class: ClassName=sch1 Member=Component R1001 Res1
+Added Member To Class: ClassName=sch1 Member=Component R1002 Res1
+Added Member To Class: ClassName=sch1 Member=Component R1003 Res1
+Added Member To Class: ClassName=sch1 Member=Component R1004 Res1
