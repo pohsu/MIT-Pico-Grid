@@ -1,0 +1,6 @@
+Added Component: Designator=R1005(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "P1.13KBCCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1.13k"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=voltage sensor Member=Component R1005 Resistor 1206
+Added Room: Name=voltage sensor

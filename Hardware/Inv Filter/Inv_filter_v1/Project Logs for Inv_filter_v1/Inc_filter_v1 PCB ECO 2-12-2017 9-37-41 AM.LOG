@@ -1,0 +1,103 @@
+Change Component Designator: OldDesignator=C1000 NewDesignator=C110
+Change Component Designator: OldDesignator=C1001 NewDesignator=C111
+Change Component Designator: OldDesignator=C1002 NewDesignator=C112
+Change Component Designator: OldDesignator=C1003 NewDesignator=C113
+Change Component Designator: OldDesignator=C1004 NewDesignator=C114
+Change Component Designator: OldDesignator=D1000 NewDesignator=D33
+Change Component Designator: OldDesignator=D1001 NewDesignator=D34
+Change Component Designator: OldDesignator=FB1000 NewDesignator=FB16
+Change Component Designator: OldDesignator=R1000 NewDesignator=R53
+Change Component Designator: OldDesignator=R1001 NewDesignator=R54
+Change Component Designator: OldDesignator=R1002 NewDesignator=R55
+Change Component Designator: OldDesignator=R1003 NewDesignator=R56
+Change Component Designator: OldDesignator=R1004 NewDesignator=R57
+Change Component Designator: OldDesignator=R1005 NewDesignator=R58
+Change Component Designator: OldDesignator=R1006 NewDesignator=R59
+Change Component Designator: OldDesignator=R1007 NewDesignator=R60
+Change Component Designator: OldDesignator=R1008 NewDesignator=R61
+Change Component Designator: OldDesignator=R1009 NewDesignator=R62
+Change Component Designator: OldDesignator=R1010 NewDesignator=R63
+Change Component Designator: OldDesignator=R1011 NewDesignator=R64
+Change Component Designator: OldDesignator=U1000 NewDesignator=U17
+Added Pin To Net: NetName=GND_PH Pin=C110-1
+Added Pin To Net: NetName=+5V_PH Pin=C110-2
+Added Pin To Net: NetName=5V_LV Pin=C111-1
+Added Pin To Net: NetName=GND_LV Pin=C111-2
+Added Pin To Net: NetName=GND_PH Pin=C112-1
+Added Pin To Net: NetName=+5V_PH Pin=C112-2
+Added Pin To Net: NetName=5V_LV Pin=C113-1
+Added Pin To Net: NetName=GND_LV Pin=C113-2
+Added Pin To Net: NetName=GND_PH Pin=C114-2
+Added Pin To Net: NetName=+5V_PH Pin=D33-1
+Added Pin To Net: NetName=-5V_PH Pin=D33-2
+Added Pin To Net: NetName=+5V_PH Pin=D34-1
+Added Pin To Net: NetName=-5V_PH Pin=D34-2
+Added Pin To Net: NetName=GND_PH Pin=D34-C
+Added Pin To Net: NetName=NetC4_3 Pin=FB16-1
+Added Pin To Net: NetName=+5V_PH Pin=R53-2
+Added Pin To Net: NetName=N_HV Pin=R58-1
+Added Pin To Net: NetName=N_HV Pin=R59-1
+Added Pin To Net: NetName=N_HV Pin=R63-2
+Added Pin To Net: NetName=GND_PH Pin=R64-2
+Added Pin To Net: NetName=+5V_PH Pin=U17-1
+Added Pin To Net: NetName=GND_PH Pin=U17-3
+Added Pin To Net: NetName=GND_PH Pin=U17-4
+Added Pin To Net: NetName=GND_LV Pin=U17-5
+Added Pin To Net: NetName=5V_LV Pin=U17-8
+Added Pin To Net: NetName=NetC114_1 Pin=C114-1
+Added Pin To Net: NetName=NetC114_1 Pin=D33-C
+Added Pin To Net: NetName=NetC114_1 Pin=R53-1
+Added Pin To Net: NetName=NetC114_1 Pin=R56-2
+Added Pin To Net: NetName=NetC114_1 Pin=U17-2
+Added Net: Name=NetC114_1
+Added Pin To Net: NetName=NetFB16_2 Pin=FB16-2
+Added Pin To Net: NetName=NetFB16_2 Pin=R54-1
+Added Net: Name=NetFB16_2
+Added Pin To Net: NetName=NetR54_2 Pin=R54-2
+Added Pin To Net: NetName=NetR54_2 Pin=R55-1
+Added Net: Name=NetR54_2
+Added Pin To Net: NetName=NetR55_2 Pin=R55-2
+Added Pin To Net: NetName=NetR55_2 Pin=R61-1
+Added Net: Name=NetR55_2
+Added Pin To Net: NetName=NetR56_1 Pin=R56-1
+Added Pin To Net: NetName=NetR56_1 Pin=R58-2
+Added Pin To Net: NetName=NetR56_1 Pin=R59-2
+Added Pin To Net: NetName=NetR56_1 Pin=R62-2
+Added Net: Name=NetR56_1
+Added Pin To Net: NetName=NetR57_1 Pin=R57-1
+Added Pin To Net: NetName=NetR57_1 Pin=U17-7
+Added Net: Name=NetR57_1
+Added Pin To Net: NetName=NetR57_2 Pin=R57-2
+Added Net: Name=NetR57_2
+Added Pin To Net: NetName=NetR60_1 Pin=R60-1
+Added Pin To Net: NetName=NetR60_1 Pin=U17-6
+Added Net: Name=NetR60_1
+Added Pin To Net: NetName=NetR60_2 Pin=R60-2
+Added Net: Name=NetR60_2
+Added Pin To Net: NetName=NetR61_2 Pin=R61-2
+Added Pin To Net: NetName=NetR61_2 Pin=R62-1
+Added Net: Name=NetR61_2
+Added Pin To Net: NetName=NetR63_1 Pin=R63-1
+Added Pin To Net: NetName=NetR63_1 Pin=R64-1
+Added Net: Name=NetR63_1
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C110 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C111 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C112 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C113 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C114 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component D33 Diode_ESD
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component D34 Diode_ESD
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component FB16 Ferrite bead
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R53 NC
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R54 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R55 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R56 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R57 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R58 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R59 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R60 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R61 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R62 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R63 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R64 Resistor 1206
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component U17 AMC1100

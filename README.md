@@ -1,7 +1,7 @@
 # MIT PicoGrid
 The goal of this project is to develop controller firmware for inverter-based microgrids.
 
-## Test-bed Configuration
+## Test-Bed Configuration
 The system diagram of the "PicoGrid" looks like:
 
 <img src="./assets/diagram.png" width = "600"/>
@@ -15,6 +15,10 @@ The system under construction:
 - TI C28379 microcontroller/TI CCS 6.0 IDE
 - ST STEVAL-IHM028V2 2kW 3-phase IGBT inverters
 - LabVIEW 14.0
+
+## Team 
+- Colm O'Rourke
+- Matt Overlin
 
 ## Publications
 - P. Vorobev; P. H. Huang, M. Al Hosani, J. L. Kirtley, and K. Turitsyn, “High-Fidelity Model Order Reduction for Microgrids Stability Assessment,” in IEEE Transactions on Power Systems, 2017 [[link](http://www.mit.edu/~turitsyn/assets/pubs/Vorobev2017ib.pdf)].

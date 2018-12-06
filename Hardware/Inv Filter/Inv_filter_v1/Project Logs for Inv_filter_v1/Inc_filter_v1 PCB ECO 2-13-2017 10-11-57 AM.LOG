@@ -1,0 +1,66 @@
+Removed Pin From Net: NetName=NetL1_9 Pin=R1-1
+Removed Pin From Net: NetName=NetFB5_1 Pin=R1-2
+Removed Pin From Net: NetName=GND_USH1 Pin=R1-3
+Removed Pin From Net: NetName=NetC1_3 Pin=R1-4
+Removed Pin From Net: NetName=NetL2_9 Pin=R2-1
+Removed Pin From Net: NetName=NetFB18_1 Pin=R2-2
+Removed Pin From Net: NetName=GND_USH2 Pin=R2-3
+Removed Pin From Net: NetName=NetL3_9 Pin=R4-1
+Removed Pin From Net: NetName=NetFB1_1 Pin=R4-2
+Removed Pin From Net: NetName=GND_VSH1 Pin=R4-3
+Removed Pin From Net: NetName=NetC4_3 Pin=R4-4
+Removed Pin From Net: NetName=NetL4_9 Pin=R5-1
+Removed Pin From Net: NetName=NetFB22_1 Pin=R5-2
+Removed Pin From Net: NetName=GND_VSH2 Pin=R5-3
+Removed Pin From Net: NetName=NetL6_9 Pin=R7-1
+Removed Pin From Net: NetName=NetFB9_1 Pin=R7-2
+Removed Pin From Net: NetName=GND_WSH1 Pin=R7-3
+Removed Pin From Net: NetName=NetC7_3 Pin=R7-4
+Removed Pin From Net: NetName=NetL7_9 Pin=R8-1
+Removed Pin From Net: NetName=NetFB26_1 Pin=R8-2
+Removed Pin From Net: NetName=GND_WSH2 Pin=R8-3
+Change Component Description : Designator=R11 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R14 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R20 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R23 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R29 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R32 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R44 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R52 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R56 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R64 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R68 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R76 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R78 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R81 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R87 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R90 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R96 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R99 Old Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm ฑ0.5% 0.25W, 1/4W Chip Resistor 1206
+Added Pin To Net: NetName=NetC1_3 Pin=R1-1
+Added Pin To Net: NetName=GND_USH1 Pin=R1-2
+Added Pin To Net: NetName=NetFB5_1 Pin=R1-3
+Added Pin To Net: NetName=NetL1_9 Pin=R1-4
+Added Pin To Net: NetName=GND_USH2 Pin=R2-2
+Added Pin To Net: NetName=NetFB18_1 Pin=R2-3
+Added Pin To Net: NetName=NetL2_9 Pin=R2-4
+Added Pin To Net: NetName=NetC4_3 Pin=R4-1
+Added Pin To Net: NetName=GND_VSH1 Pin=R4-2
+Added Pin To Net: NetName=NetFB1_1 Pin=R4-3
+Added Pin To Net: NetName=NetL3_9 Pin=R4-4
+Added Pin To Net: NetName=GND_VSH2 Pin=R5-2
+Added Pin To Net: NetName=NetFB22_1 Pin=R5-3
+Added Pin To Net: NetName=NetL4_9 Pin=R5-4
+Added Pin To Net: NetName=NetC7_3 Pin=R7-1
+Added Pin To Net: NetName=GND_WSH1 Pin=R7-2
+Added Pin To Net: NetName=NetFB9_1 Pin=R7-3
+Added Pin To Net: NetName=NetL6_9 Pin=R7-4
+Added Pin To Net: NetName=GND_WSH2 Pin=R8-2
+Added Pin To Net: NetName=NetFB26_1 Pin=R8-3
+Added Pin To Net: NetName=NetL7_9 Pin=R8-4
+Added Pin To Net: NetName=NetR2_1 Pin=R2-1
+Added Net: Name=NetR2_1
+Added Pin To Net: NetName=NetR5_1 Pin=R5-1
+Added Net: Name=NetR5_1
+Added Pin To Net: NetName=NetR8_1 Pin=R8-1
+Added Net: Name=NetR8_1

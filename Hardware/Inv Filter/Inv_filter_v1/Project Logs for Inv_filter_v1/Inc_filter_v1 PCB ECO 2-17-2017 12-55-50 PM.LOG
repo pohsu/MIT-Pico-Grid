@@ -1,0 +1,15 @@
+Added Component: Designator=C275(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "587-3248-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C276(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetL8_1 Pin=C275-1
+Added Pin To Net: NetName=GND_PWR Pin=C275-2
+Added Pin To Net: NetName=NetL8_1 Pin=C276-1
+Added Pin To Net: NetName=GND_PWR Pin=C276-2
+Change Net Name : Old Net Name=NetL8_1 New Net Name=NetC275_1
+Added Member To Class: ClassName=Power Supply Member=Component C275 Cap 1206
+Added Member To Class: ClassName=Power Supply Member=Component C276 Cap 0603_new

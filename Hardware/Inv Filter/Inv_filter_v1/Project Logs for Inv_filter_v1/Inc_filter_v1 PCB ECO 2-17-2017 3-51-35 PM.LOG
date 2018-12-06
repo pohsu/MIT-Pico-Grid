@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetC30_1 Pin=U4-1
+Removed Pin From Net: NetName=-6V_VSH1 Pin=U4-5
+Removed Pin From Net: NetName=-6V_VSH1 Pin=U4-8
+Removed Pin From Net: NetName=GND_VSH1 Pin=U4-9

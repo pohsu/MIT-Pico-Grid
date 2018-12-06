@@ -1,0 +1,25 @@
+Added Component: Designator=R?(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R?(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND_LV Pin=J1-13
+Added Pin To Net: NetName=GND_LV Pin=J1-14
+Added Pin To Net: NetName=GND_LV Pin=J1-15
+Added Pin To Net: NetName=GND_LV Pin=J1-16
+Added Pin To Net: NetName=GND_LV Pin=J1-17
+Added Pin To Net: NetName=GND_LV Pin=J1-26
+Added Pin To Net: NetName=GND_LV Pin=J1-27
+Added Pin To Net: NetName=GND_LV Pin=R?-2
+Added Pin To Net: NetName=GND_LV Pin=R?-2
+Added Pin To Net: NetName=NetJ1_18 Pin=J1-18
+Added Pin To Net: NetName=NetJ1_18 Pin=R?-1
+Added Net: Name=NetJ1_18
+Added Pin To Net: NetName=NetJ1_19 Pin=J1-19
+Added Pin To Net: NetName=NetJ1_19 Pin=R?-1
+Added Net: Name=NetJ1_19
+Added Member To Class: ClassName=LCL Member=Component R? Resistor 0603
+Added Member To Class: ClassName=LCL Member=Component R? Resistor 0603

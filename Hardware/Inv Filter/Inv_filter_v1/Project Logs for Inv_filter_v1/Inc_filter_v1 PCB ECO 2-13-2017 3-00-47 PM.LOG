@@ -1,0 +1,69 @@
+Change Component Designator: OldDesignator=C1000 NewDesignator=C1002
+Change Component Designator: OldDesignator=C1001 NewDesignator=C1003
+Change Component Designator: OldDesignator=C1002 NewDesignator=C1004
+Change Component Designator: OldDesignator=C1003 NewDesignator=C1005
+Change Component Designator: OldDesignator=C1004 NewDesignator=C1006
+Change Component Designator: OldDesignator=C1005 NewDesignator=C1007
+Change Component Designator: OldDesignator=C1006 NewDesignator=C1008
+Change Component Designator: OldDesignator=C1007 NewDesignator=C1009
+Change Component Designator: OldDesignator=C1008 NewDesignator=C1010
+Change Component Designator: OldDesignator=C1009 NewDesignator=C1011
+Change Component Designator: OldDesignator=C1010 NewDesignator=C1012
+Change Component Designator: OldDesignator=C1011 NewDesignator=C1013
+Change Component Designator: OldDesignator=C1012 NewDesignator=C1014
+Change Component Designator: OldDesignator=C1013 NewDesignator=C1015
+Change Component Designator: OldDesignator=C1014 NewDesignator=C1016
+Change Component Designator: OldDesignator=C1015 NewDesignator=C1017
+Change Component Designator: OldDesignator=C1016 NewDesignator=C1018
+Change Component Designator: OldDesignator=C1017 NewDesignator=C1019
+Change Component Designator: OldDesignator=C1018 NewDesignator=C1020
+Change Component Designator: OldDesignator=C1019 NewDesignator=C1021
+Change Component Designator: OldDesignator=C1020 NewDesignator=C1022
+Change Component Description : Designator=R11 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R14 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R20 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R23 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R29 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R32 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R44 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R52 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R56 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R64 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R68 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R76 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R78 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R81 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R87 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R90 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R96 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=R99 Old Description=12 Ohm ?.5% 0.25W, 1/4W Chip Resistor 1206 New Description=12 Ohm กำ0.5% 0.25W, 1/4W Chip Resistor 1206
+Change Component Description : Designator=U1000 Old Description=Series Voltage Reference IC ?.2% 25mA SOT-23-3 New Description=Series Voltage Reference IC กำ0.2% 25mA SOT-23-3
+Added Component: Designator=C1000(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "490-10515-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Added Component: Designator=C1001(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND_LV Pin=C1000-1
+Added Pin To Net: NetName=+5V_AD Pin=C1000-2
+Added Pin To Net: NetName=GND_LV Pin=C1001-1
+Added Pin To Net: NetName=+5V_AD Pin=C1001-2
+Change Net Name : Old Net Name=NetC1000_1 New Net Name=NetC1002_1
+Change Net Name : Old Net Name=NetC1000_2 New Net Name=NetC1002_2
+Change Net Name : Old Net Name=NetC1003_1 New Net Name=NetC1005_1
+Change Net Name : Old Net Name=NetC1006_1 New Net Name=NetC1008_1
+Change Net Name : Old Net Name=NetC1006_2 New Net Name=NetC1008_2
+Change Net Name : Old Net Name=NetC1007_1 New Net Name=NetC1009_1
+Change Net Name : Old Net Name=NetC1007_2 New Net Name=NetC1009_2
+Change Net Name : Old Net Name=NetC1010_1 New Net Name=NetC1012_1
+Change Net Name : Old Net Name=NetC1013_1 New Net Name=NetC1015_1
+Change Net Name : Old Net Name=NetC1013_2 New Net Name=NetC1015_2
+Change Net Name : Old Net Name=NetC1014_1 New Net Name=NetC1016_1
+Change Net Name : Old Net Name=NetC1014_2 New Net Name=NetC1016_2
+Change Net Name : Old Net Name=NetC1017_1 New Net Name=NetC1019_1
+Change Net Name : Old Net Name=NetC1020_1 New Net Name=NetC1022_1
+Change Net Name : Old Net Name=NetC1020_2 New Net Name=NetC1022_2
+Added Member To Class: ClassName=Analog Transmission Member=Component C1021 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1022 Cap 0603_new
