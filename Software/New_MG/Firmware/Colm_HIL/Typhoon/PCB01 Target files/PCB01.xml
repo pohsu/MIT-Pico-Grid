@@ -1,0 +1,5916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net_list>
+    
+   <system_description>
+        <name>6018692248ae11e89270ace010812cc4</name>
+        <sw_version>2018.1</sw_version>
+
+        <hw_settings>
+            <hardware_product_id>HIL402</hardware_product_id>
+            <hardware_revision>3</hardware_revision>
+            <hardware_configuration_id>1</hardware_configuration_id>
+            <hil_device_id>None</hil_device_id>
+            <device_ao_limit_enable>False</device_ao_limit_enable>
+        </hw_settings>
+
+        <solver_settings>
+            <sim_time_step>auto</sim_time_step>
+            <sim_discr_scale>1.0</sim_discr_scale>
+            <sim_method>exact</sim_method>
+            <enb_gds_oversampling>True</enb_gds_oversampling>
+            <show_modes>False</show_modes>
+            <cpl_stb>False</cpl_stb>
+            <enb_dep_sw_detect>False</enb_dep_sw_detect>
+            <enb_pole_shift>True</enb_pole_shift>
+            <ss_calc_method>systematic elimination</ss_calc_method>
+        </solver_settings>
+
+        <system_sp_settings>
+            <sys_sp_rate_1>0.0001</sys_sp_rate_1>
+            <sys_sp_rate_2>0.05</sys_sp_rate_2>
+        </system_sp_settings>
+
+        <user_sp_settings>
+            <code_section>internal memory</code_section>
+            <data_section>internal memory</data_section>
+        </user_sp_settings>
+    </system_description>
+
+    
+    
+    <spc0><electric_node_list>
+        
+             <node>0</node>
+        
+             <node>1</node>
+        
+             <node>2</node>
+        
+             <node>3</node>
+        
+             <node>4</node>
+        
+             <node>5</node>
+        
+             <node>6</node>
+        
+             <node>7</node>
+        
+             <node>8</node>
+        
+             <node>9</node>
+        
+             <node>10</node>
+        
+             <node>11</node>
+        
+             <node>12</node>
+        
+             <node>13</node>
+        
+             <node>14</node>
+        
+             <node>15</node>
+        
+             <node>16</node>
+        
+             <node>17</node>
+        
+             <node>18</node>
+        
+             <node>19</node>
+        
+             <node>20</node>
+        
+             <node>21</node>
+        
+             <node>22</node>
+        
+             <node>23</node>
+        
+             <node>24</node>
+        
+             <node>25</node>
+        
+             <node>26</node>
+        
+             <node>27</node>
+        
+             <node>28</node>
+        
+             <node>29</node>
+        
+             <node>30</node>
+        
+             <node>31</node>
+        
+             <node>32</node>
+        
+             <node>33</node>
+        
+             <node>34</node>
+        
+             <node>35</node>
+        
+             <node>36</node>
+        
+             <node>37</node>
+        
+             <node>38</node>
+        
+             <node>39</node>
+        
+        </electric_node_list>
+
+        <dsp_node_list>
+        </dsp_node_list>
+
+
+        <element_list>
+            
+  
+  <component>
+      <type>pas_capacitor</type>
+      <name>Cdc</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>capacitance</name>
+            <value>0.001</value>
+        </parameter>
+        <parameter>
+            <name>initial_voltage</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>14</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rs</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.01</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>20</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>14</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.i1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,monitoring,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>16</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>30</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.v1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,monitoring,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>21</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.v1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,monitoring,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>37</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.vco</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,reduction,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>3</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>16</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>3ph_inverter_1.IGBT Leg3.S2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>converter</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital inputs</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>one_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>2</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>12</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>25</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_short</type>
+      <name>3ph_inverter_1.Im_short_a</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>circuit_connector</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>pesb_flag</name>
+            <value>short_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>r_calc_msr</name>
+            <value>[3ph_inverter_1.vab,3ph_inverter_1.vac]</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>26</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>32</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.i1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,monitoring,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>25</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>37</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>IL1a.Ia1</name>
+      <parent_type>Current Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>IL1a</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>26</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>36</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_inductor</type>
+      <name>Lt3</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>inductance</name>
+            <value>0.0005189999999999999</value>
+        </parameter>
+        <parameter>
+            <name>initial_current</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>23</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>6</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_open</type>
+      <name>S1.dpst2</name>
+      <parent_type>Triple Pole Single Throw Contactor</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>circuit_connector</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>pesb_flag</name>
+            <value>false</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>39</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>6</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_voltage</type>
+      <name>Vs2.b</name>
+      <parent_type>Three Phase Voltage Source</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>sig_input</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>signal generator</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3phase_B,Vs2.a,Vs2.b,Vs2.c]</value>
+        </parameter>
+        <parameter>
+            <name>parent_label</name>
+            <value>Vs2</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>cpd_visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>9</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>19</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rt1</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.13725</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>29</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>24</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_inductor</type>
+      <name>Lt1</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>inductance</name>
+            <value>0.0005189999999999999</value>
+        </parameter>
+        <parameter>
+            <name>initial_current</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>24</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>10</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_voltage</type>
+      <name>Vs2.c</name>
+      <parent_type>Three Phase Voltage Source</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>sig_input</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>signal generator</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3phase_C,Vs2.a,Vs2.b,Vs2.c]</value>
+        </parameter>
+        <parameter>
+            <name>parent_label</name>
+            <value>Vs2</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>cpd_visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>17</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>19</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>VO1a.Va1</name>
+      <parent_type>Voltage Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>VO1a</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>7</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>34</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.vdc</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,reduction,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.vac</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>open_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>26</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>13</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rf1a</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.08</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>36</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>18</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.vdc</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,reduction,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>fsm_wrapper</type>
+      <name>3ph_inverter_1.IGBT Leg1.FSM_Wrapper1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>converter_name</name>
+            <value>3ph_inverter_1</value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value>3ph2l4q_r3</value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value>3ph_inverter_1.IGBT Leg1</value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value>igbt_leg</value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>spc_num</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>mdl_ctrl_len</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>switch_names</name>
+            <value>[3ph_inverter_1.IGBT Leg1.S1,3ph_inverter_1.IGBT Leg1.S2]</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital input per leg</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>di_ctrl</name>
+            <value>[4,7]</value>
+        </parameter>
+        <parameter>
+            <name>di_logic</name>
+            <value>[0,0]</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enabling</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enable_di</name>
+            <value>13</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enable_inv</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>delay_enabled</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>fixed_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>var_delay_lut</name>
+            <value>[]</value>
+        </parameter>
+        <parameter>
+            <name>delay_ammeter</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value>3ph_inverter_1.IGBT Leg1.PWM_Modulator</value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>[1T,1B]</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>S1.SC</name>
+      <parent_type>Triple Pole Single Throw Contactor</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>contactor</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital input</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>three_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>S1</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>3</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>6</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>17</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>IO1b.Ia1</name>
+      <parent_type>Current Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>IO1b</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>33</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>11</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rt2</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.13725</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>11</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>27</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>3ph_inverter_1.IGBT Leg2.S1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>converter</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital inputs</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>one_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>30</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.v1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,monitoring,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>30</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.i12</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,reduction,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>25</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>13</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_short</type>
+      <name>3ph_inverter_1.Im_short_dc</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>circuit_connector</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>pesb_flag</name>
+            <value>short_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>r_calc_msr</name>
+            <value>3ph_inverter_1.vdc</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>14</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_inductor</type>
+      <name>Lf1a</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>inductance</name>
+            <value>0.001</value>
+        </parameter>
+        <parameter>
+            <name>initial_current</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>18</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>7</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_inductor</type>
+      <name>Lf1b</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>inductance</name>
+            <value>0.001</value>
+        </parameter>
+        <parameter>
+            <name>initial_current</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>1</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>33</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_voltage</type>
+      <name>Vs2.a</name>
+      <parent_type>Three Phase Voltage Source</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>sig_input</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>signal generator</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3phase_A,Vs2.a,Vs2.b,Vs2.c]</value>
+        </parameter>
+        <parameter>
+            <name>parent_label</name>
+            <value>Vs2</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>cpd_visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>2</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>19</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>S1.SB</name>
+      <parent_type>Triple Pole Single Throw Contactor</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>contactor</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital input</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>three_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>S1</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>3</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>39</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>9</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rf1b</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.08</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>31</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>1</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>VO1b.Va1</name>
+      <parent_type>Voltage Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>VO1b</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>33</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>34</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_inductor</type>
+      <name>Lt2</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>inductance</name>
+            <value>0.0005189999999999999</value>
+        </parameter>
+        <parameter>
+            <name>initial_current</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>27</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>39</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.vab</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>open_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>26</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>28</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>IO1a.Ia1</name>
+      <parent_type>Current Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>IO1a</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>7</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>29</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rf1c</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.08</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>13</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>4</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.vdc</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>open_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>14</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>Vdc.Va1</name>
+      <parent_type>Voltage Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>Vdc</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>14</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.vdc</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,reduction,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.i12</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,reduction,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>15</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>32</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>3ph_inverter_1.IGBT Leg1.S1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>converter</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital inputs</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>one_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>21</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>3ph_inverter_1.IGBT Leg2.S2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>converter</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital inputs</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>one_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>3</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>16</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_voltage</type>
+      <name>Vs1</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>sig_input</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>signal generator</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>parent_label</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>cpd_visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>20</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_capacitor</type>
+      <name>Cf1b</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>capacitance</name>
+            <value>3e-05</value>
+        </parameter>
+        <parameter>
+            <name>initial_voltage</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>33</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>34</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.i12</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,reduction,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>16</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>38</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.i1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,monitoring,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>15</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>21</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>RL1a2</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>25.0</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>10</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>5</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>S1.SA</name>
+      <parent_type>Triple Pole Single Throw Contactor</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>contactor</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital input</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>three_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>S1</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>3</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>10</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>2</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>VO1c.Va1</name>
+      <parent_type>Voltage Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>VO1c</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>8</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>34</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.v2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,monitoring,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>0</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>15</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_open</type>
+      <name>S1.dpst1</name>
+      <parent_type>Triple Pole Single Throw Contactor</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>circuit_connector</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>pesb_flag</name>
+            <value>false</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>10</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>39</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>fsm_wrapper</type>
+      <name>3ph_inverter_1.IGBT Leg2.FSM_Wrapper1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>converter_name</name>
+            <value>3ph_inverter_1</value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value>3ph2l4q_r3</value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value>3ph_inverter_1.IGBT Leg2</value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value>igbt_leg</value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>spc_num</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>mdl_ctrl_len</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>switch_names</name>
+            <value>[3ph_inverter_1.IGBT Leg2.S1,3ph_inverter_1.IGBT Leg2.S2]</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital input per leg</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>di_ctrl</name>
+            <value>[5,8]</value>
+        </parameter>
+        <parameter>
+            <name>di_logic</name>
+            <value>[0,0]</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enabling</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enable_di</name>
+            <value>13</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enable_inv</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>delay_enabled</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>fixed_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>var_delay_lut</name>
+            <value>[]</value>
+        </parameter>
+        <parameter>
+            <name>delay_ammeter</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value>3ph_inverter_1.IGBT Leg2.PWM_Modulator</value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>[1T,1B]</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.vco</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,reduction,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>0</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>15</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.vco</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,reduction,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>12</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>25</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>fsm_wrapper</type>
+      <name>3ph_inverter_1.IGBT Leg3.FSM_Wrapper1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>converter_name</name>
+            <value>3ph_inverter_1</value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value>3ph2l4q_r3</value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value>3ph_inverter_1.IGBT Leg3</value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value>igbt_leg</value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>2</value>
+        </parameter>
+        <parameter>
+            <name>spc_num</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>mdl_ctrl_len</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>switch_names</name>
+            <value>[3ph_inverter_1.IGBT Leg3.S1,3ph_inverter_1.IGBT Leg3.S2]</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital input per leg</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>di_ctrl</name>
+            <value>[6,9]</value>
+        </parameter>
+        <parameter>
+            <name>di_logic</name>
+            <value>[0,0]</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enabling</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enable_di</name>
+            <value>13</value>
+        </parameter>
+        <parameter>
+            <name>pwm_enable_inv</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>delay_enabled</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>fixed_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>var_delay_lut</name>
+            <value>[]</value>
+        </parameter>
+        <parameter>
+            <name>delay_ammeter</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value>3ph_inverter_1.IGBT Leg3.PWM_Modulator</value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>[1T,1B]</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.v2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,monitoring,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>12</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>25</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.vbc</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>open_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>28</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>13</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_short</type>
+      <name>3ph_inverter_1.Im_short_b</name>
+      <parent_type>Three Phase Inverter</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>circuit_connector</name>
+            <value>false</value>
+        </parameter>
+        <parameter>
+            <name>pesb_flag</name>
+            <value>short_calc_helper</value>
+        </parameter>
+        <parameter>
+            <name>r_calc_msr</name>
+            <value>3ph_inverter_1.vbc</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>28</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>38</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_inductor</type>
+      <name>Lf1c</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>inductance</name>
+            <value>0.001</value>
+        </parameter>
+        <parameter>
+            <name>initial_current</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>4</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>8</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg1.i2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg1,igbt_leg,monitoring,0]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>0</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>3ph_inverter_1.IGBT Leg1.S2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>converter</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital inputs</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>one_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>0</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>15</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>RL1a3</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>25.0</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>39</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>5</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_capacitor</type>
+      <name>Cf1a</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>capacitance</name>
+            <value>3e-05</value>
+        </parameter>
+        <parameter>
+            <name>initial_voltage</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>7</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>34</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg3.i2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg3,igbt_leg,monitoring,2]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>12</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_capacitor</type>
+      <name>Cf1c</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>capacitance</name>
+            <value>3e-05</value>
+        </parameter>
+        <parameter>
+            <name>initial_voltage</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>pole_shift_ignore</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>8</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>34</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_voltage_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.v2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,monitoring,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>3</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>16</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_switch</type>
+      <name>3ph_inverter_1.IGBT Leg3.S1</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>type</name>
+            <value>converter</value>
+        </parameter>
+        <parameter>
+            <name>ctrl_src</name>
+            <value>Digital inputs</value>
+        </parameter>
+        <parameter>
+            <name>Sa</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>Sa_logic</name>
+            <value>active high</value>
+        </parameter>
+        <parameter>
+            <name>modulator_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>modulator_signal</name>
+            <value>1T</value>
+        </parameter>
+        <parameter>
+            <name>ctc_type</name>
+            <value>one_phase_breaker</value>
+        </parameter>
+        <parameter>
+            <name>block_name</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>on_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>off_delay</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>initial_state</name>
+            <value>off</value>
+        </parameter>
+        <parameter>
+            <name>switching</name>
+            <value>any current</value>
+        </parameter>
+        <parameter>
+            <name>zc_ammeter</name>
+            <value>none</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>ctc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>pe_connection</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>ctc_name</name>
+            <value>not_defined</value>
+        </parameter>
+        <parameter>
+            <name>enb_sw_ctrl</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>converter_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>converter_type</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_group_name</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_id</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>fsm_num</name>
+            <value>2</value>
+        </parameter>
+        <parameter>
+            <name>sw_nb_in_fsm</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>PESB_Optimization</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>37</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>22</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>Rt3</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.13725</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>8</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>23</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>pas_resistor</type>
+      <name>RL1a4</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>25.0</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>6</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>5</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>IL1b.Ia1</name>
+      <parent_type>Current Measurement</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>inherit</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>regular measurement</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value>IL1b</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>28</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>31</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>el_current_msr</type>
+      <name>3ph_inverter_1.IGBT Leg2.i2</name>
+      <parent_type>IGBT Leg</parent_type>
+
+      
+    <parameters>
+        <parameter>
+            <name>visible</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>feed_forward</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>nd_msr_estimation</name>
+            <value>true</value>
+        </parameter>
+        <parameter>
+            <name>comparator_enable</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>operator</name>
+            <value>greater</value>
+        </parameter>
+        <parameter>
+            <name>threshold</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>cmp_abs_value</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>sig_output</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>FSM monitoring</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value>[3ph_inverter_1,3ph_inverter_1.IGBT Leg2,igbt_leg,monitoring,1]</value>
+        </parameter>
+        <parameter>
+            <name>override_signal_name</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>signal_name</name>
+            <value></value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>35</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>3</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+        </element_list>
+
+
+    </spc0>
+    
+    
+    <spc1><electric_node_list>
+        
+             <node>0</node>
+        
+             <node>1</node>
+        
+        </electric_node_list>
+
+        <dsp_node_list>
+        </dsp_node_list>
+
+
+        <element_list>
+            
+  
+  <component>
+      <type>pas_resistor</type>
+      <name>Rs1</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>resistance</name>
+            <value>0.1</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>0</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>1</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_voltage</type>
+      <name>none</name>
+
+      
+    <parameters>
+        <parameter>
+            <name>sig_input</name>
+            <value>False</value>
+        </parameter>
+        <parameter>
+            <name>type</name>
+            <value>signal generator</value>
+        </parameter>
+        <parameter>
+            <name>param_set</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>parent_label</name>
+            <value></value>
+        </parameter>
+        <parameter>
+            <name>addr</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>spc_nb</name>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+        <parameter>
+            <name>cpd_visible</name>
+            <value>True</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>p_node</name>
+        <type>pe</type>
+        <node>0</node>
+    </terminal>
+    <terminal>
+        <name>n_node</name>
+        <type>pe</type>
+        <node>1</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+        </element_list>
+
+
+    </spc1>
+    
+    
+    <signal_processing><electric_node_list>
+        
+        </electric_node_list>
+
+        <dsp_node_list>
+        <node>0</node>
+        <node>1</node>
+        <node>2</node>
+        <node>3</node>
+        <node>4</node>
+        <node>5</node>
+        </dsp_node_list>
+
+
+        <element_list>
+            
+  
+  <component>
+      <type>gen_pwm_modulator</type>
+      <name>3ph_inverter_1.IGBT Leg3.PWM_Modulator</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>op_mode</name>
+            <value>Fixed carrier frequency</value>
+        </parameter>
+        <parameter>
+            <name>num_of_ch</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>channels</name>
+            <value>[]</value>
+        </parameter>
+        <parameter>
+            <name>di_ctrl_addrs</name>
+            <value>[6]</value>
+        </parameter>
+        <parameter>
+            <name>override_PWM_by_DI</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>carrier_freq</name>
+            <value>10000.0</value>
+        </parameter>
+        <parameter>
+            <name>carr_ph_offset</name>
+            <value>[0.0]</value>
+        </parameter>
+        <parameter>
+            <name>d_time</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>ref_sig_min_max</name>
+            <value>[-1.0, 1.0]</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>en</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>3</node>
+    </terminal>
+    <terminal>
+        <name>in</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>5</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_constant</type>
+      <name>3ph_inverter_1.IGBT Leg1.En_const</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>value</name>
+            <value>[1.0]</value>
+        </parameter>
+        <parameter>
+            <name>signal_type</name>
+            <value>real</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>out</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>2</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_constant</type>
+      <name>3ph_inverter_1.IGBT Leg3.In_const</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>value</name>
+            <value>[1.0]</value>
+        </parameter>
+        <parameter>
+            <name>signal_type</name>
+            <value>real</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>out</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>5</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_constant</type>
+      <name>3ph_inverter_1.IGBT Leg3.En_const</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>value</name>
+            <value>[1.0]</value>
+        </parameter>
+        <parameter>
+            <name>signal_type</name>
+            <value>real</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>out</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>3</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>gen_pwm_modulator</type>
+      <name>3ph_inverter_1.IGBT Leg1.PWM_Modulator</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>op_mode</name>
+            <value>Fixed carrier frequency</value>
+        </parameter>
+        <parameter>
+            <name>num_of_ch</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>channels</name>
+            <value>[]</value>
+        </parameter>
+        <parameter>
+            <name>di_ctrl_addrs</name>
+            <value>[4]</value>
+        </parameter>
+        <parameter>
+            <name>override_PWM_by_DI</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>carrier_freq</name>
+            <value>10000.0</value>
+        </parameter>
+        <parameter>
+            <name>carr_ph_offset</name>
+            <value>[0.0]</value>
+        </parameter>
+        <parameter>
+            <name>d_time</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>ref_sig_min_max</name>
+            <value>[-1.0, 1.0]</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>en</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>2</node>
+    </terminal>
+    <terminal>
+        <name>in</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>0</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_constant</type>
+      <name>3ph_inverter_1.IGBT Leg2.In_const</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>value</name>
+            <value>[1.0]</value>
+        </parameter>
+        <parameter>
+            <name>signal_type</name>
+            <value>real</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>out</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>1</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_constant</type>
+      <name>3ph_inverter_1.IGBT Leg1.In_const</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>value</name>
+            <value>[1.0]</value>
+        </parameter>
+        <parameter>
+            <name>signal_type</name>
+            <value>real</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>out</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>0</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>gen_pwm_modulator</type>
+      <name>3ph_inverter_1.IGBT Leg2.PWM_Modulator</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>op_mode</name>
+            <value>Fixed carrier frequency</value>
+        </parameter>
+        <parameter>
+            <name>num_of_ch</name>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>channels</name>
+            <value>[]</value>
+        </parameter>
+        <parameter>
+            <name>di_ctrl_addrs</name>
+            <value>[5]</value>
+        </parameter>
+        <parameter>
+            <name>override_PWM_by_DI</name>
+            <value>True</value>
+        </parameter>
+        <parameter>
+            <name>carrier_freq</name>
+            <value>10000.0</value>
+        </parameter>
+        <parameter>
+            <name>carr_ph_offset</name>
+            <value>[0.0]</value>
+        </parameter>
+        <parameter>
+            <name>d_time</name>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>ref_sig_min_max</name>
+            <value>[-1.0, 1.0]</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>en</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>4</node>
+    </terminal>
+    <terminal>
+        <name>in</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>1</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+  <component>
+      <type>src_constant</type>
+      <name>3ph_inverter_1.IGBT Leg2.En_const</name>
+      <parent_type>IGBT Leg</parent_type>
+      <system_cpu_component>False</system_cpu_component>
+
+      
+    <parameters>
+        <parameter>
+            <name>value</name>
+            <value>[1.0]</value>
+        </parameter>
+        <parameter>
+            <name>signal_type</name>
+            <value>real</value>
+        </parameter>
+        <parameter>
+            <name>execution_rate</name>
+            <value>0.0001</value>
+        </parameter>
+    </parameters>
+
+      
+    <terminals>
+    <terminal>
+        <name>out</name>
+        <type>sp</type>
+        <signal_type>real</signal_type>
+        <node>4</node>
+    </terminal>
+
+    </terminals>
+
+  </component>
+        </element_list>
+
+
+    </signal_processing>
+    
+
+</net_list>
