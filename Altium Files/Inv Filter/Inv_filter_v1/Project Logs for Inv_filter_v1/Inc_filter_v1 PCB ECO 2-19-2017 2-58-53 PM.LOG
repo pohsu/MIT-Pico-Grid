@@ -1,0 +1,54 @@
+Change Component Footprint: Designator=U1 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U5 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U9 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U16 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U17 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U18 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U19 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U23 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Footprint: Designator=U27 Old Footprint=SOP8 New Footprint=SOIC8
+Change Component Comment : Designator=U1 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U5 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U9 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U16 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U17 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U18 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U19 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U23 Old Comment=* New Comment=AMC1100
+Change Component Comment : Designator=U27 Old Comment=* New Comment=AMC1100
+Change Component Description : Designator=U1 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U5 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U9 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U16 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U17 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U18 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U19 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U23 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change Component Description : Designator=U27 Old Description= New Description=IC OPAMP ISOLATION 100KHZ 8SOIC
+Change component parameters: Designator = "U1"; Footprint = "SOIC8"; UniqueID = "\PQIMBORE"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U5"; Footprint = "SOIC8"; UniqueID = "\DFRHXIGV"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U9"; Footprint = "SOIC8"; UniqueID = "\WQCXGLSJ"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U16"; Footprint = "SOIC8"; UniqueID = "\ESFBEUDT"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U17"; Footprint = "SOIC8"; UniqueID = "\RVUGYNHT"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U18"; Footprint = "SOIC8"; UniqueID = "\KLMRDLOP"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U19"; Footprint = "SOIC8"; UniqueID = "\IEUNDBAB"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U23"; Footprint = "SOIC8"; UniqueID = "\YHCXOFTD"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U27"; Footprint = "SOIC8"; UniqueID = "\USRLOCLH"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Part"; Value = "296-38822-5-ND"; VariantName = "[No Variations]"

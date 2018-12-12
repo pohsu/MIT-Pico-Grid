@@ -1,0 +1,70 @@
+Change Component Designator: OldDesignator=C1000 NewDesignator=C10
+Change Component Designator: OldDesignator=C1001 NewDesignator=C11
+Change Component Designator: OldDesignator=C1002 NewDesignator=C12
+Change Component Designator: OldDesignator=C1003 NewDesignator=C13
+Change Component Designator: OldDesignator=C1004 NewDesignator=C14
+Change Component Designator: OldDesignator=D1000 NewDesignator=D1
+Change Component Designator: OldDesignator=D1001 NewDesignator=D2
+Change Component Designator: OldDesignator=FB1000 NewDesignator=FB1
+Change Component Designator: OldDesignator=FB1001 NewDesignator=FB2
+Change Component Designator: OldDesignator=R1000 NewDesignator=R10
+Change Component Designator: OldDesignator=R1001 NewDesignator=R11
+Change Component Designator: OldDesignator=R1002 NewDesignator=R12
+Change Component Designator: OldDesignator=R1003 NewDesignator=R13
+Change Component Designator: OldDesignator=R1004 NewDesignator=R14
+Change Component Designator: OldDesignator=U1000 NewDesignator=U1
+Added Pin To Net: NetName=+5V_USH1 Pin=C10-2
+Added Pin To Net: NetName=+5V_USH1 Pin=C12-2
+Added Pin To Net: NetName=+5V_USH1 Pin=D1-1
+Added Pin To Net: NetName=+5V_USH1 Pin=D2-1
+Added Pin To Net: NetName=+5V_USH1 Pin=R10-2
+Added Pin To Net: NetName=+5V_USH1 Pin=U1-1
+Added Net: Name=+5V_USH1
+Added Pin To Net: NetName=-5V_USH1 Pin=D1-2
+Added Pin To Net: NetName=-5V_USH1 Pin=D2-2
+Added Net: Name=-5V_USH1
+Added Pin To Net: NetName=5V_LV Pin=C11-1
+Added Pin To Net: NetName=5V_LV Pin=C13-1
+Added Pin To Net: NetName=5V_LV Pin=U1-8
+Added Net: Name=5V_LV
+Added Pin To Net: NetName=GND_LV Pin=C11-2
+Added Pin To Net: NetName=GND_LV Pin=C13-2
+Added Pin To Net: NetName=GND_LV Pin=U1-5
+Added Net: Name=GND_LV
+Added Pin To Net: NetName=GND_USH1 Pin=C10-1
+Added Pin To Net: NetName=GND_USH1 Pin=C12-1
+Added Pin To Net: NetName=GND_USH1 Pin=FB2-1
+Added Pin To Net: NetName=GND_USH1 Pin=R1-3
+Added Pin To Net: NetName=GND_USH1 Pin=U1-4
+Added Net: Name=GND_USH1
+Added Pin To Net: NetName=NetC14_1 Pin=C14-1
+Added Pin To Net: NetName=NetC14_1 Pin=D1-C
+Added Pin To Net: NetName=NetC14_1 Pin=R10-1
+Added Pin To Net: NetName=NetC14_1 Pin=R11-2
+Added Pin To Net: NetName=NetC14_1 Pin=U1-2
+Added Net: Name=NetC14_1
+Added Pin To Net: NetName=NetC14_2 Pin=C14-2
+Added Pin To Net: NetName=NetC14_2 Pin=D2-C
+Added Pin To Net: NetName=NetC14_2 Pin=R14-2
+Added Pin To Net: NetName=NetC14_2 Pin=U1-3
+Added Net: Name=NetC14_2
+Added Pin To Net: NetName=NetFB1_1 Pin=FB1-1
+Added Pin To Net: NetName=NetFB1_1 Pin=R1-2
+Added Net: Name=NetFB1_1
+Added Pin To Net: NetName=NetFB1_2 Pin=FB1-2
+Added Pin To Net: NetName=NetFB1_2 Pin=R11-1
+Added Net: Name=NetFB1_2
+Added Pin To Net: NetName=NetFB2_2 Pin=FB2-2
+Added Pin To Net: NetName=NetFB2_2 Pin=R14-1
+Added Net: Name=NetFB2_2
+Added Pin To Net: NetName=NetR12_1 Pin=R12-1
+Added Pin To Net: NetName=NetR12_1 Pin=U1-7
+Added Net: Name=NetR12_1
+Added Pin To Net: NetName=NetR12_2 Pin=R12-2
+Added Net: Name=NetR12_2
+Added Pin To Net: NetName=NetR13_1 Pin=R13-1
+Added Pin To Net: NetName=NetR13_1 Pin=U1-6
+Added Net: Name=NetR13_1
+Added Pin To Net: NetName=NetR13_2 Pin=R13-2
+Added Net: Name=NetR13_2
+Added Class: Name=Ind_current_sensor

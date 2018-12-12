@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=NetD1_1 Pin=D2-1
+Removed Pin From Net: NetName=NetD1_1 Pin=D3-1
+Removed Pin From Net: NetName=NetD1_1 Pin=D4-1
+Removed Pin From Net: NetName=NetD1_1 Pin=R3-2
+Removed Pin From Net: NetName=NetD1_1 Pin=R4-2
+Removed Pin From Net: NetName=NetD1_1 Pin=R5-2
+Removed Pin From Net: NetName=NetD1_1 Pin=R6-2
+Removed Pin From Net: NetName=NetD1_1 Pin=R7-2
+Removed Pin From Net: NetName=NetD1_1 Pin=R8-2
+Removed Pin From Net: NetName=NetR17_2 Pin=R18-2
+Removed Pin From Net: NetName=NetR17_2 Pin=R19-2
+Removed Pin From Net: NetName=NetR17_2 Pin=R20-2
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=R3-2
+Added Pin To Net: NetName=NetD2_1 Pin=R4-2
+Added Net: Name=NetD2_1
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=R5-2
+Added Pin To Net: NetName=NetD3_1 Pin=R6-2
+Added Net: Name=NetD3_1
+Added Pin To Net: NetName=NetD4_1 Pin=D4-1
+Added Pin To Net: NetName=NetD4_1 Pin=R7-2
+Added Pin To Net: NetName=NetD4_1 Pin=R8-2
+Added Net: Name=NetD4_1
+Added Pin To Net: NetName=NetR18_2 Pin=R18-2
+Added Net: Name=NetR18_2
+Added Pin To Net: NetName=NetR19_2 Pin=R19-2
+Added Net: Name=NetR19_2
+Added Pin To Net: NetName=NetR20_2 Pin=R20-2
+Added Net: Name=NetR20_2
+Added Member To Class: ClassName=sch1 Member=Component Q3 2N3904
+Added Member To Class: ClassName=sch1 Member=Component Q4 2N3904
+Added Member To Class: ClassName=sch1 Member=Component R5 Res1
+Added Member To Class: ClassName=sch1 Member=Component R6 Res1
+Added Member To Class: ClassName=sch1 Member=Component R7 Res1
+Added Member To Class: ClassName=sch1 Member=Component R8 Res1

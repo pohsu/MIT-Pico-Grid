@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=-5V_PH Pin=D32-1
+Removed Pin From Net: NetName=+5V_PH Pin=D32-2
+Added Pin To Net: NetName=+5V_PH Pin=D32-1
+Added Pin To Net: NetName=-5V_PH Pin=D32-2
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C85 Cap TH
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C86 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C87 Cap 0805
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C88 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component C89 Cap 0603_new
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component D25 Diode MBR0520
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component D26 LED
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component FB13 Ferrite bead
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R37 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R38 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R39 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component R40 Resistor 0603
+Added Member To Class: ClassName=Voltage_sensor_UVW Member=Component U13 TLV70450DBV

@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=P2 NewDesignator=P3
+Change Component Designator: OldDesignator=P3 NewDesignator=P4
+Added Member To Class: ClassName=sch1 Member=Component P4 Header 12

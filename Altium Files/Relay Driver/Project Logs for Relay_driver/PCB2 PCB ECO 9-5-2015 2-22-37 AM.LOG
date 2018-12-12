@@ -1,0 +1,91 @@
+Change Component Designator: OldDesignator=D1000 NewDesignator=D3
+Change Component Designator: OldDesignator=D1000 NewDesignator=D4
+Change Component Designator: OldDesignator=Q3 NewDesignator=Q5
+Change Component Designator: OldDesignator=Q4 NewDesignator=Q6
+Change Component Designator: OldDesignator=Q1000 NewDesignator=Q3
+Change Component Designator: OldDesignator=Q1000 NewDesignator=Q4
+Change Component Designator: OldDesignator=Q1001 NewDesignator=Q7
+Change Component Designator: OldDesignator=Q1001 NewDesignator=Q8
+Change Component Designator: OldDesignator=R5 NewDesignator=R9
+Change Component Designator: OldDesignator=R6 NewDesignator=R10
+Change Component Designator: OldDesignator=R7 NewDesignator=R13
+Change Component Designator: OldDesignator=R8 NewDesignator=R14
+Change Component Designator: OldDesignator=R9 NewDesignator=R17
+Change Component Designator: OldDesignator=R10 NewDesignator=R18
+Change Component Designator: OldDesignator=R1000 NewDesignator=R5
+Change Component Designator: OldDesignator=R1000 NewDesignator=R7
+Change Component Designator: OldDesignator=R1001 NewDesignator=R6
+Change Component Designator: OldDesignator=R1001 NewDesignator=R8
+Change Component Designator: OldDesignator=R1002 NewDesignator=R11
+Change Component Designator: OldDesignator=R1002 NewDesignator=R12
+Change Component Designator: OldDesignator=R1003 NewDesignator=R15
+Change Component Designator: OldDesignator=R1003 NewDesignator=R16
+Change Component Designator: OldDesignator=R1004 NewDesignator=R19
+Change Component Designator: OldDesignator=R1004 NewDesignator=R20
+Added Pin To Net: NetName=NetD1_1 Pin=D3-1
+Added Pin To Net: NetName=30V Pin=D3-2
+Added Pin To Net: NetName=NetD1_1 Pin=D4-1
+Added Pin To Net: NetName=30V Pin=D4-2
+Added Pin To Net: NetName=GND Pin=Q3-1
+Added Pin To Net: NetName=GND Pin=Q4-1
+Added Pin To Net: NetName=GND Pin=Q7-1
+Added Pin To Net: NetName=GND Pin=Q8-1
+Added Pin To Net: NetName=NetD1_1 Pin=R5-2
+Added Pin To Net: NetName=NetD1_1 Pin=R6-2
+Added Pin To Net: NetName=NetD1_1 Pin=R7-2
+Added Pin To Net: NetName=NetD1_1 Pin=R8-2
+Added Pin To Net: NetName=5V Pin=R11-2
+Added Pin To Net: NetName=5V Pin=R12-2
+Change Net Name : Old Net Name=NetQ3_2 New Net Name=NetQ5_2
+Change Net Name : Old Net Name=NetQ3_3 New Net Name=NetQ5_3
+Change Net Name : Old Net Name=NetQ4_2 New Net Name=NetQ6_2
+Change Net Name : Old Net Name=NetQ4_3 New Net Name=NetQ6_3
+Added Pin To Net: NetName=NetQ3_2 Pin=Q3-2
+Added Pin To Net: NetName=NetQ3_2 Pin=R15-1
+Added Net: Name=NetQ3_2
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=R5-1
+Added Pin To Net: NetName=NetQ3_3 Pin=R6-1
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=NetQ4_2 Pin=Q4-2
+Added Pin To Net: NetName=NetQ4_2 Pin=R16-1
+Added Net: Name=NetQ4_2
+Added Pin To Net: NetName=NetQ4_3 Pin=Q4-3
+Added Pin To Net: NetName=NetQ4_3 Pin=R7-1
+Added Pin To Net: NetName=NetQ4_3 Pin=R8-1
+Added Net: Name=NetQ4_3
+Added Pin To Net: NetName=NetQ7_2 Pin=Q7-2
+Added Pin To Net: NetName=NetQ7_2 Pin=R19-1
+Added Net: Name=NetQ7_2
+Added Pin To Net: NetName=NetQ7_3 Pin=Q7-3
+Added Pin To Net: NetName=NetQ7_3 Pin=R11-1
+Added Pin To Net: NetName=NetQ7_3 Pin=R15-2
+Added Net: Name=NetQ7_3
+Added Pin To Net: NetName=NetQ8_2 Pin=Q8-2
+Added Pin To Net: NetName=NetQ8_2 Pin=R20-1
+Added Net: Name=NetQ8_2
+Added Pin To Net: NetName=NetQ8_3 Pin=Q8-3
+Added Pin To Net: NetName=NetQ8_3 Pin=R12-1
+Added Pin To Net: NetName=NetQ8_3 Pin=R16-2
+Added Net: Name=NetQ8_3
+Added Pin To Net: NetName=NetR17_2 Pin=R17-2
+Added Pin To Net: NetName=NetR17_2 Pin=R18-2
+Added Pin To Net: NetName=NetR17_2 Pin=R19-2
+Added Pin To Net: NetName=NetR17_2 Pin=R20-2
+Added Net: Name=NetR17_2
+Added Member To Class: ClassName=sch1 Member=Component D3 Diode SB140
+Added Member To Class: ClassName=sch1 Member=Component D4 Diode SB140
+Added Member To Class: ClassName=sch1 Member=Component Q5 2N3904
+Added Member To Class: ClassName=sch1 Member=Component Q6 2N3904
+Added Member To Class: ClassName=sch1 Member=Component Q7 2N3904
+Added Member To Class: ClassName=sch1 Member=Component Q8 2N3904
+Added Member To Class: ClassName=sch1 Member=Component R11 Res1
+Added Member To Class: ClassName=sch1 Member=Component R12 Res1
+Added Member To Class: ClassName=sch1 Member=Component R13 Res1
+Added Member To Class: ClassName=sch1 Member=Component R14 Res1
+Added Member To Class: ClassName=sch1 Member=Component R15 Res1
+Added Member To Class: ClassName=sch1 Member=Component R16 Res1
+Added Member To Class: ClassName=sch1 Member=Component R17 Res1
+Added Member To Class: ClassName=sch1 Member=Component R18 Res1
+Added Member To Class: ClassName=sch1 Member=Component R19 Res1
+Added Member To Class: ClassName=sch1 Member=Component R20 Res1

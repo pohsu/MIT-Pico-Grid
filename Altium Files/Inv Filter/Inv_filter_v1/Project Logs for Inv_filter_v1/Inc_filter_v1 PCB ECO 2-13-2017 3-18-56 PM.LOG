@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=GND_LV Pin=C1005-1
+Added Pin To Net: NetName=GND_LV Pin=C1007-2
+Added Pin To Net: NetName=GND_LV Pin=C1012-1
+Added Pin To Net: NetName=GND_LV Pin=C1014-2
+Added Pin To Net: NetName=GND_LV Pin=C1019-1
+Added Pin To Net: NetName=GND_LV Pin=C1021-2
+Added Member To Class: ClassName=Analog Transmission Member=Component C1000 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C1001 Cap 0603_new

@@ -1,0 +1,12 @@
+Change Component Comment : Designator=C195 Old Comment=Cap 3kV 220pF New Comment=*
+Change Component Comment : Designator=C196 Old Comment=Cap 3kV 220pF New Comment=*
+Change Component Comment : Designator=C197 Old Comment=Cap 3kV 220pF New Comment=*
+Change Component Description : Designator=C195 Old Description=CAP CER 220PF 3KV NPO 1812 New Description=C4532C0G3F221K200KA
+Change Component Description : Designator=C196 Old Description=CAP CER 220PF 3KV NPO 1812 New Description=C4532C0G3F221K200KA
+Change Component Description : Designator=C197 Old Description=CAP CER 220PF 3KV NPO 1812 New Description=C4532C0G3F221K200KA
+Change component parameters: Designator = "C195"; Footprint = "1812 (4532 Metric)"; UniqueID = "\OHTKOFJN"
+Change component parameters. Clean all parameters for all variants
+Change component parameters: Designator = "C196"; Footprint = "1812 (4532 Metric)"; UniqueID = "\IFGSCBOV"
+Change component parameters. Clean all parameters for all variants
+Change component parameters: Designator = "C197"; Footprint = "1812 (4532 Metric)"; UniqueID = "\GGDTBKLG"
+Change component parameters. Clean all parameters for all variants
