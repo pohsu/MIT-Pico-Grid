@@ -1,0 +1,7 @@
+
+**** Build of configuration CPU1_RAM for project blinky_cpu01 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****

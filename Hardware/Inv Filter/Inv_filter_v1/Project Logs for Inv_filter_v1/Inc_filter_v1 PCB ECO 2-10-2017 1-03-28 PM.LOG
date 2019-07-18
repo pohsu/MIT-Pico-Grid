@@ -1,0 +1,277 @@
+Added Component: Designator=C1(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C2(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=C3(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C4(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C5(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=C6(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C7(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C8(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=C9(Radial - 4 Leads)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=L1(IND_PM6249)
+Add component. Clean all parameters for all variants
+Added Component: Designator=L2(IND_PM6249)
+Add component. Clean all parameters for all variants
+Added Component: Designator=L3(IND_PM6249)
+Add component. Clean all parameters for all variants
+Added Component: Designator=L4(IND_PM6249)
+Add component. Clean all parameters for all variants
+Added Component: Designator=L5(CM Choke)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "B82747E6203A40"; VariantName = "[No Variations]"
+Added Component: Designator=L6(IND_PM6249)
+Add component. Clean all parameters for all variants
+Added Component: Designator=L7(IND_PM6249)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R1(Res Precision CSM3637Z)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "Y1473-.02CCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.02R"; VariantName = "[No Variations]"
+Added Component: Designator=R2(Res Precision CSM3637Z)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "Y1473-.02CCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.02R"; VariantName = "[No Variations]"
+Added Component: Designator=R3(Axial 50mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RSD-5.0RCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "5R"; VariantName = "[No Variations]"
+Added Component: Designator=R4(Res Precision CSM3637Z)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "Y1473-.02CCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.02R"; VariantName = "[No Variations]"
+Added Component: Designator=R5(Res Precision CSM3637Z)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "Y1473-.02CCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.02R"; VariantName = "[No Variations]"
+Added Component: Designator=R6(Axial 50mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RSD-5.0RCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "5R"; VariantName = "[No Variations]"
+Added Component: Designator=R7(Res Precision CSM3637Z)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "Y1473-.02CCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.02R"; VariantName = "[No Variations]"
+Added Component: Designator=R8(Res Precision CSM3637Z)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "Y1473-.02CCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.02R"; VariantName = "[No Variations]"
+Added Component: Designator=R9(Axial 50mm)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RSD-5.0RCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "5R"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=N_HV Pin=C1-1
+Added Pin To Net: NetName=N_HV Pin=C1-2
+Added Pin To Net: NetName=NetC1_4 Pin=C1-4
+Added Pin To Net: NetName=N_HV Pin=C2-1
+Added Pin To Net: NetName=N_HV Pin=C2-2
+Added Pin To Net: NetName=NetC1_4 Pin=C2-4
+Added Pin To Net: NetName=NetC3_1 Pin=C3-1
+Added Pin To Net: NetName=NetC3_1 Pin=C3-2
+Added Pin To Net: NetName=NetC1_4 Pin=C3-4
+Added Pin To Net: NetName=N_HV Pin=C4-1
+Added Pin To Net: NetName=N_HV Pin=C4-2
+Added Pin To Net: NetName=NetC4_4 Pin=C4-4
+Added Pin To Net: NetName=N_HV Pin=C5-1
+Added Pin To Net: NetName=N_HV Pin=C5-2
+Added Pin To Net: NetName=NetC4_4 Pin=C5-4
+Added Pin To Net: NetName=NetC6_1 Pin=C6-1
+Added Pin To Net: NetName=NetC6_1 Pin=C6-2
+Added Pin To Net: NetName=NetC4_4 Pin=C6-4
+Added Pin To Net: NetName=N_HV Pin=C7-1
+Added Pin To Net: NetName=N_HV Pin=C7-2
+Added Pin To Net: NetName=NetC7_4 Pin=C7-4
+Added Pin To Net: NetName=N_HV Pin=C8-1
+Added Pin To Net: NetName=N_HV Pin=C8-2
+Added Pin To Net: NetName=NetC7_4 Pin=C8-4
+Added Pin To Net: NetName=NetC9_1 Pin=C9-1
+Added Pin To Net: NetName=NetC9_1 Pin=C9-2
+Added Pin To Net: NetName=NetC7_4 Pin=C9-4
+Added Pin To Net: NetName=NetL1_1 Pin=L1-1
+Added Pin To Net: NetName=NetL1_1 Pin=L1-2
+Added Pin To Net: NetName=NetL1_1 Pin=L1-3
+Added Pin To Net: NetName=NetL1_1 Pin=L1-4
+Added Pin To Net: NetName=NetL1_1 Pin=L1-5
+Added Pin To Net: NetName=NetL1_1 Pin=L1-6
+Added Pin To Net: NetName=NetL1_1 Pin=L1-7
+Added Pin To Net: NetName=NetL1_1 Pin=L1-8
+Added Pin To Net: NetName=NetL2_1 Pin=L2-1
+Added Pin To Net: NetName=NetL2_1 Pin=L2-2
+Added Pin To Net: NetName=NetL2_1 Pin=L2-3
+Added Pin To Net: NetName=NetL2_1 Pin=L2-4
+Added Pin To Net: NetName=NetL2_1 Pin=L2-5
+Added Pin To Net: NetName=NetL2_1 Pin=L2-6
+Added Pin To Net: NetName=NetL2_1 Pin=L2-7
+Added Pin To Net: NetName=NetL2_1 Pin=L2-8
+Added Pin To Net: NetName=NetL3_1 Pin=L3-1
+Added Pin To Net: NetName=NetL3_1 Pin=L3-2
+Added Pin To Net: NetName=NetL3_1 Pin=L3-3
+Added Pin To Net: NetName=NetL3_1 Pin=L3-4
+Added Pin To Net: NetName=NetL3_1 Pin=L3-5
+Added Pin To Net: NetName=NetL3_1 Pin=L3-6
+Added Pin To Net: NetName=NetL3_1 Pin=L3-7
+Added Pin To Net: NetName=NetL3_1 Pin=L3-8
+Added Pin To Net: NetName=NetL4_1 Pin=L4-1
+Added Pin To Net: NetName=NetL4_1 Pin=L4-2
+Added Pin To Net: NetName=NetL4_1 Pin=L4-3
+Added Pin To Net: NetName=NetL4_1 Pin=L4-4
+Added Pin To Net: NetName=NetL4_1 Pin=L4-5
+Added Pin To Net: NetName=NetL4_1 Pin=L4-6
+Added Pin To Net: NetName=NetL4_1 Pin=L4-7
+Added Pin To Net: NetName=NetL4_1 Pin=L4-8
+Added Pin To Net: NetName=NetC1_4 Pin=L5-1
+Added Pin To Net: NetName=NetC4_4 Pin=L5-2
+Added Pin To Net: NetName=NetC7_4 Pin=L5-3
+Added Pin To Net: NetName=NetL5_4 Pin=L5-4
+Added Pin To Net: NetName=NetL4_1 Pin=L5-5
+Added Pin To Net: NetName=NetL2_1 Pin=L5-6
+Added Pin To Net: NetName=NetL6_1 Pin=L6-1
+Added Pin To Net: NetName=NetL6_1 Pin=L6-2
+Added Pin To Net: NetName=NetL6_1 Pin=L6-3
+Added Pin To Net: NetName=NetL6_1 Pin=L6-4
+Added Pin To Net: NetName=NetL6_1 Pin=L6-5
+Added Pin To Net: NetName=NetL6_1 Pin=L6-6
+Added Pin To Net: NetName=NetL6_1 Pin=L6-7
+Added Pin To Net: NetName=NetL6_1 Pin=L6-8
+Added Pin To Net: NetName=NetL5_4 Pin=L7-1
+Added Pin To Net: NetName=NetL5_4 Pin=L7-2
+Added Pin To Net: NetName=NetL5_4 Pin=L7-3
+Added Pin To Net: NetName=NetL5_4 Pin=L7-4
+Added Pin To Net: NetName=NetL5_4 Pin=L7-5
+Added Pin To Net: NetName=NetL5_4 Pin=L7-6
+Added Pin To Net: NetName=NetL5_4 Pin=L7-7
+Added Pin To Net: NetName=NetL5_4 Pin=L7-8
+Added Pin To Net: NetName=NetR1_2 Pin=R1-2
+Added Pin To Net: NetName=NetR1_3 Pin=R1-3
+Added Pin To Net: NetName=NetC1_4 Pin=R1-4
+Added Pin To Net: NetName=NetR2_2 Pin=R2-2
+Added Pin To Net: NetName=NetR2_3 Pin=R2-3
+Added Pin To Net: NetName=NetR2_4 Pin=R2-4
+Added Pin To Net: NetName=N_HV Pin=R3-1
+Added Pin To Net: NetName=NetC3_1 Pin=R3-2
+Added Pin To Net: NetName=NetR4_2 Pin=R4-2
+Added Pin To Net: NetName=NetR4_3 Pin=R4-3
+Added Pin To Net: NetName=NetC4_4 Pin=R4-4
+Added Pin To Net: NetName=NetR5_2 Pin=R5-2
+Added Pin To Net: NetName=NetR5_3 Pin=R5-3
+Added Pin To Net: NetName=NetR5_4 Pin=R5-4
+Added Pin To Net: NetName=N_HV Pin=R6-1
+Added Pin To Net: NetName=NetC6_1 Pin=R6-2
+Added Pin To Net: NetName=NetR7_2 Pin=R7-2
+Added Pin To Net: NetName=NetR7_3 Pin=R7-3
+Added Pin To Net: NetName=NetC7_4 Pin=R7-4
+Added Pin To Net: NetName=NetR8_2 Pin=R8-2
+Added Pin To Net: NetName=NetR8_3 Pin=R8-3
+Added Pin To Net: NetName=NetR8_4 Pin=R8-4
+Added Pin To Net: NetName=N_HV Pin=R9-1
+Added Pin To Net: NetName=NetC9_1 Pin=R9-2
+Added Pin To Net: NetName=NetL1_9 Pin=L1-9
+Added Pin To Net: NetName=NetL1_9 Pin=L1-10
+Added Pin To Net: NetName=NetL1_9 Pin=L1-11
+Added Pin To Net: NetName=NetL1_9 Pin=L1-12
+Added Pin To Net: NetName=NetL1_9 Pin=L1-13
+Added Pin To Net: NetName=NetL1_9 Pin=L1-14
+Added Pin To Net: NetName=NetL1_9 Pin=L1-15
+Added Pin To Net: NetName=NetL1_9 Pin=L1-16
+Added Pin To Net: NetName=NetL1_9 Pin=R1-1
+Added Net: Name=NetL1_9
+Added Pin To Net: NetName=NetL2_9 Pin=L2-9
+Added Pin To Net: NetName=NetL2_9 Pin=L2-10
+Added Pin To Net: NetName=NetL2_9 Pin=L2-11
+Added Pin To Net: NetName=NetL2_9 Pin=L2-12
+Added Pin To Net: NetName=NetL2_9 Pin=L2-13
+Added Pin To Net: NetName=NetL2_9 Pin=L2-14
+Added Pin To Net: NetName=NetL2_9 Pin=L2-15
+Added Pin To Net: NetName=NetL2_9 Pin=L2-16
+Added Pin To Net: NetName=NetL2_9 Pin=R2-1
+Added Net: Name=NetL2_9
+Added Pin To Net: NetName=NetL3_9 Pin=L3-9
+Added Pin To Net: NetName=NetL3_9 Pin=L3-10
+Added Pin To Net: NetName=NetL3_9 Pin=L3-11
+Added Pin To Net: NetName=NetL3_9 Pin=L3-12
+Added Pin To Net: NetName=NetL3_9 Pin=L3-13
+Added Pin To Net: NetName=NetL3_9 Pin=L3-14
+Added Pin To Net: NetName=NetL3_9 Pin=L3-15
+Added Pin To Net: NetName=NetL3_9 Pin=L3-16
+Added Pin To Net: NetName=NetL3_9 Pin=R4-1
+Added Net: Name=NetL3_9
+Added Pin To Net: NetName=NetL4_9 Pin=L4-9
+Added Pin To Net: NetName=NetL4_9 Pin=L4-10
+Added Pin To Net: NetName=NetL4_9 Pin=L4-11
+Added Pin To Net: NetName=NetL4_9 Pin=L4-12
+Added Pin To Net: NetName=NetL4_9 Pin=L4-13
+Added Pin To Net: NetName=NetL4_9 Pin=L4-14
+Added Pin To Net: NetName=NetL4_9 Pin=L4-15
+Added Pin To Net: NetName=NetL4_9 Pin=L4-16
+Added Pin To Net: NetName=NetL4_9 Pin=R5-1
+Added Net: Name=NetL4_9
+Added Pin To Net: NetName=NetL6_9 Pin=L6-9
+Added Pin To Net: NetName=NetL6_9 Pin=L6-10
+Added Pin To Net: NetName=NetL6_9 Pin=L6-11
+Added Pin To Net: NetName=NetL6_9 Pin=L6-12
+Added Pin To Net: NetName=NetL6_9 Pin=L6-13
+Added Pin To Net: NetName=NetL6_9 Pin=L6-14
+Added Pin To Net: NetName=NetL6_9 Pin=L6-15
+Added Pin To Net: NetName=NetL6_9 Pin=L6-16
+Added Pin To Net: NetName=NetL6_9 Pin=R7-1
+Added Net: Name=NetL6_9
+Added Pin To Net: NetName=NetL7_9 Pin=L7-9
+Added Pin To Net: NetName=NetL7_9 Pin=L7-10
+Added Pin To Net: NetName=NetL7_9 Pin=L7-11
+Added Pin To Net: NetName=NetL7_9 Pin=L7-12
+Added Pin To Net: NetName=NetL7_9 Pin=L7-13
+Added Pin To Net: NetName=NetL7_9 Pin=L7-14
+Added Pin To Net: NetName=NetL7_9 Pin=L7-15
+Added Pin To Net: NetName=NetL7_9 Pin=L7-16
+Added Pin To Net: NetName=NetL7_9 Pin=R8-1
+Added Net: Name=NetL7_9
+Added Member To Class: ClassName=LCL Member=Component C1 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C2 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C3 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C4 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C5 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C6 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C7 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C8 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component C9 Cap Film Radial - 4 Leads
+Added Member To Class: ClassName=LCL Member=Component L1 Inductor N27 315nH PM6249
+Added Member To Class: ClassName=LCL Member=Component L2 Inductor N27 315nH PM6249
+Added Member To Class: ClassName=LCL Member=Component L3 Inductor N27 315nH PM6249
+Added Member To Class: ClassName=LCL Member=Component L4 Inductor N27 315nH PM6249
+Added Member To Class: ClassName=LCL Member=Component L5 CM choke
+Added Member To Class: ClassName=LCL Member=Component L6 Inductor N27 315nH PM6249
+Added Member To Class: ClassName=LCL Member=Component L7 Inductor N27 315nH PM6249
+Added Member To Class: ClassName=LCL Member=Component R1 Resistor Precision
+Added Member To Class: ClassName=LCL Member=Component R2 Resistor Precision
+Added Member To Class: ClassName=LCL Member=Component R3 Resistor Power
+Added Member To Class: ClassName=LCL Member=Component R4 Resistor Precision
+Added Member To Class: ClassName=LCL Member=Component R5 Resistor Precision
+Added Member To Class: ClassName=LCL Member=Component R6 Resistor Power
+Added Member To Class: ClassName=LCL Member=Component R7 Resistor Precision
+Added Member To Class: ClassName=LCL Member=Component R8 Resistor Precision
+Added Member To Class: ClassName=LCL Member=Component R9 Resistor Power

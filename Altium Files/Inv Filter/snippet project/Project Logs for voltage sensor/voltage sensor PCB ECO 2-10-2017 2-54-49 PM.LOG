@@ -1,0 +1,152 @@
+Added Component: Designator=C1000(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "1276-1860-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C1001(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "1276-1860-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C1002(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C1003(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C1004(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "445-7033-2-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "330pF"; VariantName = "[No Variations]"
+Added Component: Designator=D1000(SOT323_ESD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Added Component: Designator=D1001(SOT323_ESD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "DESD1P0RFW-7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "ESD"; VariantName = "[No Variations]"
+Added Component: Designator=FB1000(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "445-8672-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Component: Designator=R1000(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "160k"; VariantName = "[No Variations]"
+Added Component: Designator=R1001(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RG32P332KBCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "332k"; VariantName = "[No Variations]"
+Added Component: Designator=R1002(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RG32P332KBCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "332k"; VariantName = "[No Variations]"
+Added Component: Designator=R1003(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "311-2961-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "12R"; VariantName = "[No Variations]"
+Added Component: Designator=R1004(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RNCF0603AKT10R0CT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10R"; VariantName = "[No Variations]"
+Added Component: Designator=R1005(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "P1.13KBCCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1.13k"; VariantName = "[No Variations]"
+Added Component: Designator=R1006(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "NC"; VariantName = "[No Variations]"
+Added Component: Designator=R1007(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RNCF0603AKT10R0CT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10R"; VariantName = "[No Variations]"
+Added Component: Designator=R1008(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RG32P332KBCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "332k"; VariantName = "[No Variations]"
+Added Component: Designator=R1009(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "RG32P332KBCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "332k"; VariantName = "[No Variations]"
+Added Component: Designator=R1010(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0R"; VariantName = "[No Variations]"
+Added Component: Designator=R1011(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "311-2961-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "12R"; VariantName = "[No Variations]"
+Added Component: Designator=U1000(SOP8)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND_PH Pin=C1000-1
+Added Pin To Net: NetName=+5V_PH Pin=C1000-2
+Added Pin To Net: NetName=5V_LV Pin=C1001-1
+Added Pin To Net: NetName=GND_LV Pin=C1001-2
+Added Pin To Net: NetName=GND_PH Pin=C1002-1
+Added Pin To Net: NetName=+5V_PH Pin=C1002-2
+Added Pin To Net: NetName=5V_LV Pin=C1003-1
+Added Pin To Net: NetName=GND_LV Pin=C1003-2
+Added Pin To Net: NetName=NetC1004_1 Pin=C1004-1
+Added Pin To Net: NetName=GND_PH Pin=C1004-2
+Added Pin To Net: NetName=+5V_PH Pin=D1000-1
+Added Pin To Net: NetName=-5V_PH Pin=D1000-2
+Added Pin To Net: NetName=NetC1004_1 Pin=D1000-C
+Added Pin To Net: NetName=-5V_PH Pin=D1001-1
+Added Pin To Net: NetName=+5V_PH Pin=D1001-2
+Added Pin To Net: NetName=GND_PH Pin=D1001-C
+Added Pin To Net: NetName=NetFB1000_1 Pin=FB1000-1
+Added Pin To Net: NetName=NetFB1000_2 Pin=FB1000-2
+Added Pin To Net: NetName=NetC1004_1 Pin=R1000-1
+Added Pin To Net: NetName=+5V_PH Pin=R1000-2
+Added Pin To Net: NetName=NetFB1000_2 Pin=R1001-1
+Added Pin To Net: NetName=NetR1001_2 Pin=R1001-2
+Added Pin To Net: NetName=NetR1001_2 Pin=R1002-1
+Added Pin To Net: NetName=NetR1002_2 Pin=R1002-2
+Added Pin To Net: NetName=NetR1003_1 Pin=R1003-1
+Added Pin To Net: NetName=NetC1004_1 Pin=R1003-2
+Added Pin To Net: NetName=NetR1004_1 Pin=R1004-1
+Added Pin To Net: NetName=NetR1004_2 Pin=R1004-2
+Added Pin To Net: NetName=N_HV Pin=R1006-1
+Added Pin To Net: NetName=NetR1003_1 Pin=R1006-2
+Added Pin To Net: NetName=NetR1007_1 Pin=R1007-1
+Added Pin To Net: NetName=NetR1004_2 Pin=R1007-2
+Added Pin To Net: NetName=NetR1002_2 Pin=R1008-1
+Added Pin To Net: NetName=NetR1008_2 Pin=R1008-2
+Added Pin To Net: NetName=NetR1008_2 Pin=R1009-1
+Added Pin To Net: NetName=NetR1003_1 Pin=R1009-2
+Added Pin To Net: NetName=NetR1010_1 Pin=R1010-1
+Added Pin To Net: NetName=N_HV Pin=R1010-2
+Added Pin To Net: NetName=NetR1010_1 Pin=R1011-1
+Added Pin To Net: NetName=GND_PH Pin=R1011-2
+Added Pin To Net: NetName=+5V_PH Pin=U1000-1
+Added Pin To Net: NetName=NetC1004_1 Pin=U1000-2
+Added Pin To Net: NetName=GND_PH Pin=U1000-3
+Added Pin To Net: NetName=GND_PH Pin=U1000-4
+Added Pin To Net: NetName=GND_LV Pin=U1000-5
+Added Pin To Net: NetName=NetR1007_1 Pin=U1000-6
+Added Pin To Net: NetName=NetR1004_1 Pin=U1000-7
+Added Pin To Net: NetName=5V_LV Pin=U1000-8
+Added Member To Class: ClassName=voltage sensor Member=Component C1000 Cap 0603_new
+Added Member To Class: ClassName=voltage sensor Member=Component C1001 Cap 0603_new
+Added Member To Class: ClassName=voltage sensor Member=Component C1002 Cap 0603_new
+Added Member To Class: ClassName=voltage sensor Member=Component C1003 Cap 0603_new
+Added Member To Class: ClassName=voltage sensor Member=Component C1004 Cap 0603_new
+Added Member To Class: ClassName=voltage sensor Member=Component D1000 Diode_ESD
+Added Member To Class: ClassName=voltage sensor Member=Component D1001 Diode_ESD
+Added Member To Class: ClassName=voltage sensor Member=Component FB1000 Ferrite bead
+Added Member To Class: ClassName=voltage sensor Member=Component R1000 NC
+Added Member To Class: ClassName=voltage sensor Member=Component R1001 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1002 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1003 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1004 Resistor 0603
+Added Member To Class: ClassName=voltage sensor Member=Component R1005 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1006 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1007 Resistor 0603
+Added Member To Class: ClassName=voltage sensor Member=Component R1008 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1009 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component R1010 Resistor 0603
+Added Member To Class: ClassName=voltage sensor Member=Component R1011 Resistor 1206
+Added Member To Class: ClassName=voltage sensor Member=Component U1000 AMC1100
+Added Room: Name=voltage sensor

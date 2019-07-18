@@ -1,0 +1,237 @@
+Change Component Designator: OldDesignator=C1000 NewDesignator=C252
+Change Component Designator: OldDesignator=C1001 NewDesignator=C253
+Change Component Designator: OldDesignator=C1002 NewDesignator=C254
+Change Component Designator: OldDesignator=C1003 NewDesignator=C255
+Change Component Designator: OldDesignator=C1004 NewDesignator=C256
+Change Component Designator: OldDesignator=C1005 NewDesignator=C257
+Change Component Designator: OldDesignator=C1006 NewDesignator=C258
+Change Component Designator: OldDesignator=C1007 NewDesignator=C259
+Change Component Designator: OldDesignator=C1008 NewDesignator=C260
+Change Component Designator: OldDesignator=C1009 NewDesignator=C261
+Change Component Designator: OldDesignator=C1010 NewDesignator=C262
+Change Component Designator: OldDesignator=C1011 NewDesignator=C263
+Change Component Designator: OldDesignator=C1012 NewDesignator=C264
+Change Component Designator: OldDesignator=C1013 NewDesignator=C265
+Change Component Designator: OldDesignator=C1014 NewDesignator=C266
+Change Component Designator: OldDesignator=C1015 NewDesignator=C267
+Change Component Designator: OldDesignator=C1016 NewDesignator=C268
+Change Component Designator: OldDesignator=C1017 NewDesignator=C269
+Change Component Designator: OldDesignator=C1018 NewDesignator=C270
+Change Component Designator: OldDesignator=C1019 NewDesignator=C271
+Change Component Designator: OldDesignator=C1020 NewDesignator=C272
+Change Component Designator: OldDesignator=C1021 NewDesignator=C273
+Change Component Designator: OldDesignator=C1022 NewDesignator=C274
+Change Component Designator: OldDesignator=R1000 NewDesignator=R152
+Change Component Designator: OldDesignator=R1001 NewDesignator=R153
+Change Component Designator: OldDesignator=R1002 NewDesignator=R154
+Change Component Designator: OldDesignator=R1003 NewDesignator=R155
+Change Component Designator: OldDesignator=R1004 NewDesignator=R156
+Change Component Designator: OldDesignator=R1005 NewDesignator=R157
+Change Component Designator: OldDesignator=R1006 NewDesignator=R158
+Change Component Designator: OldDesignator=R1007 NewDesignator=R159
+Change Component Designator: OldDesignator=R1008 NewDesignator=R160
+Change Component Designator: OldDesignator=R1009 NewDesignator=R161
+Change Component Designator: OldDesignator=R1010 NewDesignator=R162
+Change Component Designator: OldDesignator=R1011 NewDesignator=R163
+Change Component Designator: OldDesignator=R1012 NewDesignator=R164
+Change Component Designator: OldDesignator=R1013 NewDesignator=R165
+Change Component Designator: OldDesignator=R1014 NewDesignator=R166
+Change Component Designator: OldDesignator=R1015 NewDesignator=R167
+Change Component Designator: OldDesignator=R1016 NewDesignator=R168
+Change Component Designator: OldDesignator=R1017 NewDesignator=R169
+Change Component Designator: OldDesignator=R1018 NewDesignator=R170
+Change Component Designator: OldDesignator=R1019 NewDesignator=R171
+Change Component Designator: OldDesignator=R1020 NewDesignator=R172
+Change Component Designator: OldDesignator=R1021 NewDesignator=R173
+Change Component Designator: OldDesignator=R1022 NewDesignator=R174
+Change Component Designator: OldDesignator=R1023 NewDesignator=R175
+Change Component Designator: OldDesignator=U1000 NewDesignator=U39
+Change Component Designator: OldDesignator=U1001 NewDesignator=U40
+Change Component Designator: OldDesignator=U1002 NewDesignator=U41
+Change Component Designator: OldDesignator=U1003 NewDesignator=U42
+Added Pin To Net: NetName=GND_LV Pin=C252-1
+Added Pin To Net: NetName=+5V_AD Pin=C252-2
+Added Pin To Net: NetName=GND_LV Pin=C253-1
+Added Pin To Net: NetName=+5V_AD Pin=C253-2
+Added Pin To Net: NetName=GND_LV Pin=C255-1
+Added Pin To Net: NetName=GND_LV Pin=C256-1
+Added Pin To Net: NetName=+5V_AD Pin=C256-2
+Added Pin To Net: NetName=GND_LV Pin=C257-1
+Added Pin To Net: NetName=+5V_AD Pin=C257-2
+Added Pin To Net: NetName=-5V_AD Pin=C258-1
+Added Pin To Net: NetName=GND_LV Pin=C258-2
+Added Pin To Net: NetName=-5V_AD Pin=C259-1
+Added Pin To Net: NetName=GND_LV Pin=C259-2
+Added Pin To Net: NetName=GND_LV Pin=C262-1
+Added Pin To Net: NetName=GND_LV Pin=C263-1
+Added Pin To Net: NetName=+5V_AD Pin=C263-2
+Added Pin To Net: NetName=GND_LV Pin=C264-1
+Added Pin To Net: NetName=+5V_AD Pin=C264-2
+Added Pin To Net: NetName=-5V_AD Pin=C265-1
+Added Pin To Net: NetName=GND_LV Pin=C265-2
+Added Pin To Net: NetName=-5V_AD Pin=C266-1
+Added Pin To Net: NetName=GND_LV Pin=C266-2
+Added Pin To Net: NetName=GND_LV Pin=C269-1
+Added Pin To Net: NetName=GND_LV Pin=C270-1
+Added Pin To Net: NetName=+5V_AD Pin=C270-2
+Added Pin To Net: NetName=GND_LV Pin=C271-1
+Added Pin To Net: NetName=+5V_AD Pin=C271-2
+Added Pin To Net: NetName=-5V_AD Pin=C272-1
+Added Pin To Net: NetName=GND_LV Pin=C272-2
+Added Pin To Net: NetName=-5V_AD Pin=C273-1
+Added Pin To Net: NetName=GND_LV Pin=C273-2
+Added Pin To Net: NetName=1V5_IL Pin=R123-1
+Added Pin To Net: NetName=NetR79_2 Pin=R154-2
+Added Pin To Net: NetName=NetR79_2 Pin=R155-1
+Added Pin To Net: NetName=GND_LV Pin=R155-2
+Added Pin To Net: NetName=NetR80_2 Pin=R157-2
+Added Pin To Net: NetName=NetR80_2 Pin=R158-1
+Added Pin To Net: NetName=GND_LV Pin=R158-2
+Added Pin To Net: NetName=NetR88_2 Pin=R162-2
+Added Pin To Net: NetName=NetR88_2 Pin=R163-1
+Added Pin To Net: NetName=GND_LV Pin=R163-2
+Added Pin To Net: NetName=NetR89_2 Pin=R165-2
+Added Pin To Net: NetName=NetR89_2 Pin=R166-1
+Added Pin To Net: NetName=GND_LV Pin=R166-2
+Added Pin To Net: NetName=NetR97_2 Pin=R170-2
+Added Pin To Net: NetName=NetR97_2 Pin=R171-1
+Added Pin To Net: NetName=GND_LV Pin=R171-2
+Added Pin To Net: NetName=NetR98_2 Pin=R173-2
+Added Pin To Net: NetName=NetR98_2 Pin=R174-1
+Added Pin To Net: NetName=GND_LV Pin=R174-2
+Added Pin To Net: NetName=1V5_Vo1 Pin=U31-2
+Added Pin To Net: NetName=+5V_AD Pin=U39-1
+Added Pin To Net: NetName=GND_LV Pin=U39-3
+Added Pin To Net: NetName=+5V_AD Pin=U40-3
+Added Pin To Net: NetName=-5V_AD Pin=U40-6
+Added Pin To Net: NetName=+5V_AD Pin=U41-3
+Added Pin To Net: NetName=-5V_AD Pin=U41-6
+Added Pin To Net: NetName=+5V_AD Pin=U42-3
+Added Pin To Net: NetName=-5V_AD Pin=U42-6
+Change Net Name : Old Net Name=1V5_Vo1 New Net Name=1V5_Vo
+Added Pin To Net: NetName=1V5_Io Pin=R153-1
+Added Pin To Net: NetName=1V5_Io Pin=R161-1
+Added Pin To Net: NetName=1V5_Io Pin=R169-1
+Added Pin To Net: NetName=1V5_Io Pin=U39-2
+Added Net: Name=1V5_Io
+Added Pin To Net: NetName=NetC254_1 Pin=C254-1
+Added Pin To Net: NetName=NetC254_1 Pin=R152-1
+Added Pin To Net: NetName=NetC254_1 Pin=R156-1
+Added Pin To Net: NetName=NetC254_1 Pin=U40-5
+Added Net: Name=NetC254_1
+Added Pin To Net: NetName=NetC254_2 Pin=C254-2
+Added Pin To Net: NetName=NetC254_2 Pin=R152-2
+Added Pin To Net: NetName=NetC254_2 Pin=R154-1
+Added Pin To Net: NetName=NetC254_2 Pin=U40-8
+Added Net: Name=NetC254_2
+Added Pin To Net: NetName=NetC260_1 Pin=C260-1
+Added Pin To Net: NetName=NetC260_1 Pin=R156-2
+Added Pin To Net: NetName=NetC260_1 Pin=R159-1
+Added Pin To Net: NetName=NetC260_1 Pin=U40-4
+Added Net: Name=NetC260_1
+Added Pin To Net: NetName=NetC260_2 Pin=C260-2
+Added Pin To Net: NetName=NetC260_2 Pin=R157-1
+Added Pin To Net: NetName=NetC260_2 Pin=R159-2
+Added Pin To Net: NetName=NetC260_2 Pin=U40-1
+Added Net: Name=NetC260_2
+Added Pin To Net: NetName=NetC261_1 Pin=C261-1
+Added Pin To Net: NetName=NetC261_1 Pin=R160-1
+Added Pin To Net: NetName=NetC261_1 Pin=R164-1
+Added Pin To Net: NetName=NetC261_1 Pin=U41-5
+Added Net: Name=NetC261_1
+Added Pin To Net: NetName=NetC261_2 Pin=C261-2
+Added Pin To Net: NetName=NetC261_2 Pin=R160-2
+Added Pin To Net: NetName=NetC261_2 Pin=R162-1
+Added Pin To Net: NetName=NetC261_2 Pin=U41-8
+Added Net: Name=NetC261_2
+Added Pin To Net: NetName=NetC267_1 Pin=C267-1
+Added Pin To Net: NetName=NetC267_1 Pin=R164-2
+Added Pin To Net: NetName=NetC267_1 Pin=R167-1
+Added Pin To Net: NetName=NetC267_1 Pin=U41-4
+Added Net: Name=NetC267_1
+Added Pin To Net: NetName=NetC267_2 Pin=C267-2
+Added Pin To Net: NetName=NetC267_2 Pin=R165-1
+Added Pin To Net: NetName=NetC267_2 Pin=R167-2
+Added Pin To Net: NetName=NetC267_2 Pin=U41-1
+Added Net: Name=NetC267_2
+Added Pin To Net: NetName=NetC268_1 Pin=C268-1
+Added Pin To Net: NetName=NetC268_1 Pin=R168-1
+Added Pin To Net: NetName=NetC268_1 Pin=R172-1
+Added Pin To Net: NetName=NetC268_1 Pin=U42-5
+Added Net: Name=NetC268_1
+Added Pin To Net: NetName=NetC268_2 Pin=C268-2
+Added Pin To Net: NetName=NetC268_2 Pin=R168-2
+Added Pin To Net: NetName=NetC268_2 Pin=R170-1
+Added Pin To Net: NetName=NetC268_2 Pin=U42-8
+Added Net: Name=NetC268_2
+Added Pin To Net: NetName=NetC274_1 Pin=C274-1
+Added Pin To Net: NetName=NetC274_1 Pin=R172-2
+Added Pin To Net: NetName=NetC274_1 Pin=R175-1
+Added Pin To Net: NetName=NetC274_1 Pin=U42-4
+Added Net: Name=NetC274_1
+Added Pin To Net: NetName=NetC274_2 Pin=C274-2
+Added Pin To Net: NetName=NetC274_2 Pin=R173-1
+Added Pin To Net: NetName=NetC274_2 Pin=R175-2
+Added Pin To Net: NetName=NetC274_2 Pin=U42-1
+Added Net: Name=NetC274_2
+Added Pin To Net: NetName=Vocm_Io1 Pin=C255-2
+Added Pin To Net: NetName=Vocm_Io1 Pin=R153-2
+Added Net: Name=Vocm_Io1
+Added Pin To Net: NetName=Vocm_Io2 Pin=C262-2
+Added Pin To Net: NetName=Vocm_Io2 Pin=R161-2
+Added Pin To Net: NetName=Vocm_Io2 Pin=U41-2
+Added Net: Name=Vocm_Io2
+Added Pin To Net: NetName=Vocm_Io3 Pin=C269-2
+Added Pin To Net: NetName=Vocm_Io3 Pin=R169-2
+Added Net: Name=Vocm_Io3
+Added Member To Class: ClassName=Analog Transmission Member=Component C252 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C253 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C254 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C255 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C256 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C257 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C258 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C259 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C260 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C261 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C262 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C263 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C264 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C265 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C266 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C267 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C268 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C269 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C270 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C271 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C272 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C273 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component C274 Cap 0603_new
+Added Member To Class: ClassName=Analog Transmission Member=Component R152 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R153 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R154 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R155 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R156 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R157 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R158 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R159 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R160 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R161 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R162 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R163 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R164 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R165 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R166 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R167 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R168 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R169 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R170 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R171 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R172 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R173 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R174 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component R175 Resistor 0603
+Added Member To Class: ClassName=Analog Transmission Member=Component U39 ISL21010
+Added Member To Class: ClassName=Analog Transmission Member=Component U40 AD8132
+Added Member To Class: ClassName=Analog Transmission Member=Component U41 AD8132
+Added Member To Class: ClassName=Analog Transmission Member=Component U42 AD8132

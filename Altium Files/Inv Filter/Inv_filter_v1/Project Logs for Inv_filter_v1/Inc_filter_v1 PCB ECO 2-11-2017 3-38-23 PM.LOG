@@ -1,0 +1,342 @@
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C35
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C36
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C37
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C38
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C39
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C40
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C41
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C42
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C43
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C44
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C45
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C46
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C47
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C48
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C49
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C50
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C51
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C52
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C53
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C54
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C55
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C56
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C57
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C58
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=C59
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D9
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D10
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D11
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D12
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D13
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D14
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D15
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=D16
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=FB5
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=FB6
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=FB7
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=FB8
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R19
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R20
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R21
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R22
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R23
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R24
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R25
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R26
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=R27
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=T2
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=U5
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=U6
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=U7
+Removed Member From Class: ClassName=Ind_current_sensor_VW Member=U8
+Change Component Designator: OldDesignator=C1000 NewDesignator=C60
+Change Component Designator: OldDesignator=C1001 NewDesignator=C61
+Change Component Designator: OldDesignator=C1002 NewDesignator=C62
+Change Component Designator: OldDesignator=C1003 NewDesignator=C63
+Change Component Designator: OldDesignator=C1004 NewDesignator=C64
+Change Component Designator: OldDesignator=C1005 NewDesignator=C65
+Change Component Designator: OldDesignator=C1006 NewDesignator=C66
+Change Component Designator: OldDesignator=C1007 NewDesignator=C67
+Change Component Designator: OldDesignator=C1008 NewDesignator=C68
+Change Component Designator: OldDesignator=C1009 NewDesignator=C69
+Change Component Designator: OldDesignator=C1010 NewDesignator=C70
+Change Component Designator: OldDesignator=C1011 NewDesignator=C71
+Change Component Designator: OldDesignator=C1012 NewDesignator=C72
+Change Component Designator: OldDesignator=C1013 NewDesignator=C73
+Change Component Designator: OldDesignator=C1014 NewDesignator=C74
+Change Component Designator: OldDesignator=C1015 NewDesignator=C75
+Change Component Designator: OldDesignator=C1016 NewDesignator=C76
+Change Component Designator: OldDesignator=C1017 NewDesignator=C77
+Change Component Designator: OldDesignator=C1018 NewDesignator=C78
+Change Component Designator: OldDesignator=C1019 NewDesignator=C79
+Change Component Designator: OldDesignator=C1020 NewDesignator=C80
+Change Component Designator: OldDesignator=C1021 NewDesignator=C81
+Change Component Designator: OldDesignator=C1022 NewDesignator=C82
+Change Component Designator: OldDesignator=C1023 NewDesignator=C83
+Change Component Designator: OldDesignator=C1024 NewDesignator=C84
+Change Component Designator: OldDesignator=D1000 NewDesignator=D17
+Change Component Designator: OldDesignator=D1001 NewDesignator=D18
+Change Component Designator: OldDesignator=D1002 NewDesignator=D19
+Change Component Designator: OldDesignator=D1003 NewDesignator=D20
+Change Component Designator: OldDesignator=D1004 NewDesignator=D21
+Change Component Designator: OldDesignator=D1005 NewDesignator=D22
+Change Component Designator: OldDesignator=D1006 NewDesignator=D23
+Change Component Designator: OldDesignator=D1007 NewDesignator=D24
+Change Component Designator: OldDesignator=FB1000 NewDesignator=FB9
+Change Component Designator: OldDesignator=FB1001 NewDesignator=FB10
+Change Component Designator: OldDesignator=FB1002 NewDesignator=FB11
+Change Component Designator: OldDesignator=FB1003 NewDesignator=FB12
+Change Component Designator: OldDesignator=R1000 NewDesignator=R28
+Change Component Designator: OldDesignator=R1001 NewDesignator=R29
+Change Component Designator: OldDesignator=R1002 NewDesignator=R30
+Change Component Designator: OldDesignator=R1003 NewDesignator=R31
+Change Component Designator: OldDesignator=R1004 NewDesignator=R32
+Change Component Designator: OldDesignator=R1005 NewDesignator=R33
+Change Component Designator: OldDesignator=R1006 NewDesignator=R34
+Change Component Designator: OldDesignator=R1007 NewDesignator=R35
+Change Component Designator: OldDesignator=R1008 NewDesignator=R36
+Change Component Designator: OldDesignator=T1000 NewDesignator=T3
+Change Component Designator: OldDesignator=U1000 NewDesignator=U9
+Change Component Designator: OldDesignator=U1001 NewDesignator=U10
+Change Component Designator: OldDesignator=U1002 NewDesignator=U11
+Change Component Designator: OldDesignator=U1003 NewDesignator=U12
+Added Pin To Net: NetName=GND_USH1 Pin=C60-1
+Added Pin To Net: NetName=+5V_USH1 Pin=C60-2
+Added Pin To Net: NetName=5V_LV Pin=C61-1
+Added Pin To Net: NetName=GND_LV Pin=C61-2
+Added Pin To Net: NetName=GND_USH1 Pin=C62-1
+Added Pin To Net: NetName=+5V_USH1 Pin=C62-2
+Added Pin To Net: NetName=5V_LV Pin=C63-1
+Added Pin To Net: NetName=GND_LV Pin=C63-2
+Added Pin To Net: NetName=GND_LV Pin=C65-1
+Added Pin To Net: NetName=GND_USH1 Pin=C65-2
+Added Pin To Net: NetName=GND_LV Pin=C66-1
+Added Pin To Net: NetName=5V_LV Pin=C66-2
+Added Pin To Net: NetName=GND_LV Pin=C67-1
+Added Pin To Net: NetName=5V_LV Pin=C67-2
+Added Pin To Net: NetName=GND_LV Pin=C68-1
+Added Pin To Net: NetName=5V_LV Pin=C68-2
+Added Pin To Net: NetName=GND_USH1 Pin=C69-1
+Added Pin To Net: NetName=+6V_USH1 Pin=C69-2
+Added Pin To Net: NetName=GND_USH1 Pin=C70-1
+Added Pin To Net: NetName=+6V_USH1 Pin=C70-2
+Added Pin To Net: NetName=GND_USH1 Pin=C71-1
+Added Pin To Net: NetName=GND_USH1 Pin=C72-1
+Added Pin To Net: NetName=+5V_USH1 Pin=C72-2
+Added Pin To Net: NetName=GND_USH1 Pin=C73-1
+Added Pin To Net: NetName=+5V_USH1 Pin=C73-2
+Added Pin To Net: NetName=-6V_USH1 Pin=C74-1
+Added Pin To Net: NetName=GND_USH1 Pin=C74-2
+Added Pin To Net: NetName=-6V_USH1 Pin=C75-1
+Added Pin To Net: NetName=GND_USH1 Pin=C75-2
+Added Pin To Net: NetName=GND_USH1 Pin=C76-1
+Added Pin To Net: NetName=+6V_USH1 Pin=C76-2
+Added Pin To Net: NetName=GND_USH1 Pin=C77-1
+Added Pin To Net: NetName=+6V_USH1 Pin=C77-2
+Added Pin To Net: NetName=GND_USH1 Pin=C78-1
+Added Pin To Net: NetName=-6V_USH1 Pin=C78-2
+Added Pin To Net: NetName=GND_USH1 Pin=C79-1
+Added Pin To Net: NetName=-6V_USH1 Pin=C79-2
+Added Pin To Net: NetName=GND_USH1 Pin=C81-1
+Added Pin To Net: NetName=-5V_USH1 Pin=C81-2
+Added Pin To Net: NetName=GND_USH1 Pin=C82-1
+Added Pin To Net: NetName=-5V_USH1 Pin=C82-2
+Added Pin To Net: NetName=GND_USH1 Pin=C83-1
+Added Pin To Net: NetName=GND_USH1 Pin=C84-1
+Added Pin To Net: NetName=+5V_USH1 Pin=D17-1
+Added Pin To Net: NetName=-5V_USH1 Pin=D17-2
+Added Pin To Net: NetName=+5V_USH1 Pin=D18-1
+Added Pin To Net: NetName=-5V_USH1 Pin=D18-2
+Added Pin To Net: NetName=+6V_USH1 Pin=D19-2
+Added Pin To Net: NetName=+5V_USH1 Pin=D20-A
+Added Pin To Net: NetName=+5V_USH1 Pin=D21-1
+Added Pin To Net: NetName=GND_USH1 Pin=D21-2
+Added Pin To Net: NetName=-6V_USH1 Pin=D22-1
+Added Pin To Net: NetName=-5V_USH1 Pin=D23-K
+Added Pin To Net: NetName=GND_USH1 Pin=D24-1
+Added Pin To Net: NetName=-5V_USH1 Pin=D24-2
+Added Pin To Net: NetName=NetFB1_1 Pin=FB9-1
+Added Pin To Net: NetName=GND_USH1 Pin=FB10-1
+Added Pin To Net: NetName=+5V_USH1 Pin=FB11-2
+Added Pin To Net: NetName=-5V_USH1 Pin=FB12-2
+Added Pin To Net: NetName=+5V_USH1 Pin=R28-2
+Added Pin To Net: NetName=NetR12_2 Pin=R30-2
+Added Pin To Net: NetName=NetR13_2 Pin=R31-2
+Added Pin To Net: NetName=GND_USH1 Pin=R33-1
+Added Pin To Net: NetName=GND_USH1 Pin=R35-1
+Added Pin To Net: NetName=GND_USH1 Pin=R36-1
+Added Pin To Net: NetName=5V_LV Pin=T3-2
+Added Pin To Net: NetName=GND_USH1 Pin=T3-4
+Added Pin To Net: NetName=+5V_USH1 Pin=U9-1
+Added Pin To Net: NetName=GND_USH1 Pin=U9-4
+Added Pin To Net: NetName=GND_LV Pin=U9-5
+Added Pin To Net: NetName=5V_LV Pin=U9-8
+Added Pin To Net: NetName=GND_USH1 Pin=U10-1
+Added Pin To Net: NetName=+6V_USH1 Pin=U10-2
+Added Pin To Net: NetName=5V_LV Pin=U11-2
+Added Pin To Net: NetName=GND_LV Pin=U11-4
+Added Pin To Net: NetName=GND_LV Pin=U11-5
+Added Pin To Net: NetName=GND_USH1 Pin=U12-3
+Added Pin To Net: NetName=GND_USH1 Pin=U12-4
+Added Pin To Net: NetName=-6V_USH1 Pin=U12-5
+Added Pin To Net: NetName=-6V_USH1 Pin=U12-8
+Added Pin To Net: NetName=GND_USH1 Pin=U12-9
+Added Pin To Net: NetName=NetC64_1 Pin=C64-1
+Added Pin To Net: NetName=NetC64_1 Pin=D17-C
+Added Pin To Net: NetName=NetC64_1 Pin=R28-1
+Added Pin To Net: NetName=NetC64_1 Pin=R29-2
+Added Pin To Net: NetName=NetC64_1 Pin=U9-2
+Added Net: Name=NetC64_1
+Added Pin To Net: NetName=NetC64_2 Pin=C64-2
+Added Pin To Net: NetName=NetC64_2 Pin=D18-C
+Added Pin To Net: NetName=NetC64_2 Pin=R32-2
+Added Pin To Net: NetName=NetC64_2 Pin=U9-3
+Added Net: Name=NetC64_2
+Added Pin To Net: NetName=NetC71_2 Pin=C71-2
+Added Pin To Net: NetName=NetC71_2 Pin=FB11-1
+Added Pin To Net: NetName=NetC71_2 Pin=U10-3
+Added Net: Name=NetC71_2
+Added Pin To Net: NetName=NetC80_1 Pin=C80-1
+Added Pin To Net: NetName=NetC80_1 Pin=C83-2
+Added Pin To Net: NetName=NetC80_1 Pin=FB12-1
+Added Pin To Net: NetName=NetC80_1 Pin=R34-2
+Added Pin To Net: NetName=NetC80_1 Pin=U12-1
+Added Net: Name=NetC80_1
+Added Pin To Net: NetName=NetC80_2 Pin=C80-2
+Added Pin To Net: NetName=NetC80_2 Pin=R34-1
+Added Pin To Net: NetName=NetC80_2 Pin=R36-2
+Added Pin To Net: NetName=NetC80_2 Pin=U12-2
+Added Net: Name=NetC80_2
+Added Pin To Net: NetName=NetC84_2 Pin=C84-2
+Added Pin To Net: NetName=NetC84_2 Pin=U12-6
+Added Net: Name=NetC84_2
+Added Pin To Net: NetName=NetD19_1 Pin=D19-1
+Added Pin To Net: NetName=NetD19_1 Pin=D22-2
+Added Pin To Net: NetName=NetD19_1 Pin=T3-6
+Added Net: Name=NetD19_1
+Added Pin To Net: NetName=NetD20_K Pin=D20-K
+Added Pin To Net: NetName=NetD20_K Pin=R33-2
+Added Net: Name=NetD20_K
+Added Pin To Net: NetName=NetD23_A Pin=D23-A
+Added Pin To Net: NetName=NetD23_A Pin=R35-2
+Added Net: Name=NetD23_A
+Added Pin To Net: NetName=NetFB9_2 Pin=FB9-2
+Added Pin To Net: NetName=NetFB9_2 Pin=R29-1
+Added Net: Name=NetFB9_2
+Added Pin To Net: NetName=NetFB10_2 Pin=FB10-2
+Added Pin To Net: NetName=NetFB10_2 Pin=R32-1
+Added Net: Name=NetFB10_2
+Added Pin To Net: NetName=NetR30_1 Pin=R30-1
+Added Pin To Net: NetName=NetR30_1 Pin=U9-7
+Added Net: Name=NetR30_1
+Added Pin To Net: NetName=NetR31_1 Pin=R31-1
+Added Pin To Net: NetName=NetR31_1 Pin=U9-6
+Added Net: Name=NetR31_1
+Added Pin To Net: NetName=NetT3_1 Pin=T3-1
+Added Pin To Net: NetName=NetT3_1 Pin=U11-3
+Added Net: Name=NetT3_1
+Added Pin To Net: NetName=NetT3_3 Pin=T3-3
+Added Pin To Net: NetName=NetT3_3 Pin=U11-1
+Added Net: Name=NetT3_3
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C10 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C11 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C12 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C13 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C14 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C15 Cap TH
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C16 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C17 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C18 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C19 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C20 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C21 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C22 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C23 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C24 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C25 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C26 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C27 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C28 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C29 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C30 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C31 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C32 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C33 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C34 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C60 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C61 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C62 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C63 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C64 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C65 Cap TH
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C66 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C67 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C68 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C69 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C70 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C71 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C72 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C73 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C74 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C75 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C76 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C77 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C78 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C79 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C80 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C81 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C82 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C83 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component C84 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D1 Diode_ESD
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D2 Diode_ESD
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D3 Diode MBR0520
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D4 LED
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D5 Diode Zener POWERDI123
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D6 Diode MBR0520
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D7 LED
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D8 Diode Zener POWERDI123
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D17 Diode_ESD
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D18 Diode_ESD
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D19 Diode MBR0520
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D20 LED
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D21 Diode Zener POWERDI123
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D22 Diode MBR0520
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D23 LED
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component D24 Diode Zener POWERDI123
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB1 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB2 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB3 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB4 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB9 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB10 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB11 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component FB12 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R10 NC
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R11 Resistor 1206
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R12 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R13 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R14 Resistor 1206
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R15 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R16 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R17 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R18 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R28 NC
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R29 Resistor 1206
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R30 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R31 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R32 Resistor 1206
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R33 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R34 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R35 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component R36 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component T1 750313769
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component T3 750313769
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U1 AMC1100
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U2 TLV70450DBV
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U3 SN6501
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U4 TPS7A30
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U9 AMC1100
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U10 TLV70450DBV
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U11 SN6501
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U12 TPS7A30

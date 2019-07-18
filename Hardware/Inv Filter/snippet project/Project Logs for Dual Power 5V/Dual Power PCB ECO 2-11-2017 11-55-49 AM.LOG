@@ -1,0 +1,13 @@
+Added Component: Designator=U1003(8-TSSOP)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "296-27750-1-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1015_1 Pin=U1003-1
+Added Pin To Net: NetName=NetC1015_2 Pin=U1003-2
+Added Pin To Net: NetName=GND_USH1 Pin=U1003-3
+Added Pin To Net: NetName=GND_USH1 Pin=U1003-4
+Added Pin To Net: NetName=NetC1013_2 Pin=U1003-5
+Added Pin To Net: NetName=NetC1019_2 Pin=U1003-6
+Added Pin To Net: NetName=NetC1013_2 Pin=U1003-8
+Added Pin To Net: NetName=GND_USH1 Pin=U1003-9
+Added Member To Class: ClassName=Dual Power Member=Component U1003 TPS7A30
+Added Room: Name=Dual Power

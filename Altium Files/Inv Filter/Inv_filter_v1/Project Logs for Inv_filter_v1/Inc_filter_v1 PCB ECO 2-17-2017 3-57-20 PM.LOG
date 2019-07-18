@@ -1,0 +1,8 @@
+Added Pin To Net: NetName=NetC30_1 Pin=U4-1
+Added Pin To Net: NetName=-6V_VSH1 Pin=U4-5
+Added Pin To Net: NetName=-6V_VSH1 Pin=U4-8
+Added Pin To Net: NetName=GND_VSH1 Pin=U4-9
+Added Pin To Net: NetName=NetC34_2 Pin=C34-2
+Added Pin To Net: NetName=NetC34_2 Pin=U4-6
+Added Net: Name=NetC34_2
+Added Member To Class: ClassName=Ind_current_sensor_VW Member=Component U4 TPS7A30

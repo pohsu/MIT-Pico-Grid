@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=-5V_USH1 Pin=C1006-2
+Removed Pin From Net: NetName=-5V_USH1 Pin=C1007-2
+Removed Pin From Net: NetName=-5V_USH1 Pin=D1000-A
+Removed Pin From Net: NetName=-5V_USH1 Pin=D1001-1
+Removed Pin From Net: NetName=-5V_USH1 Pin=FB1000-2
+Added Pin To Net: NetName=+5V_USH1 Pin=C1006-2
+Added Pin To Net: NetName=+5V_USH1 Pin=C1007-2
+Added Pin To Net: NetName=+5V_USH1 Pin=D1000-A
+Added Pin To Net: NetName=+5V_USH1 Pin=D1001-1
+Added Pin To Net: NetName=+5V_USH1 Pin=FB1000-2
+Added Net: Name=+5V_USH1
+Added Member To Class: ClassName=Dual Power Member=Component C Cap 0805
+Added Member To Class: ClassName=Dual Power Member=Component D Diode Zener POWERDI123
+Added Room: Name=Dual Power

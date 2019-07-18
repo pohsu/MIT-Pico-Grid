@@ -1,0 +1,63 @@
+Change Component Designator: OldDesignator=C1000 NewDesignator=C206
+Change Component Designator: OldDesignator=C1001 NewDesignator=C207
+Change Component Designator: OldDesignator=C1002 NewDesignator=C208
+Change Component Designator: OldDesignator=C1003 NewDesignator=C209
+Change Component Designator: OldDesignator=C1004 NewDesignator=C210
+Change Component Designator: OldDesignator=C1005 NewDesignator=C211
+Change Component Designator: OldDesignator=C1006 NewDesignator=C212
+Change Component Designator: OldDesignator=C1007 NewDesignator=C213
+Change Component Designator: OldDesignator=C1008 NewDesignator=C214
+Change Component Designator: OldDesignator=C1009 NewDesignator=C215
+Change Component Designator: OldDesignator=C1010 NewDesignator=C216
+Change Component Designator: OldDesignator=C1011 NewDesignator=C217
+Change Component Designator: OldDesignator=C1012 NewDesignator=C218
+Change Component Designator: OldDesignator=C1013 NewDesignator=C219
+Change Component Designator: OldDesignator=C1014 NewDesignator=C220
+Change Component Designator: OldDesignator=C1015 NewDesignator=C221
+Change Component Designator: OldDesignator=C1016 NewDesignator=C222
+Change Component Designator: OldDesignator=C1017 NewDesignator=C223
+Change Component Designator: OldDesignator=C1018 NewDesignator=C224
+Change Component Designator: OldDesignator=C1019 NewDesignator=C225
+Change Component Designator: OldDesignator=C1020 NewDesignator=C226
+Change Component Designator: OldDesignator=C1021 NewDesignator=C227
+Change Component Designator: OldDesignator=C1022 NewDesignator=C228
+Change Component Designator: OldDesignator=R1000 NewDesignator=R104
+Change Component Designator: OldDesignator=R1001 NewDesignator=R105
+Change Component Designator: OldDesignator=R1002 NewDesignator=R106
+Change Component Designator: OldDesignator=R1003 NewDesignator=R107
+Change Component Designator: OldDesignator=R1004 NewDesignator=R108
+Change Component Designator: OldDesignator=R1005 NewDesignator=R109
+Change Component Designator: OldDesignator=R1006 NewDesignator=R110
+Change Component Designator: OldDesignator=R1007 NewDesignator=R111
+Change Component Designator: OldDesignator=R1008 NewDesignator=R112
+Change Component Designator: OldDesignator=R1009 NewDesignator=R113
+Change Component Designator: OldDesignator=R1010 NewDesignator=R114
+Change Component Designator: OldDesignator=R1011 NewDesignator=R115
+Change Component Designator: OldDesignator=R1012 NewDesignator=R116
+Change Component Designator: OldDesignator=R1013 NewDesignator=R117
+Change Component Designator: OldDesignator=R1014 NewDesignator=R118
+Change Component Designator: OldDesignator=R1015 NewDesignator=R119
+Change Component Designator: OldDesignator=R1016 NewDesignator=R120
+Change Component Designator: OldDesignator=R1017 NewDesignator=R121
+Change Component Designator: OldDesignator=R1018 NewDesignator=R122
+Change Component Designator: OldDesignator=R1019 NewDesignator=R123
+Change Component Designator: OldDesignator=R1020 NewDesignator=R124
+Change Component Designator: OldDesignator=R1021 NewDesignator=R125
+Change Component Designator: OldDesignator=R1022 NewDesignator=R126
+Change Component Designator: OldDesignator=R1023 NewDesignator=R127
+Change Component Designator: OldDesignator=U1000 NewDesignator=U31
+Change Component Designator: OldDesignator=U1001 NewDesignator=U32
+Change Component Designator: OldDesignator=U1002 NewDesignator=U33
+Change Component Designator: OldDesignator=U1003 NewDesignator=U34
+Change Net Name : Old Net Name=NetC1002_1 New Net Name=NetC208_1
+Change Net Name : Old Net Name=NetC1002_2 New Net Name=NetC208_2
+Change Net Name : Old Net Name=NetC1008_1 New Net Name=NetC214_1
+Change Net Name : Old Net Name=NetC1008_2 New Net Name=NetC214_2
+Change Net Name : Old Net Name=NetC1009_1 New Net Name=NetC215_1
+Change Net Name : Old Net Name=NetC1009_2 New Net Name=NetC215_2
+Change Net Name : Old Net Name=NetC1015_1 New Net Name=NetC221_1
+Change Net Name : Old Net Name=NetC1015_2 New Net Name=NetC221_2
+Change Net Name : Old Net Name=NetC1016_1 New Net Name=NetC222_1
+Change Net Name : Old Net Name=NetC1016_2 New Net Name=NetC222_2
+Change Net Name : Old Net Name=NetC1022_1 New Net Name=NetC228_1
+Change Net Name : Old Net Name=NetC1022_2 New Net Name=NetC228_2

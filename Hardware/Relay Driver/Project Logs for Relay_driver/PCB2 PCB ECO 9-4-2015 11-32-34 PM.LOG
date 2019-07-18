@@ -1,0 +1,16 @@
+Added Component: Designator=D1(DO-41)
+Added Component: Designator=Q1(TO-92A)
+Added Component: Designator=Q2(TO-92A)
+Added Component: Designator=R1(AXIAL-0.6)
+Added Component: Designator=R2(AXIAL-0.6)
+Added Component: Designator=R3(6-0805_N)
+Added Component: Designator=R4(6-0805_N)
+Added Component: Designator=R5(6-0805_N)
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=30V Pin=D1-2
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q2-1
+Added Pin To Net: NetName=NetD1_1 Pin=R1-2
+Added Pin To Net: NetName=NetD1_1 Pin=R2-2
+Added Pin To Net: NetName=5V Pin=R3-2
+Added Pin To Net: NetName=NetR5_2 Pin=R5-2

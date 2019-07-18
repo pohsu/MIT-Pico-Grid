@@ -1,0 +1,87 @@
+Added Component: Designator=C195(1812 (4532 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "311-1182-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Cap 3kV 220pF"; VariantName = "[No Variations]"
+Added Component: Designator=C196(1812 (4532 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "311-1182-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Cap 3kV 220pF"; VariantName = "[No Variations]"
+Added Component: Designator=C197(1812 (4532 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "311-1182-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Cap 3kV 220pF"; VariantName = "[No Variations]"
+Added Component: Designator=C198(1206)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "587-3248-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF 50V"; VariantName = "[No Variations]"
+Added Component: Designator=C199(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C200(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C201(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "399-13384-1-ND "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Added Component: Designator=C202(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "490-10515-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Added Component: Designator=C203(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "311-1343-6-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C204(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "399-13384-1-ND "; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Added Component: Designator=C205(0603 (1608 Metric))
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "part"; Value = "490-10515-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Added Component: Designator=L8(Inductor Surface Mount)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "732-1103-1-ND"; VariantName = "[No Variations]"
+Added Component: Designator=PS1(8 SIP)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Part"; Value = "1470-2542-5-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND_LV Pin=C197-2
+Added Pin To Net: NetName=GND_LV Pin=C200-1
+Added Pin To Net: NetName=GND_LV Pin=C201-1
+Added Pin To Net: NetName=GND_LV Pin=C202-1
+Added Pin To Net: NetName=GND_LV Pin=C203-2
+Added Pin To Net: NetName=GND_LV Pin=C204-2
+Added Pin To Net: NetName=GND_LV Pin=C205-2
+Added Pin To Net: NetName=GND_LV Pin=PS1-7
+Change Net Name : Old Net Name=5V_LV New Net Name=+5V_LV
+Added Pin To Net: NetName=GND_PWR Pin=C197-1
+Added Pin To Net: NetName=GND_PWR Pin=C198-1
+Added Pin To Net: NetName=GND_PWR Pin=C199-1
+Added Pin To Net: NetName=GND_PWR Pin=PS1-1
+Added Net: Name=GND_PWR
+Added Pin To Net: NetName=NetC195_1 Pin=C195-1
+Added Pin To Net: NetName=NetC195_1 Pin=C196-1
+Added Pin To Net: NetName=NetC195_1 Pin=C198-2
+Added Pin To Net: NetName=NetC195_1 Pin=C199-2
+Added Pin To Net: NetName=NetC195_1 Pin=L8-2
+Added Pin To Net: NetName=NetC195_1 Pin=PS1-2
+Added Net: Name=NetC195_1
+Added Pin To Net: NetName=NetC195_2 Pin=C195-2
+Added Pin To Net: NetName=NetC195_2 Pin=C200-2
+Added Pin To Net: NetName=NetC195_2 Pin=C201-2
+Added Pin To Net: NetName=NetC195_2 Pin=C202-2
+Added Pin To Net: NetName=NetC195_2 Pin=PS1-6
+Added Net: Name=NetC195_2
+Added Pin To Net: NetName=NetC196_2 Pin=C196-2
+Added Pin To Net: NetName=NetC196_2 Pin=C203-1
+Added Pin To Net: NetName=NetC196_2 Pin=C204-1
+Added Pin To Net: NetName=NetC196_2 Pin=C205-1
+Added Pin To Net: NetName=NetC196_2 Pin=PS1-8
+Added Net: Name=NetC196_2
+Added Pin To Net: NetName=NetL8_1 Pin=L8-1
+Added Net: Name=NetL8_1
+Added Class: Name=Power Supply
+Added Member To Class: ClassName=Out_current_sensor_UVW Member=Component R86 NC

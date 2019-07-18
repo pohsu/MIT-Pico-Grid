@@ -1,0 +1,1037 @@
+version = 4.2
+
+
+//
+// Saved by sw version: 2016.4
+// Save timestamp: 01-Feb-2018 @ 05:47:50 PM
+//
+
+model "pcb01" {
+    configuration {
+        hil_device = "HIL402"
+        hil_configuration_id = 1
+        simulation_method = exact
+        simulation_time_step = auto
+        dsp_timer_periods = 100e-6, 50e-3
+        ss_calc_method = "systematic elimination"
+        enb_pole_shift = True
+        enb_gds_oversampling = True
+        show_modes = False
+        cpl_stb = False
+        enb_dep_sw_detect = False
+        code_section = "internal memory"
+        data_section = "internal memory"
+        sys_sp_rate_1 = 0.0001
+        sys_sp_rate_2 = 0.05
+        sys_real_type_precision = "default"
+        user_real_type_precision = "default"
+        sys_cpu_optimization = "high"
+        user_cpu_optimization = "high"
+    }
+
+    
+    component Subsystem "My model" {
+
+        
+        component src_voltage "Vs1" {
+            
+	    
+        }
+        [
+            position = 1472, 2000
+            rotation = right
+        ]
+        
+        component src_voltage "none" {
+            
+	    
+        }
+        [
+            position = 1496, 2216
+            rotation = right
+        ]
+        
+        component pas_resistor "Rs1" {
+            
+            resistance = "0.1"
+	    
+        }
+        [
+            position = 1592, 2216
+            rotation = right
+        ]
+        
+        component pas_resistor "Rf1a" {
+            
+            resistance = "Rf"
+	    
+        }
+        [
+            position = 2176, 1888
+        ]
+        
+        component pas_resistor "Rf1b" {
+            
+            resistance = "Rf"
+	    
+        }
+        [
+            position = 2176, 1984
+        ]
+        
+        component pas_resistor "Rf1c" {
+            
+            resistance = "Rf"
+	    
+        }
+        [
+            position = 2176, 2080
+        ]
+        
+        component msr_current "IL1a" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2080, 1888
+        ]
+        
+        component msr_current "IL1b" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2080, 1984
+        ]
+        
+        component pas_inductor "Lf1a" {
+            
+            inductance = "Lf"
+	    
+        }
+        [
+            position = 2264, 1888
+        ]
+        
+        component pas_inductor "Lf1b" {
+            
+            inductance = "Lf"
+	    
+        }
+        [
+            position = 2264, 1984
+        ]
+        
+        component pas_inductor "Lf1c" {
+            
+            inductance = "Lf"
+	    
+        }
+        [
+            position = 2264, 2080
+        ]
+        
+        component msr_current "IO1a" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 3096, 1888
+        ]
+        
+        component msr_current "IO1b" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 3112, 1984
+        ]
+        
+        component pas_capacitor "Cf1a" {
+            
+            capacitance = "Cf"
+	    
+        }
+        [
+            position = 2936, 2232
+            rotation = right
+        ]
+        
+        component pas_capacitor "Cf1c" {
+            
+            capacitance = "Cf"
+	    
+        }
+        [
+            position = 3080, 2232
+            rotation = right
+        ]
+        
+        component msr_voltage "VO1b" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2744, 2168
+            rotation = right
+        ]
+        
+        component msr_voltage "VO1a" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2672, 2168
+            rotation = right
+        ]
+        
+        component pas_capacitor "Cf1b" {
+            
+            capacitance = "Cf"
+	    
+        }
+        [
+            position = 3008, 2232
+            rotation = right
+        ]
+        
+        component pas_resistor "RL1a2" {
+            
+            resistance = "RL1"
+	    
+        }
+        [
+            position = 3664, 2184
+            rotation = right
+        ]
+        
+        component pas_resistor "RL1a3" {
+            
+            resistance = "RL1"
+	    
+        }
+        [
+            position = 3744, 2184
+            rotation = right
+        ]
+        
+        component pas_resistor "RL1a4" {
+            
+            resistance = "RL1"
+	    
+        }
+        [
+            position = 3816, 2184
+            rotation = right
+        ]
+        
+        component pas_capacitor "Cdc" {
+            
+            capacitance = "1e-3"
+	    
+        }
+        [
+            position = 1800, 1984
+            rotation = right
+        ]
+        
+        component pas_resistor "Rs" {
+            
+            resistance = "0.01"
+	    
+        }
+        [
+            position = 1616, 1888
+        ]
+        
+        component msr_voltage "VO1c" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2840, 2168
+            rotation = right
+        ]
+        
+        component ctc_tpst "S1" {
+            
+	    
+        }
+        [
+            position = 3928, 1984
+        ]
+        
+        component src_voltage_3ph "Vs2" {
+            
+	    
+        }
+        [
+            position = 4120, 1984
+            scale = -1, 1
+        ]
+        
+        component pas_resistor "Rt1" {
+            
+            resistance = "Rt"
+	    
+        }
+        [
+            position = 3328, 1888
+        ]
+        
+        component pas_inductor "Lt1" {
+            
+            inductance = "Lt"
+	    
+        }
+        [
+            position = 3440, 1888
+        ]
+        
+        component pas_resistor "Rt2" {
+            
+            resistance = "Rt"
+	    
+        }
+        [
+            position = 3328, 1984
+        ]
+        
+        component pas_inductor "Lt2" {
+            
+            inductance = "Lt"
+	    
+        }
+        [
+            position = 3440, 1984
+        ]
+        
+        component pas_resistor "Rt3" {
+            
+            resistance = "Rt"
+	    
+        }
+        [
+            position = 3328, 2080
+        ]
+        
+        component pas_inductor "Lt3" {
+            
+            inductance = "Lt"
+	    
+        }
+        [
+            position = 3440, 2080
+        ]
+        
+        component cpl_spc_3ph "Core Coupling 2" {
+            
+	    
+        }
+        [
+            position = 2616, 1984
+            scale = -1, 1
+        ]
+        
+        component msr_current "IL1a_filter" {
+            
+            bw_limit = "True"
+            execution_rate = "inherit"
+            frequency = "1000"
+	    
+        }
+        [
+            position = 2408, 1888
+        ]
+        
+        component msr_current "IC1a" {
+            
+            execution_rate = "inherit"
+	    
+        }
+        [
+            position = 2936, 1936
+            rotation = left
+        ]
+        component "core/Three Phase Inverter" "3ph_inverter_1"{
+            
+            Rth0_1 = "0.01"
+            Rth0_2 = "0.01"
+            Rth0_3 = "0.01"
+            Rth0_4 = "0.01"
+            Rth0_5 = "0.01"
+            Sa_bot = "7"
+            Sa_top = "4"
+            Sb_bot = "8"
+            Sb_top = "5"
+            Sc_bot = "9"
+            Sc_top = "6"
+            ctrl_src = "Digital input per leg"
+            d_time = "0e-6"
+            fixed_delay = "0"
+            lut_data_1 = "[]"
+            lut_data_2 = "[]"
+            lut_data_3 = "[]"
+            lut_data_4 = "[]"
+            lut_data_5 = "[]"
+            var_delay_lut = ""
+        }
+        [
+            position = 1920, 1984
+            size = 127, 256
+        ]
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        comment Comment1 START <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times'; font-size:8pt; font-weight:400; font-style:normal;"><p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:12pt;">DC source; inverter; filter; grid</span></p></body></html>                                       ENDCOMMENT 
+        [
+            position = 1568, 1760
+        ]
+        
+        comment Comment2 START <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"><html><head><meta name="qrichtext" content="1" /><style type="text/css">p, li { white-space: pre-wrap; }</style></head><body style=" font-family:'Times'; font-size:8pt; font-weight:400; font-style:normal;"><p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-family:'Arial'; font-size:9pt; font-weight:600;">Note:</span><span style=" font-family:'Arial'; font-size:9pt;"> Inverter pin assignment is compatible with dsPIC demo controller card. </span></p></body></html>                                       ENDCOMMENT 
+        [
+            position = 1976, 2144
+        ]
+        
+        junction "Junction35" pe
+        [
+            position = 2744, 2352
+        ]
+        
+        junction "Junction39" pe
+        [
+            position = 2936, 2352
+        ]
+        
+        junction "Junction40" pe
+        [
+            position = 3008, 2352
+        ]
+        
+        junction "Junction135" pe
+        [
+            position = 3744, 2312
+        ]
+        
+        junction "Junction149" pe
+        [
+            position = 2840, 2352
+        ]
+        
+        junction "Junction151" pe
+        [
+            position = 3664, 1888
+        ]
+        
+        junction "Junction152" pe
+        [
+            position = 3744, 1984
+        ]
+        
+        junction "Junction153" pe
+        [
+            position = 3008, 1984
+        ]
+        
+        junction "Junction155" pe
+        [
+            position = 3816, 2080
+        ]
+        
+        junction "Junction164" pe
+        [
+            position = 1800, 1888
+        ]
+        
+        junction "Junction165" pe
+        [
+            position = 1800, 2080
+        ]
+        
+        junction "Junction166" pe
+        [
+            position = 2840, 2080
+        ]
+        
+        junction "Junction167" pe
+        [
+            position = 2752, 1984
+        ]
+        
+        junction "Junction169" pe
+        [
+            position = 3080, 2080
+        ]
+        
+        junction "Junction170" pe
+        [
+            position = 2928, 1888
+        ]
+        
+        junction "Junction171" pe
+        [
+            position = 2672, 1888
+        ]
+        
+        connect "3ph_inverter_1.pos_out" Junction164 as Connection938
+        
+        
+        connect "3ph_inverter_1.neg_out" Junction165 as Connection941
+        
+        
+        connect "Cf1a.n_node" Junction39 as Connection187
+        
+        
+        connect "Cf1b.p_node" Junction153 as Connection861
+        
+        
+        connect "Cf1b.n_node" Junction40 as Connection190
+        
+        
+        connect "Cf1c.p_node" Junction169 as Connection962
+        
+        
+        connect "Cf1c.n_node" Junction40 as Connection192
+        
+        
+        connect "Core Coupling 2.c_in" Junction166 as Connection953
+        
+        
+        connect "Core Coupling 2.b_in" Junction167 as Connection956
+        
+        
+        connect "Core Coupling 2.b_out" "Lf1b.n_node" as Connection949
+        
+        
+        connect "IC1a.p_node" "Cf1a.p_node" as Connection975
+        
+        
+        connect "IC1a.n_node" Junction170 as Connection978
+        
+        
+        connect "IL1a.p_node" "3ph_inverter_1.a_in" as Connection453
+        [
+            breakpoints =2032, 1888;2032, 1888
+        ]
+        
+        connect "IL1a.n_node" "Rf1a.p_node" as Connection14
+        
+        
+        connect "IL1a_filter.n_node" "Core Coupling 2.a_out" as Connection966
+        
+        
+        connect "IL1b.p_node" "3ph_inverter_1.b_in" as Connection456
+        [
+            breakpoints =2032, 1984;2032, 1984
+        ]
+        
+        connect "IL1b.n_node" "Rf1b.p_node" as Connection16
+        
+        
+        connect "IO1a.p_node" Junction170 as Connection976
+        
+        
+        connect "IO1a.n_node" "Rt1.p_node" as Connection961
+        
+        
+        connect "IO1b.p_node" Junction153 as Connection863
+        
+        
+        connect "IO1b.n_node" "Rt2.p_node" as Connection960
+        
+        
+        connect Junction135 "RL1a3.n_node" as Connection735
+        [
+            breakpoints =3736, 2312
+        ]
+        
+        connect Junction149 Junction39 as Connection827
+        [
+            breakpoints =2928, 2352
+        ]
+        
+        connect Junction151 "S1.a_in" as Connection855
+        [
+            breakpoints =3664, 1888
+        ]
+        
+        connect Junction152 "RL1a3.p_node" as Connection858
+        [
+            breakpoints =3744, 1984;3744, 1984
+        ]
+        
+        connect Junction153 Junction167 as Connection954
+        [
+            breakpoints =3008, 1984;3008, 1984;3008, 1984;3008, 1984;3008, 1984;3008, 1984;2864, 1984
+        ]
+        
+        connect Junction155 "S1.c_in" as Connection872
+        [
+            breakpoints =3816, 2080;3816, 2080
+        ]
+        
+        connect Junction164 "Cdc.p_node" as Connection939
+        [
+            breakpoints =1800, 1888;1800, 1888
+        ]
+        
+        connect Junction165 "Cdc.n_node" as Connection942
+        [
+            breakpoints =1800, 2080;1800, 2080
+        ]
+        
+        connect Junction166 "VO1c.p_node" as Connection952
+        [
+            breakpoints =2840, 2080;2840, 2080;2840, 2088
+        ]
+        
+        connect Junction167 "VO1b.p_node" as Connection955
+        [
+            breakpoints =2744, 1984;2744, 1984;2744, 1984;2744, 1984;2744, 1984;2744, 1984;2744, 1984;2744, 1984;2744, 2088
+        ]
+        
+        connect Junction169 Junction166 as Connection963
+        [
+            breakpoints =3080, 2080;3080, 2080;3080, 2080;3080, 2088;3080, 2080;3080, 2080;3080, 2080;3080, 2080
+        ]
+        
+        connect Junction170 Junction171 as Connection979
+        [
+            breakpoints =2936, 1888;2936, 1888;2936, 1888;2936, 1888;2936, 1888;2936, 1888;2936, 1888;2936, 1888;2936, 1888;2864, 1888
+        ]
+        
+        connect Junction171 "Core Coupling 2.a_in" as Connection980
+        [
+            breakpoints =2672, 1888;2672, 1888;2672, 1888
+        ]
+        
+        connect Junction35 Junction149 as Connection826
+        [
+            breakpoints =2744, 2352;2744, 2352;2752, 2352;2816, 2352;2816, 2352;2816, 2352;2816, 2352
+        ]
+        
+        connect Junction35 "VO1b.n_node" as Connection131
+        [
+            breakpoints =2744, 2352
+        ]
+        
+        connect Junction40 Junction39 as Connection191
+        
+        
+        connect "Lf1a.n_node" "IL1a_filter.p_node" as Connection967
+        
+        
+        connect "Lf1c.n_node" "Core Coupling 2.c_out" as Connection950
+        
+        
+        connect "Lt1.n_node" Junction151 as Connection856
+        
+        
+        connect "Lt2.n_node" Junction152 as Connection859
+        
+        
+        connect "Lt3.n_node" Junction155 as Connection873
+        
+        
+        connect "RL1a2.n_node" Junction135 as Connection734
+        [
+            breakpoints =3664, 2312
+        ]
+        
+        connect "RL1a2.p_node" Junction151 as Connection854
+        
+        
+        connect "RL1a4.n_node" Junction135 as Connection736
+        
+        
+        connect "RL1a4.p_node" Junction155 as Connection871
+        
+        
+        connect "Rf1a.n_node" "Lf1a.p_node" as Connection41
+        
+        
+        connect "Rf1b.n_node" "Lf1b.p_node" as Connection43
+        
+        
+        connect "Rf1c.p_node" "3ph_inverter_1.c_in" as Connection965
+        
+        
+        connect "Rf1c.n_node" "Lf1c.p_node" as Connection45
+        
+        
+        connect "Rs.n_node" Junction164 as Connection940
+        
+        
+        connect "Rs1.n_node" "none.n_node" as Connection321
+        [
+            breakpoints =1576, 2304
+        ]
+        
+        connect "Rt1.n_node" "Lt1.p_node" as Connection847
+        
+        
+        connect "Rt2.n_node" "Lt2.p_node" as Connection848
+        
+        
+        connect "Rt3.p_node" Junction169 as Connection964
+        
+        
+        connect "Rt3.n_node" "Lt3.p_node" as Connection849
+        
+        
+        connect "S1.b_in" Junction152 as Connection857
+        
+        
+        connect "S1.a_out" "Vs2.a_node" as Connection829
+        
+        
+        connect "S1.c_out" "Vs2.c_node" as Connection831
+        
+        
+        connect "VO1a.p_node" Junction171 as Connection981
+        
+        
+        connect "VO1a.n_node" Junction35 as Connection130
+        [
+            breakpoints =2672, 2352;2704, 2352;2704, 2352
+        ]
+        
+        connect "VO1c.n_node" Junction149 as Connection828
+        
+        
+        connect "Vs1.n_node" Junction165 as Connection943
+        
+        
+        connect "Vs1.p_node" "Rs.p_node" as Connection301
+        
+        
+        connect "Vs2.b_node" "S1.b_out" as Connection830
+        
+        
+        connect "none.p_node" "Rs1.p_node" as Connection320
+        [
+            breakpoints =1512, 2128
+        ]
+        
+
+        
+    }
+
+    
+    
+    default {
+        
+        cpl_spc_3ph {
+            snb_type_i = "none"
+            R1 = "100e3"
+            C1 = "1e-06"
+            C2 = "1e-06"
+            fixed_snb_i = "false"
+            snb_type_u = "none"
+            R2 = "0.1"
+            L1 = "0.1"
+            L2 = "0.1"
+            fixed_snb_u = "false"
+            cpl_connection = "star"
+        }
+        
+        ctc_tpst {
+            ctrl_src = "Digital input"
+            Sa = "1"
+            Sa_logic = "active high"
+            execution_rate = "inherit"
+            initial_state = "off"
+            on_delay = "0"
+            off_delay = "0"
+            spc_nb = "0"
+            ctc_nb = "0"
+            pe_connection = "not_defined"
+            ctc_name = "not_defined"
+        }
+        
+        msr_current {
+            bw_limit = "False"
+            frequency = "10e3"
+            comparator_enable = "False"
+            operator = "greater"
+            threshold = "0"
+            cmp_abs_value = "False"
+            feed_forward = "false"
+            sig_output = "False"
+            execution_rate = "100e-6"
+            addr = "0"
+            nd_msr_estimation = "false"
+            dev_cpl_msr = "false"
+            host_device = "0"
+            output_to_device = "0"
+            dev_cpl_index = "0"
+            dev_cpl_var_nb = "0"
+            visible = "True"
+            override_signal_name = "False"
+            signal_name = ""
+        }
+        
+        msr_voltage {
+            bw_limit = "False"
+            frequency = "10e3"
+            comparator_enable = "False"
+            operator = "greater"
+            threshold = "0"
+            cmp_abs_value = "False"
+            feed_forward = "false"
+            sig_output = "False"
+            execution_rate = "100e-6"
+            addr = "0"
+            nd_msr_estimation = "false"
+            dev_cpl_msr = "false"
+            host_device = "0"
+            output_to_device = "0"
+            dev_cpl_index = "0"
+            dev_cpl_var_nb = "0"
+            visible = "True"
+            override_signal_name = "False"
+            signal_name = ""
+        }
+        
+        pas_capacitor {
+            capacitance = "1e-6"
+            initial_voltage = "0"
+        }
+        
+        pas_inductor {
+            inductance = "1e-3"
+            initial_current = "0.0"
+        }
+        
+        pas_resistor {
+            resistance = "1"
+        }
+        
+        src_voltage {
+            type = "signal generator"
+            param_set = ""
+            dev_cpl_msr = "false"
+            host_device = "0"
+            input_from_device = "0"
+            dev_cpl_index = "0"
+            dev_cpl_var_nb = "0"
+            snb_type_u = "none"
+            R2 = "0.1"
+            L1 = "0.1"
+            fixed_snb_u = "false"
+            cpd_visible = "True"
+        }
+        
+        "core/Three Phase Inverter" {
+            ctrl_src = "Digital input per switch"
+            carrier_freq = "10000.0"
+            carr_ph_offset = "0.0"
+            d_time = "5e-6"
+            ref_sig_min_max = "[-1.0, 1.0]"
+            execution_rate = "inherit"
+            Sa_top = "1"
+            Sa_top_logic = "active high"
+            Sa_bot = "2"
+            Sa_bot_logic = "active high"
+            Sb_top = "3"
+            Sb_top_logic = "active high"
+            Sb_bot = "4"
+            Sb_bot_logic = "active high"
+            Sc_top = "5"
+            Sc_top_logic = "active high"
+            Sc_bot = "6"
+            Sc_bot_logic = "active high"
+            delay_enabled = "False"
+            fixed_delay = "1e-6"
+            var_delay_lut = "[-10.0, 1e-6, 10.0, 1e-6]"
+            preview_var_delay = "Preview"
+            thrm_enabled = "False"
+            number_of_thermal_models = "1"
+            cooling_input = "1"
+            thrm1 = "T1"
+            Cth_1 = "1.0"
+            Rth0_1 = "0.0625"
+            Rth_Vin_1 = "0.0"
+            sensors_enabled_1 = "False"
+            lut_data_1 = "[-50.0, -5.0, 0.0, 0.0, 50.0, 5.0]"
+            preview_sensor_1_lut = "Preview"
+            thrm2 = "T2"
+            Cth_2 = "1.0"
+            Rth0_2 = "0.0625"
+            Rth_Vin_2 = "0.0"
+            sensors_enabled_2 = "False"
+            lut_data_2 = "[-50.0, -5.0, 0.0, 0.0, 50.0, 5.0]"
+            preview_sensor_2_lut = "Preview"
+            thrm3 = "T3"
+            Cth_3 = "1.0"
+            Rth0_3 = "0.0625"
+            Rth_Vin_3 = "0.0"
+            sensors_enabled_3 = "False"
+            lut_data_3 = "[-50.0, -5.0, 0.0, 0.0, 50.0, 5.0]"
+            preview_sensor_3_lut = "Preview"
+            thrm4 = "T4"
+            Cth_4 = "1.0"
+            Rth0_4 = "0.0625"
+            Rth_Vin_4 = "0.0"
+            sensors_enabled_4 = "False"
+            lut_data_4 = "[-50.0, -5.0, 0.0, 0.0, 50.0, 5.0]"
+            preview_sensor_4_lut = "Preview"
+            thrm5 = "T5"
+            Cth_5 = "1.0"
+            Rth0_5 = "0.0625"
+            Rth_Vin_5 = "0.0"
+            sensors_enabled_5 = "False"
+            lut_data_5 = "[-50.0, -5.0, 0.0, 0.0, 50.0, 5.0]"
+            preview_sensor_5_lut = "Preview"
+            Sa_top_I = "False"
+            Sa_bot_I = "False"
+            Sb_top_I = "False"
+            Sb_bot_I = "False"
+            Sc_top_I = "False"
+            Sc_bot_I = "False"
+            _control_property = "all high"
+        }
+    }
+
+    CODE model_init
+        # Numpy module is imported as 'np'
+        
+        RL1 = 25;
+        RL3 = 15;
+        
+        Cf = 30e-6
+        Lf = 1.0e-3
+        Rf = 0.08
+        
+        line = 0.52
+        
+        Rt = 0.03 + line * 0.165
+        Lt = 0.35e-3 + line * 0.26e-3 
+    ENDCODE
+}

@@ -1,0 +1,200 @@
+Change Component Designator: OldDesignator=C1000 NewDesignator=C120
+Change Component Designator: OldDesignator=C1001 NewDesignator=C121
+Change Component Designator: OldDesignator=C1002 NewDesignator=C122
+Change Component Designator: OldDesignator=C1003 NewDesignator=C123
+Change Component Designator: OldDesignator=C1004 NewDesignator=C124
+Change Component Designator: OldDesignator=C1005 NewDesignator=C125
+Change Component Designator: OldDesignator=C1006 NewDesignator=C126
+Change Component Designator: OldDesignator=C1007 NewDesignator=C127
+Change Component Designator: OldDesignator=C1008 NewDesignator=C128
+Change Component Designator: OldDesignator=C1009 NewDesignator=C129
+Change Component Designator: OldDesignator=C1010 NewDesignator=C130
+Change Component Designator: OldDesignator=C1011 NewDesignator=C131
+Change Component Designator: OldDesignator=C1012 NewDesignator=C132
+Change Component Designator: OldDesignator=C1013 NewDesignator=C133
+Change Component Designator: OldDesignator=C1014 NewDesignator=C134
+Change Component Designator: OldDesignator=C1015 NewDesignator=C135
+Change Component Designator: OldDesignator=C1016 NewDesignator=C136
+Change Component Designator: OldDesignator=C1017 NewDesignator=C137
+Change Component Designator: OldDesignator=C1018 NewDesignator=C138
+Change Component Designator: OldDesignator=C1019 NewDesignator=C139
+Change Component Designator: OldDesignator=C1020 NewDesignator=C140
+Change Component Designator: OldDesignator=C1021 NewDesignator=C141
+Change Component Designator: OldDesignator=C1022 NewDesignator=C142
+Change Component Designator: OldDesignator=C1023 NewDesignator=C143
+Change Component Designator: OldDesignator=C1024 NewDesignator=C144
+Change Component Designator: OldDesignator=D1000 NewDesignator=D37
+Change Component Designator: OldDesignator=D1001 NewDesignator=D38
+Change Component Designator: OldDesignator=D1002 NewDesignator=D39
+Change Component Designator: OldDesignator=D1003 NewDesignator=D40
+Change Component Designator: OldDesignator=D1004 NewDesignator=D41
+Change Component Designator: OldDesignator=D1005 NewDesignator=D42
+Change Component Designator: OldDesignator=D1006 NewDesignator=D43
+Change Component Designator: OldDesignator=D1007 NewDesignator=D44
+Change Component Designator: OldDesignator=FB1000 NewDesignator=FB18
+Change Component Designator: OldDesignator=FB1001 NewDesignator=FB19
+Change Component Designator: OldDesignator=FB1002 NewDesignator=FB20
+Change Component Designator: OldDesignator=FB1003 NewDesignator=FB21
+Change Component Designator: OldDesignator=R1000 NewDesignator=R77
+Change Component Designator: OldDesignator=R1001 NewDesignator=R78
+Change Component Designator: OldDesignator=R1002 NewDesignator=R79
+Change Component Designator: OldDesignator=R1003 NewDesignator=R80
+Change Component Designator: OldDesignator=R1004 NewDesignator=R81
+Change Component Designator: OldDesignator=R1005 NewDesignator=R82
+Change Component Designator: OldDesignator=R1006 NewDesignator=R83
+Change Component Designator: OldDesignator=R1007 NewDesignator=R84
+Change Component Designator: OldDesignator=R1008 NewDesignator=R85
+Change Component Designator: OldDesignator=T1000 NewDesignator=T5
+Change Component Designator: OldDesignator=U1000 NewDesignator=U19
+Change Component Designator: OldDesignator=U1001 NewDesignator=U20
+Change Component Designator: OldDesignator=U1002 NewDesignator=U21
+Change Component Designator: OldDesignator=U1003 NewDesignator=U22
+Added Pin To Net: NetName=5V_LV Pin=C121-1
+Added Pin To Net: NetName=GND_LV Pin=C121-2
+Added Pin To Net: NetName=5V_LV Pin=C123-1
+Added Pin To Net: NetName=GND_LV Pin=C123-2
+Added Pin To Net: NetName=GND_LV Pin=C125-1
+Added Pin To Net: NetName=GND_LV Pin=C126-1
+Added Pin To Net: NetName=5V_LV Pin=C126-2
+Added Pin To Net: NetName=GND_LV Pin=C127-1
+Added Pin To Net: NetName=5V_LV Pin=C127-2
+Added Pin To Net: NetName=GND_LV Pin=C128-1
+Added Pin To Net: NetName=5V_LV Pin=C128-2
+Added Pin To Net: NetName=5V_LV Pin=T5-2
+Added Pin To Net: NetName=GND_LV Pin=U19-5
+Added Pin To Net: NetName=5V_LV Pin=U19-8
+Added Pin To Net: NetName=5V_LV Pin=U21-2
+Added Pin To Net: NetName=GND_LV Pin=U21-4
+Added Pin To Net: NetName=GND_LV Pin=U21-5
+Added Pin To Net: NetName=+5V_USH2 Pin=C120-2
+Added Pin To Net: NetName=+5V_USH2 Pin=C122-2
+Added Pin To Net: NetName=+5V_USH2 Pin=C132-2
+Added Pin To Net: NetName=+5V_USH2 Pin=C133-2
+Added Pin To Net: NetName=+5V_USH2 Pin=D37-1
+Added Pin To Net: NetName=+5V_USH2 Pin=D38-1
+Added Pin To Net: NetName=+5V_USH2 Pin=D40-A
+Added Pin To Net: NetName=+5V_USH2 Pin=D41-1
+Added Pin To Net: NetName=+5V_USH2 Pin=FB20-2
+Added Pin To Net: NetName=+5V_USH2 Pin=R77-2
+Added Pin To Net: NetName=+5V_USH2 Pin=U19-1
+Added Net: Name=+5V_USH2
+Added Pin To Net: NetName=+6V_USH2 Pin=C129-2
+Added Pin To Net: NetName=+6V_USH2 Pin=C130-2
+Added Pin To Net: NetName=+6V_USH2 Pin=C136-2
+Added Pin To Net: NetName=+6V_USH2 Pin=C137-2
+Added Pin To Net: NetName=+6V_USH2 Pin=D39-2
+Added Pin To Net: NetName=+6V_USH2 Pin=U20-2
+Added Net: Name=+6V_USH2
+Added Pin To Net: NetName=-5V_USH2 Pin=C141-2
+Added Pin To Net: NetName=-5V_USH2 Pin=C142-2
+Added Pin To Net: NetName=-5V_USH2 Pin=D37-2
+Added Pin To Net: NetName=-5V_USH2 Pin=D38-2
+Added Pin To Net: NetName=-5V_USH2 Pin=D43-K
+Added Pin To Net: NetName=-5V_USH2 Pin=D44-2
+Added Pin To Net: NetName=-5V_USH2 Pin=FB21-2
+Added Net: Name=-5V_USH2
+Added Pin To Net: NetName=-6V_USH2 Pin=C134-1
+Added Pin To Net: NetName=-6V_USH2 Pin=C135-1
+Added Pin To Net: NetName=-6V_USH2 Pin=C138-2
+Added Pin To Net: NetName=-6V_USH2 Pin=C139-2
+Added Pin To Net: NetName=-6V_USH2 Pin=D42-1
+Added Pin To Net: NetName=-6V_USH2 Pin=U22-5
+Added Pin To Net: NetName=-6V_USH2 Pin=U22-8
+Added Net: Name=-6V_USH2
+Added Pin To Net: NetName=GND_USH2 Pin=C120-1
+Added Pin To Net: NetName=GND_USH2 Pin=C122-1
+Added Pin To Net: NetName=GND_USH2 Pin=C125-2
+Added Pin To Net: NetName=GND_USH2 Pin=C129-1
+Added Pin To Net: NetName=GND_USH2 Pin=C130-1
+Added Pin To Net: NetName=GND_USH2 Pin=C131-1
+Added Pin To Net: NetName=GND_USH2 Pin=C132-1
+Added Pin To Net: NetName=GND_USH2 Pin=C133-1
+Added Pin To Net: NetName=GND_USH2 Pin=C134-2
+Added Pin To Net: NetName=GND_USH2 Pin=C135-2
+Added Pin To Net: NetName=GND_USH2 Pin=C136-1
+Added Pin To Net: NetName=GND_USH2 Pin=C137-1
+Added Pin To Net: NetName=GND_USH2 Pin=C138-1
+Added Pin To Net: NetName=GND_USH2 Pin=C139-1
+Added Pin To Net: NetName=GND_USH2 Pin=C141-1
+Added Pin To Net: NetName=GND_USH2 Pin=C142-1
+Added Pin To Net: NetName=GND_USH2 Pin=C143-1
+Added Pin To Net: NetName=GND_USH2 Pin=C144-1
+Added Pin To Net: NetName=GND_USH2 Pin=D41-2
+Added Pin To Net: NetName=GND_USH2 Pin=D44-1
+Added Pin To Net: NetName=GND_USH2 Pin=FB19-1
+Added Pin To Net: NetName=GND_USH2 Pin=R2-3
+Added Pin To Net: NetName=GND_USH2 Pin=R82-1
+Added Pin To Net: NetName=GND_USH2 Pin=R84-1
+Added Pin To Net: NetName=GND_USH2 Pin=R85-1
+Added Pin To Net: NetName=GND_USH2 Pin=T5-4
+Added Pin To Net: NetName=GND_USH2 Pin=U19-4
+Added Pin To Net: NetName=GND_USH2 Pin=U20-1
+Added Pin To Net: NetName=GND_USH2 Pin=U22-3
+Added Pin To Net: NetName=GND_USH2 Pin=U22-4
+Added Pin To Net: NetName=GND_USH2 Pin=U22-9
+Added Net: Name=GND_USH2
+Added Pin To Net: NetName=NetC124_1 Pin=C124-1
+Added Pin To Net: NetName=NetC124_1 Pin=D37-C
+Added Pin To Net: NetName=NetC124_1 Pin=R77-1
+Added Pin To Net: NetName=NetC124_1 Pin=R78-2
+Added Pin To Net: NetName=NetC124_1 Pin=U19-2
+Added Net: Name=NetC124_1
+Added Pin To Net: NetName=NetC124_2 Pin=C124-2
+Added Pin To Net: NetName=NetC124_2 Pin=D38-C
+Added Pin To Net: NetName=NetC124_2 Pin=R81-2
+Added Pin To Net: NetName=NetC124_2 Pin=U19-3
+Added Net: Name=NetC124_2
+Added Pin To Net: NetName=NetC131_2 Pin=C131-2
+Added Pin To Net: NetName=NetC131_2 Pin=FB20-1
+Added Pin To Net: NetName=NetC131_2 Pin=U20-3
+Added Net: Name=NetC131_2
+Added Pin To Net: NetName=NetC140_1 Pin=C140-1
+Added Pin To Net: NetName=NetC140_1 Pin=C143-2
+Added Pin To Net: NetName=NetC140_1 Pin=FB21-1
+Added Pin To Net: NetName=NetC140_1 Pin=R83-2
+Added Pin To Net: NetName=NetC140_1 Pin=U22-1
+Added Net: Name=NetC140_1
+Added Pin To Net: NetName=NetC140_2 Pin=C140-2
+Added Pin To Net: NetName=NetC140_2 Pin=R83-1
+Added Pin To Net: NetName=NetC140_2 Pin=R85-2
+Added Pin To Net: NetName=NetC140_2 Pin=U22-2
+Added Net: Name=NetC140_2
+Added Pin To Net: NetName=NetC144_2 Pin=C144-2
+Added Pin To Net: NetName=NetC144_2 Pin=U22-6
+Added Net: Name=NetC144_2
+Added Pin To Net: NetName=NetD39_1 Pin=D39-1
+Added Pin To Net: NetName=NetD39_1 Pin=D42-2
+Added Pin To Net: NetName=NetD39_1 Pin=T5-6
+Added Net: Name=NetD39_1
+Added Pin To Net: NetName=NetD40_K Pin=D40-K
+Added Pin To Net: NetName=NetD40_K Pin=R82-2
+Added Net: Name=NetD40_K
+Added Pin To Net: NetName=NetD43_A Pin=D43-A
+Added Pin To Net: NetName=NetD43_A Pin=R84-2
+Added Net: Name=NetD43_A
+Added Pin To Net: NetName=NetFB18_1 Pin=FB18-1
+Added Pin To Net: NetName=NetFB18_1 Pin=R2-2
+Added Net: Name=NetFB18_1
+Added Pin To Net: NetName=NetFB18_2 Pin=FB18-2
+Added Pin To Net: NetName=NetFB18_2 Pin=R78-1
+Added Net: Name=NetFB18_2
+Added Pin To Net: NetName=NetFB19_2 Pin=FB19-2
+Added Pin To Net: NetName=NetFB19_2 Pin=R81-1
+Added Net: Name=NetFB19_2
+Added Pin To Net: NetName=NetR79_1 Pin=R79-1
+Added Pin To Net: NetName=NetR79_1 Pin=U19-7
+Added Net: Name=NetR79_1
+Added Pin To Net: NetName=NetR79_2 Pin=R79-2
+Added Net: Name=NetR79_2
+Added Pin To Net: NetName=NetR80_1 Pin=R80-1
+Added Pin To Net: NetName=NetR80_1 Pin=U19-6
+Added Net: Name=NetR80_1
+Added Pin To Net: NetName=NetR80_2 Pin=R80-2
+Added Net: Name=NetR80_2
+Added Pin To Net: NetName=NetT5_1 Pin=T5-1
+Added Pin To Net: NetName=NetT5_1 Pin=U21-3
+Added Net: Name=NetT5_1
+Added Pin To Net: NetName=NetT5_3 Pin=T5-3
+Added Pin To Net: NetName=NetT5_3 Pin=U21-1
+Added Net: Name=NetT5_3
+Added Class: Name=Out_current_sensor_UVW

@@ -1,0 +1,5 @@
+Added Component: Designator=P?(2 pin Terminal)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetL8_1 Pin=P?-1
+Added Pin To Net: NetName=GND_PWR Pin=P?-2
+Added Member To Class: ClassName=Power Supply Member=Component P? OSTYC022150

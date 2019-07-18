@@ -1,0 +1,10 @@
+Output: DigiKey Order
+Type  : BOM
+From  : Variant [[No Variations]] of Project [Inv_filter_v2.PrjPcb]
+   Generated File[DigiKey Order-Inv_filter_v2.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 3:55:29 PM On 8/24/2018

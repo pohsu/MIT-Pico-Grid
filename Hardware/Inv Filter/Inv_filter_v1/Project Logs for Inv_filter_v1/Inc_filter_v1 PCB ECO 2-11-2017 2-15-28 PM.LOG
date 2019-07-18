@@ -1,0 +1,170 @@
+Change Component Comment : Designator=U1001 Old Comment=SN6501  New Comment=SN6501
+Change Component Designator: OldDesignator=C1000 NewDesignator=C15
+Change Component Designator: OldDesignator=C1001 NewDesignator=C16
+Change Component Designator: OldDesignator=C1002 NewDesignator=C17
+Change Component Designator: OldDesignator=C1003 NewDesignator=C18
+Change Component Designator: OldDesignator=C1004 NewDesignator=C19
+Change Component Designator: OldDesignator=C1005 NewDesignator=C20
+Change Component Designator: OldDesignator=C1006 NewDesignator=C21
+Change Component Designator: OldDesignator=C1007 NewDesignator=C22
+Change Component Designator: OldDesignator=C1008 NewDesignator=C23
+Change Component Designator: OldDesignator=C1009 NewDesignator=C24
+Change Component Designator: OldDesignator=C1010 NewDesignator=C25
+Change Component Designator: OldDesignator=C1011 NewDesignator=C26
+Change Component Designator: OldDesignator=C1012 NewDesignator=C27
+Change Component Designator: OldDesignator=C1013 NewDesignator=C28
+Change Component Designator: OldDesignator=C1014 NewDesignator=C29
+Change Component Designator: OldDesignator=C1015 NewDesignator=C30
+Change Component Designator: OldDesignator=C1016 NewDesignator=C31
+Change Component Designator: OldDesignator=C1017 NewDesignator=C32
+Change Component Designator: OldDesignator=C1018 NewDesignator=C33
+Change Component Designator: OldDesignator=C1019 NewDesignator=C34
+Change Component Designator: OldDesignator=D1000 NewDesignator=D3
+Change Component Designator: OldDesignator=D1001 NewDesignator=D4
+Change Component Designator: OldDesignator=D1002 NewDesignator=D5
+Change Component Designator: OldDesignator=D1003 NewDesignator=D6
+Change Component Designator: OldDesignator=D1004 NewDesignator=D7
+Change Component Designator: OldDesignator=D1005 NewDesignator=D8
+Change Component Designator: OldDesignator=FB1000 NewDesignator=FB3
+Change Component Designator: OldDesignator=FB1001 NewDesignator=FB4
+Change Component Designator: OldDesignator=R1000 NewDesignator=R15
+Change Component Designator: OldDesignator=R1001 NewDesignator=R16
+Change Component Designator: OldDesignator=R1002 NewDesignator=R17
+Change Component Designator: OldDesignator=R1003 NewDesignator=R18
+Change Component Designator: OldDesignator=T1000 NewDesignator=T1
+Change Component Designator: OldDesignator=U1000 NewDesignator=U2
+Change Component Designator: OldDesignator=U1001 NewDesignator=U3
+Change Component Designator: OldDesignator=U1003 NewDesignator=U4
+Added Pin To Net: NetName=GND_LV Pin=C15-1
+Added Pin To Net: NetName=GND_USH1 Pin=C15-2
+Added Pin To Net: NetName=GND_LV Pin=C16-1
+Added Pin To Net: NetName=5V_LV Pin=C16-2
+Added Pin To Net: NetName=GND_LV Pin=C17-1
+Added Pin To Net: NetName=5V_LV Pin=C17-2
+Added Pin To Net: NetName=GND_LV Pin=C18-1
+Added Pin To Net: NetName=5V_LV Pin=C18-2
+Added Pin To Net: NetName=GND_USH1 Pin=C19-1
+Added Pin To Net: NetName=GND_USH1 Pin=C20-1
+Added Pin To Net: NetName=GND_USH1 Pin=C21-1
+Added Pin To Net: NetName=GND_USH1 Pin=C22-1
+Added Pin To Net: NetName=+5V_USH1 Pin=C22-2
+Added Pin To Net: NetName=GND_USH1 Pin=C23-1
+Added Pin To Net: NetName=+5V_USH1 Pin=C23-2
+Added Pin To Net: NetName=GND_USH1 Pin=C24-2
+Added Pin To Net: NetName=GND_USH1 Pin=C25-2
+Added Pin To Net: NetName=GND_USH1 Pin=C26-1
+Added Pin To Net: NetName=GND_USH1 Pin=C27-1
+Added Pin To Net: NetName=GND_USH1 Pin=C28-1
+Added Pin To Net: NetName=GND_USH1 Pin=C29-1
+Added Pin To Net: NetName=GND_USH1 Pin=C31-1
+Added Pin To Net: NetName=-5V_USH1 Pin=C31-2
+Added Pin To Net: NetName=GND_USH1 Pin=C32-1
+Added Pin To Net: NetName=-5V_USH1 Pin=C32-2
+Added Pin To Net: NetName=GND_USH1 Pin=C33-1
+Added Pin To Net: NetName=GND_USH1 Pin=C34-1
+Added Pin To Net: NetName=+5V_USH1 Pin=D4-A
+Added Pin To Net: NetName=+5V_USH1 Pin=D5-1
+Added Pin To Net: NetName=GND_USH1 Pin=D5-2
+Added Pin To Net: NetName=-5V_USH1 Pin=D7-K
+Added Pin To Net: NetName=GND_USH1 Pin=D8-1
+Added Pin To Net: NetName=-5V_USH1 Pin=D8-2
+Added Pin To Net: NetName=+5V_USH1 Pin=FB3-2
+Added Pin To Net: NetName=-5V_USH1 Pin=FB4-2
+Added Pin To Net: NetName=GND_USH1 Pin=R15-1
+Added Pin To Net: NetName=GND_USH1 Pin=R17-1
+Added Pin To Net: NetName=GND_USH1 Pin=R18-1
+Added Pin To Net: NetName=5V_LV Pin=T1-2
+Added Pin To Net: NetName=GND_USH1 Pin=T1-4
+Added Pin To Net: NetName=GND_USH1 Pin=U2-1
+Added Pin To Net: NetName=5V_LV Pin=U3-2
+Added Pin To Net: NetName=GND_LV Pin=U3-4
+Added Pin To Net: NetName=GND_LV Pin=U3-5
+Added Pin To Net: NetName=GND_USH1 Pin=U4-3
+Added Pin To Net: NetName=GND_USH1 Pin=U4-4
+Added Pin To Net: NetName=GND_USH1 Pin=U4-9
+Added Pin To Net: NetName=+6V_USH1 Pin=C19-2
+Added Pin To Net: NetName=+6V_USH1 Pin=C20-2
+Added Pin To Net: NetName=+6V_USH1 Pin=C26-2
+Added Pin To Net: NetName=+6V_USH1 Pin=C27-2
+Added Pin To Net: NetName=+6V_USH1 Pin=D3-2
+Added Pin To Net: NetName=+6V_USH1 Pin=U2-2
+Added Net: Name=+6V_USH1
+Added Pin To Net: NetName=-6V_USH1 Pin=C24-1
+Added Pin To Net: NetName=-6V_USH1 Pin=C25-1
+Added Pin To Net: NetName=-6V_USH1 Pin=C28-2
+Added Pin To Net: NetName=-6V_USH1 Pin=C29-2
+Added Pin To Net: NetName=-6V_USH1 Pin=D6-1
+Added Pin To Net: NetName=-6V_USH1 Pin=U4-5
+Added Pin To Net: NetName=-6V_USH1 Pin=U4-8
+Added Net: Name=-6V_USH1
+Added Pin To Net: NetName=NetC21_2 Pin=C21-2
+Added Pin To Net: NetName=NetC21_2 Pin=FB3-1
+Added Pin To Net: NetName=NetC21_2 Pin=U2-3
+Added Net: Name=NetC21_2
+Added Pin To Net: NetName=NetC30_1 Pin=C30-1
+Added Pin To Net: NetName=NetC30_1 Pin=C33-2
+Added Pin To Net: NetName=NetC30_1 Pin=FB4-1
+Added Pin To Net: NetName=NetC30_1 Pin=R16-2
+Added Pin To Net: NetName=NetC30_1 Pin=U4-1
+Added Net: Name=NetC30_1
+Added Pin To Net: NetName=NetC30_2 Pin=C30-2
+Added Pin To Net: NetName=NetC30_2 Pin=R16-1
+Added Pin To Net: NetName=NetC30_2 Pin=R18-2
+Added Pin To Net: NetName=NetC30_2 Pin=U4-2
+Added Net: Name=NetC30_2
+Added Pin To Net: NetName=NetC34_2 Pin=C34-2
+Added Pin To Net: NetName=NetC34_2 Pin=U4-6
+Added Net: Name=NetC34_2
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=D6-2
+Added Pin To Net: NetName=NetD3_1 Pin=T1-6
+Added Net: Name=NetD3_1
+Added Pin To Net: NetName=NetD4_K Pin=D4-K
+Added Pin To Net: NetName=NetD4_K Pin=R15-2
+Added Net: Name=NetD4_K
+Added Pin To Net: NetName=NetD7_A Pin=D7-A
+Added Pin To Net: NetName=NetD7_A Pin=R17-2
+Added Net: Name=NetD7_A
+Added Pin To Net: NetName=NetT1_1 Pin=T1-1
+Added Pin To Net: NetName=NetT1_1 Pin=U3-3
+Added Net: Name=NetT1_1
+Added Pin To Net: NetName=NetT1_3 Pin=T1-3
+Added Pin To Net: NetName=NetT1_3 Pin=U3-1
+Added Net: Name=NetT1_3
+Change Class Name : Old Net Name=Ind_current_sensor New Net Name=Ind_current_sensor_U
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C15 Cap TH
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C16 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C17 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C18 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C19 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C20 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C21 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C22 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C23 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C24 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C25 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C26 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C27 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C28 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C29 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C30 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C31 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C32 Cap 0805
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C33 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component C34 Cap 0603_new
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component D3 Diode MBR0520
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component D4 LED
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component D5 Diode Zener POWERDI123
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component D6 Diode MBR0520
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component D7 LED
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component D8 Diode Zener POWERDI123
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component FB3 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component FB4 Ferrite bead
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component R15 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component R16 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component R17 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component R18 Resistor 0603
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component T1 750313769
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component U2 TLV70450DBV
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component U3 SN6501
+Added Member To Class: ClassName=Ind_current_sensor_U Member=Component U4 TPS7A30

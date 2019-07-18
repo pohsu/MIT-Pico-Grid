@@ -1,0 +1,24 @@
+
+**** Build of configuration CPU1_RAM for project blinky_cpu01 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_examples_Cpu1/blinky/cpu01/blinky_cpu01.c'
+'Invoking: C2000 Compiler'
+"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/bin/cl2000" -v28 -ml -mt --vcu_support=vcu2 --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --include_path="C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/include" --include_path="C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_headers/include" --include_path="C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/include" -g --define=CPU1 --display_error_number --diag_warning=225 --diag_suppress=10063 --preproc_with_compile --preproc_dependency="blinky_cpu01.d"  "C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_examples_Cpu1/blinky/cpu01/blinky_cpu01.c"
+'Finished building: C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_examples_Cpu1/blinky/cpu01/blinky_cpu01.c'
+' '
+'Building target: blinky_cpu01.out'
+'Invoking: C2000 Linker'
+"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/bin/cl2000" -v28 -ml -mt --vcu_support=vcu2 --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 -g --define=CPU1 --display_error_number --diag_warning=225 --diag_suppress=10063 -z -m"blinky_cpu01.map" --stack_size=0x100 --warn_sections -i"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/lib" -i"C:/ti/ccsv6/tools/compiler/c2000_15.12.3.LTS/include" -i"C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_common/cmd" -i"C:/ti/controlSUITE/device_support/F2837xD/v210/F2837xD_headers/cmd" --reread_libs --display_error_number --xml_link_info="blinky_cpu01_linkInfo.xml" --entry_point=code_start --rom_model -o "blinky_cpu01.out" "./F2837xD_CodeStartBranch.obj" "./F2837xD_DefaultISR.obj" "./F2837xD_GlobalVariableDefs.obj" "./F2837xD_Gpio.obj" "./F2837xD_Ipc.obj" "./F2837xD_PieCtrl.obj" "./F2837xD_PieVect.obj" "./F2837xD_SysCtrl.obj" "./F2837xD_usDelay.obj" "./blinky_cpu01.obj"  -lrts2800_fpu32.lib -l2837xD_RAM_lnk_cpu1.cmd -lF2837xD_Headers_nonBIOS_cpu1.cmd -llibc.a 
+<Linking>
+'Finished building target: blinky_cpu01.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration CPU1_RAM for project blinky_cpu01 ****
+
+"C:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****
